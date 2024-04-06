@@ -1,0 +1,717 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 0;
+}
+/*---------------------------------------------------------MAIN PAGE--------------------------------------------------------------------------*/
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: blur(10px);
+}
+
+.slideshow {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  z-index: 1;
+}
+
+.slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation: imageAnimation 24s linear infinite 0s;
+  -moz-animation: imageAnimation 24s linear infinite 0s;
+  animation: imageAnimation 24s linear infinite 0s;
+}
+
+/*@media only screen and (min-width: 768px) {
+  .slideshow li h3 {
+    bottom: 30px;
+    font-size: 8.125em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .slideshow li h3 {
+    font-size: 10.9375em;
+  }
+}*/
+
+.slideshow li:nth-child(1) span {
+  background-image: url(https://media.revistagq.com/photos/620e38dcc789a63cc825a53f/16:9/w_2560%2Cc_limit/drive-to-survive-4-netflix-fecha.jpeg);
+}
+
+.slideshow li:nth-child(2) span {
+  background-image: url(https://f1chronicle.com/wp-content/uploads/2022/05/220062-emilia-romagna-gp-2022-race-scaled-1920x1080.jpg);
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  animation-delay: 6s;
+}
+
+.slideshow li:nth-child(3) span {
+  background-image: url(https://i.redd.it/8mmfuvapzyr71.jpg);
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  animation-delay: 12s;
+}
+
+.slideshow li:nth-child(4) span {
+  background-image: url(https://images.daznservices.com/di/library/DAZN_News/ff/b5/2023-03-03-alonso-aston-martin-f1-formula-1_wzn823p6f5hv1nnscf81hhaol.jpg?t=-1415982858);
+  -webkit-animation-delay: 18s;
+  -moz-animation-delay: 18s;
+  animation-delay: 18s;
+}
+
+@-webkit-keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -moz-animation-timing-function: ease-in;
+  }
+  12.5% {
+    opacity: 1;
+    -moz-animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*MAIN GROUP CONTAINERS PRINCIPAL SECTION*/
+
+.main-group {
+  position: absolute;
+  z-index: 98;
+  width: 85%;
+  height: 70%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.main-group1 {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.main-title {
+  width: 60%;
+  height: 100%;
+  margin: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-family: "Bebas Neue";
+  font-size: 6.5em;
+}
+
+.main-devices {
+  width: 40%;
+  height: 100%;
+}
+
+.main-devices > img {
+  width: 100%;
+  height: 150%;
+  margin-top: -10%;
+}
+
+.main-group2 {
+  width: 100%;
+  height: 35%;
+}
+
+/*HEADER DE LA SECCION MAIN*/
+.header {
+  position: absolute;
+  z-index: 98;
+  width: 85%;
+  height: 10%;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #222222;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.header-drop-containerData {
+  position: absolute;
+  z-index: 99;
+  width: 85%;
+  height: 25%;
+  top: 20.3%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.header-container1 {
+  height: 100%;
+  width: 20%;
+  background-color: white;
+}
+
+.header-container2 {
+  height: 100%;
+  width: 60%;
+  padding-right: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: row;
+  border-left: 2px solid #00b9ff;
+  border-right: 2px solid #00b9ff;
+  gap: 3%;
+  font-family: "Bebas Neue";
+  font-size: 1.3em;
+  color: white;
+}
+
+.header-container2 > p {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header-container2 > p:hover {
+  opacity: 0.6;
+}
+
+.progress-bar:hover:after {
+  width: 100%;
+}
+
+.progress-bar:after {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 0;
+  height: 3px;
+  background: white;
+  display: block;
+  content: "";
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-bar:hover:after {
+  width: 100%;
+}
+
+.header-container3 {
+  height: 100%;
+  width: 20%;
+}
+
+
+
+/*------------------------------------------------------LATEST NEWS/RACE----------------------------------------------------------------------*/
+.notices {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-family: "Bebas Neue";
+  gap: 10%;
+  background-color: #222222;
+}
+
+.notice-container{
+  width: 40%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5%;
+  background-color: aliceblue;
+  
+}
+
+.title-notice{
+  text-align: left;
+  font-size: 3em;
+  margin-bottom: -5%;
+}
+
+.divide-bar{
+  width: 70%;
+  height: 2px;
+  background-color: #0072b1;
+}
+
+.notice-card{
+  width: 90%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #222222;
+}
+.notice-card>div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+}
+.notice-card-1{
+  width: 20%;
+  height: 100%;
+  background-color: rgb(0, 185, 255);
+}
+
+.notice-card-2{
+  width: 60%;
+  height: 100%;
+  background-color: rebeccapurple;
+}
+
+.notice-card-3{
+  width: 20%;
+  height: 100%;
+  background-color: pink;
+}
+
+.upcoming-race-container{
+  width: 40%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5%;
+  background-color: aliceblue;
+  
+}
+
+.title-upcoming-race{
+  text-align: left;
+  font-size: 3em;
+  margin-bottom: -5%;
+}
+
+.upcoming-race-card{
+  width: 90%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #222222;
+}
+
+.upcoming-race-card>div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+}
+
+.upcoming-race-card-info{
+  width: 90%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1%;
+}
+
+.upcoming-race-card-info-photo{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upcoming-race-card-info-photo > img{
+  width: 100%;
+}
+
+.upcoming-race-card-info-track{
+  width: 50%;
+  height: 100%;
+  padding-left: 10%;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Bebas Neue";
+  font-size: 1em;
+  color: black;
+}
+
+.upcoming-race-card-info-track > h1{
+  font-size: 2em;
+  margin-bottom: 3%;
+}
+
+.upcoming-race-card-info-track > p{
+  font-size: 1.3em;
+  margin: 0;
+}
+
+.upcoming-race-card-1{
+  width: 20%;
+  height: 100%;
+  background-color: #00b9ff;
+}
+
+.upcoming-race-card-2{
+  width: 60%;
+  height: 100%;
+  background-color: rebeccapurple;
+}
+
+.upcoming-race-card-3{
+  width: 20%;
+  height: 100%;
+  background-color: pink;
+}
+
+.notices2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #222222;
+}
+
+.twitter-timeline-container{
+  width: 38%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.twitter-timeline{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.standings{
+  width: 57%;
+  height: 90%;
+}
+/*------------------------------------------------------ABOUT THE WEBPAGE---------------------------------------------------------------------*/
+
+.about {
+  opacity: 0; /* El contenido estará inicialmente oculto */
+  transition: opacity 1s ease-in; /* Transición suave de la opacidad */
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: white;
+}
+
+.show {
+  opacity: 1; /* Se muestra el contenido cuando se aplica la clase .show */
+}
+
+.about-us > h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+}
+
+.about-us {
+  width: 60%;
+  height: 100%;
+}
+
+.about-image {
+  width: 40%;
+  height: 100%;
+  background-color: #128c7e;
+}
+
+.about-title {
+  color: #222222;
+  font-size: 2em;
+  margin: 5%;
+}
+
+.about-content {
+  color: #222222;
+  text-align: justify;
+  font-size: 1.5em;
+  margin: 5%;
+}
+
+/*----------------------------------------------------------FOOTER---------------------------------------------------------------------------*/
+footer {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  font-family: "Bebas Neue";
+  background-color: #222222;
+}
+
+/*COLUMNA 1 DEL FOOTER*/
+.footer-column1 {
+  width: 45%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-vertical-bar {
+  width: 1px;
+  height: 70%;
+  background-color: #00b9ff;
+}
+
+.card-help {
+  width: 60%;
+  height: 20%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: white;
+  transition: 0.3s;
+}
+
+.card-help:hover {
+  background-color: rgba(84, 84, 84, 0.3);
+}
+
+.card-textus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*COLUMNA 2 DEL FOOTER*/
+.footer-column2 {
+  width: 45%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+input {
+  background: 0;
+  border: 0;
+  outline: none;
+  width: 80vw;
+  max-width: 400px;
+  font-size: 1.5em;
+  transition: padding 0.3s 0.2s ease;
+}
+input:focus {
+  padding-bottom: 5px;
+}
+input:focus + .line:after {
+  transform: scaleX(1);
+}
+.field {
+  position: relative;
+}
+.field .line {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -8px;
+  background: #bdc3c7;
+}
+.field .line:after {
+  content: " ";
+  position: absolute;
+  float: right;
+  width: 100%;
+  height: 3px;
+  transform: scalex(0);
+  transition: transform 0.3s ease;
+  background: #1abc9c;
+}
+
+/*TARJETA QUE CONTIENE LAS REDES SOCIALES*/
+.card-socialmedia {
+  width: 70%;
+  height: 20%;
+  background-color: rgb(238, 238, 238, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 50px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+/* linke  din*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128c7e;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Bebas Neue";
+  background-color: #222222;
+}
