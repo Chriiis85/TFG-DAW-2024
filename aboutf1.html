@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season Standings - Motoring Community</title>
+    <link rel="stylesheet" href="CSS/aboutf1.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+
+</head>
+<body>
+
+    <section class="header-container">
+        <section id="header"></section>
+        <h1 class="title-header-container"> WHAT IS FORMULA ONE?</h1>
+    </section>
+
+    <section class="main">
+        <article class="main-about">
+            <h1>About Formula One</h1>
+            <p>Formula One, commonly known as Formula 1 or F1, is the highest class of international racing for open-wheel single-seater formula racing cars sanctioned by the Fédération Internationale de l'Automobile (FIA). The FIA Formula One World Championship has been one of the world's premier forms of racing since its inaugural running in 1950. The word formula in the name refers to the set of rules all participants' cars must follow. A Formula One season consists of a series of races, known as Grands Prix. Grands Prix take place in multiple countries and continents on either purpose-built circuits or closed public roads.</p>
+            <p>A point-system is used at Grands Prix to determine two annual World Championships: one for the drivers, and one for the constructors (the teams). Each driver must hold a valid Super Licence, the highest class of racing licence the FIA issues, and the races must be held on grade one tracks, the highest grade rating the FIA issues for tracks.</p>
+            <br>
+            <h1>Who are the F1 teams?</h1>
+            <p>A Formula One constructor is the entity credited for designing the chassis and the engine. If both are designed by the same company, that company receives sole credit as the constructor (e.g., Ferrari). If they are designed by different companies, both are credited, and the name of the chassis designer is placed before that of the engine designer (e.g., McLaren-Mercedes). All constructors are scored individually, even if they share either chassis or engine with another constructor (e.g., Williams-Ford, Williams-Honda in 1983).</p>
+            <p>Since 1981,[100] Formula One teams have been required to build the chassis in which they compete, and consequently the distinction between the terms "team" and "constructor" became less pronounced, though engines may still be produced by a different entity. This requirement distinguishes the sport from series such as the IndyCar Series which allows teams to purchase chassis, and "spec series" such as Formula 2 which require all cars be kept to an identical specification. It also effectively prohibits privateers, which were common even in Formula One well into the 1970s.</p>
+            <br>
+            <div class="about-teams-container1">
+                <div class="about-teams1">
+                    <button onclick="window.location.href = 'teams.html'" class="teams-button">Meet the Teams</button>
+                </div>
+            </div>
+            <h1>Who are the drivers</h1>
+            <p>Every team in Formula One must run two cars in every session in a Grand Prix weekend, and every team may use up to four drivers in a season. A team may also run two additional drivers in Free Practice sessions, which are often used to test potential new drivers for a career as a Formula One driver or gain experienced drivers to evaluate the car. Most drivers are contracted for at least the duration of a season, with driver changes taking place in-between seasons, in comparison to early years when drivers often competed on an ad hoc basis from race to race.</p>
+            <p>Each competitor must be in the possession of a FIA Super Licence to compete in a Grand Prix, which is issued to drivers who have met the criteria of success in junior motorsport categories and having achieved 300 kilometres (190 mi) of running in a Formula One car. Drivers may also be issued a Super Licence by the World Motor Sport Council if they fail to meet the criteria. Although most drivers earn their seat on ability, commercial considerations also come into play with teams having to satisfy sponsors and financial demands.</p>
+            <div class="about-teams-container2">
+                <div class="about-teams2">
+                    <button onclick="window.location.href = 'drivers.html'" class="drivers-button">Meet the Drivers</button>
+                </div>
+            </div>
+        </article>
+        </section>
+
+    <section id="footer"></section>
+    <script>
+        // Función para cargar el contenido del archivo HTML
+        function includeHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                });
+        }
+    
+        // Incluimos el encabezado y el pie de página
+        includeHTML('header.html', 'header');
+        includeHTML('footer.html', 'footer');
+    </script>
+</body>
+</html>

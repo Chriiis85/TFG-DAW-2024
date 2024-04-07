@@ -213,6 +213,7 @@ h1 {
   justify-content: center;
   flex-direction: row;
   background-color: #222222;
+  font-family: "Bebas Neue";
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -235,7 +236,12 @@ h1 {
 .header-container1 {
   height: 100%;
   width: 20%;
-  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8em;
+  cursor: pointer;
 }
 
 .header-container2 {
@@ -249,7 +255,6 @@ h1 {
   border-left: 2px solid #00b9ff;
   border-right: 2px solid #00b9ff;
   gap: 3%;
-  font-family: "Bebas Neue";
   font-size: 1.3em;
   color: white;
 }

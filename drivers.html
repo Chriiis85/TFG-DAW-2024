@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivers - Motoring Community</title>
+    <link rel="stylesheet" href="CSS/drivers.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+
+</head>
+<body>
+
+    <section class="header-container">
+        <section id="header"></section>
+        <h1 class="title-header-container">FORMULA ONE DRIVERS</h1>
+    </section>
+
+    <section class="main">
+        <article class="card-driver-container">
+            
+        </article>
+    </section>
+
+    <section id="footer"></section>
+    <script>
+        // Función para cargar el contenido del archivo HTML
+        function includeHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                });
+        }
+    
+        // Incluimos el encabezado y el pie de página
+        includeHTML('header.html', 'header');
+        includeHTML('footer.html', 'footer');
+    </script>
+</body>
+</html>

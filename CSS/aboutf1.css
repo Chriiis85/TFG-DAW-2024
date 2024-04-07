@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Bebas Neue";
+}
+
+h1 {
+  margin: 0;
+}
+
+/*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/
+.header-container{
+  width: 100%;
+  height: 50%;
+  background-image: url(https://www.f1-fansite.com/wp-content/uploads/2023/06/SI202306040579.jpg);
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+}
+
+.header-container::before {
+  content: ""; /* Se necesita un contenido vacío para que el pseudo-elemento sea visible */
+  position: absolute; /* Posiciona el pseudo-elemento encima del contenedor */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.5); /* Color negro con una opacidad del 50% */
+}
+
+.title-header-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: white;
+  top: 30%;
+  left: 85%;
+  transform: translate(-50%);
+  font-size: 5em;
+}
+/*----------------------------------------------------------------------MAIN------------------------------------------------------------------*/
+.main{
+    width: 100%;
+    height: 250%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-about{
+  width: 80%;
+  height: 100%;
+  top: 20%;
+  text-align: justify;
+}
+
+.main-about > h1{
+  font-size: 2em;
+  margin-top: 5%;
+  font-family: "Open Sans", sans-serif;
+
+}
+
+.main-about >p{
+  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+}
+
+.about-teams-container1{
+  width: 100%;
+  height: 5%;
+  border: solid 10px red;
+  border-top-left-radius: 25px; 
+  border-bottom-left-radius: 25px; 
+  border-right: none;
+  padding: 1%;
+}
+
+.about-teams1{
+  width: 100%;
+  height: 100%;
+  background-image: url(https://t4.ftcdn.net/jpg/04/71/72/23/360_F_471722307_raSMYjGlXua2GMuZoEHDEVNYSTLBOlni.jpg);
+  background-position: center;
+  background-size: contain;
+}
+
+.about-teams-container2{
+  width: 100%;
+  height: 5%;
+  border: solid 10px red;
+  border-top-right-radius: 25px; 
+  border-bottom-right-radius: 25px; 
+  border-left: none;
+  padding: 1%;
+}
+
+.about-teams2{
+  width: 100%;
+  height: 100%;
+}

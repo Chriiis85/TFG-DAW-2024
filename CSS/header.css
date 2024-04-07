@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Bebas Neue";
+
+}
+
+h1 {
+  margin: 0;
+}
+
+/*HEADER DE LA SECCION MAIN*/
+.header {
+  position: absolute;
+  z-index: 98;
+  width: 85%;
+  height: 10%;
+  top: 10%;
+  left: 50%;
+  font-family: "Bebas Neue";
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #222222;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.header-drop-containerData {
+  position: absolute;
+  z-index: 99;
+  width: 85%;
+  height: 25%;
+  top: 20.3%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.header-container1 {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5em;
+  cursor: pointer;
+}
+
+.header-container2 {
+  height: 100%;
+  width: 60%;
+  padding-right: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: row;
+  border-left: 2px solid #00b9ff;
+  border-right: 2px solid #00b9ff;
+  gap: 3%;
+  font-size: 1.3em;
+  color: white;
+}
+
+.header-container2 > p {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header-container2 > p:hover {
+  opacity: 0.6;
+}
+
+.progress-bar:hover:after {
+  width: 100%;
+}
+
+.progress-bar:after {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 0;
+  height: 3px;
+  background: white;
+  display: block;
+  content: "";
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-bar:hover:after {
+  width: 100%;
+}
+
+.header-container3 {
+  height: 100%;
+  width: 20%;
+}
+
+
+
+ 
+
