@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Formula One - Motoring Community</title>
+    <link rel="stylesheet" href="CSS/standings.css" />
+    <link rel="stylesheet" href="CSS/header.css" />
+    <link rel="stylesheet" href="CSS/footer.css" />
+    <script defer src="JS/drivers.js"></script>
+  </head>
+  <body>
+    <section class="header-container">
+      <section id="header"></section>
+      <h1 class="title-header-container">2024 SEASON standings</h1>
+    </section>
+    <section class="container-select-data"></section>
+    <section class="main">
+      <article class="standings-container">
+        <div class="standings-driver">
+            <div class="position">1</div>
+            <div class="bar"></div>
+            <div class="name">FERNANDO ALONSO</div>
+            <div class="team">Aston Martin</div>
+            <div class="points">
+                100 PTS
+            </div>
+        </div>
+        <div class="standings-driver">
+            <div class="position">1</div>
+            <div class="bar"></div>
+            <div class="name">FERNANDO ALONSO</div>
+            <div class="team">Aston Martin</div>
+            <div class="points">
+                100 PTS
+            </div>
+        </div>
+        <div class="standings-driver">
+            <div class="position">1</div>
+            <div class="bar"></div>
+            <div class="name">FERNANDO ALONSO</div>
+            <div class="team">Aston Martin</div>
+            <div class="points">
+                100 PTS
+            </div>
+        </div>
+        <div class="standings-driver">
+            <div class="position">1</div>
+            <div class="bar"></div>
+            <div class="name">FERNANDO ALONSO</div>
+            <div class="team">Aston Martin</div>
+            <div class="points">
+                100 PTS
+            </div>
+        </div>
+      </article>
+    </section>
+    <section id="footer"></section>
+    <script>
+      // Función para cargar el contenido del archivo HTML
+      function includeHTML(file, elementId) {
+        fetch(file)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById(elementId).innerHTML = data;
+          });
+      }
+
+      // Incluimos el encabezado y el pie de página
+      includeHTML("header.html", "header");
+      includeHTML("footer.html", "footer");
+    </script>
+  </body>
+</html>
