@@ -82,10 +82,52 @@ h1 {
 .about-teams1{
   width: 100%;
   height: 100%;
-  background-image: url(https://t4.ftcdn.net/jpg/04/71/72/23/360_F_471722307_raSMYjGlXua2GMuZoEHDEVNYSTLBOlni.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: right;
   background-position: center;
-  background-size: contain;
+  border-top-left-radius: 25px; 
+  border-bottom-left-radius: 25px; 
+  background-image: url(https://wallpaperbat.com/img/457341-free-download-hd-wallpaper-2011-formula-1-grand-prix-of-monaco-1920x1080-for-your-desktop-mobile-tablet-explore-f1-monaco-wallpaper-f1-monaco-wallpaper-monaco-wallpaper-f1-wallpaper.jpg);
+
 }
+
+.about-button {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 20%;
+  margin: 5%;
+  transition: 0.2s;
+}
+
+.about-button:hover,
+.about-button:focus {
+  background-color: white;
+  color:#222;
+}
+
 
 .about-teams-container2{
   width: 100%;
@@ -100,4 +142,33 @@ h1 {
 .about-teams2{
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  border-top-right-radius: 25px; 
+  border-bottom-right-radius: 25px; 
+  background-image: url(https://library.sportingnews.com/styles/twitter_card_120x120/s3/2022-07/sporting-news-2022-photo-with-watermark-5cdf767c-6f1b-41c3-ae44-7f002a5ecec4.png?itok=YRenkBfR);
+}
+
+.about-teams-container3{
+  width: 100%;
+  height: 5%;
+  border: solid 10px red;
+  border-top-right-radius: 25px; 
+  border-top-left-radius: 25px; 
+  border-bottom: none;
+  padding: 1%;
+}
+
+.about-teams3{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  border-top-right-radius: 25px; 
+  border-top-left-radius: 25px; 
+  background-image: url(https://wallpapercave.com/wp/wp9839711.jpg);
+  background-size: cover;
 }
