@@ -1,16 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+@font-face {
+  font-family: 'F1Title';
+  src: url('/Fonts/Formula1-Black.ttf') format('truetype'); /* Especifica el formato del archivo ttf */
+  /* Puedes agregar más formatos de archivo si tu fuente tiene diferentes extensiones, como .woff2, .ttf, etc. */
+}
 body {
   width: 100vw;
   height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  font-family: "Bebas Neue";
 }
 
 h1 {
   margin: 0;
+}
+
+:root {
+  --aston-martin: #2d826d;
+  --ferrari: #DC0000;
 }
 
 /*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/
@@ -48,21 +57,147 @@ h1 {
     height: 200%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 10%;
+    /*justify-content: center;*/
+    flex-direction: column;
+    gap: 2%;
 }
 
-.team-card-border{
-  width: 50%;
-  height: 20%;
+.drivers-title-container{
+  width: 80%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  margin-top: 3%;
+  border: solid 10px #222222;
+  color: #222222;
+  border-top-left-radius: 25px; 
+  border-bottom-left-radius: 25px; 
+  border-right: none;
+  padding: 1%;
+}
+
+.drivers-title-container{
+  font-family: "F1Title";
+  font-size: 3em;
+}
+
+.teams-container{ 
+  width: 80%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  color: #222222;
+}
+
+.team-card-container{
+  width: 40%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  margin-top: 3%;
+  border: solid 5px var(--aston-martin);
+  border-top-right-radius: 25px; 
+  border-left: none;
+  border-bottom: none;
+  padding: 1%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.team-card{
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2%;
+  font-family: "F1Title";
   flex-direction: column;
-  border: solid 10px red;
-  border-top-left-radius: 25px; 
+}
+
+.team-card-divider{
+  width: 90%;
+  height: 1px;
+  background-color: black;
+}
+
+.team-card-title{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-family: "F1Title";
+  margin-bottom: -18%;
+}
+
+.team-card-title > h1 {
+  width: 60%;
+  height: 100%;
+  font-size: 1.3em;
+}
+
+.team-card-title > img {
+  width: 30%;
+  height: 100%;
+  margin-top: -18%;
+}
+
+.team-card-drivers{
+  width: 90%;
+  height: 40%;
+  display: flex;
+  align-items: left ;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 1%;
+}
+
+.team-card-driver-container {
+  width: 90%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  margin-left: 3%;
+  border: solid 1px black;
+  border-bottom-left-radius: 25px; 
   border-right: none;
-  border-bottom: none;
-  padding: 2%;
+  border-top: none;
+  padding: 1%;
+}
+.team-card-driver{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.team-card-driver > h1{
+  margin-left: 5%;
+}
+
+.team-card-driver > img{
+  width: 20%;
+}
+
+.team-card-cars{
+  width: 90%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card-cars > img{
+  width: 100%;  
+  --color: #E1E1E1;
+  background-color: #ffffff;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 80px 80px;
 }
