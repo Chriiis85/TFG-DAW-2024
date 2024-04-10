@@ -52,18 +52,6 @@ h1 {
   animation: imageAnimation 24s linear infinite 0s;
 }
 
-/*@media only screen and (min-width: 768px) {
-  .slideshow li h3 {
-    bottom: 30px;
-    font-size: 8.125em;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .slideshow li h3 {
-    font-size: 10.9375em;
-  }
-}*/
-
 .slideshow li:nth-child(1) span {
   background-image: url(https://media.revistagq.com/photos/620e38dcc789a63cc825a53f/16:9/w_2560%2Cc_limit/drive-to-survive-4-netflix-fecha.jpeg);
 }
@@ -108,6 +96,7 @@ h1 {
     opacity: 0;
   }
 }
+
 @-moz-keyframes imageAnimation {
   0% {
     opacity: 0;
@@ -127,6 +116,7 @@ h1 {
     opacity: 0;
   }
 }
+
 @keyframes imageAnimation {
   0% {
     opacity: 0;
@@ -191,12 +181,42 @@ h1 {
 .main-devices > img {
   width: 100%;
   height: 150%;
-  margin-top: -10%;
+  margin-top: -5%;
 }
 
 .main-group2 {
   width: 100%;
   height: 35%;
+  color: white;
+  font-family: "Bebas Neue";
+  font-size: 1.5em;
+}
+
+.main-group2-h1{
+ width: 25%;
+ height: 25%;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 3%;
+ margin-left: 3%;
+ border: 1px solid #0072b1;
+ background-color: rgba(255, 255, 255, 0.2);
+ transition: 0.3s;
+}
+
+.main-group2-h1 > h1{
+  font-weight: 100;
+}
+
+.main-group2-h1 > img{
+  width: 10%;
+}
+
+.main-group2-h1:hover{
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 30%;
 }
 
 /*HEADER DE LA SECCION MAIN*/

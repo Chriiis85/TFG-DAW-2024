@@ -66,26 +66,17 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 1%;
-    background-color: #F3F3F3;
 }
 
-.standings-driver{
-    width: 90%;
-    height: 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    background-color: white;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.standings-driver:hover{
-    background-color: #222222;
-    color: white;
-}
+.standings-driver-container {
+    width: 70%;
+    height: 5%;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.3s;
+    background-color: red;
+  }
 
 .bar{
     width: 7px;

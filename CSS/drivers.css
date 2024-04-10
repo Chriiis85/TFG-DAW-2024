@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+@font-face {
+  font-family: 'F1Title';
+  src: url('/Fonts/Formula1-Black.ttf') format('truetype');
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -35,10 +40,12 @@ h1 {
 .title-header-container{
   width: 100%;
   height: 20%;
+  display: flex;
+  justify-content: center;
   position: absolute;
   color: white;
   top: 30%;
-  left: 85%;
+  left: 50%;
   transform: translate(-50%);
   font-size: 5em;
 }
@@ -48,12 +55,32 @@ h1 {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+}
+
+.drivers-title-container{
+  width: 80%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  margin-top: 3%;
+  border: solid 10px #222222;
+  color: #222222;
+  border-top-left-radius: 25px; 
+  border-bottom-left-radius: 25px; 
+  border-right: none;
+  padding: 1%;
+}
+
+.drivers-title-container{
+  font-family: "F1Title";
+  font-size: 3em;
 }
 
 .card-driver-container{
   width: 90%;
   height: 50%;
+  margin-top: 5%;
   background-color: black;
 }
 

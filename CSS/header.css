@@ -79,6 +79,18 @@ h1 {
   transition: 0.3s;
 }
 
+.header-desplegable{
+  width: 85%;
+  height: 0%;
+  position: absolute;
+  display: none;
+  z-index: 99;
+  top: 20%;
+  left: 7.5%;
+  background-color: #00b9ff;
+  transition: height 0.5s ease; /* Define una transición para el cambio de altura */
+}
+
 .header-container2 > p:hover {
   opacity: 0.6;
 }
@@ -107,8 +119,4 @@ h1 {
   height: 100%;
   width: 20%;
 }
-
-
-
- 
 
