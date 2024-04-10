@@ -59,57 +59,67 @@ body {
 }
 /*-------------------------------------------------------------DRIVER STANDINGS---------------------------------------------------------------*/
 .standings-container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1%;
+  background-color: #F3F3F3;
 }
 
-.standings-driver-container {
-    width: 70%;
-    height: 5%;
-    border: 1px solid black;
-    position: relative;
-    overflow: hidden;
-    transition: height 0.3s;
-    background-color: red;
-  }
+.standings-driver{
+  width: 90%;
+  height: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.standings-driver:hover{
+  background-color: #222222;
+  color: white;
+}
 
 .bar{
-    width: 7px;
-    height: 50%;
-    background-color: red;
-    margin-left: -25%;
+  width: 7px;
+  height: 50%;
+  background-color: red;
+  margin-left: -25%;
 }
 
 .points{
-    width: 10%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    color: white;
-    font-size: 1.5em;
-    background-color: gray;
+  width: 10%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.5em;
+  background-color: gray;
 }
 
 .position{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 1.8em;
 }
 
 .team{
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .name{
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
+
   
