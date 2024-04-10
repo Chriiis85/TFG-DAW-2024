@@ -1,9 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+
+@font-face {
+  font-family: 'F1Title';
+  src: url('/Fonts/Formula1-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'F1Regular';
+  src: url('/Fonts/Formula1-Regular-1.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'F1RegularBold';
+  src: url('/Fonts/Formula1-Bold-4.ttf') format('truetype');
+}
+
 body {
   width: 100vw;
-  height: 100vh;
   margin: 0;
   overflow-x: hidden;
 }
@@ -38,40 +53,32 @@ body {
   }
 
   .main{
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
-.container-select-data{
-    width: 100%;
-    height: 40%;
-    background-color: #222222;
-    background-image: url(https://www.formula1.com/etc/designs/fom-website/images/homepage/standings/bg.jpg);
-    background-size: cover;
-}
-.container-select-data > img{
-    width: 100%;
-    height: 20%;
-    object-fit: cover;
-}
 /*-------------------------------------------------------------DRIVER STANDINGS---------------------------------------------------------------*/
 .standings-container{
   width: 100%;
   height: 100%;
+  background-color: #F3F3F3;
+}
+
+.standings-driver-container{
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 1%;
+  margin-top: 1%;
   gap: 1%;
-  background-color: #F3F3F3;
 }
 
 .standings-driver{
-  width: 90%;
-  height: 7%;
+  width: 70%;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -86,6 +93,116 @@ body {
   background-color: #222222;
   color: white;
 }
+
+.standings-driver-info{
+  width: 70%;
+  height: 300px;
+  margin-top: -0.5%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: #222222;
+  font-family: "F1Title";
+  color: white;
+}
+
+.standings-driver-info-photo{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 15px;
+  background-color: #222222;
+  background-image: url(https://media.formula1.com/content/dam/fom-website/drivers/2024Drivers/alonso.jpg.img.1920.medium.jpg/1708344615576.jpg);
+  object-fit: cover;
+  background-size: 100%;
+}
+
+.standings-driver-info-info{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom-right-radius: 15px;
+}
+
+.standings-driver-info-info-main{
+  width: 90%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.standings-driver-info-info-main-name{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.standings-driver-info-info-main-number{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 1.5em;
+
+}
+.standings-driver-info-info-main-number > img{
+  width: 30%;
+  margin-left: 15%;
+  margin-bottom: 1%;
+  border-radius: 3px;
+}
+
+.standings-driver-info-info-main-helmet{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.standings-driver-info-info-main-helmet > img{
+  width: 30%;
+}
+
+
+.standings-driver-info-info-extra{
+  width: 90%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-family: "F1RegularBold";
+}
+
+.standings-driver-info-info-extra > div{
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15%;
+  background-color: #222222;
+}
+
+.standings-driver-info-info-extra > div > p{
+  margin: 0;
+  margin-left: 10%;
+} 
 
 .bar{
   width: 7px;

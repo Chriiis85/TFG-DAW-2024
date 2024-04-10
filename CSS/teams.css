@@ -5,6 +5,7 @@
   font-family: 'F1Title';
   src: url('/Fonts/Formula1-Black.ttf') format('truetype');
 }
+
 body {
   width: 100vw;
   height: 100vh;
