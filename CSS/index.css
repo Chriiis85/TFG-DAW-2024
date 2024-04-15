@@ -314,6 +314,62 @@ h1 {
 }
 
 
+.header-drop-container{
+  display: none;
+  position: absolute;
+  z-index: 98;
+  width: 85%;
+  height: 20%;
+  top: 20.3%;
+  left: 50%;
+  transform: translate(-50%);
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  color: white;
+  background-color: #222222;
+  font-family: "Bebas Neue";
+  border-bottom: 2px solid white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.header-drop-container-line{
+  width: 50px;
+  height: 5px;
+  background-color: #00acee;
+}
+
+.header-drop-container > h1{
+  font-size: 2em;
+}
+
+#pAboutf1{
+  font-size: 1.8em;
+  transition: color 0.3s; /* Transición suave para el cambio de color */
+}
+
+#pAboutf1:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: #00acee;
+}
+
+.header-drop-container-list > p{
+  font-size: 1.5em;
+  transition: color 0.3s; /* Transición suave para el cambio de color */
+}
+
+.header-drop-container-list > p:hover{
+  text-decoration: underline;
+  color: #00acee;
+}
+
+.header-drop-container-list> p:hover{
+  cursor: pointer;
+}
+
 
 /*------------------------------------------------------LATEST NEWS/RACE----------------------------------------------------------------------*/
 .notices {
@@ -383,6 +439,8 @@ h1 {
 .about-us {
   width: 60%;
   height: 100%;
+  font-family: "Open Sans", sans-serif;
+
 }
 
 .about-image {

@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Page - Motoring Community</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="JS/script.js"></script>
     <link rel="stylesheet" href="CSS/index.css" />
   </head>
   <body>
     <section class="main">
       <article class="header">
-        <div class="header-container1"><h1 onclick="window.location.href = 'index.html'">MOTORING COMMUNITY</h1></div>
+        <div class="header-container1">
+          <h1 onclick="window.location.href = 'index.html'">
+            MOTORING COMMUNITY
+          </h1>
+        </div>
         <div class="header-container2">
-          <p class="progress-bar" onclick="window.location.href = 'aboutf1.html'" >FORMULA ONE &nbsp;&nbsp;<img
-            src="Images/down-arrow-svgrepo-com.svg"
-            alt="Down Arrow"
-          /></p>
+          <p class="progress-bar" id="formulaone">
+            FORMULA ONE &nbsp;&nbsp;<img
+              src="Images/down-arrow-svgrepo-com.svg"
+              alt="Down Arrow"
+            />
+          </p>
           <p onclick="window.location.href = 'data.html'" class="progress-bar">
             DATA & ANALYSIS&nbsp;&nbsp;<img
               src="Images/down-arrow-svgrepo-com.svg"
@@ -47,11 +54,21 @@
         <div class="main-group2">
           <div class="main-group2-h1">
             <h1>Access to all the Data & Analysis</h1>
-            <img src="Images/right-arrow-svgrepo-com.svg" alt="">
+            <img src="Images/right-arrow-svgrepo-com.svg" alt="" />
           </div>
         </div>
       </article>
-      <!--<div class="header-drop-container">Hola</div>-->
+      <div id="header-drop-container-formulaone" class="header-drop-container">
+        <h1>Formula One <div class="header-drop-container-line"></div></h1>
+        <div>
+          <p id="pAboutf1" onclick="window.location.href = 'aboutf1.html'">About Formula One</p>
+        </div>
+        <div class="header-drop-container-list">
+          <p onclick="window.location.href = 'drivers.html'">2024 Drivers</p>
+          <p onclick="window.location.href = 'teams.html'">2024 Constructors</p>
+          <p onclick="window.location.href = 'standings.html'">2024 Calendar & Schedule</p>
+        </div>
+      </div>
 
       <article class="slider">
         <ul class="slideshow">
@@ -71,11 +88,7 @@
       </article>
     </section>
 
-    <section class="notices">
-
-
-        
-    </section>
+    <section class="notices"></section>
     <div style="height: 1px; background-color: white"></div>
     <section class="notices2">
       <article class="standings"></article>
@@ -181,31 +194,33 @@
       <p>WEBPAGE MADE BY CHRISTIAN MORENO DIAZ - ALL RIGHTS RESERVED 2024®™</p>
     </section>
     <!-- Incluir Axios -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-<script>
-  /*RECOGER NOTICIAS DESDE LA API*/
-  // Función para obtener las últimas noticias de F1
-  async function getLatestF1News() {
-    try {
-      const response = await axios.get('https://newsapi.org/v2/everything', {
-        params: {
-          q: 'Formula 1 racing OR F1 Grand Prix OR Formula 1 championship', // Términos de búsqueda más específicos relacionados con la Fórmula 1
-          apiKey: 'ee0dd026874d4a01b73386a3cc365885', // Reemplazar con tu propia API key de NewsAPI
-          sortBy: 'publishedAt', // Ordenar por fecha de publicación
-        },
-      });
+    <script>
+      /*RECOGER NOTICIAS DESDE LA API*/
+      // Función para obtener las últimas noticias de F1
+      async function getLatestF1News() {
+        try {
+          const response = await axios.get(
+            "https://newsapi.org/v2/everything",
+            {
+              params: {
+                q: "Formula 1 racing OR F1 Grand Prix OR Formula 1 championship", // Términos de búsqueda más específicos relacionados con la Fórmula 1
+                apiKey: "ee0dd026874d4a01b73386a3cc365885", // Reemplazar con tu propia API key de NewsAPI
+                sortBy: "publishedAt", // Ordenar por fecha de publicación
+              },
+            }
+          );
 
-      // Mostrar los resultados
-      console.log(response.data.articles);
-    } catch (error) {
-      console.error('Error al obtener las noticias:', error);
-    }
-  }
+          // Mostrar los resultados
+          console.log(response.data.articles);
+        } catch (error) {
+          console.error("Error al obtener las noticias:", error);
+        }
+      }
 
-  // Llamar a la función para obtener las últimas noticias de F1
-  getLatestF1News();
-</script>
-
+      // Llamar a la función para obtener las últimas noticias de F1
+      getLatestF1News();
+    </script>
   </body>
 </html>

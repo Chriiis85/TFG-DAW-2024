@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+@import url('../CSS/header.css');
+@import url('../CSS/footer.css');
 
 @font-face {
   font-family: 'F1Title';
@@ -56,12 +58,33 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #F3F3F3;
 }
 
+.teams-title-container{
+  width: 80%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  border: solid 10px #222222;
+  color: #222222;
+  background-color: #F3F3F3;
+  border-top-left-radius: 25px; 
+  border-bottom-left-radius: 25px; 
+  border-right: none;
+  padding: 1%;
+}
+
+.teams-title-container{
+  font-family: "F1Title";
+  font-size: 3em;
+}
 /*-------------------------------------------------------------DRIVER STANDINGS---------------------------------------------------------------*/
 .standings-container{
   width: 100%;
-  height: 100%;
+  margin-bottom: 2%;
   background-color: #F3F3F3;
 }
 

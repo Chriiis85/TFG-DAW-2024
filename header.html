@@ -4,14 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Header - Motoring Community</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script defer src="JS/script.js"></script>
   <link rel="stylesheet" href="CSS/header.css" />
 </head>
 <body>
   <section class="header-container">
     <article class="header">
-      <div class="header-container1"><h1 onclick="window.location.href = 'index.html'">MOTORING COMMUNITY</h1></div>
+      <div class="header-container1">
+        <h1 onclick="window.location.href = 'index.html'">
+          MOTORING COMMUNITY
+        </h1>
+      </div>
       <div class="header-container2">
-        <p onclick="window.location.href = 'aboutf1.html'" >FORMULA ONE</p>
+        <p class="progress-bar" id="formulaone">
+          FORMULA ONE &nbsp;&nbsp;<img
+            src="Images/down-arrow-svgrepo-com.svg"
+            alt="Down Arrow"
+          />
+        </p>
         <p onclick="window.location.href = 'data.html'" class="progress-bar">
           DATA & ANALYSIS&nbsp;&nbsp;<img
             src="Images/down-arrow-svgrepo-com.svg"
@@ -25,10 +36,22 @@
             alt="Down Arrow"
           />
         </p>
-        <p id="forum">FORUM</p>
+        <p>FORUM</p>
       </div>
       <div class="header-container3"></div>
     </article>
+
+    <div id="header-drop-container-formulaone" class="header-drop-container">
+      <h1>Formula One <div class="header-drop-container-line"></div></h1>
+      <div>
+        <p id="pAboutf1" onclick="window.location.href = 'aboutf1.html'">About Formula One</p>
+      </div>
+      <div class="header-drop-container-list">
+        <p onclick="window.location.href = 'drivers.html'">2024 Drivers</p>
+        <p onclick="window.location.href = 'teams.html'">2024 Constructors</p>
+        <p onclick="window.location.href = 'standings.html'">2024 Calendar & Schedule</p>
+      </div>
+    </div>
   </section>
 </body>
 </html>
