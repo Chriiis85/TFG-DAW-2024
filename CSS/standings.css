@@ -110,6 +110,7 @@ body {
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s;
+  
 }
 
 .standings-driver:hover{
@@ -226,6 +227,7 @@ body {
   margin: 0;
   margin-left: 10%;
 } 
+
 
 .bar{
   width: 7px;

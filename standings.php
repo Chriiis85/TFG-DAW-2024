@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="CSS/footer.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="JS/script.js"></script>
+    <script defer src="JS/standings.js"></script>
   </head>
   <body>
     <section class="header-container">
@@ -42,27 +43,126 @@
         </div>
         <div class="header-container3"></div>
       </article>
-  
+
       <div id="header-drop-container-formulaone" class="header-drop-container">
-        <h1>Formula One <div class="header-drop-container-line"></div></h1>
+        <h1>
+          Formula One
+          <div class="header-drop-container-line"></div>
+        </h1>
         <div>
-          <p id="pAboutf1" onclick="window.location.href = 'aboutf1.html'">About Formula One</p>
+          <p id="pAboutf1" onclick="window.location.href = 'aboutf1.html'">
+            About Formula One
+          </p>
         </div>
         <div class="header-drop-container-list">
           <p onclick="window.location.href = 'drivers.html'">2024 Drivers</p>
           <p onclick="window.location.href = 'teams.html'">2024 Constructors</p>
-          <p onclick="window.location.href = 'standings.html'">2024 Calendar & Schedule</p>
+          <p onclick="window.location.href = 'standings.html'">
+            2024 Calendar & Schedule
+          </p>
         </div>
       </div>
+
       <h1 class="title-header-container">2024 SEASON standings</h1>
     </section>
     <section class="container-select-data"></section>
     <section class="main">
       <article class="teams-title-container">
-        <h1 class="teams-title">2024 Formula One Constructors</h1>
-    </article>
+        <h1 class="teams-title">2024 Formula One Driver Standings</h1>
+      </article>
       <article class="standings-container">
-        <article
+      <?php
+      function calcularEdad($fechaNacimiento) {
+        // Convertir la fecha de nacimiento a un objeto DateTime
+        $fechaNacimiento = new DateTime($fechaNacimiento);
+        
+        // Obtener la fecha actual
+        $fechaActual = new DateTime();
+        
+        // Calcular la diferencia entre la fecha actual y la fecha de nacimiento
+        $diferencia = $fechaActual->diff($fechaNacimiento);
+        
+        // Obtener la diferencia en años
+        $edad = $diferencia->y;
+        
+        return $edad;
+    }
+      // URL de la API
+      $url = 'https://ergast.com/api/f1/2024/driverStandings.json';
+
+      // Obtener los datos JSON de la API
+      $data = file_get_contents($url);
+
+      // Decodificar los datos JSON en un array PHP
+      $resultado = json_decode($data, true);
+
+      // Verificar si se obtuvo una respuesta válida
+      if ($resultado && isset($resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'])) {
+          // Obtener la lista de clasificaciones de pilotos
+          $clasificacionesPilotos = $resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'];
+          
+          for ($i=0; $i < sizeof($clasificacionesPilotos); $i++) { 
+            echo'<article
+            id="standings-driver-container"
+            class="standings-driver-container"
+          >';
+            echo'<div id="standings-driver" class="standings-driver">';
+            echo'<div class="position">' . $clasificacionesPilotos[$i]['position'] . '</div>';
+            echo'<div class="bar"></div>';
+            echo'<div class="name">' . $clasificacionesPilotos[$i]['Driver']['givenName'] ." ".  $clasificacionesPilotos[$i]['Driver']['familyName'] .'</div>';
+            echo'<div class="team">'.$clasificacionesPilotos[$i]['Constructors'][0]['name'].'</div>';
+            echo'<div class="points">'.$clasificacionesPilotos[$i]['points'].'</div>';
+            echo'</div>';
+            echo'<div
+              id="standings-driver-info"
+              class="standings-driver-info"
+              style="display: none"
+            >';
+            echo'<div class="standings-driver-info-photo" style="  background-image: url(https://media.formula1.com/content/dam/fom-website/drivers/2024Drivers/'.$clasificacionesPilotos[$i]['Driver']['familyName'] .'.jpg.img.1920.medium.jpg/1708344615576.jpg);
+            "></div>';
+            echo'<div class="standings-driver-info-info">';
+            echo'<div class="standings-driver-info-info-main">';
+            echo'<div class="standings-driver-info-info-main-name">';
+            echo'<h1>' . $clasificacionesPilotos[$i]['Driver']['givenName'] ." ".  $clasificacionesPilotos[$i]['Driver']['familyName'] .'</h1>';
+            echo'</div>';
+            echo'<div class="standings-driver-info-info-main-number">';
+            echo'<h1>'. $clasificacionesPilotos[$i]['Driver']['permanentNumber'] .'</h1>';
+            echo'<img
+                      src="https://media.formula1.com/content/dam/fom-website/flags/Monaco.jpg"
+                      alt=""
+                    />';
+                    echo'</div>';
+                    echo'<div class="standings-driver-info-info-main-helmet">';
+                    echo'<img
+                      src="https://media.formula1.com/content/dam/fom-website/manual/Helmets2024/'.$clasificacionesPilotos[$i]['Driver']['familyName'] .'.png"
+                      alt=""
+                    />';
+                    echo'</div>';
+                    echo'</div>';
+                    echo'<div class="standings-driver-info-info-extra">';
+                    echo'<div>';
+                    echo'<p>Wins: '.$clasificacionesPilotos[$i]['wins'].'</p>';
+                    echo'<p>Poles Position: 1</p>';
+                    echo'<p>Total Points: 1</p>';
+                    echo'<p>World Champions: 1</p>';
+                    echo'<a href="'.$clasificacionesPilotos[$i]['Driver']['url'].'">Access to the biography</a>';
+                    echo'</div>';
+                    echo'<div>';
+                    echo'<p>Nationality: '.$clasificacionesPilotos[$i]['Driver']['nationality'].'.</p>';
+                    echo'<p>Place of Birth: Oviedo,Spain.</p>';
+                    echo'<p>Date of Birth: '.$clasificacionesPilotos[$i]['Driver']['dateOfBirth'].'</p>';
+                    echo'<p>Age: '.calcularEdad($clasificacionesPilotos[$i]['Driver']['dateOfBirth']).'</p>';
+                    echo'</div>';
+                    echo'</div>';
+                    echo'</div>';
+                    echo'</div>';
+                    echo'</article>';
+          }
+      } else {
+          echo "No se pudo obtener la información de la API.";
+      }
+      ?>
+        <!--<article
           id="standings-driver-container"
           class="standings-driver-container"
         >
@@ -117,8 +217,7 @@
             </div>
           </div>
         </article>
-
-      </article>
+      </article>-->
     </section>
     <footer>
       <section class="footer-column1">
@@ -178,29 +277,6 @@
     <section class="author">
       <p>WEBPAGE MADE BY CHRISTIAN MORENO DIAZ - ALL RIGHTS RESERVED 2024®™</p>
     </section>
-    <script>
-      $(document).ready(function () {
-        $(".standings-driver").click(function () {
-          var info = $(this).next(".standings-driver-info");
-          info.slideToggle(function () {
-            if ($(this).is(":hidden")) {
-              $(this)
-                .prev(".standings-driver")
-                .css("border-bottom-left-radius", "15px");
-              $(this)
-                .prev(".standings-driver")
-                .css("border-bottom-right-radius", "15px");
-            } else {
-              $(this)
-                .prev(".standings-driver")
-                .css("border-bottom-left-radius", "0px");
-              $(this)
-                .prev(".standings-driver")
-                .css("border-bottom-right-radius", "0px");
-            }
-          });
-        });
-      });
-    </script>
+    
   </body>
 </html>
