@@ -4,17 +4,17 @@
 
 @font-face {
   font-family: 'F1Title';
-  src: url('/Fonts/Formula1-Black.ttf') format('truetype');
+  src: url('../Fonts/Formula1-Black.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'F1Regular';
-  src: url('/Fonts/Formula1-Regular-1.ttf') format('truetype');
+  src: url('../Fonts/Formula1-Regular-1.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'F1RegularBold';
-  src: url('/Fonts/Formula1-Bold-4.ttf') format('truetype');
+  src: url('../Fonts/Formula1-Bold-4.ttf') format('truetype');
 }
 
 body {

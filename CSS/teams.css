@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'F1Title';
-  src: url('/Fonts/Formula1-Black.ttf') format('truetype');
+  src: url('../Fonts/Formula1-Black.ttf') format('truetype');
 }
 
 body {
