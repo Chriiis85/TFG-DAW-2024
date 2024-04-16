@@ -32,7 +32,7 @@
               alt="Down Arrow"
             />
           </p>
-          <p onclick="window.location.href = 'standings.html'">2024 SEASON</p>
+          <p onclick="window.location.href = 'standings.php'">2024 SEASON</p>
           <p class="progress-bar">
             ARCHIVE AND HISTORY&nbsp;&nbsp;<img
               src="Images/down-arrow-svgrepo-com.svg"
@@ -56,8 +56,8 @@
         </div>
         <div class="header-drop-container-list">
           <p onclick="window.location.href = 'drivers.html'">2024 Drivers</p>
-          <p onclick="window.location.href = 'teams.html'">2024 Constructors</p>
-          <p onclick="window.location.href = 'standings.html'">
+          <p onclick="window.location.href = 'teams.php'">2024 Constructors</p>
+          <p onclick="window.location.href = 'standings.php'">
             2024 Calendar & Schedule
           </p>
         </div>
@@ -102,16 +102,18 @@
           $clasificacionesPilotos = $resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'];
           
           for ($i=0; $i < sizeof($clasificacionesPilotos); $i++) { 
+            $nombre_equipo = str_replace(' ', '',$clasificacionesPilotos[$i]['Constructors'][0]['name']);
             echo'<article
             id="standings-driver-container"
             class="standings-driver-container"
           >';
             echo'<div id="standings-driver" class="standings-driver">';
             echo'<div class="position">' . $clasificacionesPilotos[$i]['position'] . '</div>';
-            echo'<div class="bar"></div>';
+            echo '<div class="bar" style="background-color:var(--'.$nombre_equipo.')";></div>';
             echo'<div class="name">' . $clasificacionesPilotos[$i]['Driver']['givenName'] ." ".  $clasificacionesPilotos[$i]['Driver']['familyName'] .'</div>';
-            echo'<div class="team">'.$clasificacionesPilotos[$i]['Constructors'][0]['name'].'</div>';
-            echo'<div class="points">'.$clasificacionesPilotos[$i]['points'].'</div>';
+            echo'<div class="team">'.$clasificacionesPilotos[$i]['Constructors'][0]['name'].'<img src="Images/Teams/'.$nombre_equipo.'.png" alt=""></div>';
+            echo'<div class="points">'.$clasificacionesPilotos[$i]['points']. ' PTS.</div>';
+            echo'<div class="arrow"><img src="Images/arrowdown-svgrepo-com.svg" alt=""></div>';
             echo'</div>';
             echo'<div
               id="standings-driver-info"
@@ -142,9 +144,8 @@
                     echo'<div class="standings-driver-info-info-extra">';
                     echo'<div>';
                     echo'<p>Wins: '.$clasificacionesPilotos[$i]['wins'].'</p>';
-                    echo'<p>Poles Position: 1</p>';
                     echo'<p>Total Points: 1</p>';
-                    echo'<p>World Champions: 1</p>';
+                    echo'<p>Constructor: '.$clasificacionesPilotos[$i]['Constructors'][0]['name'].'</p>';
                     echo'<a href="'.$clasificacionesPilotos[$i]['Driver']['url'].'">Access to the biography</a>';
                     echo'</div>';
                     echo'<div>';
@@ -162,62 +163,6 @@
           echo "No se pudo obtener la información de la API.";
       }
       ?>
-        <!--<article
-          id="standings-driver-container"
-          class="standings-driver-container"
-        >
-          <div id="standings-driver" class="standings-driver">
-            <div class="position">1</div>
-            <div class="bar"></div>
-            <div class="name">FERNANDO ALONSO</div>
-            <div class="team">Aston Martin</div>
-            <div class="points">100 PTS</div>
-          </div>
-          <div
-            id="standings-driver-info"
-            class="standings-driver-info"
-            style="display: none"
-          >
-            <div class="standings-driver-info-photo"></div>
-            <div class="standings-driver-info-info">
-              <div class="standings-driver-info-info-main">
-                <div class="standings-driver-info-info-main-name">
-                  <h1>Fernando Alonso</h1>
-                </div>
-                <div class="standings-driver-info-info-main-number">
-                  <h1>14</h1>
-                  <img
-                    src="https://media.formula1.com/content/dam/fom-website/flags/Spain.jpg"
-                    alt=""
-                  />
-                </div>
-                <div class="standings-driver-info-info-main-helmet">
-                  <img
-                    src="https://media.formula1.com/content/dam/fom-website/manual/Helmets2024/alonso.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div class="standings-driver-info-info-extra">
-                <div>
-                  <p>Wins: 1</p>
-                  <p>Poles Position: 1</p>
-                  <p>Total Points: 1</p>
-                  <p>World Champions: 1</p>
-                  <p>Race Started: 1</p>
-                </div>
-                <div>
-                  <p>Country: Spain.</p>
-                  <p>Place of Birth: Oviedo,Spain.</p>
-                  <p>Date of Birth: 29/07/1981</p>
-                  <p>Age: 1</p>
-                  <p>Race Started: 1</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </article>-->
     </section>
     <footer>
       <section class="footer-column1">

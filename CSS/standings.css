@@ -19,6 +19,19 @@
   src: url('../Fonts/Formula1-Bold-4.ttf') format('truetype');
 }
 
+:root {
+  --RedBull: #3671C6;
+  --Ferrari: #DC0000;
+  --McLaren: #FF8000;
+  --Mercedes: #00D2BE;
+  --AstonMartin: #229971;
+  --RBF1Team: #6692FF;
+  --HaasF1Team: 	#B6BABD;
+  --Williams: #00A0DE;
+  --Sauber: #52E252;
+  --AlpineF1Team: #FF87BC;
+}
+
 body {
   width: 100vw;
   margin: 0;
@@ -97,6 +110,7 @@ body {
   margin-bottom: 1%;
   margin-top: 1%;
   gap: 1%;
+  font-family: "F1RegularBold";
 }
 
 .standings-driver{
@@ -104,13 +118,12 @@ body {
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   background-color: white;
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s;
-  
 }
 
 .standings-driver:hover{
@@ -120,7 +133,7 @@ body {
 
 .standings-driver-info{
   width: 70%;
-  height: 300px;
+  height: 275px;
   margin-top: -0.5%;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -166,11 +179,12 @@ body {
 }
 
 .standings-driver-info-info-main-name{
-  width: 100%;
+  width: 70%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 5%;
   font-size: 1.5em;
 }
 
@@ -179,14 +193,13 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   font-size: 1.5em;
 
 }
 .standings-driver-info-info-main-number > img{
   width: 30%;
   margin-left: 15%;
-  margin-bottom: 1%;
   border-radius: 3px;
 }
 
@@ -204,36 +217,41 @@ body {
 
 .standings-driver-info-info-extra{
   width: 90%;
-  height: 60%;
+  height: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   font-family: "F1RegularBold";
+  font-size: 1.1em;
 }
 
 .standings-driver-info-info-extra > div{
   width: 50%;
-  height: 50%;
+  height: 100%;
   display: flex;
   align-items: left;
   justify-content: center;
   flex-direction: column;
-  gap: 15%;
-  background-color: #222222;
+  gap: 10%;
 }
 
-.standings-driver-info-info-extra > div > p{
+.standings-driver-info-info-extra > div > p {
   margin: 0;
   margin-left: 10%;
 } 
 
+.standings-driver-info-info-extra > div > a {
+  margin: 0;
+  margin-left: 10%;
+} 
 
 .bar{
   width: 7px;
   height: 50%;
   background-color: red;
-  margin-left: -25%;
+  border: 1px solid black;
+  margin-left: -18%;
 }
 
 .points{
@@ -244,24 +262,51 @@ body {
   justify-content: center;
   border-radius: 50px;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.1em;
   background-color: gray;
+  margin-right: -5%;
 }
 
 .position{
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  font-size: 1.8em;
+  font-size: 1.3em;
 }
 
 .team{
-  font-size: 1.5em;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5%;
+  font-size: 1.1em;
+}
+
+.team > img{
+  width: 15%;
 }
 
 .name{
-  font-size: 1.8em;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 1.3em;
 }
 
-  
+.arrow{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.arrow > img{
+  width: 12%;
+}  

@@ -45,8 +45,8 @@
       </div>
       <div class="header-drop-container-list">
         <p onclick="window.location.href = 'drivers.html'">2024 Drivers</p>
-        <p onclick="window.location.href = 'teams.html'">2024 Constructors</p>
-        <p onclick="window.location.href = 'standings.html'">2024 Calendar & Schedule</p>
+        <p onclick="window.location.href = 'teams.php'">2024 Constructors</p>
+        <p onclick="window.location.href = 'standings.php'">2024 Calendar & Schedule</p>
       </div>
     </div>
     <h1 class="title-header-container">FORMULA ONE CONSTRUCTORS</h1>
