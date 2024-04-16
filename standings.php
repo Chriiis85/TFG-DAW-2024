@@ -68,7 +68,7 @@
     <section class="container-select-data"></section>
     <section class="main">
       <article class="teams-title-container">
-        <h1 class="teams-title">2024 Formula One Driver Standings</h1>
+        <h1 class="teams-title">2024 Formula Season Standings</h1>
       </article>
       <article class="standings-container">
       <?php
@@ -86,7 +86,57 @@
         $edad = $diferencia->y;
         
         return $edad;
-    }
+      }
+
+      function nacionalidadAPais($nacionalidad){
+        switch ($nacionalidad) {
+          case 'Dutch':
+            return 'Netherlands';
+            break;
+          case 'Mexican':
+            return 'Mexico';
+            break;
+          case 'Monegasque':
+            return 'Monaco';
+            break;   
+          case 'Spanish':
+              return 'Spain';
+              break;   
+          case 'British':
+            return 'Great-Britain';
+            break;  
+          case 'Australian':
+            return 'Australia';
+            break;   
+          case 'Canadian':
+            return 'Canada';
+            break; 
+          case 'Japanese':
+            return 'Japan';
+            break;  
+          case 'German':
+            return 'Germany';
+            break;  
+          case 'Danish':
+            return 'Denmark';
+            break; 
+          case 'Chinese':
+            return 'China';
+            break;     
+          case 'French':
+            return 'France';
+            break;    
+          case 'Finnish':
+            return 'Finland';
+            break;   
+          case 'American':
+            return 'United%20States';
+            break;
+            case 'Thai':
+              return 'Thailand';
+              break;        
+        }
+      }
       // URL de la API
       $url = 'https://ergast.com/api/f1/2024/driverStandings.json';
 
@@ -130,7 +180,7 @@
             echo'<div class="standings-driver-info-info-main-number">';
             echo'<h1>'. $clasificacionesPilotos[$i]['Driver']['permanentNumber'] .'</h1>';
             echo'<img
-                      src="https://media.formula1.com/content/dam/fom-website/flags/Monaco.jpg"
+                      src="https://media.formula1.com/content/dam/fom-website/flags/'.nacionalidadAPais($clasificacionesPilotos[$i]['Driver']['nationality']).'.jpg"
                       alt=""
                     />';
                     echo'</div>';
@@ -144,7 +194,7 @@
                     echo'<div class="standings-driver-info-info-extra">';
                     echo'<div>';
                     echo'<p>Wins: '.$clasificacionesPilotos[$i]['wins'].'</p>';
-                    echo'<p>Total Points: 1</p>';
+                    echo'<p>Total Points: '.$clasificacionesPilotos[$i]['points']. ' PTS.</p>';
                     echo'<p>Constructor: '.$clasificacionesPilotos[$i]['Constructors'][0]['name'].'</p>';
                     echo'<a href="'.$clasificacionesPilotos[$i]['Driver']['url'].'">Access to the biography</a>';
                     echo'</div>';
