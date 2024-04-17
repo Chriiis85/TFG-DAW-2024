@@ -34,4 +34,3 @@ foreach ($resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStan
         }
     }
 }
-
