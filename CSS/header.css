@@ -143,10 +143,12 @@ h1 {
 .header-drop-container-options2{
   width: 30%;
   height: 90%;
+  gap: 5%;
   display: flex;
   align-items: top; 
   justify-content: center;
   flex-direction: column;
+  transition: 0.5s;
 }
 
 .header-drop-container-options > h1{
@@ -155,25 +157,53 @@ h1 {
 }
 
 .header-drop-container-options > h3{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  flex-direction: column;
+  flex-direction: row;
   margin-left: 25%;
   font-size: 2em;
+  transition: 0.3s;
+}
+
+.header-drop-container-options > h3>img{
+  width: 5%;
+  margin-right: 3%;
+  transform: rotate(270deg);
 }
 
 .header-drop-container-options > h3:hover{
   text-decoration: #00acee underline;
   cursor: pointer;
+  transform: scale(1.025);
 }
 
 .header-drop-container-options2 > p{
   margin: 0;
+  display: flex;
+  align-items: center; 
+  justify-content: left;
+  flex-direction: column;
+  flex-direction: row;
   margin-left: 25%;
   font-size: 1.7em;
+  transition: 0.3s;
 }
 
 .header-drop-container-options2 > p:hover{
   text-decoration: #00acee underline;
   cursor: pointer;
+  transform: scale(1.025);
+
 }
+
+.header-drop-container-options2 > p>img{
+  width: 5%;
+  margin-right: 3%;
+  transform: rotate(270deg);
+}
+
 
 .header-drop-container-line{
   width: 50px;
