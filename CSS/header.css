@@ -70,7 +70,8 @@ h1 {
   border-left: 2px solid #00b9ff;
   border-right: 2px solid #00b9ff;
   gap: 3%;
-  font-size: 1.3em;
+  font-size: 1.5em;
+  font-weight: 500;
   color: white;
 }
 
@@ -115,10 +116,10 @@ h1 {
   z-index: 98;
   width: 85%;
   height: 20%;
-  top: 20.3%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%);
-  align-items: center;
+  align-items: center ;
   justify-content: space-around;
   flex-direction: row;
   color: white;
@@ -130,37 +131,53 @@ h1 {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+.header-drop-container-options{
+  width: 30%;
+  height: 90%;
+  display: flex;
+  align-items: top; 
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-drop-container-options2{
+  width: 30%;
+  height: 90%;
+  display: flex;
+  align-items: top; 
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-drop-container-options > h1{
+  margin-left: 25%;
+  font-size: 3em;
+}
+
+.header-drop-container-options > h3{
+  margin-left: 25%;
+  font-size: 2em;
+}
+
+.header-drop-container-options > h3:hover{
+  text-decoration: #00acee underline;
+  cursor: pointer;
+}
+
+.header-drop-container-options2 > p{
+  margin: 0;
+  margin-left: 25%;
+  font-size: 1.7em;
+}
+
+.header-drop-container-options2 > p:hover{
+  text-decoration: #00acee underline;
+  cursor: pointer;
+}
+
 .header-drop-container-line{
   width: 50px;
   height: 5px;
   background-color: #00acee;
 }
 
-.header-drop-container > h1{
-  font-size: 2em;
-}
-
-#pAboutf1{
-  font-size: 1.8em;
-  transition: color 0.3s; /* Transición suave para el cambio de color */
-}
-
-#pAboutf1:hover{
-  cursor: pointer;
-  text-decoration: underline;
-  color: #00acee;
-}
-
-.header-drop-container-list > p{
-  font-size: 1.8em;
-  transition: color 0.3s; /* Transición suave para el cambio de color */
-}
-
-.header-drop-container-list > p:hover{
-  text-decoration: underline;
-  color: #00acee;
-}
-
-.header-drop-container-list> p:hover{
-  cursor: pointer;
-}
