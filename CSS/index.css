@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i"); @-ms-viewport {
+  width: device-width;
+}
+
+@font-face {
+  font-family: 'F1Title';
+  src: url('../Fonts/Formula1-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'F1Regular';
+  src: url('../Fonts/Formula1-Regular-1.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'F1RegularBold';
+  src: url('../Fonts/Formula1-Bold-4.ttf') format('truetype');
+}
 
 body {
   width: 100vw;
@@ -372,23 +390,198 @@ h1 {
 
 
 /*------------------------------------------------------LATEST NEWS/RACE----------------------------------------------------------------------*/
-.notices {
+.next-race {
   width: 100%;
-  height: 100%;
+  height: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  font-family: "Bebas Neue";
-  gap: 10%;
-  background-color: #222222;
+  font-family: "F1Title";
+  background-color: black;
 }
 
+.next-race1{
+  width: 70%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: white;
+  font-family: "F1RegularBold";
+}
 
+.next-race1-circuit{
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.next-race1-name{
+  width: 75%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.next-race1-name>h1{
+  width: 90%;
+  padding-top: 1%;
+  font-size: 2.5em;
+  border-top: 1px solid #e9ecef;
+}
+
+.next-race1-circuit-day{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  margin-bottom: -5%;
+}
+
+.next-race1-circuit-image-container{
+  width: 80%;
+  height:60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 15px;
+  border-top: 1px solid #e9ecef;
+  border-right: 1px solid #e9ecef;
+  border-bottom: none;
+  border-left: none;
+}
+
+.next-race1-circuit-image{
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-race1-circuit-image> img{
+  width: 70%;
+}
+
+.next-race2{
+  width: 20%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+}
+
+.next-race3{
+  width: 20%;
+  height: 90%;
+}
+
+.next-race3-time{
+  width: 60%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color:#222222;
+}
+
+.next-race3-time-title{
+  width: 90%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "F1RegularBold";
+  background-color: grey;
+  border-radius: 25px;
+  font-size: 0.6em;
+  margin-top: 2%;
+}
+
+.next-race3-time-hour{
+  width: 90%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  flex-direction: row;
+  color: white;
+}
+
+.next-race3-time-hour >div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.next-race3-time-hour >div> h1{
+  font-size: 2.2em;
+  margin: 0;
+}
+.next-race3-time-hour >div> h3{
+  font-size: 0.8em;
+  margin: 0;
+  color: rgba(128, 128, 128, 0.75);
+  font-family: "F1Regular";
+}
+
+.next-race-bar{
+  width: 1px;
+  height: 90%;
+  background-color: grey;
+}
+
+.next-race3-round{
+  width: 20%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: white;
+  background-color:#222222;
+}
+
+#next-race-title{
+  text-transform: uppercase;
+}
+
+#round-number{
+  font-size: 3em;
+}
+
+#round{
+  font-size: 0.9em;
+  }
+
+.notice{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
 
 .notices2 {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -397,6 +590,8 @@ h1 {
 }
 
 .twitter-timeline-container{
+  margin-top: 5%;
+  margin-bottom: 5%;
   width: 38%;
   height: 90%;
   display: flex;
@@ -440,13 +635,33 @@ h1 {
   width: 60%;
   height: 100%;
   font-family: "Open Sans", sans-serif;
-
 }
 
 .about-image {
   width: 40%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 5px solid #222222;
+  background-image: url("https://images.ecestaticos.com/GmybLEEqNXeHlXczyzpIegwHZwg=/0x0:2272x1454/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F9b6%2Fd85%2Fe5f%2F9b6d85e5fc0e2eab3a31d978e7fb6208.jpg");
+  background-size: cover;
+  background-position: center;
   background-color: #128c7e;
+}
+
+.about-image-container{
+  position: absolute;
+  z-index: 99;
+  width: 50%;
+  height: 50%;
+  background-image: url("https://images.ecestaticos.com/GmybLEEqNXeHlXczyzpIegwHZwg=/0x0:2272x1454/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F9b6%2Fd85%2Fe5f%2F9b6d85e5fc0e2eab3a31d978e7fb6208.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-image > img{
+  width: 100%;
 }
 
 .about-title {
@@ -458,7 +673,7 @@ h1 {
 .about-content {
   color: #222222;
   text-align: justify;
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 5%;
 }
 
