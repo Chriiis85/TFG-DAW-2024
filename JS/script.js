@@ -118,7 +118,7 @@ async function mostrarCarreraMasCercana() {
     nextracehoras.textContent = carrera.horas;
     nextraceminutos.textContent = carrera.minutos;
     nextraceround.textContent = carrera.ronda;
-    imgCircuit.setAttribute("src", "../Images/Tracks/"+nombrecircuitoimg+".png");
+    imgCircuit.setAttribute("src", "Images/Tracks/ChineseGrandPrix.png");
   } catch (error) {
     console.error('Error al obtener la carrera más cercana:', error);
   }
