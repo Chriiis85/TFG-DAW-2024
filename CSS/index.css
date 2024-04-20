@@ -29,6 +29,10 @@ body {
 h1 {
   margin: 0;
 }
+
+*{
+  box-sizing: border-box;
+}
 /*---------------------------------------------------------MAIN PAGE--------------------------------------------------------------------------*/
 .main {
   width: 100%;
@@ -389,189 +393,453 @@ h1 {
 }
 
 
-/*------------------------------------------------------LATEST NEWS/RACE----------------------------------------------------------------------*/
+/*---------------------------------------------------------NEXT RACE--------------------------------------------------------------------------*/
+ 
+  .next-race-container {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "F1Regular";
+}
+
+@media (min-width: 576px) {
+    .next-race-container {
+        max-width: 576px;
+    }
+}
+
+@media (min-width: 768px) {
+    .next-race-container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .next-race-container {
+        max-width: 986px;
+    }
+}
+
+@media (min-width: 1360px) {
+    .next-race-container {
+        max-width: 1320px;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.col-md-5, .col-md-7, .col-lg-4, .col-lg-8, .col-xl-3, .col-xl-9 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+@media (min-width: 768px) {
+
+    .col-md-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+
+    .col-md-7 {
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .col-lg-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+    .col-lg-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+}
+
+@media (min-width: 1360px) {
+
+    .col-xl-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-xl-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+}
+
+.misc--label {
+    font-family: "F1Regular";
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+
+.f1--xxs {
+    font-family: "F1Regular";
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+
+.f1-uppercase {
+    text-transform: uppercase;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+    body {
+        margin-top: 64px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
 .next-race {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  font-family: "F1Title";
-  background-color: black;
+    background-color: #000000;
+    padding: 10px 0;
+    border-bottom: 1px solid #38383f;
 }
 
-.next-race1{
-  width: 70%;
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  color: white;
-  font-family: "F1RegularBold";
+@media (min-width: 1024px) {
+    .next-race {
+        padding: 20px 0;
+    }
 }
 
-.next-race1-circuit{
-  width: 15%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.next-race .next-race-clock {
+    display: table;
+    width: 100%;
+    margin-top: 2px;
 }
 
-.next-race1-name{
-  width: 75%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+@media (min-width: 768px) {
+    .next-race .next-race-clock {
+        margin-top: 0;
+    }
 }
 
-.next-race1-name>h1{
-  width: 90%;
-  padding-top: 1%;
-  font-size: 2.5em;
-  border-top: 1px solid #e9ecef;
+.next-race .next-race-clock .countdown-clock {
+    display: table-cell;
+    padding: 10px;
+    background-color: #1f1f27;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    vertical-align: middle;
 }
 
-.next-race1-circuit-day{
-  width: 100%;
-  height: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2em;
-  margin-bottom: -5%;
+.next-race .next-race-clock .countdown-clock .title-bar {
+    padding: 5px;
+    background-color: #38383f;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 165px;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.next-race1-circuit-image-container{
-  width: 80%;
-  height:60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-right-radius: 15px;
-  border-top: 1px solid #e9ecef;
-  border-right: 1px solid #e9ecef;
-  border-bottom: none;
-  border-left: none;
+.next-race .next-race-clock .countdown-clock .clock {
+    display: table;
+    margin: 0 auto;
+    white-space: nowrap;
+    font-feature-settings: "tnum";
 }
 
-.next-race1-circuit-image{
-  width: 90%;
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.next-race .next-race-clock .countdown-clock .clock .countdown-text {
+    font-family: "F1Regular";
+    font-size: 22px;
+    line-height: 26px;
 }
 
-.next-race1-circuit-image> img{
-  width: 70%;
+span{
+    font-size: 1em;
 }
 
-.next-race2{
-  width: 20%;
-  height: 85%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1%;
+.countdown-text{
+  margin-top: 0px;
 }
 
-.next-race3{
-  width: 20%;
-  height: 90%;
+@media (min-width: 768px) {
+    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+        font-size: 32px;
+        line-height: 36px;
+    }
 }
 
-.next-race3-time{
-  width: 60%;
-  height: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color:#222222;
+@media (min-width: 768px) {
+    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+        font-family: "F1Regular";
+        font-size: 20px;
+        line-height: 24px;
+    }
 }
 
-.next-race3-time-title{
-  width: 90%;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: "F1RegularBold";
-  background-color: grey;
-  border-radius: 25px;
-  font-size: 0.6em;
-  margin-top: 2%;
+@media (min-width: 768px) and (min-width: 768px) {
+    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+        font-size: 25px;
+        line-height: 30px;
+    }
 }
 
-.next-race3-time-hour{
-  width: 90%;
-  height: 60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5%;
-  flex-direction: row;
-  color: white;
+@media (min-width: 1360px) {
+    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+        font-family: "F1Regular";
+        font-size: 22px;
+        line-height: 26px;
+    }
 }
 
-.next-race3-time-hour >div{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+@media (min-width: 1360px) and (min-width: 768px) {
+    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+        font-size: 32px;
+        line-height: 36px;
+    }
 }
 
-.next-race3-time-hour >div> h1{
-  font-size: 2.2em;
-  margin: 0;
-}
-.next-race3-time-hour >div> h3{
-  font-size: 0.8em;
-  margin: 0;
-  color: rgba(128, 128, 128, 0.75);
-  font-family: "F1Regular";
+.next-race .next-race-clock .countdown-clock .clock .days, .next-race .next-race-clock .countdown-clock .clock .hours, .next-race .next-race-clock .countdown-clock .clock .minutes, .next-race .next-race-clock .countdown-clock .clock .seconds {
+    display: table-cell;
+    color: #ffffff;
+    padding: 0 10px;
+    text-align: center;
+    border-left: 1px solid #38383f;
 }
 
-.next-race-bar{
-  width: 1px;
-  height: 90%;
-  background-color: grey;
+.next-race .next-race-clock .countdown-clock .clock .days:first-child {
+    border-left: 0;
 }
 
-.next-race3-round{
-  width: 20%;
-  height: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10%;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  color: white;
-  background-color:#222222;
+.next-race .next-race-clock .countdown-clock .clock .days > span, .next-race .next-race-clock .countdown-clock .clock .hours > span, .next-race .next-race-clock .countdown-clock .clock .minutes > span, .next-race .next-race-clock .countdown-clock .clock .seconds > span {
+    display: block;
+    color: #949498;
 }
 
-#next-race-title{
-  text-transform: uppercase;
+.next-race .next-race-clock .countdown-clock .clock .days p, .next-race .next-race-clock .countdown-clock .clock .hours p, .next-race .next-race-clock .countdown-clock .clock .minutes p, .next-race .next-race-clock .countdown-clock .clock .seconds p {
+    margin-bottom: 0;
 }
 
-#round-number{
-  font-size: 3em;
+.next-race .next-race-clock .countdown-clock .clock .days {
+    padding-left: 0;
+}
+
+.next-race .next-race-clock .countdown-clock .clock .seconds {
+    padding-right: 0;
+}
+
+.next-race .next-race-clock .countdown-clock .clock .days:not(.d-none) + .hours + .minutes {
+    padding-right: 0;
+}
+
+.next-race .next-race-clock .round {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px 10px 8px;
+    background-color: #38383f;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 2px solid #000000;
+}
+
+.next-race .next-race-clock .round .round-container {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+}
+
+.next-race-date {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.next-race-date > p{
+    margin: 0;
+}
+
+.next-race-info {
+    display: flex;
+}
+
+.next-race-info .next-race-next-race-circuit-imagecontainer {
+    border-top: solid 1px #38383f;
+    border-right: solid 1px #38383f;
+    border-top-right-radius: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.next-race-info .next-race-text-container {
+    border-top: solid 1px #38383f;
+    color: white;
+    text-transform: uppercase;
+    width: 100%;
+    padding-top: 12px;
+}
+
+@media (min-width: 768px) {
+    .next-race-info .next-race-text-container {
+        padding-top: 15px;
+    }
+}
+
+@media (min-width: 1360px) {
+    .next-race-info .next-race-text-container {
+        padding-top: 20px;
+    }
+}
+
+.next-race-title {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .next-race-title {
+        margin-bottom: 0;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .next-race-title {
+        display: table;
+        width: 100%;
+    }
+}
+
+.next-race-text-container .next-race-text {
+    display: inline-block;
+    font-family: "F1Regular";
+    font-size: 16px;
+    line-height: 18px;
+}
+
+@media (min-width: 768px) {
+    .next-race-text-container .next-race-text {
+        font-size: 17px;
+        line-height: 23px;
+    }
+}
+
+@media (min-width: 768px) {
+    .next-race-text-container .next-race-text {
+        font-family: "F1Regular";
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+@media (min-width: 768px) and (min-width: 768px) {
+    .next-race-text-container .next-race-text {
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
+
+@media (min-width: 1360px) {
+    .next-race-text-container .next-race-text {
+        font-family: "F1Regular";
+        font-size: 22px;
+        line-height: 26px;
+    }
+}
+
+@media (min-width: 1360px) and (min-width: 768px) {
+    .next-race-text-container .next-race-text {
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
+
+.next-race-next-race-circuit-imagecontainer {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.next-race-next-race-circuit-imagecontainer img {
+    width: 40px;
+}
+
+@media (min-width: 768px) {
+    .next-race-next-race-circuit-imagecontainer {
+        width: 70px;
+        margin-right: 15px;
+    }
+
+    .next-race-next-race-circuit-imagecontainer img {
+        width: 50px;
+    }
+}
+
+@media (min-width: 1360px) {
+    .next-race-next-race-circuit-imagecontainer {
+        width: 100px;
+    }
+
+    .next-race-next-race-circuit-imagecontainer img {
+        width: 75px;
+    }
+}
+
+.minutes{
+    padding-right: 100px;
 }
 
 #round{
-  font-size: 0.9em;
+    border-left: 5px solid black;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    background-color:#38383f;
+    margin-right: 5%;
+}
+
+#round-title{
+    background-color:#1f1f27;
+}
+
+#round-text{
+    padding-left: 10%;
+}
+
+
+/*@media (min-width: 800px) {
+  #round{
+    margin-right: 100px;
   }
+}*/
+
+@media (max-width: 600px) {
+  .next-race{
+    padding-right: 5%;
+  }
+}
+
 
 .notice{
   width: 100%;

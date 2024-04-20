@@ -102,10 +102,10 @@ async function mostrarCarreraMasCercana() {
   try {
     const carrera = await obtenerCarreraMasCercana();
     let nextracetitle = document.getElementById('next-race-title');
-    let nextracefecha = document.getElementById('next-race-fecha');
-    let nextracedias = document.getElementById('next-race-dias');
-    let nextracehoras = document.getElementById('next-race-horas');
-    let nextraceminutos = document.getElementById('next-race-mins');
+    let nextracefecha = document.getElementById('next-race-date');
+    let nextracedias = document.getElementById('next-race-days');
+    let nextracehoras = document.getElementById('next-race-hours');
+    let nextraceminutos = document.getElementById('countdown-mins');
     let nextraceround = document.getElementById('round-number');
     let imgCircuit = document.getElementById('next-race-circuito');
 

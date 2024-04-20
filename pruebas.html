@@ -13,8 +13,8 @@
     font-family: 'F1Regular';
     src: url('../Fonts/Formula1-Regular-1.ttf') format('truetype');
   }
-  
-.next-race-container {
+ 
+  .next-race-container {
     width: 100%;
     padding-right: 10px;
     padding-left: 10px;
@@ -101,18 +101,6 @@
     }
 }
 
-.d-none {
-    display: none !important;
-}
-
-.icon-chevron-right:before {
-    content: "\e914";
-}
-
-.f1-color--white {
-    color: #ffffff;
-}
-
 .misc--label {
     font-family: "F1Regular";
     font-size: 13px;
@@ -129,20 +117,8 @@
     font-weight: normal;
 }
 
-.f1-bold--xxs {
-    font-family: "F1Regular";
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: 0.5px;
-    font-weight: normal;
-}
-
 .f1-uppercase {
     text-transform: uppercase;
-}
-
-.f1-center {
-    text-align: center;
 }
 
 html, body {
@@ -178,10 +154,6 @@ img {
 p {
     margin-top: 0;
     margin-bottom: 20px;
-}
-
-.no-margin {
-    margin: 0;
 }
 
 @media (max-width: 1023px) {
@@ -238,6 +210,8 @@ p {
     max-width: 165px;
     margin-left: auto;
     margin-right: auto;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .next-race .next-race-clock .countdown-clock .clock {
@@ -251,6 +225,10 @@ p {
     font-family: "F1Regular";
     font-size: 22px;
     line-height: 26px;
+}
+
+span{
+    font-size: 1em;
 }
 
 @media (min-width: 768px) {
@@ -323,7 +301,7 @@ p {
     padding-right: 0;
 }
 
-.next-race .next-race-clock .rolex-logo {
+.next-race .next-race-clock .round {
     display: table-cell;
     vertical-align: middle;
     padding: 10px 10px 8px;
@@ -333,7 +311,7 @@ p {
     border-left: 2px solid #000000;
 }
 
-.next-race .next-race-clock .rolex-logo .rolex-clock {
+.next-race .next-race-clock .round .round-container {
     width: 70px;
     height: 70px;
     margin: auto;
@@ -341,6 +319,11 @@ p {
 
 .next-race-date {
     margin-bottom: 10px;
+    color: white;
+}
+
+.next-race-date > p{
+    margin: 0;
 }
 
 .next-race-info {
@@ -357,6 +340,8 @@ p {
 
 .next-race-info .next-race-text-container {
     border-top: solid 1px #38383f;
+    color: white;
+    text-transform: uppercase;
     width: 100%;
     padding-top: 12px;
 }
@@ -389,11 +374,6 @@ p {
         display: table;
         width: 100%;
     }
-}
-
-.next-race-title .race-text-link {
-    margin: 0 auto;
-    display: inline-flex;
 }
 
 .next-race-text-container .next-race-text {
@@ -440,36 +420,6 @@ p {
     }
 }
 
-.next-race-text-container .icon {
-    color: #ffffff;
-    align-self: center;
-    font-family: "F1Regular";
-    font-size: 16px;
-    line-height: 18px;
-}
-
-@media (min-width: 768px) {
-    .next-race-text-container .icon {
-        font-size: 17px;
-        line-height: 23px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .next-race-text-container .icon {
-        font-family: "F1Regular";
-        font-size: 20px;
-        line-height: 24px;
-    }
-}
-
-@media (min-width: 1024px) and (min-width: 768px) {
-    .next-race-text-container .icon {
-        font-size: 25px;
-        line-height: 30px;
-    }
-}
-
 .next-race-next-race-circuit-imagecontainer {
     width: 50px;
     margin-right: 10px;
@@ -499,24 +449,45 @@ p {
         width: 75px;
     }
 }
+
+.minutes{
+    padding-right: 100px;
+}
+
+#round{
+    border-left: 5px solid black;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    background-color:#38383f;
+}
+
+#round-title{
+    background-color:#1f1f27;
+}
+
+#round-text{
+    padding-left: 10%;
+}
+
 </style>
 <section class="next-race">
   <div class="next-race-container">
     <div class="row">
       <div class="col-md-7 col-lg-8 col-xl-9">
         <div class="next-race-title">
-          <div class="next-race-date f1-color--white">
-            <span class="no-margin f1-bold--xxs date-text">12 - 14 July</span>
+          <div class="next-race-date">
+            <p>12 - 14 July</p>
           </div>
           <div class="next-race-info">
             <div class="next-race-next-race-circuit-imagecontainer">
-              <img class="circuit-image" src="https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great%20Britain.png" alt="F1 live race circuit">
+              <img class="circuit-image" src="Images/Tracks/ChineseGrandPrix.png" alt="F1 live race circuit">
             </div>
             <div class="next-race-text-container">
-                <div class="next-race-text f1-color--white f1-uppercase">
+                <div class="next-race-text">
                   <span class="race-name">Great Britain</span>
                 </div>
-                <i class="icon icon-chevron-right"></i>
             </div>
           </div>
         </div>
@@ -524,28 +495,29 @@ p {
       <div class="col-md-5 col-lg-4 col-xl-3">
         <div class="next-race-clock">
           <div class="countdown-clock">
-            <div class="title-bar misc--label f1-uppercase f1-center">Race Start</div>
+            <div class="title-bar misc--label">Race Start</div>
             <div class="clock">
               <div class="days">
-                <p class="f1-color--white countdown-text">03</p>
+                <p class="countdown-text">03</p>
                 <span class="f1--xxs f1-uppercase">days</span>
               </div>
               <div class="hours">
-                <p class="f1-color--white countdown-text">00</p>
+                <p class="countdown-text">00</p>
                 <span class="f1--xxs f1-uppercase">hrs</span>
               </div>
               <div class="minutes">
-                <p class="f1-color--white countdown-text">27</p>
+                <p id="countdown-mins" class="countdown-text">27</p>
                 <span class="f1--xxs f1-uppercase">mins</span>
-              </div>
-              <div class="seconds d-none">
-                <p class="f1-color--white countdown-text">35</p>
-                <span class="f1--xxs f1-uppercase">secs</span>
               </div>
             </div>
           </div>
-          <div class="rolex-logo">
-            <div id="rolex-clock" class="rolex-clock">
+          <div id="round" class="countdown-clock">
+            <div id="round-title" class="title-bar misc--label">Race</div>
+            <div  class="clock">
+              <div id="round-text" class="days">
+                <p class="countdown-text">5</p>
+                <span class="f1--xxs f1-uppercase">Round</span>
+              </div>
             </div>
           </div>
         </div>
