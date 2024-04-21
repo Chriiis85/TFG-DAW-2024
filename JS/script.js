@@ -62,20 +62,23 @@ async function obtenerCarreraMasCercana() {
     // Obtenemos la fecha actual
     const fechaActual = new Date();
 
-    // Inicializamos la carrera más cercana con la primera carrera
-    let carreraMasCercana = carreras[0];
-    let tiempoMinimo = Math.abs(new Date(carreraMasCercana.date + 'T' + carreraMasCercana.time) - fechaActual);
+    // Buscamos la carrera más cercana que aún no haya pasado
+    let carreraMasCercana = null;
+    let tiempoMinimo = Infinity;
 
-    // Iteramos sobre cada carrera para encontrar la más cercana
-    for (let i = 1; i < carreras.length; i++) {
+    for (let i = 0; i < carreras.length; i++) {
       const carreraActual = carreras[i];
-      const tiempoActual = Math.abs(new Date(carreraActual.date + 'T' + carreraActual.time) - fechaActual);
+      const tiempoActual = new Date(carreraActual.date + 'T' + carreraActual.time) - fechaActual;
 
-      // Si el tiempo de la carrera actual es menor que el mínimo actual, actualizamos la carrera más cercana
-      if (tiempoActual < tiempoMinimo) {
+      if (tiempoActual > 0 && tiempoActual < tiempoMinimo) {
         tiempoMinimo = tiempoActual;
         carreraMasCercana = carreraActual;
       }
+    }
+
+    // Si no hay carreras futuras, seleccionamos la última carrera
+    if (!carreraMasCercana) {
+      carreraMasCercana = carreras[carreras.length - 1];
     }
 
     // Calculamos el tiempo restante hasta la próxima carrera
@@ -96,6 +99,7 @@ async function obtenerCarreraMasCercana() {
     console.error('Error al obtener los datos:', error);
   }
 }
+
 
 // Llamamos a la función para obtener la carrera más cercana y mostramos los resultados
 async function mostrarCarreraMasCercana() {
@@ -118,7 +122,7 @@ async function mostrarCarreraMasCercana() {
     nextracehoras.textContent = carrera.horas;
     nextraceminutos.textContent = carrera.minutos;
     nextraceround.textContent = carrera.ronda;
-    imgCircuit.setAttribute("src", "Images/Tracks/ChineseGrandPrix.png");
+    imgCircuit.setAttribute("src", "Images/Tracks/"+nombrecircuitoimg+".png");
   } catch (error) {
     console.error('Error al obtener la carrera más cercana:', error);
   }
