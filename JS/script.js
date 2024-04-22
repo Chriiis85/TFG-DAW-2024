@@ -183,5 +183,23 @@ async function formatearFecha(fecha) {
 // Llamamos a la función para mostrar la carrera más cercana
 setInterval(mostrarCarreraMasCercana, 1000);
 
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+    document.getElementById("upBtn").classList.remove("hidden");
+  } else {
+    document.getElementById("upBtn").classList.add("hidden");
+  }
+}
+
+function scrollToTop() {
+  const scrollStep = -window.scrollY / (500 / 15);
+  const scrollInterval = setInterval(function(){
+    if ( window.scrollY != 0 ) {
+      window.scrollBy( 0, scrollStep );
+    }
+    else clearInterval(scrollInterval);
+  },15);
+}
 
