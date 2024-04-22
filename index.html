@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="JS/script.js"></script>
+    <script defer src="JS/news.js"></script>
+
     <link rel="stylesheet" href="CSS/index.css" />
   </head>
   <body>
@@ -97,7 +99,7 @@
           <div class="col-md-7 col-lg-8 col-xl-9">
             <div class="next-race-title">
               <div class="next-race-date">
-                <p id="next-race-date">12 - 14 July</p>
+                <p id="next-race-date">-</p>
               </div>
               <div class="next-race-info">
                 <div class="next-race-next-race-circuit-imagecontainer">
@@ -111,7 +113,7 @@
                 <div class="next-race-text-container">
                   <div class="next-race-text">
                     <span id="next-race-title" class="race-name"
-                      >Great Britain</span
+                      >-</span
                     >
                   </div>
                 </div>
@@ -124,15 +126,15 @@
                 <div class="title-bar misc--label">Race Start</div>
                 <div class="clock">
                   <div class="days">
-                    <p id="next-race-days" class="countdown-text">03</p>
+                    <p id="next-race-days" class="countdown-text">-</p>
                     <span class="f1--xxs f1-uppercase">days</span>
                   </div>
                   <div class="hours">
-                    <p id="next-race-hours" class="countdown-text">00</p>
+                    <p id="next-race-hours" class="countdown-text">-</p>
                     <span class="f1--xxs f1-uppercase">hrs</span>
                   </div>
                   <div class="minutes">
-                    <p id="countdown-mins" class="countdown-text">27</p>
+                    <p id="countdown-mins" class="countdown-text">-</p>
                     <span class="f1--xxs f1-uppercase">mins</span>
                   </div>
                 </div>
@@ -141,7 +143,7 @@
                 <div id="round-title" class="title-bar misc--label">Race</div>
                 <div class="clock">
                   <div id="round-text" class="days">
-                    <p id="round-number" class="countdown-text">5</p>
+                    <p id="round-number" class="countdown-text">-</p>
                     <span class="f1--xxs f1-uppercase">Round</span>
                   </div>
                 </div>
@@ -151,9 +153,55 @@
         </div>
       </div>
     </section>
-    <section class="notice"></section>
-    <section class="notices">
-      <!--<article class="twitter-timeline-container">
+    <section class="latest-news-container">
+      <article class="latest-news">
+        <div class="latest-news-title">
+          <div class="latest-news-bar-title"></div>
+          <h1>LATEST NEWS</h1>
+          <div class="latest-news-bar-title"></div>
+        </div>
+        <div class="latest-news-notice">
+          <div id="latest-news-notice1" class="latest-news-notice1">
+            <div class="latest-news-notice1-title">
+              <h1 id="notice-title1">Esto es un titulo de ejemplo para la primera noticia</h1>
+            </div>
+            <div class="latest-news-notice1-extra">
+              <p id="notice-author1">Author: Christian · Date: 23-23-2024</p>
+            </div>
+          </div>
+          <div class="latest-news-notice2">
+            <div id="latest-news-notice2"  class="latest-news-notice3">
+                <div class="latest-news-notice3-title">
+                  <h1 id="notice-title2">Esto es un titulo de ejemplo para la segunda noticia</h1>
+                </div>
+                <div class="latest-news-notice3-extra">
+                  <p id="notice-author2">Author: Christian · Date: 23-23-2024</p>
+                </div>
+              </div>
+            <div class="latest-news-notice4">
+              <div id="latest-news-notice3"  class="latest-news-notice5">
+                <div class="latest-news-notice4-title">
+                  <h1 id="notice-title3">Esto es un titulo de ejemplo para la segunda noticia</h1>
+                </div>
+                <div class="latest-news-notice4-extra">
+                  <p id="notice-author3">Author: Christian · Date: 23-23-2024</p>
+                </div>
+              </div>
+              <div id="latest-news-notice4"  class="latest-news-notice6">
+                <div class="latest-news-notice4-title">
+                  <h1 id="notice-title4">Esto es un titulo de ejemplo para la segunda noticia</h1>
+                </div>
+                <div class="latest-news-notice4-extra">
+                  <p id="notice-author4">Author: Christian · Date: 23-23-2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <!--<section class="notices">
+      <article class="twitter-timeline-container">
         <a
           class="twitter-timeline"
           data-lang="en"
@@ -169,8 +217,8 @@
           src="https://platform.twitter.com/widgets.js"
           charset="utf-8"
         ></script>
-      </article>-->
-    </section>
+      </article>
+    </section>-->
     <section class="about">
       <article class="about-us">
         <h1 class="about-title">¿What is Motoring Community?</h1>
