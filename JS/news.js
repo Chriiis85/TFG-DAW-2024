@@ -18,10 +18,10 @@ async function obtenerNoticiasFormula1() {
 async function mostrarNoticiasFormula1() {
     try {
         const noticias = await obtenerNoticiasFormula1();
-        const noticia1 = noticias[4];
-        const noticia2 = noticias[1];
-        const noticia3 = noticias[2];
-        const noticia4 = noticias[4];
+        const noticia1 = noticias[1];
+        const noticia2 = noticias[2];
+        const noticia3 = noticias[3];
+        const noticia4 = noticias[0];
 
         // Función para formatear la fecha
         const formatearFecha = fecha => {
@@ -32,19 +32,19 @@ async function mostrarNoticiasFormula1() {
             });
         };
 
-        document.getElementById("notice-title1").textContent = noticia1.title;
+        document.getElementById("notice-title1").textContent = noticia1.title+".";
         document.getElementById("notice-author1").textContent = "Author: " + (noticia1.author || 'Desconocido') + " | Date: " + formatearFecha(noticia1.publishedAt);
         document.getElementById("latest-news-notice1").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)),url('" + noticia1.urlToImage + "')";;
 
-        document.getElementById("notice-title2").textContent = noticia2.title;
+        document.getElementById("notice-title2").textContent = noticia2.title+".";
         document.getElementById("notice-author2").textContent = "Author: " + (noticia2.author || 'Desconocido') + " | Date: " + formatearFecha(noticia2.publishedAt);
         document.getElementById("latest-news-notice2").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)),url('" + noticia2.urlToImage + "')";;
 
-        document.getElementById("notice-title3").textContent = noticia3.title;
+        document.getElementById("notice-title3").textContent = noticia3.title+".";
         document.getElementById("notice-author3").textContent = "Author: " + (noticia3.author || 'Desconocido') + " | Date: " + formatearFecha(noticia3.publishedAt);
         document.getElementById("latest-news-notice3").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)),url('" + noticia3.urlToImage + "')";;
 
-        document.getElementById("notice-title4").textContent = noticia4.title;
+        document.getElementById("notice-title4").textContent = noticia4.title+".";
         document.getElementById("notice-author4").textContent = "Author: " + (noticia4.author || 'Desconocido') + " | Date: " + formatearFecha(noticia4.publishedAt);
         document.getElementById("latest-news-notice4").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)),url('" + noticia4.urlToImage + "')";;
 
