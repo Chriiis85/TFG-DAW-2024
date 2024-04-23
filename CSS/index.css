@@ -1513,6 +1513,9 @@ input:focus + .line:after {
   .latest-news-container>h1{
     font-size: 1.5em;
   }
+  .latest-news-container>p{
+    font-size: 1em;
+  }
 
   .main-title{
     width: 100%;
