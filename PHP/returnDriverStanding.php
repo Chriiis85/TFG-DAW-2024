@@ -13,14 +13,6 @@ if ($resultado && isset($resultado['MRData']['StandingsTable']['StandingsLists']
     // Obtener la lista de clasificaciones de pilotos
     $clasificacionesPilotos = $resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'];
     
-    // Iterar sobre las clasificaciones de pilotos y mostrar la posición, el nombre del piloto y los puntos
-    /*foreach ($clasificacionesPilotos as $clasificacion) {
-        echo "Posición: " . $clasificacion['position'] . "<br>";
-        echo "Nombre del piloto: " . $clasificacion['Driver']['givenName'] . " " . $clasificacion['Driver']['familyName'] . "<br>";
-        echo "Puntos: " . $clasificacion['points'] . "<br><br>";
-    }*/
-
-    print_r ($clasificacionesPilotos[0]['Driver']['dateOfBirth']);
 } else {
     echo "No se pudo obtener la información de la API.";
 }

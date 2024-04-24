@@ -9,8 +9,6 @@ $data = file_get_contents($url);
 // Decodificar los datos JSON en un array PHP
 $resultado = json_decode($data, true);
 
-print_r($resultado);
-
 // Función para obtener los pilotos de una escudería
 function damePilotos($escuderia, $resultado) {
     $pilotos = [];
