@@ -125,9 +125,11 @@
         for ($i=0; $i < sizeof($data['MRData']['RaceTable']['Races']); $i++) { 
           $raceName = $data['MRData']['RaceTable']['Races'][$i]['raceName'];
           $circuitName = $data['MRData']['RaceTable']['Races'][$i]['Circuit']['circuitName'];
-          $raceDate = $data['MRData']['RaceTable']['Races'][$i]['date'];
-          $mes = substr($raceDate , 5, 2);
-          $dia = substr($raceDate , 8, 2);
+          $raceDate1 = $data['MRData']['RaceTable']['Races'][$i]['date'];
+          $raceDate2 = $data['MRData']['RaceTable']['Races'][$i]['FirstPractice']['date'];
+          $mes = substr($raceDate1 , 5, 2);
+          $dia1 = substr($raceDate1 , 8, 2);
+          $dia2 = substr($raceDate2 , 8, 2);
           $circuitImg = str_replace(" ", "", $raceName);
           $pais = $data['MRData']['RaceTable']['Races'][$i]['Circuit']['Location']['country'];
           if($pais === "UK"){
@@ -144,10 +146,10 @@
           echo '
                 <div class="race-container">
                     <div class="race-container-round">
-                        <h1>ROUND: '.($i+1).'</h1>
+                        <h1>ROUND '.($i+1).'</h1>
                     </div>
                     <div class="race-container-title">
-                        <h1>'.$dia.' - '.dameMes($mes).'</h1>
+                        <h1>'.$dia2.'-'.$dia1.' '.dameMes($mes).'</h1>
                         <img src="https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/'.$pais.'-flag.png.transform/2col/image.png" alt="">
                     </div>
                     <div class="race-container-desc">

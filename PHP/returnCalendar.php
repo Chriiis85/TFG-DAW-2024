@@ -20,6 +20,7 @@ curl_close($curl);
 // Decodificar la respuesta JSON
 $data = json_decode($response, true);
 //print_r($data['MRData']['RaceTable']['Races'][23]['Circuit']['Location']['country']);
+print_r($data['MRData']['RaceTable']['Races'][0]);
 
 function dameMes($digitoMes) {
     switch ($digitoMes) {

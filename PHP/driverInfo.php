@@ -11,6 +11,6 @@
       // Verificar si se obtuvo una respuesta válida
       if ($resultado && isset($resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'])) {
           // Obtener la lista de clasificaciones de pilotos
-          print_r($clasificacionesPilotos = $resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'][0]);
+          //print_r($clasificacionesPilotos = $resultado['MRData']);
       }
 ?>
