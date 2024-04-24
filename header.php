@@ -24,12 +24,9 @@
           />
         </p>
         <p onclick="window.location.href = 'data.html'" class="progress-bar">
-          DATA & ANALYSIS&nbsp;&nbsp;<img
-            src="Images/down-arrow-svgrepo-com.svg"
-            alt="Down Arrow"
-          />
+          DATA & ANALYSIS
         </p>
-        <p onclick="window.location.href = 'standings.html'">2024 SEASON</p>
+        <p onclick="window.location.href = 'standings.php'">2024 SEASON</p>
         <p class="progress-bar">
           ARCHIVE AND HISTORY&nbsp;&nbsp;<img
             src="Images/down-arrow-svgrepo-com.svg"

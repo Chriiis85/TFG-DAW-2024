@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Formula One - Motoring Community</title>
   <link rel="stylesheet" href="CSS/standings.css" />
-  <link rel="stylesheet" href="CSS/header.css" />
   <link rel="stylesheet" href="CSS/footer.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script defer src="JS/script.js"></script>
@@ -14,49 +13,9 @@
 </head>
 
 <body>
-  <section class="header-container">
-    <article class="header">
-      <div class="header-container1">
-        <h1 onclick="window.location.href = 'index.html'">
-          MOTORING COMMUNITY
-        </h1>
-      </div>
-      <div class="header-container2">
-        <p class="progress-bar" id="formulaone">
-          FORMULA ONE &nbsp;&nbsp;<img src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />
-        </p>
-        <p onclick="window.location.href = 'data.html'" class="progress-bar">
-          DATA & ANALYSIS&nbsp;&nbsp;<img src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />
-        </p>
-        <p onclick="window.location.href = 'standings.php'">2024 SEASON</p>
-        <p class="progress-bar">
-          ARCHIVE AND HISTORY&nbsp;&nbsp;<img src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />
-        </p>
-        <p>FORUM</p>
-      </div>
-      <div class="header-container3"></div>
-    </article>
-
-    <div id="header-drop-container-formulaone" class="header-drop-container">
-      <h1>
-        Formula One
-        <div class="header-drop-container-line"></div>
-      </h1>
-      <div>
-        <p id="pAboutf1" onclick="window.location.href = 'aboutf1.html'">
-          About Formula One
-        </p>
-      </div>
-      <div class="header-drop-container-list">
-        <p onclick="window.location.href = 'drivers.html'">2024 Drivers</p>
-        <p onclick="window.location.href = 'teams.php'">2024 Constructors</p>
-        <p onclick="window.location.href = 'standings.php'">
-          2024 Calendar & Schedule
-        </p>
-      </div>
-    </div>
-    <h1 class="title-header-container">2024 SEASON standings</h1>
-  </section>
+  <?php
+    include "header.php";
+  ?>
   <section class="container-select-data"></section>
   <section class="main">
     <article class="teams-title-container">
