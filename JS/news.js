@@ -36,20 +36,29 @@ async function mostrarNoticiasFormula1() {
         document.getElementById("notice-author1").textContent = "Author: " + (noticia1.author || 'Desconocido') + " | Date: " + formatearFecha(noticia1.publishedAt);
         document.getElementById("latest-news-notice1").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)),url('" + noticia1.urlToImage + "')";;
         document.getElementById("latest-news-notice1").addEventListener("click", ()=>{
-
+            window.location.href = ""+noticia1.url+"";
         });
 
         document.getElementById("notice-title2").textContent = noticia2.title+".";
         document.getElementById("notice-author2").textContent = "Author: " + (noticia2.author || 'Desconocido') + " | Date: " + formatearFecha(noticia2.publishedAt);
         document.getElementById("latest-news-notice2").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)),url('" + noticia2.urlToImage + "')";;
+        document.getElementById("latest-news-notice2").addEventListener("click", ()=>{
+            window.location.href = ""+noticia2.url+"";
+        });
 
         document.getElementById("notice-title3").textContent = noticia3.title+".";
         document.getElementById("notice-author3").textContent = "Author: " + (noticia3.author || 'Desconocido') + " | Date: " + formatearFecha(noticia3.publishedAt);
         document.getElementById("latest-news-notice3").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)),url('" + noticia3.urlToImage + "')";;
+        document.getElementById("latest-news-notice3").addEventListener("click", ()=>{
+            window.location.href = ""+noticia3.url+"";
+        });
 
         document.getElementById("notice-title4").textContent = noticia4.title+".";
         document.getElementById("notice-author4").textContent = "Author: " + (noticia4.author || 'Desconocido') + " | Date: " + formatearFecha(noticia4.publishedAt);
         document.getElementById("latest-news-notice4").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 1)),url('" + noticia4.urlToImage + "')";;
+        document.getElementById("latest-news-notice4").addEventListener("click", ()=>{
+            window.location.href = ""+noticia4.url+"";
+        });
 
     } catch (error) {
         console.error('Error al mostrar noticias:', error);
