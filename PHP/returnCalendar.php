@@ -62,5 +62,31 @@ function dameMes($digitoMes) {
     }
 }
 
+function formatHora($hora){
+    $parseado = strtotime($hora);
+    $hora_parseada = date("H:i", $parseado);
+    return $hora_parseada;
+}
+
+function sumarUnaHora($hora) {
+    $hora_dt = DateTime::createFromFormat('H:i:s\Z', $hora);
+    if ($hora_dt === false) {
+        return "Formato de hora no válido";
+    }
+    $hora_dt->modify('+1 hour');
+    return $hora_dt->format('H:i');
+}
+
+function sumarDosHora($hora) {
+    $hora_dt = DateTime::createFromFormat('H:i:s\Z', $hora);
+    if ($hora_dt === false) {
+        return "Formato de hora no válido";
+    }
+    $hora_dt->modify('0 hour');
+    return $hora_dt->format('H:i');
+}
+
+
+
 
 ?>

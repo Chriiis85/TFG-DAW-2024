@@ -509,31 +509,97 @@ span{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 1%;
+    gap: 3%;
     justify-content: space-around;
     padding: 3%;
 }
 
-.race-container{
-    width: 350px;
-    height: 350px;
+.race-container {
+    width: 400px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    margin-bottom: 5%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     border-top-right-radius: 15px;
     border: 3px solid black;
     border-bottom: none;
     border-left: none;
-    transition: 0.3s;
     background-color: white;
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+    margin-bottom: 5%;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    position: relative;
 }
+
+.race-container-front {
+    width: 95%;
+    height: 400px;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-top-right-radius: 15px;
+    border-bottom: none;
+    border-left: none;
+}
+
+.race-container-back {
+    width: 95%;
+    height: 400px;
+    transform: rotateY(180deg);
+    opacity: 0; /* Ocultar inicialmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-top-right-radius: 15px;
+    border-bottom: none;
+    border-left: none;
+    transition: opacity 0.3s linear;
+}
+
+#first-sesion{
+    margin-top: 5%;
+}
+
+.race-container-sesion{
+    width: 95%;
+    height: 10%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: row;
+}
+
+.race-container-sesion>h1 p{
+    margin: 0;
+}
+
+.race-container-sesion-title{
+    width: 70%;
+    font-size: 1.1em;
+    font-family: "F1RegularBold";
+}
+
+.race-container-sesion-hour{
+    width: 110%;
+    padding: 5%;
+    color: white;
+    border-radius: 5px;
+    background-color:#38383f;
+}
+
 
 .race-container:hover{
     cursor: pointer;
-    transform: scale(0.95);
+    /*transform: scale(0.95);*/
 }
 
 .race-container-round{
@@ -611,3 +677,4 @@ span{
 .race-container-img > img{
     width: 50%;
 }
+
