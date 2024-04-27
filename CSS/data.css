@@ -1,10 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+@import url('../CSS/header.css');
+@import url('../CSS/footer.css');
 
 @font-face {
   font-family: 'F1Title';
   src: url('../Fonts/Formula1-Black.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'F1Regular';
+  src: url('../Fonts/Formula1-Regular-1.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'F1RegularBold';
+  src: url('../Fonts/Formula1-Bold-4.ttf') format('truetype');
+}
+
 
 body {
   width: 100vw;
@@ -12,7 +26,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: "Bebas Neue";
-  background-color: white;
+  background-color: #F3F3F3;
 }
 
 h1 {
@@ -50,10 +64,6 @@ h1 {
   font-size: 5em;
 }
 
-.main{
-  width: 100%;
-  background-color: #f3f3f3;
-}
 
 .data-container{
   width: 100%;
@@ -70,27 +80,136 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: white;
 }
 
 .data-select{
   width: 100%;
-  height: 200px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
-  background-color: lightblue;
-}
-
-.data-select > div{
-  width: 32%;
-  height: 100%;
-  background-color: lawngreen;
+  background-color: #222222;
 }
 
 .data-content{
   width: 100%;
-  height: 1000px;
-  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-bottom: 3%;
+  padding-top: 3%;
+}
+
+.data-content>h1{
+  font-family: "F1Title";
+  font-size: 3em;
+  margin-bottom: 3%;
+}
+
+.data-table{
+  width: 90%;
+  height: 80%;
+}
+
+/**/
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1em;
+  min-width: 400px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  font-family: "F1Regular";
+  text-align: center;
+
+}
+
+.content-table thead tr {
+  background-color: #222222;
+  color: #ffffff;
+  font-family: "F1Title";
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #00b9ff;;
 }
 /**/
+/* Estilo base para el select */
+.select {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+/* Estilo para el select visible */
+.select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Estilo para la flecha del select */
+.select::after {
+  content: '\25BC'; /* Código de la flecha hacia abajo */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Estilo para el select cuando está enfocado */
+.select select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo para las opciones del select */
+.select select option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Estilo para las opciones del select cuando se pasan por encima */
+.select select option:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilo para las opciones del select cuando están seleccionadas */
+.select select option:checked {
+  background-color: #007bff;
+  color: #fff;
+}
