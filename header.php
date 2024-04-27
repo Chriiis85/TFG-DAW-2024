@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Header - Motoring Community</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script defer src="JS/script.js"></script>
   <link rel="stylesheet" href="CSS/header.css" />
 </head>
 <body>
@@ -26,13 +25,7 @@
         <p onclick="window.location.href = 'data.html'" class="progress-bar">
           DATA & ANALYSIS
         </p>
-        <p onclick="window.location.href = 'standings.php'">2024 SEASON</p>
-        <p class="progress-bar">
-          ARCHIVE AND HISTORY&nbsp;&nbsp;<img
-            src="Images/down-arrow-svgrepo-com.svg"
-            alt="Down Arrow"
-          />
-        </p>
+        <p onclick="window.location.href = 'standings.php'">SEASON STANDINGS</p>
         <p>FORUM</p>
       </div>
       <div class="header-container3"></div>

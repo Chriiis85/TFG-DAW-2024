@@ -182,7 +182,7 @@ async function formatearFecha(fecha) {
 
 // Llamamos a la función para mostrar la carrera más cercana
 setInterval(mostrarCarreraMasCercana, 1000);
-
+document.getElementById("upBtn").classList.add("hidden");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
