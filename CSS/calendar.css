@@ -575,7 +575,7 @@ span {
 }
 
 .race-container-sesion-hour {
-  width: 110%;
+  width: 120%;
   padding: 5%;
   color: white;
   border-radius: 5px;
@@ -691,3 +691,14 @@ span {
     font-size: 0.9em;
   }
 }
+
+@media (max-width: 400px) {
+  .race-container-sesion-title{
+    width: 60%;
+    font-size: 1em;
+  }
+  .race-container-sesion{
+    gap: 0%;
+  }
+}
+
