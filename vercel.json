@@ -1,4 +1,4 @@
 {
-    "functions": { "TFG-DAW-2024/**/*.php": { "runtime": "vercel-php@1.0.0" } }
-  }
+    "functions": { "*.php": { "runtime": "vercel-php@1.0.0" } }
+}
   
