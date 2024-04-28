@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url('../CSS/header.css');
-@import url('../CSS/footer.css');
+@import url("../CSS/header.css");
+@import url("../CSS/footer.css");
 
 body {
   width: 100vw;
@@ -15,82 +15,51 @@ h1 {
   margin: 0;
 }
 
-/*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/
-.header-container{
-  width: 100%;
-  height: 50%;
-  background-image: url(https://www.f1-fansite.com/wp-content/uploads/2023/06/SI202306040579.jpg);
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
-}
-
-.header-container::before {
-  content: ""; /* Se necesita un contenido vacío para que el pseudo-elemento sea visible */
-  position: absolute; /* Posiciona el pseudo-elemento encima del contenedor */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: rgba(0, 0, 0, 0.5); /* Color negro con una opacidad del 50% */
-}
-
-.title-header-container{
-  width: 100%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  color: white;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%);
-  font-size: 5em;
-}
 /*----------------------------------------------------------------------MAIN------------------------------------------------------------------*/
-.main{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.main-about{
+.main-about {
   width: 80%;
   height: 100%;
   top: 20%;
   text-align: justify;
 }
 
-.main-about > h1{
+.main-about > h1 {
   font-size: 2em;
   margin-top: 5%;
   font-family: "Open Sans", sans-serif;
-
 }
 
-.main-about >p{
+.main-about > p {
   font-size: 1.2em;
   font-family: "Open Sans", sans-serif;
 }
 
-.about-teams-container1{
+.about-teams-container1 {
   width: 100%;
   height: 100px;
   border: solid 10px red;
-  border-top-left-radius: 25px; 
-  border-bottom-left-radius: 25px; 
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   border-right: none;
   padding: 1%;
 }
 
-.about-teams1{
+.about-teams1 {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: right;
   background-position: center;
-  border-top-left-radius: 10px; 
-  border-bottom-left-radius: 10px; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   background-image: url(https://wallpaperbat.com/img/457341-free-download-hd-wallpaper-2011-formula-1-grand-prix-of-monaco-1920x1080-for-your-desktop-mobile-tablet-explore-f1-monaco-wallpaper-f1-monaco-wallpaper-monaco-wallpaper-f1-wallpaper.jpg);
 }
 
@@ -102,7 +71,7 @@ h1 {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
@@ -127,51 +96,50 @@ h1 {
 .about-button:hover,
 .about-button:focus {
   background-color: white;
-  color:#222;
+  color: #222;
 }
 
-
-.about-teams-container2{
+.about-teams-container2 {
   width: 100%;
   height: 100px;
   border: solid 10px red;
-  border-top-right-radius: 25px; 
-  border-bottom-right-radius: 25px; 
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
   border-left: none;
   padding: 1%;
 }
 
-.about-teams2{
+.about-teams2 {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   background-position: center;
-  border-top-right-radius: 10px; 
-  border-bottom-right-radius: 10px; 
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   background-image: url(https://library.sportingnews.com/styles/twitter_card_120x120/s3/2022-07/sporting-news-2022-photo-with-watermark-5cdf767c-6f1b-41c3-ae44-7f002a5ecec4.png?itok=YRenkBfR);
 }
 
-.about-teams-container3{
+.about-teams-container3 {
   width: 100%;
   height: 100px;
   margin-bottom: 3%;
   border: solid 10px red;
-  border-top-right-radius: 25px; 
-  border-top-left-radius: 25px; 
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
   border-bottom: none;
   padding: 1%;
 }
 
-.about-teams3{
+.about-teams3 {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-position: center;
-  border-top-right-radius: 10px; 
-  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background-image: url(https://wallpapercave.com/wp/wp9839711.jpg);
   background-size: cover;
 }
@@ -181,10 +149,10 @@ h1 {
     width: 150px;
     font-size: 0.8em;
   }
-  .main-about >p{
+  .main-about > p {
     font-size: 1em;
   }
-  .main-about >h1{
+  .main-about > h1 {
     font-size: 1.5em;
   }
 }

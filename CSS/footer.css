@@ -14,182 +14,182 @@ h1 {
 
 /*----------------------------------------------------------FOOTER---------------------------------------------------------------------------*/
 footer {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 30px;
-    font-family: "Bebas Neue";
-    background-color: #222222;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  font-family: "Bebas Neue";
+  background-color: #222222;
+}
+
+/*COLUMNA 1 DEL FOOTER*/
+.footer-column1 {
+  width: 45%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-vertical-bar {
+  width: 1px;
+  height: 70%;
+  background-color: #00b9ff;
+}
+
+.card-help {
+  width: 60%;
+  height: 20%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: white;
+  transition: 0.3s;
+}
+
+.card-help:hover {
+  background-color: rgba(84, 84, 84, 0.3);
+}
+
+.card-textus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*COLUMNA 2 DEL FOOTER*/
+.footer-column2 {
+  width: 45%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+input {
+  background: 0;
+  border: 0;
+  outline: none;
+  width: 80vw;
+  max-width: 400px;
+  font-size: 1.5em;
+  transition: padding 0.3s 0.2s ease;
+}
+input:focus {
+  padding-bottom: 5px;
+}
+input:focus + .line:after {
+  transform: scaleX(1);
+}
+.field {
+  position: relative;
+}
+.field .line {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -8px;
+  background: #bdc3c7;
+}
+.field .line:after {
+  content: " ";
+  position: absolute;
+  float: right;
+  width: 100%;
+  height: 3px;
+  transform: scalex(0);
+  transition: transform 0.3s ease;
+  background: #1abc9c;
+}
+
+/*TARJETA QUE CONTIENE LAS REDES SOCIALES*/
+.card-socialmedia {
+  width: 70%;
+  height: 20%;
+  background-color: rgb(238, 238, 238, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 50px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+/* linke  din*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128c7e;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
   }
-  
-  /*COLUMNA 1 DEL FOOTER*/
-  .footer-column1 {
-    width: 45%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .footer-vertical-bar {
-    width: 1px;
-    height: 70%;
-    background-color: #00b9ff;
-  }
-  
-  .card-help {
-    width: 60%;
-    height: 20%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    font-size: 1.2em;
-    color: white;
-    transition: 0.3s;
-  }
-  
-  .card-help:hover {
-    background-color: rgba(84, 84, 84, 0.3);
-  }
-  
-  .card-textus {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /*COLUMNA 2 DEL FOOTER*/
-  .footer-column2 {
-    width: 45%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 25px;
-  }
-  
-  input {
-    background: 0;
-    border: 0;
-    outline: none;
-    width: 80vw;
-    max-width: 400px;
-    font-size: 1.5em;
-    transition: padding 0.3s 0.2s ease;
-  }
-  input:focus {
-    padding-bottom: 5px;
-  }
-  input:focus + .line:after {
-    transform: scaleX(1);
-  }
-  .field {
-    position: relative;
-  }
-  .field .line {
-    width: 100%;
-    height: 3px;
-    position: absolute;
-    bottom: -8px;
-    background: #bdc3c7;
-  }
-  .field .line:after {
-    content: " ";
-    position: absolute;
-    float: right;
-    width: 100%;
-    height: 3px;
-    transform: scalex(0);
-    transition: transform 0.3s ease;
-    background: #1abc9c;
-  }
-  
-  /*TARJETA QUE CONTIENE LAS REDES SOCIALES*/
-  .card-socialmedia {
-    width: 70%;
-    height: 20%;
-    background-color: rgb(238, 238, 238, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px 25px;
-    gap: 50px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-  }
-  
-  .socialContainer {
-    width: 52px;
-    height: 52px;
-    background-color: rgb(44, 44, 44);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition-duration: 0.3s;
-  }
-  /* instagram*/
-  .containerOne:hover {
-    background-color: #d62976;
-    transition-duration: 0.3s;
-  }
-  /* twitter*/
-  .containerTwo:hover {
-    background-color: #00acee;
-    transition-duration: 0.3s;
-  }
-  /* linke  din*/
-  .containerThree:hover {
-    background-color: #0072b1;
-    transition-duration: 0.3s;
-  }
-  /* Whatsapp*/
-  .containerFour:hover {
-    background-color: #128c7e;
-    transition-duration: 0.3s;
-  }
-  
-  .socialContainer:active {
-    transform: scale(0.9);
-    transition-duration: 0.3s;
-  }
-  
-  .socialSvg {
-    width: 17px;
-  }
-  
-  .socialSvg path {
-    fill: rgb(255, 255, 255);
-  }
-  
-  .socialContainer:hover .socialSvg {
-    animation: slide-in-top 0.3s both;
-  }
-  
-  @keyframes slide-in-top {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-  
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .author {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: "Bebas Neue";
-    background-color: #222222;
-  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Bebas Neue";
+  background-color: #222222;
+}

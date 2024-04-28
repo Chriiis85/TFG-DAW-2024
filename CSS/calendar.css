@@ -1,22 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url('../CSS/header.css');
-@import url('../CSS/footer.css');
+@import url("../CSS/header.css");
+@import url("../CSS/footer.css");
 
 @font-face {
-    font-family: 'F1Title';
-    src: url('../Fonts/Formula1-Black.ttf') format('truetype');
-  }
-  
-  @font-face {
-    font-family: 'F1Regular';
-    src: url('../Fonts/Formula1-Regular-1.ttf') format('truetype');
-  }
-  
-  @font-face {
-    font-family: 'F1RegularBold';
-    src: url('../Fonts/Formula1-Bold-4.ttf') format('truetype');
-  }
+  font-family: "F1Title";
+  src: url("../Fonts/Formula1-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "F1Regular";
+  src: url("../Fonts/Formula1-Regular-1.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "F1RegularBold";
+  src: url("../Fonts/Formula1-Bold-4.ttf") format("truetype");
+}
 
 body {
   width: 100vw;
@@ -24,633 +24,669 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: "Bebas Neue";
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
 }
 
 h1 {
   margin: 0;
 }
-/*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/
-.header-container{
-  width: 100%;
-  height: 50%;
-  background-image: url(https://www.f1-fansite.com/wp-content/uploads/2023/06/SI202306040579.jpg);
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
-}
 /*---------------------------------------------------------NEXT RACE--------------------------------------------------------------------------*/
- 
+
 .next-race-container {
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    font-family: "F1Regular";
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "F1Regular";
 }
 
 @media (min-width: 576px) {
-    .next-race-container {
-        max-width: 576px;
-    }
+  .next-race-container {
+    max-width: 576px;
+  }
 }
 
 @media (min-width: 768px) {
-    .next-race-container {
-        max-width: 768px;
-    }
+  .next-race-container {
+    max-width: 768px;
+  }
 }
 
 @media (min-width: 1024px) {
-    .next-race-container {
-        max-width: 986px;
-    }
+  .next-race-container {
+    max-width: 986px;
+  }
 }
 
 @media (min-width: 1360px) {
-    .next-race-container {
-        max-width: 1320px;
-    }
+  .next-race-container {
+    max-width: 1320px;
+  }
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -10px;
-    margin-left: -10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 
-.col-md-5, .col-md-7, .col-lg-4, .col-lg-8, .col-xl-3, .col-xl-9 {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
+.col-md-5,
+.col-md-7,
+.col-lg-4,
+.col-lg-8,
+.col-xl-3,
+.col-xl-9 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 25px;
+  padding-left: 10px;
 }
 
 @media (min-width: 768px) {
+  .col-md-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
 
-    .col-md-5 {
-        flex: 0 0 41.66667%;
-        max-width: 41.66667%;
-    }
-
-    .col-md-7 {
-        flex: 0 0 58.33333%;
-        max-width: 58.33333%;
-    }
+  .col-md-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
 }
 
 @media (min-width: 1024px) {
+  .col-lg-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
 
-    .col-lg-4 {
-        flex: 0 0 33.33333%;
-        max-width: 33.33333%;
-    }
-
-    .col-lg-8 {
-        flex: 0 0 66.66667%;
-        max-width: 66.66667%;
-    }
+  .col-lg-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
 }
 
 @media (min-width: 1360px) {
+  .col-xl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
 
-    .col-xl-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-
-    .col-xl-9 {
-        flex: 0 0 75%;
-        max-width: 75%;
-    }
+  .col-xl-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
 }
 
 .misc--label {
-    font-family: "F1Regular";
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: 0.5px;
-    font-weight: normal;
+  font-family: "F1Regular";
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  font-weight: normal;
 }
 
 .f1--xxs {
-    font-family: "F1Regular";
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: 0.5px;
-    font-weight: normal;
+  font-family: "F1Regular";
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  font-weight: normal;
 }
 
 .f1-uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
-
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1023px) {
-    body {
-        margin-top: 64px;
-    }
+  body {
+    margin-top: 64px;
+  }
 }
 
 @media (max-width: 767px) {
-    body {
-        margin-top: 50px;
-    }
+  body {
+    margin-top: 50px;
+  }
 }
 
 .next-race {
-    background-color: #000000;
-    padding: 10px 0;
-    border-bottom: 1px solid #38383f;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #000000;
+  padding: 10px 0;
+  border-bottom: 1px solid #38383f;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 @media (min-width: 1024px) {
-    .next-race {
-        padding: 20px 0;
-    }
+  .next-race {
+    padding: 20px 0;
+  }
 }
 
 .next-race .next-race-clock {
-    display: table;
-    width: 100%;
-    margin-top: 2px;
+  display: table;
+  width: 100%;
+  margin-top: 2px;
 }
 
 @media (min-width: 768px) {
-    .next-race .next-race-clock {
-        margin-top: 0;
-    }
+  .next-race .next-race-clock {
+    margin-top: 0;
+  }
 }
 
 .next-race .next-race-clock .countdown-clock {
-    display: table-cell;
-    padding: 10px;
-    background-color: #1f1f27;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    vertical-align: middle;
+  display: table-cell;
+  padding: 10px;
+  background-color: #1f1f27;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  vertical-align: middle;
 }
 
 .next-race .next-race-clock .countdown-clock .title-bar {
-    padding: 5px;
-    background-color: #38383f;
-    color: #ffffff;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    max-width: 165px;
-    margin-left: auto;
-    margin-right: auto;
-    text-transform: uppercase;
-    text-align: center;
+  padding: 5px;
+  background-color: #38383f;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 165px;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .next-race .next-race-clock .countdown-clock .clock {
-    display: table;
-    margin: 0 auto;
-    white-space: nowrap;
-    font-feature-settings: "tnum";
+  display: table;
+  margin: 0 auto;
+  white-space: nowrap;
+  font-feature-settings: "tnum";
 }
 
 .next-race .next-race-clock .countdown-clock .clock .countdown-text {
-    font-family: "F1Regular";
-    font-size: 22px;
-    line-height: 26px;
+  font-family: "F1Regular";
+  font-size: 22px;
+  line-height: 26px;
 }
 
-span{
-    font-size: 1em;
+span {
+  font-size: 1em;
 }
 
-.countdown-text{
+.countdown-text {
   margin-top: 0px;
 }
 
 @media (min-width: 768px) {
-    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
-        font-size: 32px;
-        line-height: 36px;
-    }
+  .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+    font-size: 32px;
+    line-height: 36px;
+  }
 }
 
 @media (min-width: 768px) {
-    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
-        font-family: "F1Regular";
-        font-size: 20px;
-        line-height: 24px;
-    }
+  .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+    font-family: "F1Regular";
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 @media (min-width: 768px) and (min-width: 768px) {
-    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
-        font-size: 25px;
-        line-height: 30px;
-    }
+  .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+    font-size: 25px;
+    line-height: 30px;
+  }
 }
 
 @media (min-width: 1360px) {
-    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
-        font-family: "F1Regular";
-        font-size: 22px;
-        line-height: 26px;
-    }
+  .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+    font-family: "F1Regular";
+    font-size: 22px;
+    line-height: 26px;
+  }
 }
 
 @media (min-width: 1360px) and (min-width: 768px) {
-    .next-race .next-race-clock .countdown-clock .clock .countdown-text {
-        font-size: 32px;
-        line-height: 36px;
-    }
+  .next-race .next-race-clock .countdown-clock .clock .countdown-text {
+    font-size: 32px;
+    line-height: 36px;
+  }
 }
 
-.next-race .next-race-clock .countdown-clock .clock .days, .next-race .next-race-clock .countdown-clock .clock .hours, .next-race .next-race-clock .countdown-clock .clock .minutes, .next-race .next-race-clock .countdown-clock .clock .seconds {
-    display: table-cell;
-    color: #ffffff;
-    padding: 0 10px;
-    text-align: center;
-    border-left: 1px solid #38383f;
+.next-race .next-race-clock .countdown-clock .clock .days,
+.next-race .next-race-clock .countdown-clock .clock .hours,
+.next-race .next-race-clock .countdown-clock .clock .minutes,
+.next-race .next-race-clock .countdown-clock .clock .seconds {
+  display: table-cell;
+  color: #ffffff;
+  padding: 0 10px;
+  text-align: center;
+  border-left: 1px solid #38383f;
 }
 
 .next-race .next-race-clock .countdown-clock .clock .days:first-child {
-    border-left: 0;
+  border-left: 0;
 }
 
-.next-race .next-race-clock .countdown-clock .clock .days > span, .next-race .next-race-clock .countdown-clock .clock .hours > span, .next-race .next-race-clock .countdown-clock .clock .minutes > span, .next-race .next-race-clock .countdown-clock .clock .seconds > span {
-    display: block;
-    color: #949498;
+.next-race .next-race-clock .countdown-clock .clock .days > span,
+.next-race .next-race-clock .countdown-clock .clock .hours > span,
+.next-race .next-race-clock .countdown-clock .clock .minutes > span,
+.next-race .next-race-clock .countdown-clock .clock .seconds > span {
+  display: block;
+  color: #949498;
 }
 
-.next-race .next-race-clock .countdown-clock .clock .days p, .next-race .next-race-clock .countdown-clock .clock .hours p, .next-race .next-race-clock .countdown-clock .clock .minutes p, .next-race .next-race-clock .countdown-clock .clock .seconds p {
-    margin-bottom: 0;
+.next-race .next-race-clock .countdown-clock .clock .days p,
+.next-race .next-race-clock .countdown-clock .clock .hours p,
+.next-race .next-race-clock .countdown-clock .clock .minutes p,
+.next-race .next-race-clock .countdown-clock .clock .seconds p {
+  margin-bottom: 0;
 }
 
 .next-race .next-race-clock .countdown-clock .clock .days {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 .next-race .next-race-clock .countdown-clock .clock .seconds {
-    padding-right: 0;
+  padding-right: 0;
 }
 
-.next-race .next-race-clock .countdown-clock .clock .days:not(.d-none) + .hours + .minutes {
-    padding-right: 0;
+.next-race
+  .next-race-clock
+  .countdown-clock
+  .clock
+  .days:not(.d-none)
+  + .hours
+  + .minutes {
+  padding-right: 0;
 }
 
 .next-race .next-race-clock .round {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 10px 10px 8px;
-    background-color: #38383f;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-left: 2px solid #000000;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px 10px 8px;
+  background-color: #38383f;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 2px solid #000000;
 }
 
 .next-race .next-race-clock .round .round-container {
-    width: 70px;
-    height: 70px;
-    margin: auto;
+  width: 70px;
+  height: 70px;
+  margin: auto;
 }
 
 .next-race-date {
-    margin-bottom: 10px;
-    color: white;
+  margin-bottom: 10px;
+  color: white;
 }
 
-.next-race-date > p{
-    margin: 0;
+.next-race-date > p {
+  margin: 0;
 }
 
 .next-race-info {
-    display: flex;
+  display: flex;
 }
 
 .next-race-info .next-race-next-race-circuit-imagecontainer {
-    border-top: solid 1px #38383f;
-    border-right: solid 1px #38383f;
-    border-top-right-radius: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
+  border-top: solid 1px #38383f;
+  border-right: solid 1px #38383f;
+  border-top-right-radius: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
 }
 
 .next-race-info .next-race-text-container {
-    border-top: solid 1px #38383f;
-    color: white;
-    text-transform: uppercase;
-    width: 100%;
-    padding-top: 12px;
+  border-top: solid 1px #38383f;
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+  padding-top: 12px;
 }
 
 @media (min-width: 768px) {
-    .next-race-info .next-race-text-container {
-        padding-top: 15px;
-    }
+  .next-race-info .next-race-text-container {
+    padding-top: 15px;
+  }
 }
 
 @media (min-width: 1360px) {
-    .next-race-info .next-race-text-container {
-        padding-top: 20px;
-    }
+  .next-race-info .next-race-text-container {
+    padding-top: 20px;
+  }
 }
 
 .next-race-title {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
-    .next-race-title {
-        margin-bottom: 0;
-        height: 100%;
-    }
+  .next-race-title {
+    margin-bottom: 0;
+    height: 100%;
+  }
 }
 
 @media (min-width: 1024px) {
-    .next-race-title {
-        display: table;
-        width: 100%;
-    }
+  .next-race-title {
+    display: table;
+    width: 100%;
+  }
 }
 
 .next-race-text-container .next-race-text {
-    display: inline-block;
+  display: inline-block;
+  font-family: "F1Regular";
+  font-size: 16px;
+  line-height: 18px;
+}
+
+@media (min-width: 768px) {
+  .next-race-text-container .next-race-text {
+    font-size: 17px;
+    line-height: 23px;
+  }
+}
+
+@media (min-width: 768px) {
+  .next-race-text-container .next-race-text {
     font-family: "F1Regular";
-    font-size: 16px;
-    line-height: 18px;
-}
-
-@media (min-width: 768px) {
-    .next-race-text-container .next-race-text {
-        font-size: 17px;
-        line-height: 23px;
-    }
-}
-
-@media (min-width: 768px) {
-    .next-race-text-container .next-race-text {
-        font-family: "F1Regular";
-        font-size: 20px;
-        line-height: 24px;
-    }
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 @media (min-width: 768px) and (min-width: 768px) {
-    .next-race-text-container .next-race-text {
-        font-size: 25px;
-        line-height: 30px;
-    }
+  .next-race-text-container .next-race-text {
+    font-size: 25px;
+    line-height: 30px;
+  }
 }
 
 @media (min-width: 1360px) {
-    .next-race-text-container .next-race-text {
-        font-family: "F1Regular";
-        font-size: 22px;
-        line-height: 26px;
-    }
+  .next-race-text-container .next-race-text {
+    font-family: "F1Regular";
+    font-size: 22px;
+    line-height: 26px;
+  }
 }
 
 @media (min-width: 1360px) and (min-width: 768px) {
-    .next-race-text-container .next-race-text {
-        font-size: 32px;
-        line-height: 36px;
-    }
+  .next-race-text-container .next-race-text {
+    font-size: 32px;
+    line-height: 36px;
+  }
 }
 
 .next-race-next-race-circuit-imagecontainer {
-    width: 50px;
-    margin-right: 10px;
+  width: 50px;
+  margin-right: 10px;
 }
 
 .next-race-next-race-circuit-imagecontainer img {
-    width: 40px;
+  width: 40px;
 }
 
 @media (min-width: 768px) {
-    .next-race-next-race-circuit-imagecontainer {
-        width: 70px;
-        margin-right: 15px;
-    }
+  .next-race-next-race-circuit-imagecontainer {
+    width: 70px;
+    margin-right: 15px;
+  }
 
-    .next-race-next-race-circuit-imagecontainer img {
-        width: 50px;
-    }
+  .next-race-next-race-circuit-imagecontainer img {
+    width: 50px;
+  }
 }
 
 @media (min-width: 1360px) {
-    .next-race-next-race-circuit-imagecontainer {
-        width: 100px;
-    }
+  .next-race-next-race-circuit-imagecontainer {
+    width: 100px;
+  }
 
-    .next-race-next-race-circuit-imagecontainer img {
-        width: 75px;
-    }
+  .next-race-next-race-circuit-imagecontainer img {
+    width: 75px;
+  }
 }
 
-.minutes{
-    padding-right: 100px;
+.minutes {
+  padding-right: 100px;
 }
 
-#round{
-    border-left: 5px solid black;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 0px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 0px;
-    background-color:#38383f;
-    margin-right: 5%;
+#round {
+  border-left: 5px solid black;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  background-color: #38383f;
 }
 
-#round-title{
-    background-color:#1f1f27;
+#round-title {
+  background-color: #1f1f27;
 }
 
-#round-text{
-    padding-left: 10%;
+#round-text {
+  padding-left: 10%;
 }
 
 /*------------------------------------------------------------------------CALENADRIO----------------------------------------------------------*/
-.calendar-season-container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.calendar-season-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.calendar-season{
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 3%;
-    justify-content: space-around;
-    padding: 3%;
+.calendar-season {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 3%;
+  justify-content: space-around;
+  padding: 3%;
 }
 
 .race-container {
-    width: 400px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border-top-right-radius: 15px;
-    border: 3px solid black;
-    border-bottom: none;
-    border-left: none;
-    background-color: white;
-    transform-style: preserve-3d;
-    transition: all 0.5s linear;
-    margin-bottom: 5%;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-top-right-radius: 15px;
+  border: 3px solid black;
+  border-bottom: none;
+  border-left: none;
+  background-color: white;
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+  margin-bottom: 5%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  position: relative;
 }
 
 .race-container-front {
-    width: 95%;
-    height: 400px;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-top-right-radius: 15px;
-    border-bottom: none;
-    border-left: none;
+  width: 95%;
+  height: 400px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-top-right-radius: 15px;
+  border-bottom: none;
+  border-left: none;
 }
 
 .race-container-back {
-    width: 95%;
-    height: 400px;
-    transform: rotateY(180deg);
-    opacity: 0; /* Ocultar inicialmente */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-top-right-radius: 15px;
-    border-bottom: none;
-    border-left: none;
-    transition: opacity 0.3s linear;
+  width: 95%;
+  height: 400px;
+  transform: rotateY(180deg);
+  opacity: 0; /* Ocultar inicialmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-top-right-radius: 15px;
+  border-bottom: none;
+  border-left: none;
+  transition: opacity 0.3s linear;
 }
 
-#first-sesion{
-    margin-top: 5%;
+#first-sesion {
+  margin-top: 5%;
 }
 
-.race-container-sesion{
-    width: 95%;
-    height: 10%;
-    margin-top: 2%;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    flex-direction: row;
+.race-container-sesion {
+  width: 95%;
+  height: 10%;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
-.race-container-sesion>h1 p{
-    margin: 0;
+.race-container-sesion > h1 p {
+  margin: 0;
 }
 
-.race-container-sesion-title{
-    width: 70%;
-    font-size: 1.1em;
-    font-family: "F1RegularBold";
+.race-container-sesion-title {
+  width: 70%;
+  font-size: 1.1em;
+  font-family: "F1RegularBold";
 }
 
-.race-container-sesion-hour{
-    width: 110%;
-    padding: 5%;
-    color: white;
-    border-radius: 5px;
-    background-color:#38383f;
+.race-container-sesion-hour {
+  width: 110%;
+  padding: 5%;
+  color: white;
+  border-radius: 5px;
+  background-color: #38383f;
 }
 
-
-.race-container:hover{
-    cursor: pointer;
-    /*transform: scale(0.95);*/
+.race-container:hover {
+  cursor: pointer;
+  /*transform: scale(0.95);*/
 }
 
-.race-container-round{
-    width: 95%;
-    height: 10%;
-    margin-top: 2%;
-    margin-bottom: -4%;
-    font-family: "F1Title";
-    font-size: 1em;
+.race-container-round {
+  width: 95%;
+  height: 10%;
+  margin-top: 2%;
+  margin-bottom: -4%;
+  font-family: "F1Title";
+  font-size: 1em;
 }
 
-.race-container-title{
-    width: 95%;
-    height: 18%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    font-family: "F1Title";
-    font-size: 0.8em;
-    border-bottom: 1px solid gray;
+.race-container-title {
+  width: 95%;
+  height: 18%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  font-family: "F1Title";
+  font-size: 0.8em;
+  border-bottom: 1px solid gray;
 }
 
-.race-container-title>h1{
-    color: white;
-    padding: 2%;
-    background-color: #1f1f27;
-    border-radius: 5px;
+.race-container-title > h1 {
+  color: white;
+  padding: 2%;
+  background-color: #1f1f27;
+  border-radius: 5px;
 }
 
-.race-container-title > img{
-    width: 70px;
-    height: 40px;
-    margin-left: 5%;
-    border-radius: 5px;
-    border: 1px solid black;
+.race-container-title > img {
+  width: 70px;
+  height: 40px;
+  margin-left: 5%;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
-.race-container-desc{
-    width: 95%;
-    height: 30%;
-    display: flex;
-    align-items: left;
-    justify-content: center;
-    flex-direction: column;
-    border-bottom: 1px solid gray;
+.race-container-desc {
+  width: 95%;
+  height: 30%;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid gray;
 }
 
-.race-container-desc>h1{
-    font-size: 1.5em;
-    font-family: "F1RegularBold";
-    margin: 0;
+.race-container-desc > h1 {
+  font-size: 1.5em;
+  font-family: "F1RegularBold";
+  margin: 0;
 }
 
-.race-container-desc>p{
-    font-size: 1em;
-    font-family: "F1Regular";
-    text-transform: uppercase;
-    margin: 0;
+.race-container-desc > p {
+  font-size: 1em;
+  font-family: "F1Regular";
+  text-transform: uppercase;
+  margin: 0;
 }
 
-.race-container-img{
-    width: 95%;
-    height: 40%;  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    --color: #E1E1E1;
-    background-color: #ffffff;
-    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
-    background-size: 70px 75px;
+.race-container-img {
+  width: 95%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --color: #e1e1e1;
+  background-color: #ffffff;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 70px 75px;
 }
 
-.race-container-img > img{
-    width: 50%;
+.race-container-img > img {
+  width: 50%;
 }
 
+/*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
+@media (max-width: 1350px) {
+  #next-race-date {
+    font-size: 0.9em;
+  }
+}

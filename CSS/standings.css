@@ -1,35 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
-@import url('../CSS/header.css');
-@import url('../CSS/footer.css');
+@import url("../CSS/header.css");
+@import url("../CSS/footer.css");
 
 @font-face {
-  font-family: 'F1Title';
-  src: url('../Fonts/Formula1-Black.ttf') format('truetype');
+  font-family: "F1Title";
+  src: url("../Fonts/Formula1-Black.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'F1Regular';
-  src: url('../Fonts/Formula1-Regular-1.ttf') format('truetype');
+  font-family: "F1Regular";
+  src: url("../Fonts/Formula1-Regular-1.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'F1RegularBold';
-  src: url('../Fonts/Formula1-Bold-4.ttf') format('truetype');
+  font-family: "F1RegularBold";
+  src: url("../Fonts/Formula1-Bold-4.ttf") format("truetype");
 }
 
 :root {
-  --RedBull: #3671C6;
-  --Ferrari: #DC0000;
-  --McLaren: #FF8000;
-  --Mercedes: #00D2BE;
+  --RedBull: #3671c6;
+  --Ferrari: #dc0000;
+  --McLaren: #ff8000;
+  --Mercedes: #00d2be;
   --AstonMartin: #229971;
-  --RBF1Team: #6692FF;
-  --HaasF1Team: 	#B6BABD;
-  --Williams: #00A0DE;
-  --Sauber: #52E252;
-  --AlpineF1Team: #FF87BC;
+  --RBF1Team: #6692ff;
+  --HaasF1Team: #b6babd;
+  --Williams: #00a0de;
+  --Sauber: #52e252;
+  --AlpineF1Team: #ff87bc;
 }
 
 body {
@@ -38,43 +38,14 @@ body {
   overflow-x: hidden;
 }
 
-/*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/
-.header-container{
-    width: 100%;
-    height: 50%;
-    background-image: url(https://img2.rtve.es/i/?w=1600&i=1680083321103.JPG);
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
-  }
-  
-  .header-container::before {
-    content: ""; /* Se necesita un contenido vacío para que el pseudo-elemento sea visible */
-    position: absolute; /* Posiciona el pseudo-elemento encima del contenedor */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background-color: rgba(0, 0, 0, 0.5); /* Color negro con una opacidad del 50% */
-  }
-  
-  .title-header-container{
-    width: 100%;
-    height: 20%;
-    position: absolute;
-    color: white;
-    top: 30%;
-    left: 85%;
-    transform: translate(-50%);
-    font-size: 5em;
-  }
-
-  .main{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #F3F3F3;
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f3f3f3;
 }
 
-.teams-title-container{
+.teams-title-container {
   width: 80%;
   height: 5%;
   display: flex;
@@ -83,19 +54,19 @@ body {
   margin-bottom: 2%;
   border: solid 10px #222222;
   color: #222222;
-  background-color: #F3F3F3;
-  border-top-left-radius: 25px; 
-  border-bottom-left-radius: 25px; 
+  background-color: #f3f3f3;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   border-right: none;
   padding: 1%;
 }
 
-.teams-title-container{
+.teams-title-container {
   font-family: "F1Title";
   font-size: 3em;
 }
 /*-------------------------------------------------------------DRIVER STANDINGS---------------------------------------------------------------*/
-.standings-selector{
+.standings-selector {
   width: 70%;
   height: 50px;
   display: flex;
@@ -110,7 +81,7 @@ body {
   background-color: #222222;
 }
 
-.standings-selector > div{
+.standings-selector > div {
   width: 28%;
   height: 60%;
   display: flex;
@@ -120,14 +91,14 @@ body {
   transition: 0.2s;
 }
 
-.standings-selector > div:hover{
+.standings-selector > div:hover {
   cursor: pointer;
   border-radius: 5px;
   color: black;
   background-color: white;
 }
 
-.standings-selector-bar{
+.standings-selector-bar {
   position: absolute;
   width: 20%;
   height: 4px;
@@ -135,29 +106,28 @@ body {
   background-color: #00b9ff;
 }
 
-#barDriverStan{
+#barDriverStan {
   display: block;
 }
 
-#barConstStan{
+#barConstStan {
   display: none;
 }
 
-.standings-teams-container{
+.standings-teams-container {
   width: 100%;
   margin-bottom: 2%;
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
 }
 
-.standings-drivers-container{
+.standings-drivers-container {
   width: 100%;
   margin-top: 1%;
   margin-bottom: 2%;
-  background-color: #F3F3F3;
-  
+  background-color: #f3f3f3;
 }
 
-.standings-driver-container{
+.standings-driver-container {
   width: 100%;
   display: flex;
   align-items: center;
@@ -166,10 +136,9 @@ body {
   margin-top: 1%;
   gap: 1%;
   font-family: "F1RegularBold";
-
 }
 
-.standings-teams-container{
+.standings-teams-container {
   width: 100%;
   display: flex;
   align-items: center;
@@ -181,7 +150,7 @@ body {
   display: none;
 }
 
-.standings-driver{
+.standings-driver {
   width: 70%;
   height: 70px;
   display: flex;
@@ -194,7 +163,7 @@ body {
   transition: 0.3s;
 }
 
-.standings-teams{
+.standings-teams {
   width: 70%;
   height: 70px;
   display: flex;
@@ -208,21 +177,21 @@ body {
   transition: 0.3s;
 }
 
-.standings-driver:hover{
+.standings-driver:hover {
   background-color: #222222;
   color: white;
 }
 
-.standings-teams:hover{
+.standings-teams:hover {
   background-color: #222222;
   color: white;
 }
 
-.standings-teams:hover .driversname{
+.standings-teams:hover .driversname {
   color: white;
 }
 
-.standings-driver-info{
+.standings-driver-info {
   width: 70%;
   height: 275px;
   margin-top: 0%;
@@ -238,7 +207,7 @@ body {
   color: white;
 }
 
-.standings-teams-info{
+.standings-teams-info {
   width: 70%;
   height: 250px;
   margin-top: -1%;
@@ -254,7 +223,7 @@ body {
   color: white;
 }
 
-.standings-driver-info-photo{
+.standings-driver-info-photo {
   width: 30%;
   height: 100%;
   display: flex;
@@ -266,7 +235,7 @@ body {
   background-size: 100%;
 }
 
-.standings-teams-info-photo{
+.standings-teams-info-photo {
   width: 40%;
   height: 100%;
   display: flex;
@@ -276,18 +245,40 @@ body {
   background-color: white;
   object-fit: cover;
   background-size: 100%;
-  --color: #E1E1E1;
+  --color: #e1e1e1;
   background-color: #ffffff;
-  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
   background-size: 80px 80px;
 }
 
-.standings-teams-info-photo > img{
+.standings-teams-info-photo > img {
   width: 95%;
 }
 
-.standings-driver-info-info{
+.standings-driver-info-info {
   width: 70%;
   height: 100%;
   display: flex;
@@ -297,7 +288,7 @@ body {
   border-bottom-right-radius: 15px;
 }
 
-.standings-teams-info-info{
+.standings-teams-info-info {
   width: 60%;
   height: 100%;
   display: flex;
@@ -307,7 +298,7 @@ body {
   border-bottom-right-radius: 15px;
 }
 
-.standings-driver-info-info-main{
+.standings-driver-info-info-main {
   width: 90%;
   height: 30%;
   display: flex;
@@ -317,7 +308,7 @@ body {
   margin-left: 7%;
 }
 
-.standings-teams-info-info-main{
+.standings-teams-info-info-main {
   width: 90%;
   height: 30%;
   display: flex;
@@ -326,7 +317,7 @@ body {
   flex-direction: row;
 }
 
-.standings-drivers-info-info-main-name{
+.standings-drivers-info-info-main-name {
   width: 70%;
   height: 100%;
   display: flex;
@@ -336,7 +327,7 @@ body {
   font-size: 1.5em;
 }
 
-.standings-driver-info-info-main-name{
+.standings-driver-info-info-main-name {
   width: 70%;
   height: 100%;
   display: flex;
@@ -345,7 +336,7 @@ body {
   font-size: 1.5em;
 }
 
-.standings-teams-info-info-main-name{
+.standings-teams-info-info-main-name {
   width: 70%;
   height: 100%;
   display: flex;
@@ -355,7 +346,7 @@ body {
   font-size: 2em;
 }
 
-.standings-driver-info-info-main-number{
+.standings-driver-info-info-main-number {
   width: 30%;
   height: 100%;
   display: flex;
@@ -364,7 +355,7 @@ body {
   font-size: 1.5em;
 }
 
-.standings-teams-info-info-main-number{
+.standings-teams-info-info-main-number {
   width: 30%;
   height: 100%;
   display: flex;
@@ -373,21 +364,21 @@ body {
   font-size: 1.5em;
 }
 
-.standings-driver-info-info-main-number > img{
+.standings-driver-info-info-main-number > img {
   width: 30%;
   margin-left: 15%;
   border-radius: 3px;
   margin-bottom: 1%;
 }
 
-.standings-teams-info-info-main-number > img{
+.standings-teams-info-info-main-number > img {
   width: 50%;
   margin-left: 15%;
   border-radius: 3px;
   margin-bottom: 1%;
 }
 
-.standings-driver-info-info-main-helmet{
+.standings-driver-info-info-main-helmet {
   width: 80%;
   height: 100%;
   display: flex;
@@ -395,11 +386,11 @@ body {
   justify-content: center;
 }
 
-.standings-driver-info-info-main-helmet > img{
+.standings-driver-info-info-main-helmet > img {
   width: 25%;
 }
 
-.standings-teams-info-info-main-logo{
+.standings-teams-info-info-main-logo {
   width: 100%;
   height: 100%;
   display: flex;
@@ -407,13 +398,13 @@ body {
   justify-content: center;
 }
 
-.standings-teams-info-info-main-logo > img{
+.standings-teams-info-info-main-logo > img {
   width: 15%;
   background-color: white;
   border-radius: 5px;
 }
 
-.standings-driver-info-info-extra{
+.standings-driver-info-info-extra {
   width: 90%;
   height: 70%;
   display: flex;
@@ -424,7 +415,7 @@ body {
   font-size: 1.1em;
 }
 
-.standings-teams-info-info-extra{
+.standings-teams-info-info-extra {
   width: 90%;
   height: 70%;
   display: flex;
@@ -435,7 +426,7 @@ body {
   font-size: 1.1em;
 }
 
-.standings-driver-info-info-extra > div{
+.standings-driver-info-info-extra > div {
   width: 50%;
   height: 100%;
   display: flex;
@@ -448,14 +439,14 @@ body {
 .standings-driver-info-info-extra > div > p {
   margin: 0;
   margin-left: 10%;
-} 
+}
 
 .standings-driver-info-info-extra > div > a {
   margin: 0;
   margin-left: 10%;
-} 
+}
 
-.standings-teams-info-info-extra > div{
+.standings-teams-info-info-extra > div {
   width: 50%;
   height: 100%;
   display: flex;
@@ -468,14 +459,14 @@ body {
 .standings-teams-info-info-extra > div > p {
   margin: 0;
   margin-left: 10%;
-} 
+}
 
 .standings-teams-info-info-extra > div > a {
   margin: 0;
   margin-left: 10%;
-} 
+}
 
-.bar{
+.bar {
   width: 7px;
   height: 50%;
   background-color: red;
@@ -483,7 +474,7 @@ body {
   margin-left: -18%;
 }
 
-.points{
+.points {
   width: 10%;
   height: 50%;
   display: flex;
@@ -496,7 +487,7 @@ body {
   margin-right: -5%;
 }
 
-.position{
+.position {
   width: 20%;
   display: flex;
   align-items: center;
@@ -505,7 +496,7 @@ body {
   font-size: 1.3em;
 }
 
-.team{
+.team {
   width: 20%;
   display: flex;
   align-items: center;
@@ -515,13 +506,13 @@ body {
   font-size: 1.1em;
 }
 
-.team > img{
+.team > img {
   width: 15%;
   background-color: white;
   border-radius: 5px;
 }
 
-.name{
+.name {
   width: 30%;
   display: flex;
   align-items: center;
@@ -530,7 +521,7 @@ body {
   font-size: 1.3em;
 }
 
-.driversname{
+.driversname {
   width: 10%;
   display: flex;
   align-items: center;
@@ -540,7 +531,7 @@ body {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.arrow{
+.arrow {
   width: 20%;
   display: flex;
   align-items: center;
@@ -549,6 +540,6 @@ body {
   margin-right: -5%;
 }
 
-.arrow > img{
+.arrow > img {
   width: 12%;
-}  
+}

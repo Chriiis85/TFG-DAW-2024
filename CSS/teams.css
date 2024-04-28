@@ -1,26 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url('../CSS/header.css');
-@import url('../CSS/footer.css');
+@import url("../CSS/footer.css");
 
 @font-face {
-  font-family: 'F1Title';
-  src: url('../Fonts/Formula1-Black.ttf') format('truetype');
+  font-family: "F1Title";
+  src: url("../Fonts/Formula1-Black.ttf") format("truetype");
 }
 
 :root {
-  --RedBull: #3671C6;
-  --Ferrari: #DC0000;
-  --McLaren: #FF8000;
-  --Mercedes: #00D2BE;
+  --RedBull: #3671c6;
+  --Ferrari: #dc0000;
+  --McLaren: #ff8000;
+  --Mercedes: #00d2be;
   --AstonMartin: #229971;
-  --RBF1Team: #6692FF;
-  --HaasF1Team: 	#B6BABD;
-  --Williams: #00A0DE;
-  --Sauber: #52E252;
-  --AlpineF1Team: #FF87BC;
+  --RBF1Team: #6692ff;
+  --HaasF1Team: #b6babd;
+  --Williams: #00a0de;
+  --Sauber: #52e252;
+  --AlpineF1Team: #ff87bc;
 }
-
 
 body {
   width: 100vw;
@@ -36,29 +34,20 @@ h1 {
 
 :root {
   --aston-martin: #2d826d;
-  --ferrari: #DC0000;
-}
-
-/*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/
-.header-container{
-  width: 100%;
-  height: 50%;
-  background-image: url();
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
-  background-position: center;
+  --ferrari: #dc0000;
 }
 
 /*----------------------------------------------------------------------MAIN------------------------------------------------------------------*/
-.main{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    /*justify-content: center;*/
-    flex-direction: column;
-    gap: 2%;
+.main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  flex-direction: column;
+  gap: 2%;
 }
 
-.teams-title-container{
+.teams-title-container {
   width: 80%;
   height: 5%;
   display: flex;
@@ -66,18 +55,18 @@ h1 {
   margin-top: 3%;
   border: solid 10px #222222;
   color: #222222;
-  border-top-left-radius: 25px; 
-  border-bottom-left-radius: 25px; 
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   border-right: none;
   padding: 1%;
 }
 
-.teams-title-container{
+.teams-title-container {
   font-family: "F1Title";
   font-size: 3em;
 }
 
-.teams-container{ 
+.teams-container {
   width: 80%;
   height: 30%;
   display: flex;
@@ -88,23 +77,24 @@ h1 {
   color: #222222;
 }
 
-.team-card-container{
+.team-card-container {
   width: 500px;
   height: 500px;
   display: flex;
   align-items: center;
   margin-top: 3%;
   border: solid 5px var(--aston-martin);
-  border-top-right-radius: 25px; 
+  border-top-right-radius: 25px;
   border-left: none;
   border-bottom: none;
   padding: 1%;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin-bottom: 3%;
   background-color: white;
 }
 
-.team-card{
+.team-card {
   width: 100%;
   height: 100%;
   display: flex;
@@ -115,7 +105,7 @@ h1 {
   flex-direction: column;
 }
 
-.team-card-divider{
+.team-card-divider {
   width: 90%;
   height: 1px;
   margin-top: -5%;
@@ -123,7 +113,7 @@ h1 {
   background-color: black;
 }
 
-.team-card-divider2{
+.team-card-divider2 {
   width: 90%;
   height: 1px;
   margin-top: 3%;
@@ -131,7 +121,7 @@ h1 {
   background-color: black;
 }
 
-.team-card-title{
+.team-card-title {
   width: 100%;
   height: 20%;
   display: flex;
@@ -152,7 +142,7 @@ h1 {
   font-size: 2em;
 }
 
-.team-card-title > div{
+.team-card-title > div {
   width: 30%;
   height: 100%;
   display: flex;
@@ -162,15 +152,15 @@ h1 {
   margin-top: -6%;
 }
 
-.team-card-title >div> img {
+.team-card-title > div > img {
   width: 50%;
 }
 
-.team-card-drivers{
+.team-card-drivers {
   width: 95%;
   height: 20%;
   display: flex;
-  align-items: left ;
+  align-items: left;
   justify-content: center;
   flex-direction: column;
   gap: 1%;
@@ -184,12 +174,12 @@ h1 {
   align-items: center;
   margin-left: 3%;
   border: solid 1px black;
-  border-bottom-left-radius: 25px; 
+  border-bottom-left-radius: 25px;
   border-right: none;
   border-top: none;
   padding: 1%;
 }
-.team-card-driver{
+.team-card-driver {
   width: 100%;
   height: 40%;
   display: flex;
@@ -198,17 +188,17 @@ h1 {
   flex-direction: row;
 }
 
-.team-card-driver > h1{
+.team-card-driver > h1 {
   margin-left: 5%;
   font-size: 1.3em;
 }
 
-.team-card-driver > img{
+.team-card-driver > img {
   width: 19%;
   margin-bottom: -0.6%;
 }
 
-.team-card-cars{
+.team-card-cars {
   width: 90%;
   height: 30%;
   display: flex;
@@ -216,11 +206,33 @@ h1 {
   justify-content: center;
 }
 
-.team-card-cars > img{
-  width: 100%;  
-  --color: #E1E1E1;
+.team-card-cars > img {
+  width: 100%;
+  --color: #e1e1e1;
   background-color: #ffffff;
-  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
   background-size: 80px 80px;
 }

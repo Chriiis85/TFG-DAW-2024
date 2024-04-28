@@ -7,7 +7,6 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: "Bebas Neue";
-
 }
 
 h1 {
@@ -109,8 +108,7 @@ h1 {
   width: 20%;
 }
 
-
-.header-drop-container{
+.header-drop-container {
   display: none;
   position: absolute;
   z-index: 98;
@@ -119,7 +117,7 @@ h1 {
   top: 20%;
   left: 50%;
   transform: translate(-50%);
-  align-items: center ;
+  align-items: center;
   justify-content: space-around;
   flex-direction: row;
   color: white;
@@ -131,34 +129,34 @@ h1 {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.header-drop-container-options{
+.header-drop-container-options {
   width: 30%;
   height: 90%;
   display: flex;
-  align-items: top; 
+  align-items: top;
   justify-content: center;
   flex-direction: column;
 }
 
-.header-drop-container-options2{
+.header-drop-container-options2 {
   width: 30%;
   height: 90%;
   gap: 5%;
   display: flex;
-  align-items: top; 
+  align-items: top;
   justify-content: center;
   flex-direction: column;
   transition: 0.5s;
 }
 
-.header-drop-container-options > h1{
+.header-drop-container-options > h1 {
   margin-left: 25%;
   font-size: 2em;
 }
 
-.header-drop-container-options > h3{
+.header-drop-container-options > h3 {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   flex-direction: row;
@@ -167,22 +165,22 @@ h1 {
   transition: 0.3s;
 }
 
-.header-drop-container-options > h3>img{
+.header-drop-container-options > h3 > img {
   width: 5%;
   margin-right: 3%;
   transform: rotate(270deg);
 }
 
-.header-drop-container-options > h3:hover{
+.header-drop-container-options > h3:hover {
   text-decoration: #00acee underline;
   cursor: pointer;
   opacity: 0.65;
 }
 
-.header-drop-container-options2 > p{
+.header-drop-container-options2 > p {
   margin: 0;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: left;
   flex-direction: column;
   flex-direction: row;
@@ -191,22 +189,20 @@ h1 {
   transition: 0.3s;
 }
 
-.header-drop-container-options2 > p:hover{
+.header-drop-container-options2 > p:hover {
   text-decoration: #00acee underline;
   cursor: pointer;
   opacity: 0.65;
 }
 
-.header-drop-container-options2 > p>img{
+.header-drop-container-options2 > p > img {
   width: 5%;
   margin-right: 3%;
   transform: rotate(270deg);
 }
 
-
-
 /*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/
-.header-container{
+.header-container {
   width: 100%;
   height: 50%;
   display: flex;
@@ -224,10 +220,15 @@ h1 {
   left: 0;
   width: 100%;
   height: 50%;
-  background-color: rgba(0, 0, 0, 0.5); /* Color negro con una opacidad del 50% */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Color negro con una opacidad del 50% */
 }
 
-.title-header-container{
+.title-header-container {
   width: 100%;
   height: 20%;
   display: flex;
@@ -242,31 +243,30 @@ h1 {
 
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 @media (max-width: 1500px) {
-  .title-header-container{
+  .title-header-container {
     font-size: 4.5em;
   }
   .header-container1 {
     font-size: 1.25em;
   }
-
 }
 
 @media (max-width: 1100px) {
-  .header-container3{
+  .header-container3 {
     display: none;
   }
 
-  .header-container1{
+  .header-container1 {
     width: 30%;
   }
 
-  .header-container2{
+  .header-container2 {
     width: 70%;
     border-right: none;
     font-size: 1.25em;
   }
 
-  .title-header-container{
+  .title-header-container {
     font-size: 4em;
   }
 
@@ -274,49 +274,46 @@ h1 {
     font-size: 1.25em;
   }
 
-  .header-drop-container-options > h1{
+  .header-drop-container-options > h1 {
     font-size: 2em;
   }
 
-
-  .header-drop-container-options > h3{
+  .header-drop-container-options > h3 {
     font-size: 1.5em;
   }
 
-  .header-drop-container-options2 > p{
+  .header-drop-container-options2 > p {
     font-size: 1.25em;
   }
-
 }
 
 @media (max-width: 900px) {
-  .header-drop-container-options > h1{
+  .header-drop-container-options > h1 {
     font-size: 2em;
     margin-left: -12%;
   }
 
-
-  .header-drop-container-options > h3{
+  .header-drop-container-options > h3 {
     font-size: 1.5em;
     margin-left: -15%;
   }
 
-  .header-drop-container-options2 > p{
+  .header-drop-container-options2 > p {
     font-size: 1.25em;
     margin-left: -1%;
   }
 }
 
 @media (max-width: 750px) {
-  .header{
+  .header {
     flex-direction: column;
   }
 
-  .header-container1{
+  .header-container1 {
     width: 90%;
     height: 40%;
   }
-  .header-container2{
+  .header-container2 {
     width: 97%;
     height: 60%;
     align-items: center;
@@ -326,22 +323,34 @@ h1 {
   }
 }
 
+@media (max-width: 850px) {
+  .title-header-container {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 700px) {
+  .title-header-container {
+    font-size: 2em;
+  }
+}
+
 @media (max-width: 650px) {
-  .header-drop-container{
+  .header-drop-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  .header-drop-container-options > h1{
+  .header-drop-container-options > h1 {
     font-size: 1.5em;
   }
-  .header-drop-container-options > h3{
+  .header-drop-container-options > h3 {
     font-size: 1.25em;
   }
-  .header-drop-container-options{
+  .header-drop-container-options {
     margin: 0;
   }
-  .header-drop-container-options2{
+  .header-drop-container-options2 {
     flex-direction: row;
     width: 100%;
     gap: 1%;
@@ -350,31 +359,22 @@ h1 {
 }
 
 @media (max-width: 510px) {
-  .header-container2{
+  .header-container2 {
     font-size: 1em;
   }
-  .header-drop-container-options > h1{
+  .header-drop-container-options > h1 {
     font-size: 1.25em;
   }
-  .header-drop-container-options > h3{
+  .header-drop-container-options > h3 {
     font-size: 1em;
   }
 }
 
 @media (max-width: 430px) {
-  .header-container2{
+  .header-container2 {
     font-size: 0.9em;
   }
-}
-
-@media (max-width: 600px) {
-  .title-header-container{
-    font-size: 3em;
-  }
-}
-
-@media (max-width: 400px) {
-  .title-header-container{
-    font-size: 2.5em;
+  .title-header-container {
+    font-size: 1.75em;
   }
 }

@@ -13,7 +13,7 @@
 
 <body>
   <?php
-    include "header.php";
+  include "header.php";
   ?>
   <section class="main">
     <article class="teams-title-container">
@@ -21,36 +21,36 @@
     </article>
     <article class="teams-container">
       <?php
-      include("PHP/driverTeam.php");
-      include("PHP/returnTeamStanding.php");
+      include ("PHP/driverTeam.php");
+      include ("PHP/returnTeamStanding.php");
 
       // Iterar sobre las escuderías y sus pilotos
       for ($i = 0; $i < sizeof($escuderias); $i++) {
-          // Reemplazar espacios en el nombre del equipo para evitar problemas con los nombres de archivos
-          $nombre_equipo = str_replace(' ', '', $clasificacionesEquipos[$i]['Constructor']['name']);
+        // Reemplazar espacios en el nombre del equipo para evitar problemas con los nombres de archivos
+        $nombre_equipo = str_replace(' ', '', $clasificacionesEquipos[$i]['Constructor']['name']);
 
-          // Imprimir el contenedor de la tarjeta del equipo
-          echo '<div class="team-card-container" style="border:solid 5px var(--' . $nombre_equipo . ');   border-left: none;
+        // Imprimir el contenedor de la tarjeta del equipo
+        echo '<div class="team-card-container" style="border:solid 5px var(--' . $nombre_equipo . ');   border-left: none;
               border-bottom: none;">
               <div class="team-card">
                 <div class="team-card-title">
                 <h1>' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</h1>            
-                <div> <img src="Images/Teams/'.$nombre_equipo.'.png" alt=""></div>
+                <div> <img src="Images/Teams/' . $nombre_equipo . '.png" alt=""></div>
                 </div>
                 <div class="team-card-divider"></div>';
 
-          // Iterar sobre los pilotos del equipo (solo los primeros dos)
-          for ($j = 0; $j < 2; $j++) {
-              // Obtener el nombre completo del piloto
-              $nombre_completo = $escuderias[$clasificacionesEquipos[$i]['Constructor']['name']][$j];
+        // Iterar sobre los pilotos del equipo (solo los primeros dos)
+        for ($j = 0; $j < 2; $j++) {
+          // Obtener el nombre completo del piloto
+          $nombre_completo = $escuderias[$clasificacionesEquipos[$i]['Constructor']['name']][$j];
 
-              // Encontrar la posición del primer espacio en el nombre del piloto
-              $primerEspacio = strpos($nombre_completo, ' ');
+          // Encontrar la posición del primer espacio en el nombre del piloto
+          $primerEspacio = strpos($nombre_completo, ' ');
 
-              // Obtener el apellido del piloto usando substr desde el primer espacio hasta el final
-              $apellido = substr($nombre_completo, $primerEspacio + 1);
-              // Imprimir la tarjeta del piloto
-              echo ' <div class="team-card-drivers">
+          // Obtener el apellido del piloto usando substr desde el primer espacio hasta el final
+          $apellido = substr($nombre_completo, $primerEspacio + 1);
+          // Imprimir la tarjeta del piloto
+          echo ' <div class="team-card-drivers">
                           <div class="team-card-driver-container">
                               <div class="team-card-driver">
                                   <h1>' . $nombre_completo . '</h1>
@@ -58,10 +58,10 @@
                               </div>
                           </div>
                       </div>';
-          }
+        }
 
-          // Imprimir el divisor y la imagen del auto del equipo
-          echo '<div class="team-card-divider2"></div>
+        // Imprimir el divisor y la imagen del auto del equipo
+        echo '<div class="team-card-divider2"></div>
                           <div class="team-card-cars">
                               <img src="Images/Cars/' . $nombre_equipo . '.png" alt="">
                           </div>
@@ -132,10 +132,11 @@
 </body>
 <script>
   let tituloPrincipal = document.getElementById("title-header");
-  tituloPrincipal.textContent = "Prueba";
+  tituloPrincipal.textContent = "Formula One 2024 Constructors";
 
   let headerContainer = document.getElementById("header-container");
   headerContainer.style.backgroundImage = "url('https://media.formula1.com/image/upload/content/dam/fom-website/races/2023/race-listing/Bahrain%20Testing.jpg')";
 
 </script>
+
 </html>

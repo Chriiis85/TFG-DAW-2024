@@ -14,7 +14,7 @@
 
 <body>
   <?php
-    include "header.php";
+  include "header.php";
   ?>
   <section class="container-select-data"></section>
   <section class="main">
@@ -22,14 +22,20 @@
       <h1 class="teams-title">2024 Formula One Season Standings</h1>
     </article>
     <article class="standings-selector">
-      <div id="DriverStan"><h1>Drivers Standings</h1><div id="barDriverStan" class="standings-selector-bar"></div></div>
-      <div id="ConstStan"><h1>Constructors Standings</h1><div id="barConstStan" class="standings-selector-bar"></div></div>
+      <div id="DriverStan">
+        <h1>Drivers Standings</h1>
+        <div id="barDriverStan" class="standings-selector-bar"></div>
+      </div>
+      <div id="ConstStan">
+        <h1>Constructors Standings</h1>
+        <div id="barConstStan" class="standings-selector-bar"></div>
+      </div>
     </article>
     <article class="standings-teams-container">
       <article id="standings-teams-container" class="standings-driver-container">
         <?php
-        include("PHP/driverTeam.php");
-        include("PHP/returnTeamStanding.php");
+        include ("PHP/driverTeam.php");
+        include ("PHP/returnTeamStanding.php");
         for ($i = 0; $i < sizeof($escuderias); $i++) {
           $nombre_equipo = str_replace(' ', '', $clasificacionesEquipos[$i]['Constructor']['name']);
           // Obtener el nombre completo del piloto
@@ -42,45 +48,45 @@
           $apellido1 = substr($nombre_completo1, $primerEspacio + 1);
           $apellido2 = substr($nombre_completo2, $primerEspacio2 + 1);
 
-          echo'<div id="standings-teams" class="standings-teams">
-            <div class="position">'.$clasificacionesEquipos[$i]['position'].'</div>
-            <div class="bar" style="background-color:var(--'.$nombre_equipo.')"></div>
-            <div class="name">'.$clasificacionesEquipos[$i]['Constructor']['name'] .'</div>
-            <div class="driversname">'.$apellido1.'/'.$apellido2.'</div>
-            <div class="team"><img src="Images/Teams/'.$nombre_equipo.'.png" alt=""></div>
-            <div class="points">'.$clasificacionesEquipos[$i]['points'].' PTS.</div>
+          echo '<div id="standings-teams" class="standings-teams">
+            <div class="position">' . $clasificacionesEquipos[$i]['position'] . '</div>
+            <div class="bar" style="background-color:var(--' . $nombre_equipo . ')"></div>
+            <div class="name">' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</div>
+            <div class="driversname">' . $apellido1 . '/' . $apellido2 . '</div>
+            <div class="team"><img src="Images/Teams/' . $nombre_equipo . '.png" alt=""></div>
+            <div class="points">' . $clasificacionesEquipos[$i]['points'] . ' PTS.</div>
             <div class="arrow"><img src="Images/arrowdown-svgrepo-com.svg" alt=""></div>
           </div>';
 
-          echo'<div id="standings-teams-info" class="standings-teams-info" style="display: none">
+          echo '<div id="standings-teams-info" class="standings-teams-info" style="display: none">
           <div class="standings-teams-info-photo">
             <img src="Images/Cars/' . $nombre_equipo . '.png" alt="">
           </div>
           <div class="standings-teams-info-info">
             <div class="standings-teams-info-info-main">
               <div class="standings-teams-info-info-main-name">
-                <h1>'.$clasificacionesEquipos[$i]['Constructor']['name'].'</h1>
+                <h1>' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</h1>
               </div>
               <div class="standings-teams-info-info-main-number">
                 <h1></h1>
                 <img
-                  src="https://media.formula1.com/content/dam/fom-website/flags/'.nacionalidadAPais($clasificacionesEquipos[$i]['Constructor']['nationality']).'.jpg"
+                  src="https://media.formula1.com/content/dam/fom-website/flags/' . nacionalidadAPais($clasificacionesEquipos[$i]['Constructor']['nationality']) . '.jpg"
                   alt="" />
               </div>
               <div class="standings-teams-info-info-main-logo">
-              <img src="Images/Teams/'.$nombre_equipo.'.png" alt="">
+              <img src="Images/Teams/' . $nombre_equipo . '.png" alt="">
               </div>
             </div>
             <div class="standings-teams-info-info-extra">
               <div>
-                <p>Wins: '.$clasificacionesEquipos[$i]['wins'].'.</p>
-                <p>Total Points: '.$clasificacionesEquipos[$i]['points'].' PTS.</p>
-                <a href="'.$clasificacionesEquipos[$i]['Constructor']['url'].'">Access to the biography.</a>
+                <p>Wins: ' . $clasificacionesEquipos[$i]['wins'] . '.</p>
+                <p>Total Points: ' . $clasificacionesEquipos[$i]['points'] . ' PTS.</p>
+                <a href="' . $clasificacionesEquipos[$i]['Constructor']['url'] . '">Access to the biography.</a>
               </div>
               <div>
-                <p>Nationality: '.$clasificacionesEquipos[$i]['Constructor']['nationality'].'.</p>
-                <p>Driver1: '.$nombre_completo1.'.</p>
-                <p>Driver2: '.$nombre_completo2.'.</p>
+                <p>Nationality: ' . $clasificacionesEquipos[$i]['Constructor']['nationality'] . '.</p>
+                <p>Driver1: ' . $nombre_completo1 . '.</p>
+                <p>Driver2: ' . $nombre_completo2 . '.</p>
               </div>
             </div>
           </div>
@@ -305,5 +311,13 @@
   </section>
 
 </body>
+<script>
+  let tituloPrincipal = document.getElementById("title-header");
+  tituloPrincipal.textContent = "Formula One Season Standings";
+
+  let headerContainer = document.getElementById("header-container");
+  headerContainer.style.backgroundImage = "url('https://img2.rtve.es/i/?w=1600&i=1680083321103.JPG')";
+
+</script>
 
 </html>
