@@ -130,5 +130,12 @@
     <p>WEBPAGE MADE BY CHRISTIAN MORENO DIAZ - ALL RIGHTS RESERVED 2024®™</p>
   </section>
 </body>
+<script>
+  let tituloPrincipal = document.getElementById("title-header");
+  tituloPrincipal.textContent = "Prueba";
 
+  let headerContainer = document.getElementById("header-container");
+  headerContainer.style.backgroundImage = "url('https://media.formula1.com/image/upload/content/dam/fom-website/races/2023/race-listing/Bahrain%20Testing.jpg')";
+
+</script>
 </html>

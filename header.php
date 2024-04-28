@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Header - Motoring Community</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script defer src="JS/script.js"></script>
   <link rel="stylesheet" href="CSS/header.css" />
 </head>
 <body>
-  <section class="header-container">
+  <section id="header-container" class="header-container">
     <article class="header">
       <div class="header-container1">
         <h1 onclick="window.location.href = 'index.html'">
@@ -36,10 +37,6 @@
       <div class="header-drop-container-options"><h3 onclick="window.location.href = 'aboutf1.php'"><img
         src="Images/down-arrow-svgrepo-com.svg"
         alt="Down Arrow"
-      />Formula One News</h3></div>
-      <div class="header-drop-container-options"><h3 onclick="window.location.href = 'aboutf1.php'"><img
-        src="Images/down-arrow-svgrepo-com.svg"
-        alt="Down Arrow"
       />About Formula One</h3></div>
       <div class="header-drop-container-options2">
         <p onclick="window.location.href = 'drivers.html'"><img
@@ -56,6 +53,7 @@
         />Season Calendar</p>
       </div>
     </div>
+    <h1 id="title-header" class="title-header-container">THIS IS THE HEADER</h1>
   </section>
 </body>
 </html>

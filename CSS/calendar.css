@@ -37,30 +37,6 @@ h1 {
   background-image: url(https://www.f1-fansite.com/wp-content/uploads/2023/06/SI202306040579.jpg);
   background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
 }
-
-.header-container::before {
-  content: ""; /* Se necesita un contenido vacío para que el pseudo-elemento sea visible */
-  position: absolute; /* Posiciona el pseudo-elemento encima del contenedor */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: rgba(0, 0, 0, 0.5); /* Color negro con una opacidad del 50% */
-}
-
-.title-header-container{
-  width: 100%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  color: white;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%);
-  font-size: 5em;
-}
-
 /*---------------------------------------------------------NEXT RACE--------------------------------------------------------------------------*/
  
 .next-race-container {
