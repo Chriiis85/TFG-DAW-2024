@@ -16,6 +16,9 @@
   <?php
   include "header.php";
   ?>
+  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+    <img src="Images/UPARROW.svg" alt="" />
+  </button>
   <section class="container-select-data"></section>
   <section class="main">
     <article class="teams-title-container">
@@ -318,6 +321,26 @@
   let headerContainer = document.getElementById("header-container");
   headerContainer.style.backgroundImage = "url('https://img2.rtve.es/i/?w=1600&i=1680083321103.JPG')";
 
+  document.getElementById("upBtn").classList.add("hidden");
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+      document.getElementById("upBtn").classList.remove("hidden");
+    } else {
+      document.getElementById("upBtn").classList.add("hidden");
+    }
+  }
+
+  function scrollToTop() {
+    const scrollStep = -window.scrollY / (500 / 15);
+    const scrollInterval = setInterval(function () {
+      if (window.scrollY != 0) {
+        window.scrollBy(0, scrollStep);
+      }
+      else clearInterval(scrollInterval);
+    }, 15);
+  }
 </script>
 
 </html>

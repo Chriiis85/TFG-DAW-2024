@@ -15,6 +15,9 @@
   <?php
   include "header.php"
     ?>
+  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+    <img src="Images/UPARROW.svg" alt="" />
+  </button>
   <section class="main">
     <article class="main-about">
       <h1>About Formula One</h1>
@@ -198,4 +201,5 @@
   headerContainer.style.backgroundImage = "url('https://www.f1-fansite.com/wp-content/uploads/2023/06/SI202306040579.jpg')";
 
 </script>
+
 </html>

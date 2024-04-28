@@ -14,6 +14,9 @@
   <?php
   include "header.php"
     ?>
+  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+    <img src="Images/UPARROW.svg" alt="" />
+  </button>
   <section class="data-container">
     <article class="data">
       <div class="data-select">
@@ -55,6 +58,27 @@
   let headerContainer = document.getElementById("header-container");
   headerContainer.style.backgroundImage = "url('  https://static01.nyt.com/images/2019/07/13/sports/13sp-scene-inyt1/13sp-scene-inyt1-videoSixteenByNineJumbo1600.jpg')";
 
+
+  document.getElementById("upBtn").classList.add("hidden");
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+      document.getElementById("upBtn").classList.remove("hidden");
+    } else {
+      document.getElementById("upBtn").classList.add("hidden");
+    }
+  }
+
+  function scrollToTop() {
+    const scrollStep = -window.scrollY / (500 / 15);
+    const scrollInterval = setInterval(function () {
+      if (window.scrollY != 0) {
+        window.scrollBy(0, scrollStep);
+      }
+      else clearInterval(scrollInterval);
+    }, 15);
+  }
 </script>
 
 </html>

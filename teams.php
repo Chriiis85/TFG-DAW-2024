@@ -8,13 +8,16 @@
   <link rel="stylesheet" href="CSS/teams.css">
   <link rel="stylesheet" href="CSS/footer.css">
   <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
-  <!--<script defer src="JS/script.js"></script>-->
+  <script defer src="JS/script.js"></script>
 </head>
 
 <body>
   <?php
   include "header.php";
   ?>
+  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+    <img src="Images/UPARROW.svg" alt="" />
+  </button>
   <section class="main">
     <article class="teams-container">
       <?php

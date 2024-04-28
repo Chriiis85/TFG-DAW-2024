@@ -14,6 +14,9 @@
   <?php
   include "header.php";
   ?>
+  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+    <img src="Images/UPARROW.svg" alt="" />
+  </button>
   <section class="next-race">
     <div class="next-race-container">
       <div class="row">
