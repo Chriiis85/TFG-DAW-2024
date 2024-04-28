@@ -155,7 +155,8 @@ body {
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 5%;
   flex-direction: row;
   background-color: white;
   border-radius: 5px;
@@ -567,4 +568,64 @@ body {
 .up-button:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+@media (max-width: 1700px) {
+  .standings-selector > div {
+    width: 40%;
+  }
+  .standings-selector-bar{
+    width: 400px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .standings-selector > div {
+    width: 45%;
+  }
+  .standings-selector-bar{
+    width: 350px;
+  }
+}
+
+
+
+@media (max-width: 1110px) {
+  .standings-selector {
+    flex-direction: column;
+    height: 100px;
+  }
+  .standings-selector > div {
+    width: 90%;
+    height: 20%;
+  }
+  
+  .standings-selector-bar{
+    margin-top: 3%;
+    width: 400px;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .standings-selector {
+    font-size: 1em;
+  }
+
+  .standings-selector-bar{
+    margin-top: 4%;
+    width: 300px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .standings-selector {
+    font-size: 0.8em;
+  }
+  .standings-selector-bar{
+    margin-top: 5%;
+    width: 200px;
+  }
+
 }

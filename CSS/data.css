@@ -121,66 +121,47 @@ h1 {
 /**/
 /* Estilo base para el select */
 .select {
+  width: 300px;
   position: relative;
-  width: 200px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  font-size: 1em;
-  color: #333;
-  cursor: pointer;
-  margin-left: 5%;
 }
-
-/* Estilo para el select visible */
-.select select {
+select {
   appearance: none;
+  /*  safari  */
   -webkit-appearance: none;
-  -moz-appearance: none;
+  /*  other styles for aesthetics */
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-size: 1.15rem;
+  padding: 0.675em 6em 0.675em 1em;
   background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 0.25rem;
+  color: #000;
   cursor: pointer;
-  outline: none;
 }
 
-/* Estilo para la flecha del select */
+.select::before,
 .select::after {
-  content: "\25BC"; /* Código de la flecha hacia abajo */
+  --size: 0.3rem;
+  content: "";
   position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
+  right: 1rem;
   pointer-events: none;
 }
 
-/* Estilo para el select cuando está enfocado */
-.select select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+.select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
 }
 
-/* Estilo para las opciones del select */
-.select select option {
-  background-color: #fff;
-  color: #333;
+.select::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 55%;
 }
-
-/* Estilo para las opciones del select cuando se pasan por encima */
-.select select option:hover {
-  background-color: #f0f0f0;
-}
-
-/* Estilo para las opciones del select cuando están seleccionadas */
-.select select option:checked {
-  background-color: #007bff;
-  color: #fff;
-}
-
+/*-------------------------------------------------------------BOTON ARRIBA----------------------------------------------------------------*/
 .up-button {
   position: fixed;
   bottom: 20px;
