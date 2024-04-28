@@ -137,40 +137,40 @@ async function formatearFecha(fecha) {
 
   switch (mes) {
     case "01":
-      mes = "January";
+      mes = "Jan";
       break;
     case "02":
-      mes = "February";
+      mes = "Feb";
       break;
     case "03":
-      mes = "March";
+      mes = "Mar";
       break;
     case "04":
-      mes = "April";
+      mes = "Apr";
       break;
     case "05":
       mes = "May";
       break;
     case "06":
-      mes = "June";
+      mes = "Jun";
       break;
     case "07":
-      mes = "July";
+      mes = "Jul";
       break;
     case "08":
-      mes = "August";
+      mes = "Aug";
       break;
     case "09":
-      mes = "September";
+      mes = "Sep";
       break;
     case "10":
-      mes = "October";
+      mes = "Oct";
       break;
     case "11":
-      mes = "November";
+      mes = "Nov";
       break;
     case "12":
-      mes = "December";
+      mes = "Dec";
       break;
     default:
       break;
