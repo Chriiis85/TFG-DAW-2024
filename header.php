@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Header - Motoring Community</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script defer src="JS/script.js"></script>
+  <script defer src="JS/header.js"></script>
   <link rel="stylesheet" href="CSS/header.css" />
 </head>
 
