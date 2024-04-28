@@ -7,6 +7,16 @@
   src: url("../Fonts/Formula1-Black.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "F1Regular";
+  src: url("../Fonts/Formula1-Regular-1.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "F1RegularBold";
+  src: url("../Fonts/Formula1-Bold-4.ttf") format("truetype");
+}
+
 :root {
   --RedBull: #3671c6;
   --Ferrari: #dc0000;
@@ -42,33 +52,15 @@ h1 {
   width: 100%;
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
   flex-direction: column;
   gap: 2%;
 }
 
-.teams-title-container {
-  width: 80%;
-  height: 5%;
-  display: flex;
-  align-items: center;
-  margin-top: 3%;
-  border: solid 10px #222222;
-  color: #222222;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-right: none;
-  padding: 1%;
-}
-
-.teams-title-container {
-  font-family: "F1Title";
-  font-size: 3em;
-}
-
 .teams-container {
-  width: 80%;
+  width: 90%;
   height: 30%;
+  margin-top: 2%;
+  margin-bottom: 3%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -81,7 +73,10 @@ h1 {
   width: 500px;
   height: 500px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7%;
+  flex-direction: column;
   margin-top: 3%;
   border: solid 5px var(--aston-martin);
   border-top-right-radius: 25px;
@@ -92,122 +87,68 @@ h1 {
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin-bottom: 3%;
   background-color: white;
+  margin-left: 3%;
+  margin-right: 3%;
+  transition: 0.3s;
 }
 
-.team-card {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2%;
-  font-family: "F1Title";
-  flex-direction: column;
-}
-
-.team-card-divider {
-  width: 90%;
-  height: 1px;
-  margin-top: -5%;
-  margin-bottom: -5%;
-  background-color: black;
-}
-
-.team-card-divider2 {
-  width: 90%;
-  height: 1px;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  background-color: black;
+.team-card-container:hover {
+  cursor: pointer;
+  transform: scale(0.96);
 }
 
 .team-card-title {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  flex-direction: row;
-  gap: 5%;
-  font-family: "F1Title";
-}
-
-.team-card-title > h1 {
-  width: 60%;
-  height: 100%;
-  padding-top: 5%;
-  padding-left: 5%;
-  text-transform: uppercase;
-  font-size: 2em;
-}
-
-.team-card-title > div {
-  width: 30%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: -6%;
-}
-
-.team-card-title > div > img {
-  width: 50%;
-}
-
-.team-card-drivers {
-  width: 95%;
-  height: 20%;
-  display: flex;
-  align-items: left;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1%;
-  margin-top: 5%;
-}
-
-.team-card-driver-container {
-  width: 90%;
-  height: 80%;
-  display: flex;
-  align-items: center;
-  margin-left: 3%;
-  border: solid 1px black;
-  border-bottom-left-radius: 25px;
-  border-right: none;
-  border-top: none;
-  padding: 1%;
-}
-.team-card-driver {
-  width: 100%;
-  height: 40%;
+  width: 500px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  border-bottom: 2px solid black;
 }
 
-.team-card-driver > h1 {
-  margin-left: 5%;
-  font-size: 1.3em;
+.team-card-title > img {
+  width: 70px;
+  padding-right: 5%;
 }
 
-.team-card-driver > img {
-  width: 19%;
-  margin-bottom: -0.6%;
+.team-card-title > h1 {
+  padding-left: 5%;
+  font-size: 2em;
+  font-family: "F1Title";
 }
 
-.team-card-cars {
-  width: 90%;
-  height: 30%;
+.team-card-driver {
+  width: 450px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10%;
+  border-bottom-left-radius: 10px;
+  border: 2px solid black;
+  border-top: none;
+  border-right: none;
+  margin-left: 3%;
 }
 
-.team-card-cars > img {
-  width: 100%;
+.team-card-driver > h1 {
+  width: 300px;
+  font-size: 1.5em;
+  font-family: "F1RegularBold";
+}
+
+.team-card-driver > img {
+  width: 80px;
+}
+
+.team-card-car {
+  width: 500px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid black;
   --color: #e1e1e1;
   background-color: #ffffff;
   background-image: linear-gradient(
@@ -235,4 +176,58 @@ h1 {
       transparent
     );
   background-size: 80px 80px;
+}
+
+.team-card-car > img {
+  width: 95%;
+}
+
+/*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
+@media (max-width: 600px) {
+  .team-card-container {
+    width: 400px;
+  }
+
+  .team-card-title {
+    width: 400px;
+  }
+
+  .team-card-car {
+    width: 400px;
+  }
+
+  .team-card-driver {
+    width: 350px;
+    gap: 0%;
+  }
+
+  .team-card-driver > h1 {
+    width: 250px;
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 475px) {
+  .team-card-container {
+    width: 90%;
+  }
+
+  .team-card-title {
+    width: 95%;
+  }
+
+  .team-card-car {
+    width: 95%;
+  }
+
+  .team-card-driver {
+    width: 95%;
+    gap: -5%;
+  }
+
+  .team-card-driver > h1 {
+    width: 90%;
+    font-size: 1em;
+    padding-left: 3%;
+  }
 }
