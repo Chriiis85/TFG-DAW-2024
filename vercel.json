@@ -1,4 +1,4 @@
 {
-    "functions": { "*.php": { "runtime": "vercel-php@1.0.0" } }
-}
+    "functions": { "api/**/*.php": { "runtime": "vercel-php@1.0.0" } }
+  }
   
