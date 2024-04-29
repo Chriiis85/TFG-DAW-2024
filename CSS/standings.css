@@ -231,9 +231,13 @@ body {
   align-items: center;
   justify-content: center;
   border-bottom-left-radius: 15px;
-  background-color: #222222;
+}
+
+.standings-driver-info-photo > img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  background-size: 100%;
+  object-position: top;
 }
 
 .standings-teams-info-photo {
@@ -329,12 +333,12 @@ body {
 }
 
 .standings-driver-info-info-main-name {
-  width: 70%;
+  width: 80%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: left;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .standings-teams-info-info-main-name {
@@ -353,7 +357,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .standings-teams-info-info-main-number {
@@ -366,8 +370,8 @@ body {
 }
 
 .standings-driver-info-info-main-number > img {
-  width: 30%;
-  margin-left: 15%;
+  width: 40%;
+  margin-left: 25%;
   border-radius: 3px;
   margin-bottom: 1%;
 }
@@ -388,7 +392,7 @@ body {
 }
 
 .standings-driver-info-info-main-helmet > img {
-  width: 25%;
+  width: 30%;
 }
 
 .standings-teams-info-info-main-logo {
@@ -432,8 +436,9 @@ body {
   height: 100%;
   display: flex;
   align-items: left;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  margin-top: 5%;
   gap: 10%;
 }
 

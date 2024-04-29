@@ -210,8 +210,11 @@
               class="standings-driver-info"
               style="display: none"
             >';
-          echo '<div class="standings-driver-info-photo" style="  background-image: url(https://media.formula1.com/content/dam/fom-website/drivers/2024Drivers/' . $clasificacionesPilotos[$i]['Driver']['familyName'] . '.jpg.img.1920.medium.jpg/1708344615576.jpg);
-            "></div>';
+          echo '<div class="standings-driver-info-photo" ><img
+                      src="https://media.formula1.com/content/dam/fom-website/drivers/2024Drivers/' . $clasificacionesPilotos[$i]['Driver']['familyName'] . '.jpg.img.1920.medium.jpg/1708344615576.jpg)"
+                      alt=""
+                    />
+            </div>';
           echo '<div class="standings-driver-info-info">';
           echo '<div class="standings-driver-info-info-main">';
           echo '<div class="standings-driver-info-info-main-name">';
@@ -240,7 +243,6 @@
           echo '</div>';
           echo '<div>';
           echo '<p>Nationality: ' . $clasificacionesPilotos[$i]['Driver']['nationality'] . '.</p>';
-          echo '<p>Place of Birth: Oviedo,Spain.</p>';
           echo '<p>Date of Birth: ' . $clasificacionesPilotos[$i]['Driver']['dateOfBirth'] . '</p>';
           echo '<p>Age: ' . calcularEdad($clasificacionesPilotos[$i]['Driver']['dateOfBirth']) . '</p>';
           echo '</div>';
