@@ -18,11 +18,11 @@ async function obtenerNoticiasFormula1() {
 async function mostrarNoticiasFormula1() {
     try {
         const noticias = await obtenerNoticiasFormula1();
-        const noticia1 = noticias[7];
-        const noticia2 = noticias[1];
-        const noticia3 = noticias[0];
-        const noticia4 = noticias[3];
-        console.log(noticia1);
+        const noticia1 = noticias[93];
+        const noticia2 = noticias[97];
+        const noticia3 = noticias[98];
+        const noticia4 = noticias[99];
+        console.log(noticias);
         // Función para formatear la fecha
         const formatearFecha = fecha => {
             return new Date(fecha).toLocaleDateString('es-ES', {

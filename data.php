@@ -27,6 +27,7 @@
           <select id="select2">
             <option value="Constructors">Constructors Standings</option>
             <option value="Drivers">Drivers Standings</option>
+            <option value="Race">Race Result</option>
           </select>
         </div>
       </div>

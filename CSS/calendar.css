@@ -577,6 +577,7 @@ span {
 .race-container-sesion-hour {
   width: 120%;
   padding: 5%;
+  padding-left: 10%;
   color: white;
   border-radius: 5px;
   background-color: #38383f;
