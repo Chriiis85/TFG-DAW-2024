@@ -88,7 +88,7 @@ h1 {
 .content-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 1em;
+  font-size: 1.25em;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   font-family: "F1Regular";
@@ -124,6 +124,10 @@ h1 {
 .select {
   width: 300px;
   position: relative;
+}
+
+#select3{
+  display: none;
 }
 select {
   appearance: none;

@@ -30,17 +30,16 @@
             <option value="Race">Race Result</option>
           </select>
         </div>
+        <div class="select">
+          <select id="select3">
+          </select>
+        </div>
       </div>
       <div class="data-content">
         <h1 id="title">2024 Driver Standings</h1>
         <div class="data-table">
           <table id="tabla" class="content-table">
-            <thead>
-              <tr>
-                <th>Position</th>
-                <th>Driver Name</th>
-                <th>Points</th>
-              </tr>
+            <thead id="tabla-thead">
             </thead>
             <tbody id="tabla-tbody"></tbody>
           </table>
