@@ -50,7 +50,23 @@ async function obtenerRacesYear(year) {
   });
 }
 
-function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2) {
+async function obtenerRacesResult(year,round) {
+  return new Promise((resolve, reject) => {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+              let result = JSON.parse(this.responseText);
+              let data = result.MRData.RaceTable.Races[0].Results;
+              resolve(data);
+          }
+      };
+      xhttp.open("POST", "PHP/getResultRace.php", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("year=" + year + "&round=" + round);
+  });
+}
+
+function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2, opcionSeleccionada3) {
   if (opcionSeleccionada2 == "Constructors") {
     select3.style.display="none";
     obtenerStandingsConstructorYear(opcionSeleccionada1).then((resultados) => {
@@ -138,14 +154,56 @@ function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2) {
     });
   }else if (opcionSeleccionada2 == "Race") {
     select3.style.display="block";
+    obtenerRacesResult(opcionSeleccionada1, opcionSeleccionada3).then((resultados) => {
+      //console.log(resultados)
+      //console.log(opcionSeleccionada1)
 
+      /* Pintar datos en la tabla */
+      let tablaTBody = document.getElementById("tabla-tbody");
+      tablaTBody.innerHTML = "";
+      let tablaTHead = document.getElementById("tabla-thead");
+      tablaTHead.innerHTML = "";
+
+      let tablaTHeadtr = document.createElement("tr");
+      let th1 = document.createElement("th");
+      th1.textContent = "Position";
+      let th2 = document.createElement("th");
+      th2.textContent = "Driver Name";
+      let th3 = document.createElement("th");
+      th3.textContent = "Points";
+
+      tablaTHeadtr.appendChild(th1);
+      tablaTHeadtr.appendChild(th2);
+      tablaTHeadtr.appendChild(th3);
+
+      tablaTHead.appendChild(tablaTHeadtr);
+
+      for (const piloto of resultados) {
+        let tr = document.createElement("tr");
+        let tdPosicion = document.createElement("td");
+        let tdNombre = document.createElement("td");
+        let tdPuntos = document.createElement("td");
+
+        tdPosicion.textContent = piloto.position;
+        tdNombre.textContent =
+          piloto.Driver.givenName + " " + piloto.Driver.familyName;
+        tdPuntos.textContent = piloto.points;
+
+        tr.appendChild(tdPosicion);
+        tr.appendChild(tdNombre);
+        tr.appendChild(tdPuntos);
+        tablaTBody.appendChild(tr);
+      }
+      let titulo = document.getElementById("title");
+      titulo.textContent = opcionSeleccionada1 +" "+ select3.options[select3.selectedIndex].textContent +" Results";
+    });
   }
 }
 
 function obtenerCarreras(opcionSeleccionada){
   select3.innerHTML="";
   obtenerRacesYear(opcionSeleccionada).then((resultados) => {
-    console.log(resultados)
+    //console.log(resultados)
     for (let i = 0; i < resultados.length; i++) {
       let option = document.createElement("option");
       option.value = resultados[i]['round'];
@@ -161,7 +219,8 @@ function obtenerCarreras(opcionSeleccionada){
     // Obtener el valor seleccionado
     const opcionSeleccionada1 = select1.value;
     const opcionSeleccionada2 = select2.value;
-    mostrarResultados(opcionSeleccionada1, opcionSeleccionada2);
+    const opcionSeleccionada3 = select3.value;
+    mostrarResultados(opcionSeleccionada1, opcionSeleccionada2,opcionSeleccionada3);
     obtenerCarreras(opcionSeleccionada1);
   });
   
@@ -169,8 +228,16 @@ function obtenerCarreras(opcionSeleccionada){
     // Obtener el valor seleccionado
     const opcionSeleccionada1 = select1.value;
     const opcionSeleccionada2 = select2.value;
-    mostrarResultados(opcionSeleccionada1, opcionSeleccionada2);
+    const opcionSeleccionada3 = select3.value;
+    mostrarResultados(opcionSeleccionada1, opcionSeleccionada2,opcionSeleccionada3);
     obtenerCarreras(opcionSeleccionada1);
+  });
+
+  select3.addEventListener("change", function () {
+    const opcionSeleccionada1 = select1.value;
+    const opcionSeleccionada2 = select2.value;
+    const opcionSeleccionada3 = select3.value;
+    mostrarResultados(opcionSeleccionada1, opcionSeleccionada2,opcionSeleccionada3);
   });
   
   //Rellenar los años disponibles  for (let i = 2024; i > 1949; i--) {
