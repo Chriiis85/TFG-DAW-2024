@@ -1,27 +1,21 @@
 <?php
-//URL de la API
+//URL PARA RECOGER LA API
 $url = 'https://ergast.com/api/f1/current.json';
-// Iniciar la sesión cURL
+//INICIALIZAR CURL PARA CONECTAR LA API Y LAS OPCIONES
 $curl = curl_init();
-
-
-// Configurar las opciones de cURL
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_HEADER, false);
 
-// Realizar la solicitud
+//GUARDAMOS LA RESPUESTA AL EJECUTAR LA CONSULTA A LA API
 $response = curl_exec($curl);
 
-
-// Cerrar la sesión cURL
-curl_close($curl);
-
-// Decodificar la respuesta JSON
+//DECODIFICAR LA RESPUESTA EN JSON PARA TRATARLA
 $data = json_decode($response, true);
-//print_r($data['MRData']['RaceTable']['Races'][23]['Circuit']['Location']['country']);
 
-function dameMes($digitoMes) {
+//FUNCION QUE PASA EL MES A SU ABREVIATURA EX:SEPTIEMBRE SEP
+function dameMes($digitoMes)
+{
     switch ($digitoMes) {
         case '01':
             return "JAN";
@@ -62,13 +56,17 @@ function dameMes($digitoMes) {
     }
 }
 
-function formatHora($hora){
+//FUNCION QUE PARSEA EL FORMATO DE LA HORA PARA MOSTRAR HH:MM
+function formatHora($hora)
+{
     $parseado = strtotime($hora);
     $hora_parseada = date("H:i", $parseado);
     return $hora_parseada;
 }
 
-function sumarUnaHora($hora) {
+//FUNCION QUE SUMA UNA HORA A LA HORA DE LA CARRERA PARA ESTABLECER EL FINAL
+function sumarUnaHora($hora)
+{
     $hora_dt = DateTime::createFromFormat('H:i:s\Z', $hora);
     if ($hora_dt === false) {
         return "Formato de hora no válido";
@@ -77,7 +75,9 @@ function sumarUnaHora($hora) {
     return $hora_dt->format('H:i');
 }
 
-function sumarDosHora($hora) {
+//FUNCION QUE SUMA DOS HORAS A LA HORA DE LA CARRERA PARA ESTABLECER EL FINAL
+function sumarDosHora($hora)
+{
     $hora_dt = DateTime::createFromFormat('H:i:s\Z', $hora);
     if ($hora_dt === false) {
         return "Formato de hora no válido";
@@ -88,5 +88,7 @@ function sumarDosHora($hora) {
 
 
 
+//CERRAR LA CONEXION A LA API
+curl_close($curl);
 
 ?>

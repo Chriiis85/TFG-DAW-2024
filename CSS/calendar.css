@@ -718,12 +718,11 @@ span {
 }
 
 @media (max-width: 400px) {
-  .race-container-sesion-title{
+  .race-container-sesion-title {
     width: 60%;
     font-size: 1em;
   }
-  .race-container-sesion{
+  .race-container-sesion {
     gap: 0%;
   }
 }
-

@@ -139,7 +139,7 @@
     </article>
   </section>
 
-  <!--IMPLEMENTAR HEADER IGUAL QUE EN TODAS LAS PAGINAS-->
+  <!--IMPLEMENTAR FOOTER IGUAL QUE EN TODAS LAS PAGINAS-->
   <?php
   include "footer.php"
     ?>
