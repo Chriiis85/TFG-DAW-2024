@@ -5,12 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Header - Motoring Community</title>
+  <!--SCRIPT JQUERY-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--SCRIPT HEADER PARA LA PAGINA-->
   <script defer src="JS/header.js"></script>
+  <!--HOJA DE ESTILOS HEADER-->
+
   <link rel="stylesheet" href="CSS/header.css" />
 </head>
 
 <body>
+  <!--CONTENEDOR QUE TIENE Y ACTUA COMO EL HEADER IGUAL EN TODAS LAS PAGINAS SIMPLIFICANDO EL CODIGO-->
   <section id="header-container" class="header-container">
     <article class="header">
       <div class="header-container1">
@@ -30,7 +35,7 @@
       </div>
       <div class="header-container3"></div>
     </article>
-
+    <!--CONTENIDO QUE SE DESPLIEGA AL HACER HOVER SOBRE LOS CONTENIDOS-->
     <div id="header-drop-container-formulaone" class="header-drop-container">
       <div class="header-drop-container-options">
         <h1>Formula One <div class="header-drop-container-line"></div>
@@ -49,6 +54,7 @@
             alt="Down Arrow" />Season Calendar</p>
       </div>
     </div>
+    <!--TITULO QUE SE CAMBIA EN CADA PAGINA PARA MOSTRAR EL CONTENIDO-->
     <h1 id="title-header" class="title-header-container"></h1>
   </section>
 </body>
