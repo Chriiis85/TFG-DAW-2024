@@ -1,195 +1,258 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 body {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "Open Sans", sans-serif;
+  }
+
+footer{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    color: white;
+    background-color: #222222;
+    font-family: "Open Sans", sans-serif;
 }
 
-h1 {
-  margin: 0;
-}
-
-/*----------------------------------------------------------FOOTER---------------------------------------------------------------------------*/
-footer {
-  width: 100%;
-  height: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 30px;
-  font-family: "Bebas Neue";
-  background-color: #222222;
-}
-
-/*COLUMNA 1 DEL FOOTER*/
-.footer-column1 {
-  width: 45%;
+.footer-top{
+  width: 90%;
   height: 80%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
-.footer-vertical-bar {
-  width: 1px;
-  height: 70%;
-  background-color: #00b9ff;
-}
-
-.card-help {
-  width: 60%;
-  height: 20%;
-  cursor: pointer;
+.footer-top-col1{
+  width: 30%;
+  height: 95%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
+  gap: 1%;
+  padding-top: 1.5%;
+  flex-direction: column;
+}
+
+.footer-top-col1>div>h1{
+  margin: 0;
+  text-align: center;
+  font-size: 2em;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.footer-top-col1>p{
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic; /* Aplicar estilo de cursiva */
+  text-align: center;
+}
+
+.footer-top-col2{
+  width: 20%;
+  height: 95%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 1.5%;
+  flex-direction: column;
+}
+
+.footer-top-col2>h1{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.footer-top-col2 > h1 {
+  margin: 0;
+  margin-top: 10%;
+}
+
+.footer-top-col2 > p {
+  margin: 0;
+  margin-bottom: 3%;
   font-size: 1.2em;
-  color: white;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+}
+
+.footer-top-col2 > p::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00b9ff;
+  transition: width 0.3s;
+}
+
+.footer-top-col2 > p:hover::after {
+  width: 100%;
+}
+
+.footer-top-col2>p:hover{
+  cursor: pointer;
+  color: rgba(255, 255, 255, 1.5);
+  transform: translateX(10px);
+}
+
+.footer-top-col2-bar{
+  width: 35%;
+  height: 3px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  background-color: #00b9ff;  
+} 
+
+.footer-bot{
+  width: 90%;
+  height:15%;
+  border-top: 2px solid #00b9ff;
+}
+
+.footer-bot>p{
+  margin-left: 5%;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+/**/
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px #00000027;
   transition: 0.3s;
 }
 
-.card-help:hover {
-  background-color: rgba(84, 84, 84, 0.3);
+.social-button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 6px 3px #00000027;
 }
 
-.card-textus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.social-buttons svg {
+  transition: 0.3s;
+  height: 20px;
 }
 
-/*COLUMNA 2 DEL FOOTER*/
-.footer-column2 {
-  width: 45%;
-  height: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 25px;
+.facebook {
+  background-color: #3b5998;
 }
 
-input {
-  background: 0;
-  border: 0;
-  outline: none;
-  width: 80vw;
-  max-width: 400px;
-  font-size: 1.5em;
-  transition: padding 0.3s 0.2s ease;
-}
-input:focus {
-  padding-bottom: 5px;
-}
-input:focus + .line:after {
-  transform: scaleX(1);
-}
-.field {
-  position: relative;
-}
-.field .line {
-  width: 100%;
-  height: 3px;
-  position: absolute;
-  bottom: -8px;
-  background: #bdc3c7;
-}
-.field .line:after {
-  content: " ";
-  position: absolute;
-  float: right;
-  width: 100%;
-  height: 3px;
-  transform: scalex(0);
-  transition: transform 0.3s ease;
-  background: #1abc9c;
+.facebook svg {
+  fill: #f2f2f2;
 }
 
-/*TARJETA QUE CONTIENE LAS REDES SOCIALES*/
-.card-socialmedia {
-  width: 70%;
-  height: 20%;
-  background-color: rgb(238, 238, 238, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px 25px;
-  gap: 50px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+.facebook:hover svg {
+  fill: #3b5998;
 }
 
-.socialContainer {
-  width: 52px;
-  height: 52px;
-  background-color: rgb(44, 44, 44);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition-duration: 0.3s;
-}
-/* instagram*/
-.containerOne:hover {
-  background-color: #d62976;
-  transition-duration: 0.3s;
-}
-/* twitter*/
-.containerTwo:hover {
-  background-color: #00acee;
-  transition-duration: 0.3s;
-}
-/* linke  din*/
-.containerThree:hover {
-  background-color: #0072b1;
-  transition-duration: 0.3s;
-}
-/* Whatsapp*/
-.containerFour:hover {
-  background-color: #128c7e;
-  transition-duration: 0.3s;
+.github {
+  background-color: #333;
 }
 
-.socialContainer:active {
-  transform: scale(0.9);
-  transition-duration: 0.3s;
+.github svg {
+  width: 25px;
+  height: 25px;
+  fill: #f2f2f2;
 }
 
-.socialSvg {
-  width: 17px;
+.github:hover svg {
+  fill: #333;
 }
 
-.socialSvg path {
-  fill: rgb(255, 255, 255);
+.linkedin {
+  background-color: #0077b5;
 }
 
-.socialContainer:hover .socialSvg {
-  animation: slide-in-top 0.3s both;
+.linkedin svg {
+  fill: #f2f2f2;
 }
 
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
+.linkedin:hover svg {
+  fill: #0077b5;
+}
+
+.instagram {
+  background-color: #c13584;
+}
+
+.instagram svg {
+  fill: #f2f2f2;
+}
+
+.instagram:hover svg {
+  fill: #c13584;
+}
+
+@media (max-width: 1000px) {
+  .footer-top{
+    flex-direction: column;
+  }
+  footer{
+    height: 900px;  
+  }
+  .footer-top-col2{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-bottom: -3%;
   }
 
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+  .footer-top-col2>h1{
+    font-size: 1.25em;
+  }
+
+  .footer-top-col2>p{
+    font-size: 1em;
+  }
+
+  .footer-bot{
+    height: 5%;
+    padding-top: 3%;
+    padding-bottom: -5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-bot>p{
+    margin-right: 5%;
+  }
+
+  .footer-top-col1{
+    margin-bottom: -5%;    
   }
 }
 
-.author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: "Bebas Neue";
-  background-color: #222222;
+@media (max-width: 600px) {
+  footer{
+    height: 90%;  
+  }
+  .footer-top-col2-bar{
+    width: 50%;
+  }
 }
