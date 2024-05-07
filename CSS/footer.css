@@ -1,28 +1,30 @@
+/*--------------------------------------------------------------IMPORT FONTS-------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    overflow-x: hidden;
-    font-family: "Open Sans", sans-serif;
-  }
-
-footer{
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    color: white;
-    background-color: #222222;
-    font-family: "Open Sans", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
 }
 
-.footer-top{
+/*-----------------------------------------------------------------FOOTER---------------------------------------------------------------------*/
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: white;
+  background-color: #222222;
+  font-family: "Open Sans", sans-serif;
+}
+
+.footer-top {
   width: 90%;
   height: 80%;
   display: flex;
@@ -31,7 +33,7 @@ footer{
   flex-direction: row;
 }
 
-.footer-top-col1{
+.footer-top-col1 {
   width: 30%;
   height: 95%;
   display: flex;
@@ -42,7 +44,7 @@ footer{
   flex-direction: column;
 }
 
-.footer-top-col1>div>h1{
+.footer-top-col1 > div > h1 {
   margin: 0;
   text-align: center;
   font-size: 2em;
@@ -50,13 +52,13 @@ footer{
   margin-bottom: 3%;
 }
 
-.footer-top-col1>p{
+.footer-top-col1 > p {
   color: rgba(255, 255, 255, 0.7);
   font-style: italic; /* Aplicar estilo de cursiva */
   text-align: center;
 }
 
-.footer-top-col2{
+.footer-top-col2 {
   width: 20%;
   height: 95%;
   display: flex;
@@ -66,7 +68,7 @@ footer{
   flex-direction: column;
 }
 
-.footer-top-col2>h1{
+.footer-top-col2 > h1 {
   font-size: 1.5em;
   font-weight: bold;
 }
@@ -88,7 +90,7 @@ footer{
 .footer-top-col2 > p::after {
   content: "";
   position: absolute;
-  bottom: -5px; 
+  bottom: -5px;
   left: 0;
   width: 0;
   height: 2px;
@@ -100,32 +102,32 @@ footer{
   width: 100%;
 }
 
-.footer-top-col2>p:hover{
+.footer-top-col2 > p:hover {
   cursor: pointer;
   color: rgba(255, 255, 255, 1.5);
   transform: translateX(10px);
 }
 
-.footer-top-col2-bar{
+.footer-top-col2-bar {
   width: 35%;
   height: 3px;
   margin-top: 2%;
   margin-bottom: 5%;
-  background-color: #00b9ff;  
-} 
+  background-color: #00b9ff;
+}
 
-.footer-bot{
+.footer-bot {
   width: 90%;
-  height:15%;
+  height: 15%;
   border-top: 2px solid #00b9ff;
 }
 
-.footer-bot>p{
+.footer-bot > p {
   margin-left: 5%;
   font-size: 0.9em;
   font-weight: bold;
 }
-/**/
+/*-------------------------------------------------------------------------REDES SOCIALES-----------------------------------------------------*/
 .social-buttons {
   display: flex;
   justify-content: center;
@@ -205,14 +207,15 @@ footer{
   fill: #c13584;
 }
 
+/*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 @media (max-width: 1000px) {
-  .footer-top{
+  .footer-top {
     flex-direction: column;
   }
-  footer{
-    height: 900px;  
+  footer {
+    height: 900px;
   }
-  .footer-top-col2{
+  .footer-top-col2 {
     width: 50%;
     display: flex;
     align-items: center;
@@ -221,15 +224,15 @@ footer{
     margin-bottom: -3%;
   }
 
-  .footer-top-col2>h1{
+  .footer-top-col2 > h1 {
     font-size: 1.25em;
   }
 
-  .footer-top-col2>p{
+  .footer-top-col2 > p {
     font-size: 1em;
   }
 
-  .footer-bot{
+  .footer-bot {
     height: 5%;
     padding-top: 3%;
     padding-bottom: -5%;
@@ -239,20 +242,20 @@ footer{
     text-align: center;
   }
 
-  .footer-bot>p{
+  .footer-bot > p {
     margin-right: 5%;
   }
 
-  .footer-top-col1{
-    margin-bottom: -5%;    
+  .footer-top-col1 {
+    margin-bottom: -5%;
   }
 }
 
 @media (max-width: 600px) {
-  footer{
-    height: 90%;  
+  footer {
+    height: 90%;
   }
-  .footer-top-col2-bar{
+  .footer-top-col2-bar {
     width: 50%;
   }
 }
