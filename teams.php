@@ -80,7 +80,7 @@
     </article>
   </section>
   <?php
-  include "footer2.php";
+  include "footer.php";
   ?>
 </body>
 <script>

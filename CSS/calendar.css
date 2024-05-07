@@ -570,7 +570,7 @@ span {
 }
 
 .race-container-sesion-title {
-  width: 70%;
+  width: 60%;
   font-size: 1.1em;
   font-family: "F1RegularBold";
 }
@@ -581,6 +581,8 @@ span {
   padding-left: 10%;
   color: white;
   border-radius: 5px;
+  font-size: 0.7em;
+  font-family: "F1RegularBold";
   background-color: #38383f;
 }
 
