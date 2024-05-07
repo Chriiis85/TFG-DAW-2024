@@ -73,14 +73,14 @@
       <article class="footer-top-col2">
         <h1>Privacy Policy</h1>
         <div class="footer-top-col2-bar"></div>
-        <p>Privacy Policy</p>
-        <p>Data Usage</p>
-        <p>Cookies Usage</p>
+        <p id="privacy-policy">Privacy Policy</p>
+        <p id="data-usage">Data Usage</p>
+        <p id="cookies-usage">Cookies Usage</p>
       </article>
       <article class="footer-top-col2">
         <h1>Get Help</h1>
         <div class="footer-top-col2-bar"></div>
-        <p>F&Q</p>
+        <p id="faq">F&Q</p>
         <p onclick="window.location.href = 'aboutf1.php'">Learn More</p>
       </article>
     </section>
@@ -91,4 +91,193 @@
     </section>
   </footer>
 </body>
+<!-- CONTENIDO MODAL COOKIES -->
+<div id="cookies-modal" class="modal">
+  <h1>Política de Cookies</h1>
+  <p>Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario y para ayudarnos a comprender cómo se
+    utiliza nuestro sitio. Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita
+    nuestro sitio web.
+
+    Al utilizar nuestro sitio web, usted acepta el uso de cookies de acuerdo con esta política. Si no acepta el uso de
+    estas cookies, por favor desactive las cookies siguiendo las instrucciones proporcionadas por su navegador de
+    Internet.</p>
+
+  <h1>Cookies de terceros
+  </h1>
+  <p>En algunos casos especiales, también utilizamos cookies proporcionadas por terceros de confianza. La siguiente
+    sección detalla qué cookies de terceros puede encontrar a través de este sitio.
+  </p>
+
+  <p>Esperamos que esta política de cookies le haya aclarado las cosas y, como se mencionó anteriormente, si hay algo de
+    lo que no está seguro si necesita o no, suele ser más seguro dejar las cookies habilitadas en caso de que interactúe
+    con una de las funciones que utiliza en nuestro sitio.
+
+    Sin embargo, si aún está buscando más información, puede contactarnos a través de uno de nuestros métodos de
+    contacto preferidos.</p>
+</div>
+
+<!-- CONTEINDO MODAL POLITICAS -->
+<div id="privacy-modal" class="modal">
+  <h1>Política de Privacidad</h2>
+    <p>En Motoring Community, estamos comprometidos a proteger la privacidad de nuestros usuarios y a garantizar que su
+      información personal se mantenga confidencial y segura. Esta política describe cómo recopilamos, utilizamos y
+      protegemos la información que obtenemos a través de nuestros servicios en línea.
+    </p>
+</div>
+
+<!-- CONTEINDO MODAL USO DATOS -->
+<div id="data-usage-modal" class="modal">
+  <h2>Uso de Datos</h2>
+  <p>En Motoring Community, nos tomamos muy en serio la privacidad de nuestros usuarios y la protección de sus datos
+    personales. Esta política describe cómo recopilamos, utilizamos y protegemos la información que obtenemos a través
+    de nuestros servicios en línea.
+  </p>
+</div>
+
+<div id="faq-modal" class="modal">
+  <h2>Preguntas Frecuentes (F&Q)</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <h3 class="accordion-header">¿Qué son las cookies?
+        <span class="arrow">&#9662;</span>
+      </h3>
+      <div class="accordion-content">
+        Las cookies son archivos de texto que contienen pequeñas cantidades de información que se descargan en su
+        dispositivo cuando visita un sitio web. Las cookies se utilizan ampliamente para hacer que los sitios web
+        funcionen de manera más eficiente, así como para proporcionar información a los propietarios del sitio.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header">¿Cómo usamos las cookies?
+
+        <span class="arrow">&#9662;</span>
+      </h3>
+      <div class="accordion-content">
+        Utilizamos cookies por varias razones, que se detallan a continuación. Desafortunadamente, en la mayoría de los
+        casos, no hay opciones estándar de la industria para deshabilitar las cookies sin deshabilitar completamente la
+        funcionalidad y las características que agregan a este sitio. Se recomienda que deje todas las cookies activadas
+        si no está seguro de si las necesita o no, en caso de que se utilicen para proporcionar un servicio que utiliza.
+
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header">¿Qué son las cookies?
+        <span class="arrow">&#9662;</span>
+      </h3>
+      <div class="accordion-content">
+        Las cookies son archivos de texto que contienen pequeñas cantidades de información que se descargan en su
+        dispositivo cuando visita un sitio web. Las cookies se utilizan ampliamente para hacer que los sitios web
+        funcionen de manera más eficiente, así como para proporcionar información a los propietarios del sitio.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header">¿Qué datos recopilamos?
+        <span class="arrow">&#9662;</span>
+      </h3>
+      <div class="accordion-content">
+        Recopilamos información personal de diferentes maneras, incluidas las interacciones directas cuando usted nos
+        proporciona información al crear una cuenta, completar formularios en nuestro sitio web o en nuestras
+        aplicaciones, o al comunicarse con nosotros por correo electrónico, teléfono u otros medios.
+
+        También recopilamos información automáticamente cuando usted utiliza nuestros servicios, incluida la información
+        sobre su dispositivo y la actividad de navegación, mediante el uso de cookies y otras tecnologías similares.
+
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header">¿Como usamos sus datos?
+        <span class="arrow">&#9662;</span>
+      </h3>
+      <div class="accordion-content">
+        Utilizamos la información que recopilamos para proporcionar, mantener y mejorar nuestros servicios, así como
+        para personalizar su experiencia y para comunicarnos con usted. Esto puede incluir el envío de comunicaciones de
+        marketing si usted ha dado su consentimiento para recibirlas.
+
+        No vendemos ni alquilamos su información personal a terceros sin su consentimiento explícito. Sin embargo,
+        podemos compartir su información con terceros proveedores de servicios que nos ayudan a operar nuestro negocio y
+        a prestar servicios en su nombre, siempre y cuando se comprometan a mantener la confidencialidad de su
+        información.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header">Protección de Datos
+        <span class="arrow">&#9662;</span>
+      </h3>
+      <div class="accordion-content">
+        Tomamos medidas para proteger la seguridad de su información personal y para asegurarnos de que se utilice de
+        acuerdo con esta política. Esto incluye la implementación de medidas técnicas y organizativas para proteger
+        contra el acceso no autorizado, la divulgación, la alteración o la destrucción de su información personal.
+
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header">Derechos de Usuario
+        <span class="arrow">&#9662;</span>
+      </h3>
+      <div class="accordion-content">
+        Usted tiene ciertos derechos en relación con sus datos personales, incluido el derecho a acceder, corregir,
+        eliminar, limitar o protestar contra el procesamiento de su información personal. Si desea ejercer alguno de
+        estos derechos, por favor contáctenos utilizando la información de contacto proporcionada al final de esta
+        política.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header">Cambios en la Política
+        <span class="arrow">&#9662;</span>
+      </h3>
+      <div class="accordion-content">
+        Podemos actualizar esta política de vez en cuando para reflejar cambios en nuestras prácticas de recopilación y
+        uso de datos. Le recomendamos que revise periódicamente esta página para obtener la información más reciente
+        sobre nuestras políticas y prácticas de privacidad.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#faq").on("click", function () {
+      // Abre el modal al hacer clic
+      $("#faq-modal").modal({
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false
+      });
+
+      // Configura el acordeón dentro del modal
+      $(".accordion-header").click(function () {
+        $(this).toggleClass("active");
+        $(this).next(".accordion-content").slideToggle("fast");
+      });
+    });
+
+    $("#cookies-usage").on("click", function () {
+      $("#cookies-modal").modal({
+        fadeDuration: 300
+      });
+    });
+    $("#privacy-policy").on("click", function () {
+      // Abre el modal al hacer clic
+      $("#privacy-modal").modal({
+        fadeDuration: 300
+      });
+    });
+    $("#data-usage").on("click", function () {
+      // Abre el modal al hacer clic
+      $("#data-usage-modal").modal({
+        fadeDuration: 300
+      });
+    });
+
+  });
+</script>
+
 </html>

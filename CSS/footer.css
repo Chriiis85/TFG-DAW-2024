@@ -205,6 +205,57 @@ footer {
 .instagram:hover svg {
   fill: #c13584;
 }
+/*----------------------------------------------------------MODAL Y ACORDEON JQUERY-----------------------------------------------------------*/
+
+#faq-modal {
+  width: 80%; 
+  height: 80%; 
+  max-width: 800px; 
+  max-height: 600px; 
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.modal{
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+}
+
+/* Estilos del acordeón */
+.accordion-header {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+  background-color: rgba(0, 118, 181, 0.3);
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+}
+
+.active .accordion-content {
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+}
+
+.accordion-header:hover .arrow {
+  transform: translateY(-50%) rotate(90deg);
+}
 
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 @media (max-width: 1000px) {
