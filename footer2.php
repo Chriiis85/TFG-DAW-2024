@@ -73,9 +73,9 @@
         <article class="footer-top-col2">
             <h1>Menu</h1>
             <div class="footer-top-col2-bar"></div>
-            <p>Main Page</p>
-            <p>About Formula One</p>
-            <p>Motoring Community Forum</p>
+            <p onclick="window.location.href = 'index.html'">Main Page</p>
+            <p onclick="window.location.href = 'aboutf1.php'">About Formula One</p>
+            <p onclick="window.location.href = 'forum.php'">Motoring Community Forum</p>
         </article> 
         <article class="footer-top-col2">
             <h1>Privacy Policy</h1>
@@ -88,7 +88,7 @@
             <h1>Get Help</h1>
             <div class="footer-top-col2-bar"></div>
             <p>F&Q</p>
-            <p>Learn More</p>
+            <p onclick="window.location.href = 'aboutf1.php'">Learn More</p>
         </article>
       </section>
       <section class="footer-bot">
