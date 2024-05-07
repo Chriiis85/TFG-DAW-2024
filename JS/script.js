@@ -114,7 +114,8 @@ async function mostrarCarreraMasCercana() {
     let imgCircuit = document.getElementById('next-race-circuito');
 
     let nombrecircuitoimg = carrera.nombre.replace(" ","");
-    nombrecircuitoimg = nombrecircuitoimg .replace(" ","");
+    nombrecircuitoimg = nombrecircuitoimg.replace(" ","");
+    nombrecircuitoimg = nombrecircuitoimg.replace(" ","");
     
     nextracetitle.textContent = carrera.nombre;
     nextracefecha.textContent = await formatearFecha(carrera.fecha);
