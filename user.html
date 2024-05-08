@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users - Motoring Community</title>
+    <link rel="stylesheet" href="CSS/user.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="main">
+        <!--FORMULARIO PARA EL REGISTRO-->
+      <article id="formRegister" class="main-info-Register">
+        <h1>Motoring Community Register</h1>
+        <div class="formField">
+          <input type="text" required="" />
+          <span>Username/Mail</span>
+        </div>
+        <div class="formField">
+            <input type="text" required="" />
+            <span>Name</span>
+          </div>
+          <div class="formField">
+            <input type="text" required="" />
+            <span>Surname</span>
+          </div>
+        <div class="formField">
+          <input type="password" id="passwordField1" required />
+          <span>Password</span>
+          <button
+            type="button"
+            id="togglePasswordBtn"
+            onclick="togglePasswordVisibility1()"
+          >
+            <i id="passwordIcon" class="fa fa-eye-slash"></i>
+          </button>
+        </div>
+        <p id="loginFormChange">Have an account? Login here.</p>
+        <button id="login" class="buttons" role="button">Register</button>
+        <button id="home" class="buttons" role="button">Go Home</button>
+      </article>
+      <article id="foto" class="main-foto">
+        <img id="img" src="Images/Login-img.jpg" alt="" />
+      </article>
+      <article id="formLogin" class="main-info-Login">
+        <h1>Motoring Community Login</h1>
+        <div class="formField">
+          <input type="text" required="" />
+          <span>Username</span>
+        </div>
+        <div class="formField">
+          <input type="password" id="passwordField2" required />
+          <span>Password</span>
+          <button
+            type="button"
+            id="togglePasswordBtn"
+            onclick="togglePasswordVisibility2()"
+          >
+            <i id="passwordIcon" class="fa fa-eye-slash"></i>
+            <!--<img src="Images/eye_see.svg" alt="">-->
+          </button>
+        </div>
+        <p id="registerFormChange">Don´t have an account? Register here.</p>
+        <button id="login" class="buttons" role="button">Login</button>
+        <button id="home" class="buttons" role="button">Go Home</button>
+        <p>Forgotten your password? Reset here.</p>
+      </article>
+      
+    </section>
+  </body>
+  <script>
+    function togglePasswordVisibility1() {
+      var passwordField = document.getElementById("passwordField1");
+      var passwordIcon = document.getElementById("passwordIcon");
+
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        passwordIcon.classList.remove("fa-eye-slash");
+        passwordIcon.classList.add("fa-eye");
+      } else {
+        passwordField.type = "password";
+        passwordIcon.classList.remove("fa-eye");
+        passwordIcon.classList.add("fa-eye-slash");
+      }
+    }
+
+    function togglePasswordVisibility2() {
+      var passwordField = document.getElementById("passwordField2");
+      var passwordIcon = document.getElementById("passwordIcon");
+
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        passwordIcon.classList.remove("fa-eye-slash");
+        passwordIcon.classList.add("fa-eye");
+      } else {
+        passwordField.type = "password";
+        passwordIcon.classList.remove("fa-eye");
+        passwordIcon.classList.add("fa-eye-slash");
+      }
+    }
+
+    let changeForm = document.getElementById("registerFormChange").addEventListener("click", ()=>{
+        let formLogin = document.getElementById("formLogin");
+        formLogin.style.display = "none";
+
+        let image = document.getElementById("foto");
+        image.style.borderTopRightRadius = "11px";
+        image.style.borderBottomRightRadius = "11px";
+        image.style.borderTopLeftRadius = "0px";
+        image.style.borderBottomLeftRadius = "0px";
+        image.style.borderLeft = "0px";
+
+        let img = document.getElementById("img");
+        img.setAttribute("src", "Images/Register-img.jpg")
+
+        let formRegister = document.getElementById("formRegister");
+        formRegister.style.display = "flex";
+    })
+
+    let changeForm2 = document.getElementById("loginFormChange").addEventListener("click", ()=>{
+        let formLogin = document.getElementById("formRegister");
+        formLogin.style.display = "none";
+
+        let image = document.getElementById("foto");
+        image.style.borderTopRightRadius = "0px";
+        image.style.borderBottomRightRadius = "0px";
+        image.style.borderTopLeftRadius = "11px";
+        image.style.borderBottomLeftRadius = "11px";
+        image.style.borderLeft = "0px";
+
+        let img = document.getElementById("img");
+        img.setAttribute("src", "Images/Login-img.jpg")
+
+        let formRegister = document.getElementById("formLogin");
+        formRegister.style.display = "flex";
+    })
+
+    
+  </script>
+</html>
