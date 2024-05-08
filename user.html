@@ -87,8 +87,49 @@
         >
           Go Home
         </button>
-        <p>Forgot your password? Reset here.</p>
+        <p id="pwdFormChange">Forgot your password? Reset here.</p>
       </article>
+            <!--FORMULARIO PARA EL FORM DE RESETEAR LA PWD-->
+            <article id="formPwd" class="main-info-Pwd">
+              <h1>Motoring Community Reset Password</h1>
+              <div class="formField">
+                <input type="text" required="" />
+                <span>Username</span>
+              </div>
+              <div class="formField">
+                <input type="password" id="passwordField2" required />
+                <span>New Password</span>
+                <button
+                  type="button"
+                  id="togglePasswordBtn"
+                  onclick="togglePasswordVisibility2()"
+                >
+                  <i id="passwordIcon" class="fa fa-eye-slash"></i>
+                  <!--<img src="Images/eye_see.svg" alt="">-->
+                </button>
+              </div>
+              <div class="formField">
+                <input type="password" id="passwordField2" required />
+                <span>Confirm New Password</span>
+                <button
+                  type="button"
+                  id="togglePasswordBtn"
+                  onclick="togglePasswordVisibility2()"
+                >
+                  <i id="passwordIcon" class="fa fa-eye-slash"></i>
+                  <!--<img src="Images/eye_see.svg" alt="">-->
+                </button>
+              </div>
+              <button id="confirmPwd" class="buttons" role="button">Confirm</button>
+              <button
+                onclick="window.location.href = 'user.html'"
+                id="home"
+                class="buttons"
+                role="button"
+              >
+                Go Back
+              </button>
+            </article>
     </section>
   </body>
 </html>
