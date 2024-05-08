@@ -1,3 +1,4 @@
+/*--------------------------------------------------------------IMPORT FONTS-------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 body {
@@ -9,7 +10,7 @@ body {
   justify-content: center;
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   --s: 200px; /* control the size */
   --c1: #222222;
   --c2: #4e4f51;
@@ -30,160 +31,158 @@ body {
   background-size: var(--s) calc(var(--s) * 0.577);
 }
 
-.main{
-    width: 70%;
-    height: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+/*--------------------------------------------------------------MAIN--------------------------------------------------------------------------*/
+.main {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .main-foto {
-    position: relative;
-    width: 40%;
-    height: 100%;
-    border-top-left-radius: 11px;
-    border-bottom-left-radius: 11px;
-    border-right: 2px solid black;
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  width: 40%;
+  height: 100%;
+  border-top-left-radius: 11px;
+  border-bottom-left-radius: 11px;
+  border-right: 2px solid black;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-foto > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .main-foto::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+  z-index: 1;
 }
 
-
-.main-info-Login{
-    width: 60%;
-    height: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 3%;
+.main-info-Login {
+  width: 60%;
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3%;
 }
 
-.main-info-Login>h1{
-    font-size: 2.5em;
-    font-weight: bold;
-    text-align: center;
+.main-info-Login > h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
 }
 
-.main-info-Login>p:hover{
-    cursor: pointer;
-    text-decoration: 2px solid #00b9ff underline;
+.main-info-Login > p:hover {
+  cursor: pointer;
+  text-decoration: 2px solid #00b9ff underline;
 }
 
-.main-info-Register{
-    width: 60%;
-    height: 100%;
-    margin-bottom: 3%;
-    padding-left: 5%;
-    padding-right: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 3%;
-    display: none;
+.main-info-Register {
+  width: 60%;
+  height: 100%;
+  margin-bottom: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3%;
+  display: none;
 }
 
-.main-info-Register>h1{
-    font-size: 2.5em;
-    font-weight: bold;
-    text-align: center;
+.main-info-Register > h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
 }
 
-.main-info-Register>p:hover{
-    cursor: pointer;
-    text-decoration: 2px solid #00b9ff underline;
+.main-info-Register > p:hover {
+  cursor: pointer;
+  text-decoration: 2px solid #00b9ff underline;
 }
 
-
-
-/*INPUT USERNAME y PWD*/
+/*-------------------------------------------------------------INPUT USERNAME y PWD-----------------------------------------------------------*/
 .formField {
-    margin: 10px;
-    position: relative;
-  }
-  
-  .formField input {
-    width: 500px;
-    height: 20px;
-    padding: 10px 15px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background-color: #f1f1f1;
-    color: #333;
-    font-size: 16px;
-    font-weight: 550;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 0 0 5px transparent;
-  }
-  
-  .formField input:hover,
-  .formField input:focus {
-    box-shadow: 0 0 0 2px #333;
-  }
-  
-  .formField span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 8px 15px;
-    color: #333;
-    font-size: 16px;
-    font-weight: 600;
-    text-shadow: -1px -1px 0 #f1f1f1, 1px -1px 0 #f1f1f1, -1px 1px 0 #f1f1f1,
-      1px 1px 0 #f1f1f1;
-    transition: 0.3s ease-in-out;
-    pointer-events: none;
-  }
-  
-  .formField input:focus + span,
-  .formField input:valid + span {
-    transform: translateY(-32px) translateX(-5px) scale(0.95);
-    transition: 0.3s ease-in-out;
-  }
+  margin: 10px;
+  position: relative;
+}
 
-  #togglePasswordBtn {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Estilo adicional para el ícono de la contraseña */
-  #passwordIcon {
-    color: #333;
-  }
-  
-/*Buttons*/
+.formField input {
+  width: 500px;
+  height: 20px;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 16px;
+  font-weight: 550;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 0 5px transparent;
+}
+
+.formField input:hover,
+.formField input:focus {
+  box-shadow: 0 0 0 2px #333;
+}
+
+.formField span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 8px 15px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  text-shadow: -1px -1px 0 #f1f1f1, 1px -1px 0 #f1f1f1, -1px 1px 0 #f1f1f1,
+    1px 1px 0 #f1f1f1;
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.formField input:focus + span,
+.formField input:valid + span {
+  transform: translateY(-32px) translateX(-5px) scale(0.95);
+  transition: 0.3s ease-in-out;
+}
+
+#togglePasswordBtn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo adicional para el ícono de la contraseña */
+#passwordIcon {
+  color: #333;
+}
+
+/*-------------------------------------------------------------------BUTTONS------------------------------------------------------------------*/
 
 .buttons {
   background-color: #222;
@@ -193,7 +192,7 @@ body {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
   font-size: 1em;
   font-weight: 700;
   line-height: 1.5;
@@ -215,86 +214,84 @@ body {
 
 .buttons:hover,
 .buttons:focus {
-  opacity: .75;
-} 
-
-#login{
-    margin-bottom: 1%;
+  opacity: 0.75;
 }
 
-#usernameField{
-    margin-bottom: 2%;
+#login {
+  margin-bottom: 1%;
 }
 
-#pwdeField{
-    margin-bottom: 20%;
+#usernameField {
+  margin-bottom: 2%;
 }
 
-#registerFormChange{
-    width: 70%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin-top: -2%;
-    margin-bottom: -1%;
+#pwdeField {
+  margin-bottom: 20%;
 }
 
+#registerFormChange {
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: -2%;
+  margin-bottom: -1%;
+}
+
+/*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 @media (max-width: 1600px) {
-    .main-info-Register>h1{
-        font-size: 2em;
-    }
+  .main-info-Register > h1 {
+    font-size: 2em;
+  }
 }
-
 
 @media (max-width: 1200px) {
-    .formField input {
-        width: 300px;
-    }
-    #registerFormChange{
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
+  .formField input {
+    width: 300px;
+  }
+  #registerFormChange {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 @media (max-width: 800px) {
-    .formField input {
-        width: 200px;
-    }
-    #registerFormChange{
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    .main-info-Login>h1{
-        font-size: 2em;
-    }
-    .main-info-Login>p{
-        font-size: 0.9em;
-        text-align: center;
-    }
-    #registerFormChange{
-        font-size: 0.9em;
-    }
-    .main-foto{
-        display: none;
-    }
-    .buttons {
-        width: 150px;
-    }
-    .main-info-Register{
-        width: 100%;
-    }
-
+  .formField input {
+    width: 200px;
+  }
+  #registerFormChange {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .main-info-Login > h1 {
+    font-size: 2em;
+  }
+  .main-info-Login > p {
+    font-size: 0.9em;
+    text-align: center;
+  }
+  #registerFormChange {
+    font-size: 0.9em;
+  }
+  .main-foto {
+    display: none;
+  }
+  .buttons {
+    width: 150px;
+  }
+  .main-info-Register {
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
-    .main-info-Register>h1{
-        font-size: 1.5em;
-    }
+  .main-info-Register > h1 {
+    font-size: 1.5em;
+  }
 
-    #home{
-        margin-bottom: 10%;
-    }
+  #home {
+    margin-bottom: 10%;
+  }
 }
