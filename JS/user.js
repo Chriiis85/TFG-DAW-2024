@@ -16,7 +16,7 @@ function togglePasswordVisibility1() {
 
 /*FUNCION PARA CAMBIAR LA VISIBILIDAD DE LA CONTRASEÑA Y EL ICONO*/
 function togglePasswordVisibility2() {
-  var passwordField = document.getElementById("passwordField2");
+  var passwordField = document.getElementById("pwdLogin");
   var passwordIcon = document.getElementById("passwordIcon");
 
   if (passwordField.type === "password") {
