@@ -31,7 +31,7 @@
           HISTORIC DATA
         </p>
         <p onclick="window.location.href = 'standings.php'">SEASON STANDINGS</p>
-        <p>FORUM</p>
+        <p onclick="window.location.href = 'forum.php'">FORUM</p>
       </div>
       <div class="header-container3"></div>
     </article>
