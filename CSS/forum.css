@@ -368,3 +368,52 @@ select {
   border-radius: 50%; 
   background-color: transparent;
 }
+/*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
+
+@media (max-width: 1400px) {
+  .main-bar-search{
+    width: 30%;
+  }
+}
+
+@media (max-width: 1200px) {
+.main-bar-add{
+  width: 30%;
+}
+
+.main-bar-filter{
+  width: 30%;
+}
+}
+
+@media (max-width: 700px) {
+.main-bar{
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-bar-search{
+  width: 80%;
+  margin-bottom: -5%;
+
+}
+
+.main-bar-add{
+  width: 120%;
+  padding: 0;
+}
+
+.main-bar-filter{
+  width: 100%;
+  padding: 0;
+  margin-bottom: -5%;
+}
+}
+
+@media (max-width: 700px) {
+.post-card{
+  font-size: 0.9em;
+}
+}
