@@ -1,16 +1,42 @@
 <?php
-include "conexion.php";
-// CONSULTA QUE VAMOS A REALIZAR
-$consulta = "SELECT * FROM themes";
+function returnThemesByDefault(){
+    include "conexion.php";
+    // CONSULTA QUE VAMOS A REALIZAR
+    $consulta = "SELECT * FROM themes";
+    
+    //EJECUTAMOS LA CONSULTA
+    $result = mysqli_query($con, $consulta);
+    
+    // Obtener todos los resultados
+    $themes = mysqli_fetch_all($result);
+    //$equipos = mysqli_fetch_row($result);
+    //$equipos = mysqli_fetch_assoc($result);
+    //print_r($themes);
+    return $themes;
+}
 
-//EJECUTAMOS LA CONSULTA
-$result = mysqli_query($con, $consulta);
+function returnThemesByDate(){
+    include "conexion.php";
+    // CONSULTA QUE VAMOS A REALIZAR
+    $consulta = "SELECT * FROM `themes` ORDER BY date DESC;";
+    
+    //EJECUTAMOS LA CONSULTA
+    $result = mysqli_query($con, $consulta);
+    
+    // Obtener todos los resultados
+    $themes = mysqli_fetch_all($result);
 
-// Obtener todos los resultados
-$themes = mysqli_fetch_all($result);
-//$equipos = mysqli_fetch_row($result);
-//$equipos = mysqli_fetch_assoc($result);
-//print_r($themes);
+    return $themes;
+}
+
+function returnThemesByPopularity(){
+
+}
+
+function returnThemesByViews(){
+
+}
+
 
 function returnNombreUsu($id_usu) {
     //CONSULTA A EJECUTAR
@@ -125,11 +151,4 @@ function returnLastPost($id_theme) {
     }
 }
 
-
-
-
-
-
-// Cerrar la conexión
-mysqli_close($con);
 ?>

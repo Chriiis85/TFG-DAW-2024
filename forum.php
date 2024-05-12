@@ -44,25 +44,27 @@
         <h1 id="orderP">Order by: Default.</h1>
         <h1 id="countPostP">Showing: 19 Posts.</h1>
       </div>
-      <?php
-      include "PHP/Forum/returnThemes.php";
-      for ($i = 0; $i < sizeof($themes); $i++) {
-        echo '<div class="post-card-container">
+      <div id="posts-group" class="posts-group">
+        <?php
+        include "PHP/Forum/returnThemes.php";
+        $themes = returnThemesByDefault();
+        for ($i = 0; $i < sizeof($themes); $i++) {
+          echo '<div class="post-card-container">
           <div class="post-card">
             <div class="post-card-1">
-              <h1>Posted by: '.returnNombreUsu($themes[$i][0]).'</h1>
-              <p>Posted on: '.$themes[$i][2].'</p>
+              <h1>Posted by: ' . returnNombreUsu($themes[$i][3]) . '</h1>
+              <p>Posted on: ' . $themes[$i][2] . '</p>
             </div>
             <div class="post-card-2">
               <div class="post-card-3">
                 <h1>
-                '.$themes[$i][1].'
+                ' . $themes[$i][1] . '
                 </h1>
               </div>
               <div class="post-card-4">
                 <div class="post-card-5">
                   <p id="pLimit">
-                    '.returnLastPost($themes[$i][0]).'
+                    ' . returnLastPost($themes[$i][0]) . '
                   </p>
                 </div>
                 <div class="post-card-6">
@@ -72,50 +74,16 @@
                   </div>
                   <div class="post-card-msg">
                     <img src="Images/msg.svg" alt="" />
-                    <p>'.returnNumberPosts($themes[$i][0]).'</p>
+                    <p>' . returnNumberPosts($themes[$i][0]) . '</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>';
-      }
-      ?>
-      <!--<div class="post-card-container">
-          <div class="post-card">
-            <div class="post-card-1">
-              <h1>Posted by: Christian Moreno Diaz</h1>
-              <p>Posted on: 22 Abril 2024</p>
-            </div>
-            <div class="post-card-2">
-              <div class="post-card-3">
-                <h1>
-                  Esto es un texto de ejemplo para el titulo de un nuevo post
-                </h1>
-              </div>
-              <div class="post-card-4">
-                <div class="post-card-5">
-                  <p id="pLimit">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Nulla nam reprehenderit iste ea veniam? Sunt expedita
-                    debitis nostrum necessitatibus aliquam provident accusamus,
-                    beatae, cupiditate quas ullam nesciunt veniam cumque illum.
-                  </p>
-                </div>
-                <div class="post-card-6">
-                  <div class="post-card-views">
-                    <img src="Images/view.svg" alt="" />
-                    <p>16</p>
-                  </div>
-                  <div class="post-card-msg">
-                    <img src="Images/msg.svg" alt="" />
-                    <p>5</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>-->
+        }
+        ?>
+      </div>
       <div class="pagination" id="pagination">
         <h1>Page:</h1>
       </div>
@@ -179,6 +147,16 @@
 
     let countPostP = document.getElementById("countPostP");
     countPostP.textContent = countPost;
+  });
+
+  let filter = document.getElementById("filter");
+  filter.addEventListener("change", () => {
+    let selectedValue = filter.value;
+    let postsGrupo = document.getElementById("posts-group");
+    let orderP = document.getElementById("orderP");
+    if (selectedValue == "Newest") {
+            
+    }
   });
 </script>
 
