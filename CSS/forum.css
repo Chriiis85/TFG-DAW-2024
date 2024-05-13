@@ -65,6 +65,18 @@ body {
   flex-direction: column;
 }
 
+.img-noresult{
+  width: 500px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-noresult>img{
+  width: 50%;
+}
+
 .posts-container{
   width: 100%;
   padding-top: 3%;

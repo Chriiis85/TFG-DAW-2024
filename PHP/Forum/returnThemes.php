@@ -86,12 +86,6 @@ function returnThemesByPopularity()
 
 }
 
-function returnThemesByViews()
-{
-
-}
-
-
 function returnNombreUsu($id_usu)
 {
     //CONSULTA A EJECUTAR
