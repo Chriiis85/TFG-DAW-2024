@@ -40,6 +40,7 @@ footer {
   justify-content: center;
   gap: 1%;
   padding-top: 1.5%;
+  margin-right: 10%;
   flex-direction: column;
 }
 
@@ -264,6 +265,9 @@ footer {
   }
   footer {
     height: 900px;
+  }
+  .footer-top-col1 {
+    margin-right: 0;
   }
   .footer-top-col2 {
     width: 50%;

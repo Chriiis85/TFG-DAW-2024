@@ -1,12 +1,63 @@
 <?php
-function returnThemesByDefault(){
+error_reporting(0);
+
+$filterType = $_POST["filter"];
+
+$themes = returnThemesByDate();
+
+if ($filterType == "Newest") {
+    //echo "Se filtra por newest";
+    $themes = returnThemesByDate();
+    for ($i = 0; $i < sizeof($themes); $i++) {
+        $themes[$i][3] = returnNombreUsu($themes[$i][3]);
+        $themes[$i][4] = returnNumberPosts($themes[$i][0]);
+        $themes[$i][5] = returnLastPost($themes[$i][0]);
+    }
+    echo json_encode($themes);
+} else if ($filterType == "Default") {
+    //echo "Se filtra por Default";
+    $themes = returnThemesByDefault();
+    for ($i = 0; $i < sizeof($themes); $i++) {
+        $themes[$i][3] = returnNombreUsu($themes[$i][3]);
+        $themes[$i][4] = returnNumberPosts($themes[$i][0]);
+        $themes[$i][5] = returnLastPost($themes[$i][0]);
+    }
+    echo json_encode($themes);
+} else if ($filterType == "Popularity") {
+    echo "Se filtra por Popularity";
+} else if ($filterType == "Views") {
+    
+    $themes = returnThemesByDefault();
+    for ($i = 0; $i < sizeof($themes); $i++) {
+        $themes[$i][3] = returnNombreUsu($themes[$i][3]);
+        $themes[$i][4] = returnNumberPosts($themes[$i][0]);
+        $themes[$i][5] = returnLastPost($themes[$i][0]);
+    }
+
+    function compararPorCuartaColumna($a, $b) {
+        // Comparar la cuarta columna ($themes[$i][4])
+        if ($a[4] == $b[4]) {
+            return 0;
+        }
+        return ($a[4] < $b[4]) ? -1 : 1;
+    }
+    
+    // Ordenar el array utilizando la función de comparación
+    usort($themes, 'compararPorCuartaColumna');
+    $themes = array_reverse($themes);
+
+    echo json_encode($themes);
+}
+
+function returnThemesByDefault()
+{
     include "conexion.php";
     // CONSULTA QUE VAMOS A REALIZAR
     $consulta = "SELECT * FROM themes";
-    
+
     //EJECUTAMOS LA CONSULTA
     $result = mysqli_query($con, $consulta);
-    
+
     // Obtener todos los resultados
     $themes = mysqli_fetch_all($result);
     //$equipos = mysqli_fetch_row($result);
@@ -15,30 +66,34 @@ function returnThemesByDefault(){
     return $themes;
 }
 
-function returnThemesByDate(){
+function returnThemesByDate()
+{
     include "conexion.php";
     // CONSULTA QUE VAMOS A REALIZAR
     $consulta = "SELECT * FROM `themes` ORDER BY date DESC;";
-    
+
     //EJECUTAMOS LA CONSULTA
     $result = mysqli_query($con, $consulta);
-    
+
     // Obtener todos los resultados
     $themes = mysqli_fetch_all($result);
 
     return $themes;
 }
 
-function returnThemesByPopularity(){
+function returnThemesByPopularity()
+{
 
 }
 
-function returnThemesByViews(){
+function returnThemesByViews()
+{
 
 }
 
 
-function returnNombreUsu($id_usu) {
+function returnNombreUsu($id_usu)
+{
     //CONSULTA A EJECUTAR
     $consulta = "SELECT username FROM users WHERE id = ?";
     include "conexion.php";
@@ -69,7 +124,8 @@ function returnNombreUsu($id_usu) {
     }
 }
 
-function returnNumberPosts($id_theme) {
+function returnNumberPosts($id_theme)
+{
     //CONSULTA A EJECUTAR
     $consulta = "SELECT * FROM posts WHERE id_theme = ?";
     include "conexion.php";
@@ -100,7 +156,8 @@ function returnNumberPosts($id_theme) {
     }
 }
 
-function returnLastPost($id_theme) {
+function returnLastPost($id_theme)
+{
     //CONSULTA A EJECUTAR
     $consulta = "SELECT * FROM posts WHERE id_theme = ? ORDER BY date DESC LIMIT 1";
     include "conexion.php";
