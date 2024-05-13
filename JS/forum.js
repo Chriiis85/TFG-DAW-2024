@@ -58,6 +58,7 @@
     let countPostP = document.getElementById("countPostP");
     countPostP.textContent = countPost;
   }
+  actualizarPostP();
 
   let filter = document.getElementById("filter");
   filter.addEventListener("change", () => {
@@ -69,15 +70,19 @@
     switch (selectedValue) {
       case "Newest":
         tipo = "Newest"
+        orderP.textContent="Order by: "+tipo;
         break;
       case "Popularity":
         tipo = "Popularity"
+        orderP.textContent="Order by: "+tipo;
         break;
       case "Views":
         tipo = "Views"
+        orderP.textContent="Order by: "+tipo;
         break;
       default:
-        tipo = "Default";
+        tipo = "Default"        
+        orderP.textContent="Order by: "+tipo;
         break;
     }
 
