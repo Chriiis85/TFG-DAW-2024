@@ -110,9 +110,6 @@
         }
         ?>
       </div>
-      <div class="pagination" id="pagination">
-        <h1>Page:</h1>
-      </div>
     </article>
 
     <div id="new-theme-modal" class="modal">
