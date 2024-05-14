@@ -27,7 +27,7 @@ if (!$con->connect_error) {
             //REDIRIGIMOS AL USUARIO
             echo '<script language="javascript">';
             echo 'alert("Bienvenido de nuevo: ' . $username . '");';
-            echo 'window.location.href = "../../forum.html";';
+            echo 'window.location.href = "../../forum.php";';
             echo '</script>';
         } else {
             //REDIRIGIMOS AL USUARIO

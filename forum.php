@@ -6,13 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motoring Community - Forum</title>
   <script defer src="JS/forum.js"></script>
-
+  <!-- SCRIPT JQUERY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <!-- SCRIPT JQUERY MODALS ALERT -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- SCRIPT Y HOJA DE ESTILOS JQUERY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <!-- Link al archivo CSS -->
 </head>
 
 <body>
   <link rel="stylesheet" href="CSS/forum.css" />
-
+  <?php
+  if (isset($_COOKIE["username"])) {
+    // Si está establecida, muestra el valor de la cookie
+    echo "¡Hola, " . $_COOKIE["username"] . "!";
+    echo '<button id="logout">Log Out</button>';
+  } else {
+    // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
+    header('Location: users.php');
+  }
+  ?>
   <section class="main">
     <article class="posts-container" id="postsContainer">
       <div class="main-bar">
@@ -39,7 +54,7 @@
           </div>
         </div>
         <div class="main-bar-add">
-          <button class="button-add" role="button">Add new Theme</button>
+          <button id="newTheme" class="button-add" role="button">Add new Theme</button>
         </div>
       </div>
       <div class="posts-container-info">
@@ -52,7 +67,7 @@
         $themes = returnThemesByDefault();
         for ($i = 0; $i < sizeof($themes); $i++) {
           echo '<div id="post-card-container" class="post-card-container">
-          <div class="post-card">
+          <div id="postCard' . $themes[$i][0] . '" onclick="window.location.href = \'forumPosts.php?id=' . $themes[$i][0] . '\'" class="post-card">
             <div class="post-card-1">
               <h1>Posted by: ' . returnNombreUsu($themes[$i][3]) . '</h1>
               <p>Posted on: ' . $themes[$i][2] . '</p>
@@ -90,9 +105,177 @@
         <h1>Page:</h1>
       </div>
     </article>
+
+    <div id="new-theme-modal" class="modal">
+      <h2>Add Theme to the Forum</h2>
+      <div class="themeFormContainer">
+        <div class="inputContainer">
+          <label for="">Enter Theme Name:</label>
+          <input placeholder="New Theme Name" class="inputText" type="text" name="Theme_Name" id="Theme_Name">
+        </div>
+        <div class="checkbox-wrapper-46">
+          <input type="checkbox" id="cbx-46" class="inp-cbx" />
+          <label for="cbx-46" class="cbx"><span>
+              <svg viewBox="0 0 12 10" height="10px" width="12px">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg></span><span id="privacyTheme">Accept Privacy and Policy</span>
+          </label>
+        </div>
+        <p id="cbxError">You need to accept Privacy Policy to add a new Theme</p>
+        <p id="nameError">You need to add a neme to the new Theme</p>
+
+        <div class="themes-btnCont">
+          <button id="CloseThemeBtn" class="backTheme">Close</button>
+          <button id="addThemeBtn" class="confirmTheme">Confirm New Theme</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="new-theme-privacy" class="modal">
+      <h2>Privacy Policy</h2>
+      <p>At Motoring Community team, we strive to maintain a friendly and respectful environment where all members can
+        participate constructively and safely. We want to remind you of some important guidelines regarding acceptable
+        conduct in our discussions:</p>
+      <p>Mutual Respect: Please treat all members with courtesy and consideration. Avoid insults, personal attacks, or
+        any form of disrespectful behavior.</p>
+      <p>Appropriate Language: Use appropriate language and avoid the use of obscene words, insults, or any form of
+        expression that may be offensive or inappropriate.</p>
+      <p>Appropriate Content: Do not post content that may be considered inappropriate, offensive, discriminatory,
+        illegal, or that violates the rights of others.</p>
+      <p>Compliance with Rules: Follow all rules and guidelines set forth in our Privacy Policy and Terms of Service for
+        the forum. Failure to comply with these rules may result in content removal, account suspension, or any other
+        necessary disciplinary action.</p>
+      <p>All users are responsible for their conduct on the forum and for ensuring that their contributions comply with
+        these guidelines. We appreciate your cooperation in maintaining a safe and pleasant environment for everyone.
+      </p>
+      <p>Thank you for being part of our community!</p>
+      <p>Sincerely,
+        The Motoring Community Team.</p>
+    </div>
   </section>
   <?php
   include "footer.php";
   ?>
 </body>
+<script>
+  $(document).ready(function () {
+    $("#newTheme").on("click", function () {
+      // Abre el modal al hacer clic
+      $("#new-theme-modal").modal({
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false
+      });
+    });
+
+    $("#privacyTheme").on("click", function () {
+      // Abre el modal al hacer clic
+      $("#new-theme-privacy").modal({
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false
+      });
+    });
+
+    $("#CloseThemeBtn").on("click", function () {
+      $.modal.close();
+    });
+
+  })
+
+  let addTheme = document.getElementById("addThemeBtn").addEventListener("click", () => {
+    let nameTheme = document.getElementById("Theme_Name");
+    let cbxTheme = document.getElementById("cbx-46");
+    let cbxError = document.getElementById("cbxError");
+    let nameError = document.getElementById("nameError");
+
+
+    if (!cbxTheme.checked) {
+      cbxError.style.display = "block"
+    }
+    if (nameTheme.value == "") {
+      nameError.style.display = "block"
+    }
+
+    if (cbxTheme.checked) {
+      cbxError.style.display = "none"
+    }
+    if (!nameTheme.value == "") {
+      nameError.style.display = "none"
+    }
+
+    if (!nameTheme.value == "" && cbxTheme.checked) {
+      Swal.fire({
+        title: "Do you want to create the new Theme?",
+        text: "New theme name: " + nameTheme.value,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Confirm!",
+        cancelButtonText: "No, go back.",
+        allowOutsideClick: false
+      }).then((result) => {
+        if (result.isConfirmed) {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                Swal.fire({
+                  title: "Theme Created!",
+                  text: "The theme was created successfully.",
+                  icon: "success",
+                  showConfirmButton: true
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    location.reload();
+                  }
+                });
+              } else {
+                Swal.fire("Error!", "Theme not created.", "error");
+              }
+            }
+          };
+          xhttp.open("POST", "PHP/Forum/insertTheme.php", true);
+          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xhttp.send('name=' + encodeURIComponent(nameTheme.value));
+        } else {
+          Swal.fire("Cancelled", "Operation cancelled.", "info");
+        }
+      });
+
+
+    }
+  })
+
+  let logout = document.getElementById("logout");
+  logout.addEventListener("click", () => {
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    Swal.fire({
+      title: "Do you want to Log Out?",
+      text: "Login Out: ",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Confirm!",
+      cancelButtonText: "No, go back.",
+      allowOutsideClick: false
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Login Out!",
+          text: "Come back Soon!.",
+          icon: "success",
+          showConfirmButton: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.reload();
+          }
+        });
+      } else {
+        Swal.fire("Cancelled", "Coming Back.", "info");
+      }
+    })
+  })
+</script>
+
 </html>

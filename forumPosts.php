@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Te amo</p>
+    <?php
+        $id_theme = $_GET["id"];
+        echo $id_theme;
+    ?>
 </body>
 </html>

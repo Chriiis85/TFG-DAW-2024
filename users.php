@@ -40,7 +40,7 @@
       </div>
       <p id="loginFormChange">Have an account? Login here.</p>
       <button id="register" class="buttons" role="button">Register</button>
-      <button onclick="window.location.href = 'forum.html'" id="home" class="buttons" role="button">
+      <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
         Go Home
       </button>
     </article>
@@ -67,7 +67,7 @@
         </div>
         <p id="registerFormChange">Don´t have an account? Register here.</p>
         <button type="submit" id="login" class="buttons" role="button">Login</button>
-      <button onclick="window.location.href = 'forum.html'" id="home" class="buttons" role="button">
+      <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
         Go Home
       </button>
       <p id="pwdFormChange">Forgot your password? Reset here.</p>
