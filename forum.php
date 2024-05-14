@@ -20,14 +20,23 @@
   <link rel="stylesheet" href="CSS/forum.css" />
   <?php
   if (isset($_COOKIE["username"])) {
-    // Si está establecida, muestra el valor de la cookie
-    echo "¡Hola, " . $_COOKIE["username"] . "!";
-    echo '<button id="logout">Log Out</button>';
+    $username =  $_COOKIE["username"];
   } else {
     // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
     header('Location: users.php');
   }
   ?>
+  <header>
+    <?php
+    echo'<div class="header-container"></div>';
+    echo '<div class="user">
+      <p>Welcome Back: Christian!</p>
+      <button class="logOutBtn">Log Out     <img src="Images/logout.svg" alt=""></button>
+    </div>';
+    ?>
+
+  </header>
+
   <section class="main">
     <article class="posts-container" id="postsContainer">
       <div class="main-bar">
@@ -210,7 +219,7 @@
         text: "New theme name: " + nameTheme.value,
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
+        confirmButtonColor: "green",
         confirmButtonText: "Confirm!",
         cancelButtonText: "No, go back.",
         allowOutsideClick: false
@@ -220,16 +229,21 @@
           xhttp.onreadystatechange = function () {
             if (this.readyState == 4) {
               if (this.status == 200) {
-                Swal.fire({
-                  title: "Theme Created!",
-                  text: "The theme was created successfully.",
-                  icon: "success",
-                  showConfirmButton: true
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    location.reload();
-                  }
-                });
+                if (this.responseText == 1) {
+                  Swal.fire({
+                    title: "Theme Created!",
+                    text: "The theme was created successfully.",
+                    icon: "success",
+                    showConfirmButton: true
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      location.reload();
+                    }
+                  });
+                } else {
+                  Swal.fire("Error!", "Theme not created.", "error");
+                }
+
               } else {
                 Swal.fire("Error!", "Theme not created.", "error");
               }

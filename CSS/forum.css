@@ -9,17 +9,68 @@ body {
   /*background-color: black;*/
 }
 
+header {
+  width: 100%;
+  height: 15%;
+  background-color: #222222;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.header-container{
+  width: 70%;
+  height: 100%;
+}
+
+.user {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  padding-right: 50px;
+}
+
+.user > p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.logOutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  width: 150px;
+  transition: transform 200ms, background 200ms;
+}
+
+.logOutBtn:hover {
+  transform: translateY(-2px);
+}
 /*----------------------------------------------------------------------MAIN------------------------------------------------------------------*/
 .main {
   width: 100%;
-  padding-top: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.main-bar{
+.main-bar {
   width: 90%;
   height: 75px;
   display: flex;
@@ -29,7 +80,7 @@ body {
   background-color: white;
   border-radius: 10px;
 }
-.main-bar-filter{
+.main-bar-filter {
   width: 25%;
   height: 100%;
   display: flex;
@@ -38,7 +89,7 @@ body {
   padding-left: 5%;
 }
 
-.main-bar-search{
+.main-bar-search {
   width: 50%;
   height: 100%;
   display: flex;
@@ -46,7 +97,7 @@ body {
   justify-content: center;
 }
 
-.main-bar-add{  
+.main-bar-add {
   width: 25%;
   height: 100%;
   display: flex;
@@ -55,7 +106,7 @@ body {
   padding-right: 5%;
 }
 
-.posts-group{
+.posts-group {
   width: 100%;
   display: flex;
   align-items: center;
@@ -63,7 +114,7 @@ body {
   flex-direction: column;
 }
 
-.img-noresult{
+.img-noresult {
   width: 500px;
   height: 400px;
   display: flex;
@@ -71,11 +122,11 @@ body {
   justify-content: center;
 }
 
-.img-noresult>img{
+.img-noresult > img {
   width: 50%;
 }
 
-.posts-container{
+.posts-container {
   width: 100%;
   padding-top: 3%;
   padding-bottom: 3%;
@@ -87,7 +138,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-.posts-container-info{
+.posts-container-info {
   width: 90%;
   display: flex;
   align-items: center;
@@ -249,9 +300,9 @@ h1 {
   line-height: 28px;
   width: 90%;
   height: 100px;
- }
- 
- .input {
+}
+
+.input {
   width: 100%;
   height: 50px;
   line-height: 28px;
@@ -263,36 +314,37 @@ h1 {
   background-color: #f3f3f4;
   color: #0d0c22;
   font-size: 1em;
-  transition: .3s ease;
- }
- 
- .input::placeholder {
+  transition: 0.3s ease;
+}
+
+.input::placeholder {
   color: #9e9ea7;
- }
- 
- .input:focus, input:hover {
+}
+
+.input:focus,
+input:hover {
   outline: none;
   border-color: rgb(0, 185, 255);
   background-color: #fff;
   box-shadow: 0 0 0 4px rgb(0 185 255 / 10%);
- }
- 
- .icon {
+}
+
+.icon {
   position: absolute;
   left: 1rem;
   fill: #9e9ea7;
   width: 1rem;
   height: 1rem;
- }
+}
 
- /*-------------------------------------------------------------SELECT----------------------------------------------------------------------*/
- 
- .select {
+/*-------------------------------------------------------------SELECT----------------------------------------------------------------------*/
+
+.select {
   width: 70%;
   position: relative;
 }
 
-#select3{
+#select3 {
   display: none;
 }
 select {
@@ -332,7 +384,7 @@ select {
   border-top: var(--size) solid black;
   top: 55%;
 }
- 
+
 /*-------------------------------------------------------------BUTTON ADD---------------------------------------------------------------------*/
 .button-add {
   background-color: #222;
@@ -342,7 +394,7 @@ select {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
@@ -364,18 +416,18 @@ select {
 
 .button-add:hover,
 .button-add:focus {
-  opacity: .75;
+  opacity: 0.75;
 }
 
 /*-------------------------------------------------------------PAGINATION---------------------------------------------------------------------*/
-.pagination{
+.pagination {
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
-.buttonPagination{
+.buttonPagination {
   font-size: 1.25em;
   width: 30px;
   height: 30px;
@@ -383,39 +435,38 @@ select {
   align-items: center;
   justify-content: center;
   margin-left: 2%;
-  border-radius: 50%; 
+  border-radius: 50%;
   background-color: transparent;
 }
 
 /*------------------------------------------------------------------MODAL---------------------------------------------------------------------*/
 #new-theme-modal {
-  width: 80%; 
-  height: 80%; 
-  max-width: 800px; 
-  max-height: 600px; 
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 600px;
   overflow: auto;
   overflow-x: hidden;
 }
 
-.modal{
+.modal {
   font-family: "Open Sans", sans-serif;
   text-align: justify;
 }
 
-.modal>h2{
+.modal > h2 {
   font-size: 2em;
 }
 
-.close-modal{
+.close-modal {
   position: absolute;
   z-index: 99;
   margin: 5%;
 }
 
-
 /*------------------------------------------------------------------FORM----------------------------------------------------------------------*/
 
-.themeFormContainer{
+.themeFormContainer {
   width: 100%;
   height: 80%;
   display: flex;
@@ -425,7 +476,7 @@ select {
   flex-direction: column;
 }
 
-.inputContainer{
+.inputContainer {
   width: 90%;
   height: 10%;
   display: flex;
@@ -435,7 +486,7 @@ select {
   font-weight: bold;
 }
 
-.inputText{
+.inputText {
   width: 50%;
   height: 50px;
   border: 3px solid #000;
@@ -447,14 +498,14 @@ select {
   user-select: auto;
   font-size: 16px;
   padding: 0 6px;
-  padding-left: 12px; 
+  padding-left: 12px;
 }
 
-.inputText:focus{
+.inputText:focus {
   border: 3px solid #5551ff;
 }
 
-.themes-btnCont{
+.themes-btnCont {
   width: 90%;
   height: 15%;
   display: flex;
@@ -465,27 +516,27 @@ select {
   margin-bottom: 25px;
 }
 
-.confirmTheme{
+.confirmTheme {
   width: 40%;
   display: inline-block;
   outline: 0;
   border: 0;
   cursor: pointer;
   background: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 8px;
   padding: 14px 24px 16px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
-  transition: transform 200ms,background 200ms;
+  transition: transform 200ms, background 200ms;
 }
 
-.confirmTheme:hover{
+.confirmTheme:hover {
   transform: translateY(-2px);
 }
 
-.backTheme{
+.backTheme {
   width: 40%;
   display: inline-block;
   outline: 0;
@@ -496,33 +547,33 @@ select {
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
-  transition: transform 200ms,background 200ms;
+  transition: transform 200ms, background 200ms;
   background: transparent;
   color: #000000;
   box-shadow: 0 0 0 3px #000000 inset;
 }
-.backTheme:hover{
+.backTheme:hover {
   transform: translateY(-2px);
 }
 
-#privacyTheme{
+#privacyTheme {
   cursor: pointer;
   text-decoration: underline;
 }
 
-#privacyTheme:hover{
+#privacyTheme:hover {
   cursor: pointer;
   text-decoration: underline;
   color: blue;
 }
 
-#cbxError{
+#cbxError {
   display: none;
   color: red;
   margin: 0;
 }
 
-#nameError{
+#nameError {
   display: none;
   color: red;
   margin: 0;
@@ -609,49 +660,48 @@ select {
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 
 @media (max-width: 1400px) {
-  .main-bar-search{
+  .main-bar-search {
     width: 30%;
   }
 }
 
 @media (max-width: 1200px) {
-.main-bar-add{
-  width: 30%;
-}
+  .main-bar-add {
+    width: 30%;
+  }
 
-.main-bar-filter{
-  width: 30%;
-}
-}
-
-@media (max-width: 700px) {
-.main-bar{
-  height: 200px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.main-bar-search{
-  width: 80%;
-  margin-bottom: -5%;
-
-}
-
-.main-bar-add{
-  width: 120%;
-  padding: 0;
-}
-
-.main-bar-filter{
-  width: 100%;
-  padding: 0;
-  margin-bottom: -5%;
-}
+  .main-bar-filter {
+    width: 30%;
+  }
 }
 
 @media (max-width: 700px) {
-.post-card{
-  font-size: 0.9em;
+  .main-bar {
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .main-bar-search {
+    width: 80%;
+    margin-bottom: -5%;
+  }
+
+  .main-bar-add {
+    width: 120%;
+    padding: 0;
+  }
+
+  .main-bar-filter {
+    width: 100%;
+    padding: 0;
+    margin-bottom: -5%;
+  }
 }
+
+@media (max-width: 700px) {
+  .post-card {
+    font-size: 0.9em;
+  }
 }
