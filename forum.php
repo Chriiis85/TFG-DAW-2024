@@ -84,7 +84,7 @@
             </div>
             <div class="post-card-2">
               <div class="post-card-3">
-                <h1>
+                <h1 id="nameTheme-' . $themes[$i][0] . '">
                 ' . $themes[$i][1] . '
                 </h1>
               </div>
@@ -105,7 +105,7 @@
                       <p>' . returnNumberPosts($themes[$i][0]) . '</p>
                     </div>
                   </div>';
-          if ($themes[$i][3] == $id_usu_theme) {
+          if ($themes[$i][3] == $id_usu_theme || $username == "admin") {
             echo '<div class="post-card-6-edit">
                       <button class="editThemeBtn" id="editCard-' . $themes[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
                       <button class="deleteThemeBtn" id="deleteCard-' . $themes[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
@@ -312,9 +312,9 @@
 
   let editBtn = document.querySelectorAll(".editThemeBtn");
   for (const btnEdit of editBtn) {
-    btnEdit.addEventListener("click", ()=>{
+    btnEdit.addEventListener("click", () => {
       event.stopPropagation();
-      let id_theme =btnEdit.id;
+      let id_theme = btnEdit.id;
       id_theme = id_theme.split('-')[1];
       alert(id_theme);
     })
@@ -322,35 +322,56 @@
 
   let deleteBtn = document.querySelectorAll(".deleteThemeBtn");
   for (const btnDelete of deleteBtn) {
-    btnDelete.addEventListener("click", ()=>{
+    btnDelete.addEventListener("click", () => {
       event.stopPropagation();
       let id_theme = btnDelete.id;
       id_theme = id_theme.split('-')[1];
+
+      let nameTheme = document.getElementById("nameTheme-"+id_theme)
+
       Swal.fire({
-      title: "Do you want to delete this theme?",
-      text: "Deleting Theme...s",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Confirm!",
-      cancelButtonText: "No, go back.",
-      allowOutsideClick: false
-    }).then((result) => {
-      if (result.isConfirmed) {
-        /*Swal.fire({
-          title: "Login Out!",
-          text: "Come back Soon!.",
-          icon: "success",
-          showConfirmButton: true
-        }).then((result) => {
-          if (result.isConfirmed) {
-            location.reload();
-          }
-        });*/
-      } else {
-        Swal.fire("Cancelled", "Coming Back.", "info");
-      }
-    })
+        title: "Do you want to delete this Theme?",
+        text: "Deleting theme: '" + nameTheme.textContent+"'",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "green",
+        confirmButtonText: "Confirm!",
+        cancelButtonText: "No, go back.",
+        allowOutsideClick: false
+      }).then((result) => {
+        if (result.isConfirmed) {
+          let username = getCookie("username");
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                if (this.responseText == 1) {
+                  Swal.fire({
+                    title: "Theme Deleted!",
+                    text: "The theme was deleted successfully.",
+                    icon: "success",
+                    showConfirmButton: true
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      location.reload();
+                    }
+                  });
+                } else {
+                  Swal.fire("Error!", "Theme not deleted.", "error");
+                }
+
+              } else {
+                Swal.fire("Error!", "Theme not deleted.", "error");
+              }
+            }
+          };
+          xhttp.open("POST", "PHP/Forum/deleteTheme.php", true);
+          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xhttp.send('id_theme=' + id_theme);
+        } else {
+          Swal.fire("Cancelled", "Operation cancelled.", "info");
+        }
+      });
     })
   }
 

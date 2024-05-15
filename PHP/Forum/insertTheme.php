@@ -38,7 +38,6 @@ function returnIdUsu($id_nombre) {
     }
 }
 
-
 include "conexion.php";
 
 //CONSULTA A EJECUTAR
