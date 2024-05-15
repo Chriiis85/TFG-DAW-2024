@@ -137,11 +137,36 @@
           </label>
         </div>
         <p id="cbxError">You need to accept Privacy Policy to add a new Theme</p>
-        <p id="nameError">You need to add a neme to the new Theme</p>
+        <p id="nameError">You need to add a name to the new Theme</p>
 
         <div class="themes-btnCont">
           <button id="CloseThemeBtn" class="backTheme">Close</button>
           <button id="addThemeBtn" class="confirmTheme">Confirm New Theme</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="edit-theme-modal" class="modal">
+      <h2>Edit theme</h2>
+      <div class="themeFormContainer">
+        <div class="inputContainer">
+          <label for="">Enter new Theme Name:</label>
+          <input placeholder="New Theme Name" class="inputText" type="text" name="New_Theme_Name" id="New_Theme_Name">
+        </div>
+        <div class="checkbox-wrapper-46">
+          <input type="checkbox" id="cbx-462" class="inp-cbx" />
+          <label for="cbx-462" class="cbx"><span>
+              <svg viewBox="0 0 12 10" height="10px" width="12px">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg></span><span id="privacyThemeEdit">Accept Privacy and Policy</span>
+          </label>
+        </div>
+        <p id="cbxErrorEdit">You need to accept Privacy Policy to edit the Theme</p>
+        <p id="nameErrorEdit">You need to add a name to the new Theme</p>
+
+        <div class="themes-btnCont">
+          <button id="CloseEditThemeBtn" class="backTheme">Close</button>
+          <button id="editThemeBtn" class="confirmTheme">Confirm New Name</button>
         </div>
       </div>
     </div>
@@ -173,208 +198,83 @@
   ?>
 </body>
 <script>
-
-  function getCookie(name) {
-    let nameEQ = name + "=";
-    let ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-  }
-
-  $(document).ready(function () {
-    $("#newTheme").on("click", function () {
-      // Abre el modal al hacer clic
-      $("#new-theme-modal").modal({
-        fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false
-      });
-    });
-
-    $("#privacyTheme").on("click", function () {
-      // Abre el modal al hacer clic
-      $("#new-theme-privacy").modal({
-        fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false
-      });
-    });
-
-    $("#CloseThemeBtn").on("click", function () {
-      $.modal.close();
-    });
-
-  })
-
-  let addTheme = document.getElementById("addThemeBtn").addEventListener("click", () => {
-    let nameTheme = document.getElementById("Theme_Name");
-    let cbxTheme = document.getElementById("cbx-46");
-    let cbxError = document.getElementById("cbxError");
-    let nameError = document.getElementById("nameError");
-
-
-    if (!cbxTheme.checked) {
-      cbxError.style.display = "block"
-    }
-    if (nameTheme.value == "") {
-      nameError.style.display = "block"
-    }
-
-    if (cbxTheme.checked) {
-      cbxError.style.display = "none"
-    }
-    if (!nameTheme.value == "") {
-      nameError.style.display = "none"
-    }
-
-    if (!nameTheme.value == "" && cbxTheme.checked) {
-      Swal.fire({
-        title: "Do you want to create the new Theme?",
-        text: "New theme name: " + nameTheme.value,
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "green",
-        confirmButtonText: "Confirm!",
-        cancelButtonText: "No, go back.",
-        allowOutsideClick: false
-      }).then((result) => {
-        if (result.isConfirmed) {
-          let username = getCookie("username");
-          var xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
-              if (this.status == 200) {
-                if (this.responseText == 1) {
-                  Swal.fire({
-                    title: "Theme Created!",
-                    text: "The theme was created successfully.",
-                    icon: "success",
-                    showConfirmButton: true
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                      location.reload();
-                    }
-                  });
-                } else {
-                  Swal.fire("Error!", "Theme not created.", "error");
-                }
-
-              } else {
-                Swal.fire("Error!", "Theme not created.", "error");
-              }
-            }
-          };
-          xhttp.open("POST", "PHP/Forum/insertTheme.php", true);
-          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          xhttp.send('name=' + encodeURIComponent(nameTheme.value) + '&username=' + username);
-        } else {
-          Swal.fire("Cancelled", "Operation cancelled.", "info");
-        }
-      });
-
-
-    }
-  })
-
-  let logout = document.getElementById("logout");
-  logout.addEventListener("click", () => {
-    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    Swal.fire({
-      title: "Do you want to Log Out?",
-      text: "Login Out: ",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Confirm!",
-      cancelButtonText: "No, go back.",
-      allowOutsideClick: false
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Login Out!",
-          text: "Come back Soon!.",
-          icon: "success",
-          showConfirmButton: true
-        }).then((result) => {
-          if (result.isConfirmed) {
-            location.reload();
-          }
-        });
-      } else {
-        Swal.fire("Cancelled", "Coming Back.", "info");
-      }
-    })
-  })
-
   let editBtn = document.querySelectorAll(".editThemeBtn");
   for (const btnEdit of editBtn) {
     btnEdit.addEventListener("click", () => {
       event.stopPropagation();
       let id_theme = btnEdit.id;
       id_theme = id_theme.split('-')[1];
-      alert(id_theme);
-    })
-  }
 
-  let deleteBtn = document.querySelectorAll(".deleteThemeBtn");
-  for (const btnDelete of deleteBtn) {
-    btnDelete.addEventListener("click", () => {
-      event.stopPropagation();
-      let id_theme = btnDelete.id;
-      id_theme = id_theme.split('-')[1];
+      let ConfirmeditBtn = document.getElementById("editThemeBtn").addEventListener("click", () => {
+        let nameTheme = document.getElementById("New_Theme_Name");
+        let cbxTheme = document.getElementById("cbx-462");
+        let cbxError = document.getElementById("cbxErrorEdit");
+        let nameError = document.getElementById("nameErrorEdit");
 
-      let nameTheme = document.getElementById("nameTheme-"+id_theme)
+        let ThemeName = document.getElementById("nameTheme-" + id_theme)
 
-      Swal.fire({
-        title: "Do you want to delete this Theme?",
-        text: "Deleting theme: '" + nameTheme.textContent+"'",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "green",
-        confirmButtonText: "Confirm!",
-        cancelButtonText: "No, go back.",
-        allowOutsideClick: false
-      }).then((result) => {
-        if (result.isConfirmed) {
-          let username = getCookie("username");
-          var xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
-              if (this.status == 200) {
-                if (this.responseText == 1) {
-                  Swal.fire({
-                    title: "Theme Deleted!",
-                    text: "The theme was deleted successfully.",
-                    icon: "success",
-                    showConfirmButton: true
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                      location.reload();
-                    }
-                  });
-                } else {
-                  Swal.fire("Error!", "Theme not deleted.", "error");
-                }
-
-              } else {
-                Swal.fire("Error!", "Theme not deleted.", "error");
-              }
-            }
-          };
-          xhttp.open("POST", "PHP/Forum/deleteTheme.php", true);
-          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          xhttp.send('id_theme=' + id_theme);
-        } else {
-          Swal.fire("Cancelled", "Operation cancelled.", "info");
+        if (!cbxTheme.checked) {
+          cbxError.style.display = "block"
         }
-      });
+        if (nameTheme.value == "") {
+          nameError.style.display = "block"
+        }
+
+        if (cbxTheme.checked) {
+          cbxError.style.display = "none"
+        }
+        if (!nameTheme.value == "") {
+          nameError.style.display = "none"
+        }
+
+        if (!nameTheme.value == "" && cbxTheme.checked) {
+          Swal.fire({
+            title: "Do you want to edit this Theme: "+ThemeName.textContent+" ?",
+            text: "New theme name: " + nameTheme.value,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "green",
+            confirmButtonText: "Confirm!",
+            cancelButtonText: "No, go back.",
+            allowOutsideClick: false
+          }).then((result) => {
+            if (result.isConfirmed) {
+              let username = getCookie("username");
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {
+                    if (this.responseText == 1) {
+                      Swal.fire({
+                        title: "Theme Edited!",
+                        text: "The theme was edited successfully.",
+                        icon: "success",
+                        showConfirmButton: true
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                          location.reload();
+                        }
+                      });
+                    } else {
+                      Swal.fire("Error!", "Theme not edited.", "error");
+                    }
+
+                  } else {
+                    Swal.fire("Error!", "Theme not edited.", "error");
+                  }
+                }
+              };
+              xhttp.open("POST", "PHP/Forum/editTheme.php", true);
+              xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              xhttp.send('name=' + encodeURIComponent(nameTheme.value) + '&id_theme=' + id_theme);
+            } else {
+              Swal.fire("Cancelled", "Operation cancelled.", "info");
+            }
+          });
+        }
+      })
     })
   }
-
 </script>
 <?php
 function returnIdUsu($id_nombre)

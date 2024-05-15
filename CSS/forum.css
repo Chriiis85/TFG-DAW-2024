@@ -505,6 +505,15 @@ select {
   overflow-x: hidden;
 }
 
+#edit-theme-modal {
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 600px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
 .modal {
   font-family: "Open Sans", sans-serif;
   text-align: justify;
@@ -623,6 +632,17 @@ select {
   color: blue;
 }
 
+#privacyThemeEdit {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#privacyThemeEdit:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+
 #cbxError {
   display: none;
   color: red;
@@ -630,6 +650,18 @@ select {
 }
 
 #nameError {
+  display: none;
+  color: red;
+  margin: 0;
+}
+
+#cbxErrorEdit {
+  display: none;
+  color: red;
+  margin: 0;
+}
+
+#nameErrorEdit {
   display: none;
   color: red;
   margin: 0;
