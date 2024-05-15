@@ -3,7 +3,7 @@ error_reporting(0);
 
 $filterType = $_POST["filter"];
 
-$themes = returnThemesByDate();
+//$themes = returnThemesByDate();
 
 if ($filterType == "Newest") {
     //echo "Se filtra por newest";

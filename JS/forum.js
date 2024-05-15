@@ -50,6 +50,9 @@
     actualizarPostP();
 
   }*/
+deleteBtn();
+editBtn();
+jqueryModal();
 
 function getCookie(name) {
   let nameEQ = name + "=";
@@ -61,7 +64,7 @@ function getCookie(name) {
   }
   return null;
 }
-
+function jqueryModal(){
 $(document).ready(function () {
   $("#newTheme").on("click", function () {
     // Abre el modal al hacer clic
@@ -107,6 +110,7 @@ $(document).ready(function () {
     $.modal.close();
   });
 });
+}
 
 let addTheme = document
   .getElementById("addThemeBtn")
@@ -214,149 +218,154 @@ logout.addEventListener("click", () => {
   });
 });
 
-let editBtn = document.querySelectorAll(".editThemeBtn");
-for (const btnEdit of editBtn) {
-  btnEdit.addEventListener("click", () => {
-    event.stopPropagation();
-    let id_theme = btnEdit.id;
-    id_theme = id_theme.split("-")[1];
+function editBtn() {
+  let editBtn = document.querySelectorAll(".editThemeBtn");
+  for (const btnEdit of editBtn) {
+    btnEdit.addEventListener("click", () => {
+      event.stopPropagation();
+      let id_theme = btnEdit.id;
+      id_theme = id_theme.split("-")[1];
 
-    let ConfirmeditBtn = document
-      .getElementById("editThemeBtn")
-      .addEventListener("click", () => {
-        let nameTheme = document.getElementById("New_Theme_Name");
-        let cbxTheme = document.getElementById("cbx-462");
-        let cbxError = document.getElementById("cbxErrorEdit");
-        let nameError = document.getElementById("nameErrorEdit");
+      let ConfirmeditBtn = document
+        .getElementById("editThemeBtn")
+        .addEventListener("click", () => {
+          let nameTheme = document.getElementById("New_Theme_Name");
+          let cbxTheme = document.getElementById("cbx-462");
+          let cbxError = document.getElementById("cbxErrorEdit");
+          let nameError = document.getElementById("nameErrorEdit");
 
-        let ThemeName = document.getElementById("nameTheme-" + id_theme);
+          let ThemeName = document.getElementById("nameTheme-" + id_theme);
+          if (!cbxTheme.checked) {
+            cbxError.style.display = "block";
+          }
+          if (nameTheme.value == "") {
+            nameError.style.display = "block";
+          }
 
-        if (!cbxTheme.checked) {
-          cbxError.style.display = "block";
-        }
-        if (nameTheme.value == "") {
-          nameError.style.display = "block";
-        }
+          if (cbxTheme.checked) {
+            cbxError.style.display = "none";
+          }
+          if (!nameTheme.value == "") {
+            nameError.style.display = "none";
+          }
 
-        if (cbxTheme.checked) {
-          cbxError.style.display = "none";
-        }
-        if (!nameTheme.value == "") {
-          nameError.style.display = "none";
-        }
-
-        if (!nameTheme.value == "" && cbxTheme.checked) {
-          Swal.fire({
-            title:
-              "Do you want to edit this Theme: " + ThemeName.textContent + " ?",
-            text: "New theme name: " + nameTheme.value,
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "green",
-            confirmButtonText: "Confirm!",
-            cancelButtonText: "No, go back.",
-            allowOutsideClick: false,
-          }).then((result) => {
-            if (result.isConfirmed) {
-              let username = getCookie("username");
-              var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                  if (this.status == 200) {
-                    if (this.responseText == 1) {
-                      Swal.fire({
-                        title: "Theme Edited!",
-                        text: "The theme was edited successfully.",
-                        icon: "success",
-                        showConfirmButton: true,
-                      }).then((result) => {
-                        if (result.isConfirmed) {
-                          location.reload();
-                        }
-                      });
+          if (!nameTheme.value == "" && cbxTheme.checked) {
+            Swal.fire({
+              title:
+                "Do you want to edit this Theme: " +
+                ThemeName.textContent +
+                " ?",
+              text: "New theme name: " + nameTheme.value,
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "green",
+              confirmButtonText: "Confirm!",
+              cancelButtonText: "No, go back.",
+              allowOutsideClick: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                let username = getCookie("username");
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                  if (this.readyState == 4) {
+                    if (this.status == 200) {
+                      if (this.responseText == 1) {
+                        Swal.fire({
+                          title: "Theme Edited!",
+                          text: "The theme was edited successfully.",
+                          icon: "success",
+                          showConfirmButton: true,
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            location.reload();
+                          }
+                        });
+                      } else {
+                        Swal.fire("Error!", "Theme not edited.", "error");
+                      }
                     } else {
                       Swal.fire("Error!", "Theme not edited.", "error");
                     }
-                  } else {
-                    Swal.fire("Error!", "Theme not edited.", "error");
                   }
-                }
-              };
-              xhttp.open("POST", "PHP/Forum/editTheme.php", true);
-              xhttp.setRequestHeader(
-                "Content-type",
-                "application/x-www-form-urlencoded"
-              );
-              xhttp.send(
-                "name=" +
-                  encodeURIComponent(nameTheme.value) +
-                  "&id_theme=" +
-                  id_theme
-              );
-            } else {
-              Swal.fire("Cancelled", "Operation cancelled.", "info");
-            }
-          });
-        }
-      });
-  });
+                };
+                xhttp.open("POST", "PHP/Forum/editTheme.php", true);
+                xhttp.setRequestHeader(
+                  "Content-type",
+                  "application/x-www-form-urlencoded"
+                );
+                xhttp.send(
+                  "name=" +
+                    encodeURIComponent(nameTheme.value) +
+                    "&id_theme=" +
+                    id_theme
+                );
+              } else {
+                Swal.fire("Cancelled", "Operation cancelled.", "info");
+              }
+            });
+          }
+        });
+    });
+  }
 }
 
-let deleteBtn = document.querySelectorAll(".deleteThemeBtn");
-for (const btnDelete of deleteBtn) {
-  btnDelete.addEventListener("click", () => {
-    event.stopPropagation();
-    let id_theme = btnDelete.id;
-    id_theme = id_theme.split("-")[1];
+function deleteBtn() {
+  let deleteBtn = document.querySelectorAll(".deleteThemeBtn");
+  for (const btnDelete of deleteBtn) {
+    btnDelete.addEventListener("click", () => {
+      event.stopPropagation();
+      let id_theme = btnDelete.id;
+      id_theme = id_theme.split("-")[1];
 
-    let nameTheme = document.getElementById("nameTheme-" + id_theme);
+      let nameTheme = document.getElementById("nameTheme-" + id_theme);
 
-    Swal.fire({
-      title: "Do you want to delete this Theme?",
-      text: "Deleting theme: '" + nameTheme.textContent + "'",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "green",
-      confirmButtonText: "Confirm!",
-      cancelButtonText: "No, go back.",
-      allowOutsideClick: false,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        let username = getCookie("username");
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4) {
-            if (this.status == 200) {
-              if (this.responseText == 1) {
-                Swal.fire({
-                  title: "Theme Deleted!",
-                  text: "The theme was deleted successfully.",
-                  icon: "success",
-                  showConfirmButton: true,
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    location.reload();
-                  }
-                });
+      Swal.fire({
+        title: "Do you want to delete this Theme?",
+        text: "Deleting theme: '" + nameTheme.textContent + "'",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "green",
+        confirmButtonText: "Confirm!",
+        cancelButtonText: "No, go back.",
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          let username = getCookie("username");
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                if (this.responseText == 1) {
+                  Swal.fire({
+                    title: "Theme Deleted!",
+                    text: "The theme was deleted successfully.",
+                    icon: "success",
+                    showConfirmButton: true,
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      location.reload();
+                    }
+                  });
+                } else {
+                  Swal.fire("Error!", "Theme not deleted.", "error");
+                }
               } else {
                 Swal.fire("Error!", "Theme not deleted.", "error");
               }
-            } else {
-              Swal.fire("Error!", "Theme not deleted.", "error");
             }
-          }
-        };
-        xhttp.open("POST", "PHP/Forum/deleteTheme.php", true);
-        xhttp.setRequestHeader(
-          "Content-type",
-          "application/x-www-form-urlencoded"
-        );
-        xhttp.send("id_theme=" + id_theme);
-      } else {
-        Swal.fire("Cancelled", "Operation cancelled.", "info");
-      }
+          };
+          xhttp.open("POST", "PHP/Forum/deleteTheme.php", true);
+          xhttp.setRequestHeader(
+            "Content-type",
+            "application/x-www-form-urlencoded"
+          );
+          xhttp.send("id_theme=" + id_theme);
+        } else {
+          Swal.fire("Cancelled", "Operation cancelled.", "info");
+        }
+      });
     });
-  });
+  }
 }
 
 function actualizarPostP() {
@@ -376,13 +385,13 @@ filter.addEventListener("change", () => {
 
   switch (selectedValue) {
     case "Newest":
-      tipo = "Newest"
+      tipo = "Newest";
       break;
     case "Popularity":
-      tipo = "Popularity"
+      tipo = "Popularity";
       break;
     case "Views":
-      tipo = "Views"
+      tipo = "Views";
       break;
     default:
       tipo = "Default";
@@ -403,17 +412,26 @@ filter.addEventListener("change", () => {
 
         var postCard = document.createElement("div");
         postCard.className = "post-card";
+        postCard.onclick = function () {
+          window.location.href = "forumPosts.php?id=" + theme[0];
+        };
 
         var postCard1 = document.createElement("div");
         postCard1.className = "post-card-1";
-        postCard1.innerHTML = "<h1>Posted by: " + theme[3] + "</h1><p>Posted on: " + theme[2] + "</p>";
+        postCard1.innerHTML =
+          "<h1>Posted by: " +
+          theme[3] +
+          "</h1><p>Posted on: " +
+          theme[2] +
+          "</p>";
 
         var postCard2 = document.createElement("div");
         postCard2.className = "post-card-2";
 
         var postCard3 = document.createElement("div");
         postCard3.className = "post-card-3";
-        postCard3.innerHTML = "<h1>" + theme[1] + "</h1>";
+        postCard3.innerHTML =
+        "<h1 id='nameTheme-" + theme[0] + "'>" + theme[1] + "</h1>"
 
         var postCard4 = document.createElement("div");
         postCard4.className = "post-card-4";
@@ -425,16 +443,45 @@ filter.addEventListener("change", () => {
         var postCard6 = document.createElement("div");
         postCard6.className = "post-card-6";
 
+        var postCard6Info = document.createElement("div");
+        postCard6Info.className = "post-card-6-info";
+
         var postCardViews = document.createElement("div");
         postCardViews.className = "post-card-views";
-        postCardViews.innerHTML = "<img src='Images/view.svg' alt='' /><p>16</p>";
+        postCardViews.innerHTML =
+          "<img src='Images/view.svg' alt='' /><p>16</p>";
 
         var postCardMsg = document.createElement("div");
         postCardMsg.className = "post-card-msg";
-        postCardMsg.innerHTML = "<img src='Images/msg.svg' alt='' /><p>" + theme[4] + "</p>";
+        postCardMsg.innerHTML =
+          "<img src='Images/msg.svg' alt='' /><p>" + theme[4] + "</p>";
 
-        postCard6.appendChild(postCardViews);
-        postCard6.appendChild(postCardMsg);
+        var postCard6Edit = document.createElement("div");
+        postCard6Edit.className = "post-card-6-edit";
+
+        var postCardDeleteBtn = document.createElement("button");
+        postCardDeleteBtn.className = "deleteThemeBtn";
+        postCardDeleteBtn.innerHTML = "<img src='Images/delete.svg' alt='' />";
+        postCardDeleteBtn.setAttribute("id", "deleteCard-" + theme[0]);
+
+        var postCardEditBtn = document.createElement("button");
+        postCardEditBtn.className = "editThemeBtn";
+        postCardEditBtn.innerHTML = "<img src='Images/edit.svg' alt='' />";
+        postCardEditBtn.setAttribute("id", "editCard-" + theme[0]);
+
+        postCard6Info.appendChild(postCardViews);
+        postCard6Info.appendChild(postCardMsg);
+        postCard6.appendChild(postCard6Info);
+
+        let user = getCookie("username");
+        if(theme[3] == user){
+        postCard6Edit.appendChild(postCardEditBtn);
+        postCard6Edit.appendChild(postCardDeleteBtn);
+        postCard6.appendChild(postCard6Edit);
+        }
+        
+
+
         postCard4.appendChild(postCard5);
         postCard4.appendChild(postCard6);
         postCard2.appendChild(postCard3);
@@ -444,15 +491,15 @@ filter.addEventListener("change", () => {
         postCardContainer.appendChild(postCard);
         postsGroup.appendChild(postCardContainer);
       });
-
+      deleteBtn();
+      editBtn();
+      jqueryModal();
       actualizarPostP();
-
     }
   };
   xhttp.open("POST", "PHP/Forum/returnThemes.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send('filter=' + tipo);
-
+  xhttp.send("filter=" + tipo);
 });
 
 let search = document.getElementById("search");
@@ -477,13 +524,15 @@ function searchTheme(letra) {
         postContainer.id = "post-card-container";
         let imagen = document.createElement("img");
         let divimg = document.createElement("div");
-        imagen.setAttribute("src", "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png");
+        imagen.setAttribute(
+          "src",
+          "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png"
+        );
         imagen.classList.add("img-noresult");
         divimg.appendChild(imagen);
         postContainer.appendChild(divimg);
         postsGroup.appendChild(postContainer); // Agregar el nuevo contenedor al DOM
       }
-
 
       themes.forEach(function (theme) {
         var postCardContainer = document.createElement("div");
@@ -491,17 +540,26 @@ function searchTheme(letra) {
 
         var postCard = document.createElement("div");
         postCard.className = "post-card";
+        postCard.onclick = function () {
+          window.location.href = "forumPosts.php?id=" + theme[0];
+        };
 
         var postCard1 = document.createElement("div");
         postCard1.className = "post-card-1";
-        postCard1.innerHTML = "<h1>Posted by: " + theme[3] + "</h1><p>Posted on: " + theme[2] + "</p>";
+        postCard1.innerHTML =
+          "<h1>Posted by: " +
+          theme[3] +
+          "</h1><p>Posted on: " +
+          theme[2] +
+          "</p>";
 
         var postCard2 = document.createElement("div");
         postCard2.className = "post-card-2";
 
         var postCard3 = document.createElement("div");
         postCard3.className = "post-card-3";
-        postCard3.innerHTML = "<h1>" + theme[1] + "</h1>";
+        postCard3.innerHTML =
+        "<h1 id='nameTheme-" + theme[0] + "'>" + theme[1] + "</h1>"
 
         var postCard4 = document.createElement("div");
         postCard4.className = "post-card-4";
@@ -513,16 +571,45 @@ function searchTheme(letra) {
         var postCard6 = document.createElement("div");
         postCard6.className = "post-card-6";
 
+        var postCard6Info = document.createElement("div");
+        postCard6Info.className = "post-card-6-info";
+
         var postCardViews = document.createElement("div");
         postCardViews.className = "post-card-views";
-        postCardViews.innerHTML = "<img src='Images/view.svg' alt='' /><p>16</p>";
+        postCardViews.innerHTML =
+          "<img src='Images/view.svg' alt='' /><p>16</p>";
 
         var postCardMsg = document.createElement("div");
         postCardMsg.className = "post-card-msg";
-        postCardMsg.innerHTML = "<img src='Images/msg.svg' alt='' /><p>" + theme[4] + "</p>";
+        postCardMsg.innerHTML =
+          "<img src='Images/msg.svg' alt='' /><p>" + theme[4] + "</p>";
 
-        postCard6.appendChild(postCardViews);
-        postCard6.appendChild(postCardMsg);
+        var postCard6Edit = document.createElement("div");
+        postCard6Edit.className = "post-card-6-edit";
+
+        var postCardDeleteBtn = document.createElement("button");
+        postCardDeleteBtn.className = "deleteThemeBtn";
+        postCardDeleteBtn.innerHTML = "<img src='Images/delete.svg' alt='' />";
+        postCardDeleteBtn.setAttribute("id", "deleteCard-" + theme[0]);
+
+        var postCardEditBtn = document.createElement("button");
+        postCardEditBtn.className = "editThemeBtn";
+        postCardEditBtn.innerHTML = "<img src='Images/edit.svg' alt='' />";
+        postCardEditBtn.setAttribute("id", "editCard-" + theme[0]);
+
+        postCard6Info.appendChild(postCardViews);
+        postCard6Info.appendChild(postCardMsg);
+        postCard6.appendChild(postCard6Info);
+
+        let user = getCookie("username");
+        if(theme[3] == user){
+        postCard6Edit.appendChild(postCardEditBtn);
+        postCard6Edit.appendChild(postCardDeleteBtn);
+        postCard6.appendChild(postCard6Edit);
+        }
+        
+
+
         postCard4.appendChild(postCard5);
         postCard4.appendChild(postCard6);
         postCard2.appendChild(postCard3);
@@ -532,11 +619,117 @@ function searchTheme(letra) {
         postCardContainer.appendChild(postCard);
         postsGroup.appendChild(postCardContainer);
       });
-
+      deleteBtn();
+      editBtn();
+      jqueryModal();
       actualizarPostP();
     }
   };
   xhttp.open("POST", "PHP/Forum/search_theme.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("letra=" + letra);
+}
+
+function createPostCardContainer(theme) {
+  var postCardContainer = document.createElement("div");
+  postCardContainer.id = "post-card-container";
+  postCardContainer.classList.add("post-card-container");
+
+  var postCard = document.createElement("div");
+  postCard.id = "postCard" + theme[0];
+  postCard.classList.add("post-card");
+  postCard.onclick = function () {
+    window.location.href = "forumPosts.php?id=" + theme[0];
+  };
+
+  var postCard1 = document.createElement("div");
+  postCard1.classList.add("post-card-1");
+  var postedBy = document.createElement("h1");
+  postedBy.textContent = "Posted by: " /*+ returnNombreUsu(theme[3])*/;
+  var postedOn = document.createElement("p");
+  postedOn.textContent = "Posted on: " + theme[2];
+  postCard1.appendChild(postedBy);
+  postCard1.appendChild(postedOn);
+
+  var postCard2 = document.createElement("div");
+  postCard2.classList.add("post-card-2");
+
+  var postCard3 = document.createElement("div");
+  postCard3.classList.add("post-card-3");
+  var nameTheme = document.createElement("h1");
+  nameTheme.id = "nameTheme-" + theme[0];
+  nameTheme.textContent = theme[1];
+  postCard3.appendChild(nameTheme);
+
+  var postCard4 = document.createElement("div");
+  postCard4.classList.add("post-card-4");
+
+  var postCard5 = document.createElement("div");
+  postCard5.classList.add("post-card-5");
+  var pLimit = document.createElement("p");
+  pLimit.id = "pLimit";
+  /*pLimit.textContent = returnLastPost(theme[0]);*/
+  postCard5.appendChild(pLimit);
+
+  var postCard6 = document.createElement("div");
+  postCard6.classList.add("post-card-6");
+  var postCard6Info = document.createElement("div");
+  postCard6Info.classList.add("post-card-6-info");
+
+  var postCardViews = document.createElement("div");
+  postCardViews.classList.add("post-card-views");
+  var viewsImg = document.createElement("img");
+  viewsImg.src = "Images/view.svg";
+  var viewsCount = document.createElement("p");
+  viewsCount.textContent = "16";
+  postCardViews.appendChild(viewsImg);
+  postCardViews.appendChild(viewsCount);
+
+  var postCardMsg = document.createElement("div");
+  postCardMsg.classList.add("post-card-msg");
+  var msgImg = document.createElement("img");
+  msgImg.src = "Images/msg.svg";
+  var msgCount = document.createElement("p");
+  /*msgCount.textContent = returnNumberPosts(theme[0]);*/
+  postCardMsg.appendChild(msgImg);
+  postCardMsg.appendChild(msgCount);
+
+  postCard6Info.appendChild(postCardViews);
+  postCard6Info.appendChild(postCardMsg);
+  postCard6.appendChild(postCard6Info);
+
+  //if (theme[3] == id_usu_theme || username == "admin") {
+  var postCard6Edit = document.createElement("div");
+  postCard6Edit.classList.add("post-card-6-edit");
+  var editBtn = document.createElement("button");
+  editBtn.classList.add("editThemeBtn");
+  editBtn.id = "editCard-" + theme[0];
+  var editImg = document.createElement("img");
+  editImg.src = "Images/edit.svg";
+  editBtn.appendChild(editImg);
+
+  var deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("deleteThemeBtn");
+  deleteBtn.id = "deleteCard-" + theme[0];
+  var deleteImg = document.createElement("img");
+  deleteImg.src = "Images/delete.svg";
+  deleteBtn.appendChild(deleteImg);
+
+  postCard6Edit.appendChild(editBtn);
+  postCard6Edit.appendChild(deleteBtn);
+  postCard6.appendChild(postCard6Edit);
+  //}
+
+  postCard4.appendChild(postCard5);
+  postCard4.appendChild(postCard6);
+
+  postCard2.appendChild(postCard3);
+  postCard2.appendChild(postCard4);
+
+  postCard.appendChild(postCard1);
+  postCard.appendChild(postCard2);
+
+  postCardContainer.appendChild(postCard);
+
+  //return postCardContainer;
 }

@@ -105,13 +105,13 @@
                       <p>' . returnNumberPosts($themes[$i][0]) . '</p>
                     </div>
                   </div>';
-          if ($themes[$i][3] == $id_usu_theme || $username == "admin") {
-            echo '<div class="post-card-6-edit">
-                      <button class="editThemeBtn" id="editCard-' . $themes[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
-                      <button class="deleteThemeBtn" id="deleteCard-' . $themes[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
-                    </div>';
-          }
-          echo '</div>
+              if ($themes[$i][3] == $id_usu_theme || $username == "admin") {
+                echo '<div class="post-card-6-edit">
+                          <button class="editThemeBtn" id="editCard-' . $themes[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
+                          <button class="deleteThemeBtn" id="deleteCard-' . $themes[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
+                        </div>';
+              }
+              echo '</div>
               </div>
             </div>
           </div>
