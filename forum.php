@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="CSS/forum.css" />
   <?php
   if (isset($_COOKIE["username"])) {
-    $username =  $_COOKIE["username"];
+    $username = $_COOKIE["username"];
   } else {
     // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
     header('Location: users.php');
@@ -28,10 +28,10 @@
   ?>
   <header>
     <?php
-    echo'<div class="header-container"></div>';
+    echo '<div class="header-container"></div>';
     echo '<div class="user">
-      <p>Welcome Back: Christian!</p>
-      <button class="logOutBtn">Log Out     <img src="Images/logout.svg" alt=""></button>
+      <p>Welcome Back: ' . $username . '!</p>
+      <button id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
     </div>';
     ?>
 
@@ -74,6 +74,7 @@
         <?php
         include "PHP/Forum/returnThemes.php";
         $themes = returnThemesByDefault();
+        $id_usu_theme = returnIdUsu($username);
         for ($i = 0; $i < sizeof($themes); $i++) {
           echo '<div id="post-card-container" class="post-card-container">
           <div id="postCard' . $themes[$i][0] . '" onclick="window.location.href = \'forumPosts.php?id=' . $themes[$i][0] . '\'" class="post-card">
@@ -94,15 +95,23 @@
                   </p>
                 </div>
                 <div class="post-card-6">
-                  <div class="post-card-views">
-                    <img src="Images/view.svg" alt="" />
-                    <p>16</p>
-                  </div>
-                  <div class="post-card-msg">
-                    <img src="Images/msg.svg" alt="" />
-                    <p>' . returnNumberPosts($themes[$i][0]) . '</p>
-                  </div>
-                </div>
+                  <div class="post-card-6-info">
+                    <div class="post-card-views">
+                      <img src="Images/view.svg" alt="" />
+                      <p>16</p>
+                    </div>
+                    <div class="post-card-msg">
+                      <img src="Images/msg.svg" alt="" />
+                      <p>' . returnNumberPosts($themes[$i][0]) . '</p>
+                    </div>
+                  </div>';
+          if ($themes[$i][3] == $id_usu_theme) {
+            echo '<div class="post-card-6-edit">
+                      <button class="editThemeBtn" id="editCard-' . $themes[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
+                      <button class="deleteThemeBtn" id="deleteCard-' . $themes[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
+                    </div>';
+          }
+          echo '</div>
               </div>
             </div>
           </div>
@@ -164,6 +173,18 @@
   ?>
 </body>
 <script>
+
+  function getCookie(name) {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
   $(document).ready(function () {
     $("#newTheme").on("click", function () {
       // Abre el modal al hacer clic
@@ -222,6 +243,7 @@
         allowOutsideClick: false
       }).then((result) => {
         if (result.isConfirmed) {
+          let username = getCookie("username");
           var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function () {
             if (this.readyState == 4) {
@@ -248,7 +270,7 @@
           };
           xhttp.open("POST", "PHP/Forum/insertTheme.php", true);
           xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          xhttp.send('name=' + encodeURIComponent(nameTheme.value));
+          xhttp.send('name=' + encodeURIComponent(nameTheme.value) + '&username=' + username);
         } else {
           Swal.fire("Cancelled", "Operation cancelled.", "info");
         }
@@ -287,6 +309,89 @@
       }
     })
   })
+
+  let editBtn = document.querySelectorAll(".editThemeBtn");
+  for (const btnEdit of editBtn) {
+    btnEdit.addEventListener("click", ()=>{
+      event.stopPropagation();
+      let id_theme =btnEdit.id;
+      id_theme = id_theme.split('-')[1];
+      alert(id_theme);
+    })
+  }
+
+  let deleteBtn = document.querySelectorAll(".deleteThemeBtn");
+  for (const btnDelete of deleteBtn) {
+    btnDelete.addEventListener("click", ()=>{
+      event.stopPropagation();
+      let id_theme = btnDelete.id;
+      id_theme = id_theme.split('-')[1];
+      Swal.fire({
+      title: "Do you want to delete this theme?",
+      text: "Deleting Theme...s",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Confirm!",
+      cancelButtonText: "No, go back.",
+      allowOutsideClick: false
+    }).then((result) => {
+      if (result.isConfirmed) {
+        /*Swal.fire({
+          title: "Login Out!",
+          text: "Come back Soon!.",
+          icon: "success",
+          showConfirmButton: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.reload();
+          }
+        });*/
+      } else {
+        Swal.fire("Cancelled", "Coming Back.", "info");
+      }
+    })
+    })
+  }
+
 </script>
+<?php
+function returnIdUsu($id_nombre)
+{
+  // CONSULTA A EJECUTAR
+  $consulta = "SELECT id FROM users WHERE username = ?";
+  include "PHP/Forum/conexion.php";
+
+  // VERIFICAR LA CONEXIÓN
+  if (!$con) {
+    return "Error: No se pudo conectar a la base de datos";
+  }
+
+  // INICIAR EL STATEMENT
+  $stmt = mysqli_stmt_init($con);
+
+  // PREPARAR LA CONSULTA
+  if (mysqli_stmt_prepare($stmt, $consulta)) {
+    // ENLAZAR LOS PARÁMETROS
+    mysqli_stmt_bind_param($stmt, "s", $id_nombre);
+
+    // EJECUTAR EL STATEMENT
+    mysqli_stmt_execute($stmt);
+
+    // OBTENER EL RESULTADO
+    mysqli_stmt_bind_result($stmt, $id_usuario);
+    mysqli_stmt_fetch($stmt);
+
+    // CERRAR EL STATEMENT
+    mysqli_stmt_close($stmt);
+
+    // DEVOLVER EL ID DEL USUARIO
+    return $id_usuario;
+  } else {
+    // MANEJO DE ERRORES SI LA PREPARACIÓN DE LA CONSULTA FALLA
+    return "Error: No se pudo preparar la consulta";
+  }
+} ?>
+
 
 </html>
