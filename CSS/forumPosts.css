@@ -136,10 +136,18 @@ header {
   justify-content: center;
   flex-direction: row;
   background-color: white;
+  opacity: 0.75;
+  transition: 0.3s;
+}
+
+.post-container:hover {
+  opacity: 1;
+  background-color: white;
 }
 
 .post-container-1 {
   width: 20%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,12 +159,14 @@ header {
   font-weight: bold;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 .post-container-1 >h1{
   font-weight: bold;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 20px;
 }
 
 .post-container-2 {
@@ -336,6 +346,7 @@ header {
   justify-content: space-around;
   flex-direction: row;
   text-align: justify;
+  padding-top: 10px;
   border-top: 1px solid gray;
 }
 
@@ -865,14 +876,6 @@ select {
     font-size: 1.75em;
   }
 }
-@media (max-width:1100px) {
-.post-container-1{
-  /*height: 200px;*/
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-}
-
 @media (max-width: 700px) {
   .main-bar {
     height: 200px;
@@ -913,6 +916,14 @@ select {
   }
   .user{
     width: 50%;
+  }
+
+  .post-container-1 >p{
+    font-size: 0.9em;
+  }
+  
+  .post-container-1 >h1{
+    font-size: 0.9em;
   }
 }
 

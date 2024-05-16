@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <!-- Link al archivo CSS -->
 </head>
-
+<?php
+ //include "headerForum.php";
+  ?>
 <body>
   <link rel="stylesheet" href="CSS/forumPosts.css" />
   <?php
@@ -91,12 +93,12 @@
                       <img src="Images/view.svg" alt="" />
                       <p>Views: 1</p>
                       </div>-->';
-            if ($posts[$i][3] == $id_usu_theme || $username == "admin") {
+            /*if ($posts[$i][3] == $id_usu_theme || $username == "admin") {
               echo '<div class="post-card-6-edit">
                                   <button class="editPostBtn" id="editCard-' . $posts[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
                                   <button class="deletePostBtn" id="deleteCard-' . $posts[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
                                 </div>';
-            }
+            }*/
             echo '</div>
                   <div class="post-container-2">
                     <p id="postContent-'.$posts[$i][0].'">' . $posts[$i][1] . '</p>

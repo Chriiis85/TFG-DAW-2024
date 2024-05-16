@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   /*background-color: black;*/
+  
 }
 
 header {
@@ -99,12 +100,12 @@ header {
   border-radius: 10px;
 }
 .main-bar-filter {
-  width: 25%;
+  width: 30%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 5%;
+  padding-left: 2%;
 }
 
 .main-bar-search {
@@ -116,12 +117,12 @@ header {
 }
 
 .main-bar-add {
-  width: 25%;
+  width: 30%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 5%;
+  padding-right: 2%;
 }
 
 .posts-group {
@@ -154,6 +155,24 @@ header {
   flex-direction: column;
   background-color: #f3f3f3;
   background-color: #f3f3f3;
+  --s: 200px; /* control the size */
+  --c1: #757575;
+  --c2: #4e4f51;
+  --c3: #3c3c3c;
+
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
 }
 
 .posts-container-info {
