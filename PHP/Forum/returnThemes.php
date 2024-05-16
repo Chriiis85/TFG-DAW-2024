@@ -194,7 +194,7 @@ function returnLastPost($id_theme)
             return $last_post['contenido'];
         } else {
             // Si no hay resultados
-            return "No se encontraron posts para este tema";
+            return "There are no posts for this theme";
         }
     } else {
         // Manejo de errores si la preparación de la consulta falla

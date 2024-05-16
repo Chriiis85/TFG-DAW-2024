@@ -423,6 +423,10 @@ header {
 .posts-container-info>h1{
   font-size: 1.5em;
 }
+
+.imgnoresult{
+  width: 500px;
+}
 /*---------------------------------------------------------SEARCH INPUT----------------------------------------------------------------------*/
 .group {
   position: relative;
