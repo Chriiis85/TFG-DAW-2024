@@ -30,6 +30,7 @@ header {
 
 .header-container>h1{
   cursor: pointer;
+  text-align: center;
 }
 
 .user {
@@ -40,11 +41,13 @@ header {
   justify-content: space-around;
   flex-direction: row;
   padding-right: 50px;
+  padding-left: 50px;
 }
 
 .user > p {
   font-size: 1.5em;
   font-weight: bold;
+  text-align: center;
 }
 
 .logOutBtn {
@@ -63,6 +66,8 @@ header {
   line-height: 1;
   width: 150px;
   transition: transform 200ms, background 200ms;
+  text-align: center;
+  padding-left: 30px;
 }
 
 .logOutBtn:hover {
@@ -135,15 +140,23 @@ header {
 
 .post-container-1 {
   width: 20%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
-.post-container-1 {
+.post-container-1 >p{
   font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.post-container-1 >h1{
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .post-container-2 {
@@ -237,8 +250,12 @@ header {
   font-weight: bold;
 }
 
-.post-card-1 > p,
-h1 {
+.post-card-1 > p {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.post-card-1 > h1 {
   padding-left: 3%;
   padding-right: 3%;
 }
@@ -314,7 +331,6 @@ h1 {
 
 .post-card-6-edit {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -325,7 +341,7 @@ h1 {
 
 .editPostBtn{
   width: 40%;
-  height: 70%;
+  height: 50%;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -336,7 +352,7 @@ h1 {
 
 .deletePostBtn{
   width: 40%;
-  height: 70%;
+  height: 50%;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -393,6 +409,9 @@ h1 {
   font-weight: bold;
 }
 
+.posts-container-info>h1{
+  font-size: 1.5em;
+}
 /*---------------------------------------------------------SEARCH INPUT----------------------------------------------------------------------*/
 .group {
   position: relative;
@@ -455,7 +474,7 @@ select {
   /*  other styles for aesthetics */
   width: 100%;
   font-size: 1.15rem;
-  padding: 0.675em 6em 0.675em 1em;
+  padding: 0.675em 2em 0.675em 1em;
   background-color: #fff;
   border: 1px solid #caced1;
   border-radius: 0.25rem;
@@ -815,10 +834,22 @@ select {
 }
 
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
-
 @media (max-width: 1400px) {
   .main-bar-search {
     width: 30%;
+  }
+  .user{
+    width: 40%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .user > p{
+    font-size: 1.25em;  
+  }
+  .logOutBtn{
+    width: 150px;
+    height: 50px;
+    font-size: 1em;
   }
 }
 
@@ -830,6 +861,16 @@ select {
   .main-bar-filter {
     width: 30%;
   }
+  .header-container>h1{
+    font-size: 1.75em;
+  }
+}
+@media (max-width:1100px) {
+.post-container-1{
+  /*height: 200px;*/
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 }
 
 @media (max-width: 700px) {
@@ -855,10 +896,37 @@ select {
     padding: 0;
     margin-bottom: -5%;
   }
+  .posts-container-info>h1{
+    font-size: 1.25em;
+  }
+  .editPostBtn>img{
+    width: 20px;
+  }
+  .deletePostBtn>img{
+    width: 20px;
+  }
+  .post-card-msg>img{
+    width: 20px;
+  }
+  .header-container>h1{
+    font-size: 1.25em;
+  }
+  .user{
+    width: 50%;
+  }
 }
 
 @media (max-width: 700px) {
   .post-card {
     font-size: 0.9em;
   }
+}
+
+@media (max-width: 500px) {
+.editPostBtn>img{
+  width: 15px;
+}
+.deletePostBtn>img{
+  width: 15px;
+}
 }

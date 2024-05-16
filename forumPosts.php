@@ -87,10 +87,10 @@
                     <div class="post-container-1">
                       <h1>Posted by: ' . returnNombreUsu($posts[$i][3]) . '.</h1>
                       <p>Posted on: ' . $posts[$i][2] . '.</p>
-                      <div class="post-card-views">
+                      <!--<div class="post-card-views">
                       <img src="Images/view.svg" alt="" />
                       <p>Views: 1</p>
-                      </div>';
+                      </div>-->';
             if ($posts[$i][3] == $id_usu_theme || $username == "admin") {
               echo '<div class="post-card-6-edit">
                                   <button class="editPostBtn" id="editCard-' . $posts[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>

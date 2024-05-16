@@ -21,7 +21,7 @@ header {
 }
 
 .header-container{
-  width: 70%;
+  width: 60%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -30,21 +30,29 @@ header {
 
 .header-container>h1{
   cursor: pointer;
+  text-align: center;
+}
+
+.posts-container-info>h1{
+  font-size: 1.5em;
 }
 
 .user {
   width: 30%;
   height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
-  padding-right: 50px;
+  text-align: center;
 }
 
 .user > p {
   font-size: 1.5em;
   font-weight: bold;
+  text-align: center;
 }
 
 .logOutBtn {
@@ -63,6 +71,8 @@ header {
   line-height: 1;
   width: 150px;
   transition: transform 200ms, background 200ms;
+  text-align: center;
+  padding-left: 20px;
 }
 
 .logOutBtn:hover {
@@ -199,8 +209,11 @@ header {
   font-weight: bold;
 }
 
-.post-card-1 > p,
-h1 {
+.post-card-1 > p {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.post-card-1 > h1 {
   padding-left: 3%;
   padding-right: 3%;
 }
@@ -343,6 +356,7 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .post-card-msg > img {
@@ -417,7 +431,7 @@ select {
   /*  other styles for aesthetics */
   width: 100%;
   font-size: 1.15rem;
-  padding: 0.675em 6em 0.675em 1em;
+  padding: 0.675em 2em 0.675em 1em;
   background-color: #fff;
   border: 1px solid #caced1;
   border-radius: 0.25rem;
@@ -508,6 +522,10 @@ select {
   height: 80%;
   max-width: 800px;
   max-height: 600px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   overflow: auto;
   overflow-x: hidden;
 }
@@ -556,6 +574,7 @@ select {
   justify-content: space-around;
   font-size: 1.25em;
   font-weight: bold;
+  text-align: center;
 }
 
 .inputText {
@@ -758,6 +777,19 @@ select {
   .main-bar-search {
     width: 30%;
   }
+  .user{
+    width: 40%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .user > p{
+    font-size: 1.25em;  
+  }
+  .logOutBtn{
+    width: 150px;
+    height: 50px;
+    font-size: 1em;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -768,6 +800,32 @@ select {
   .main-bar-filter {
     width: 30%;
   }
+  .header-container>h1{
+    font-size: 1.75em;
+  }
+}
+
+@media (max-width: 900px) {
+.themes-btnCont{
+  flex-direction: column;
+  gap: 10%;
+  width: 100%;
+}
+#CloseThemeBtn{
+  width: 70%;
+}
+#addThemeBtn{
+  width: 70%;
+}
+  
+#edit-theme-modal {
+  width: 90%; 
+}
+
+
+.inputContainer{
+  width: 100%;
+}
 }
 
 @media (max-width: 700px) {
@@ -793,10 +851,74 @@ select {
     padding: 0;
     margin-bottom: -5%;
   }
+  .posts-container-info>h1{
+    font-size: 1.25em;
+  }
+  .editThemeBtn>img{
+    width: 20px;
+  }
+  .deleteThemeBtn>img{
+    width: 20px;
+  }
+  .post-card-msg>img{
+    width: 20px;
+  }
+  .header-container>h1{
+    font-size: 1.25em;
+  }
+  .user{
+    width: 50%;
+  }
+
+  #new-theme-modal {
+    width: 95%; 
+  }
+  
+  #edit-theme-modal {
+    width: 95%; 
+  }
 }
 
 @media (max-width: 700px) {
   .post-card {
     font-size: 0.9em;
   }
+}
+
+@media (max-width: 600px) {
+  .inputContainer{
+    flex-direction: column;
+    justify-content: center;
+    gap:5%;
+    height: 200px;
+    width: 90%;
+  }
+  .inputContainer> .inputText{
+    height: 50px;
+    width: 200px;
+  }
+  #CloseThemeBtn{
+    width: 90%;
+  }
+  #addThemeBtn{
+    width: 90%;
+  }
+  #CloseThemeBtn{
+    width: 90%;
+  }
+  #addThemeBtn{
+    width: 90%;
+  }
+  .themeFormContainer{
+    height: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+.editThemeBtn>img{
+  width: 15px;
+}
+.deleteThemeBtn>img{
+  width: 15px;
+}
 }
