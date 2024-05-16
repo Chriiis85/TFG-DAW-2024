@@ -38,7 +38,7 @@
           <i id="passwordIcon" class="fa fa-eye-slash"></i>
         </button>
       </div>
-      <p id="loginFormChange">Have an account? Login here.</p>
+      <p onclick="window.location.href = 'users.php'" id="loginFormChange">Have an account? Login here.</p>
       <button id="register" class="buttons" role="button">Register</button>
       <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
         Go Home
@@ -70,7 +70,7 @@
       <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
         Go Home
       </button>
-      <p id="pwdFormChange">Forgot your password? Reset here.</p>
+      <!--<p id="pwdFormChange">Forgot your password? Reset here.</p>-->
       </form>
     </article>
 
