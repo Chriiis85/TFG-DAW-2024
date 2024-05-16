@@ -2,44 +2,45 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Motoring Community - Posts</title>
-    <script defer src="JS/forumPosts.js"></script>
-    <!-- SCRIPT JQUERY -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <!-- SCRIPT JQUERY MODALS ALERT -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- SCRIPT Y HOJA DE ESTILOS JQUERY -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motoring Community - Forum</title>
+  <script defer src="JS/forum.js"></script>
+  <!-- SCRIPT JQUERY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <!-- SCRIPT JQUERY MODALS ALERT -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- SCRIPT Y HOJA DE ESTILOS JQUERY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <!-- Link al archivo CSS -->
 </head>
 
 <body>
-    <!-- Link al archivo CSS -->
-    <link rel="stylesheet" href="CSS/forumPosts.css" />
+  <link rel="stylesheet" href="CSS/forumPosts.css" />
+  <?php
+  $id_theme = $_GET["id"];
+  include "PHP/Forum/returnPosts.php";
+  if (isset($_COOKIE["username"])) {
+    $username = $_COOKIE["username"];
+  } else {
+    // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
+    header('Location: users.php');
+  }
+  $id_usu_theme = returnIdUsu($username);
+  ?>
+  <header>
     <?php
-    $id_theme = $_GET["id"];
+    echo '<div class="header-container"></div>';
+    echo '<div class="user">
+      <p>Welcome Back: ' . $username . '!</p>
+      <button id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
+    </div>';
     ?>
-    <?php
-    if (isset($_COOKIE["username"])) {
-        $username = $_COOKIE["username"];
-    } else {
-        // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
-        header('Location: users.php');
-    }
-    ?>
-    <header>
-        <?php
-        echo '<div class="header-container"></div>';
-        echo '<div class="user">
-        <p>Welcome Back: Christian!</p>
-        <button class="logOutBtn">Log Out     <img src="Images/logout.svg" alt=""></button>
-        </div>';
-        ?>
-    </header>
 
-      <section class="main">
+  </header>
+
+  <section class="main">
     <article class="posts-container" id="postsContainer">
       <div class="main-bar">
         <div class="main-bar-filter">
@@ -65,23 +66,52 @@
           </div>
         </div>
         <div class="main-bar-add">
-          <button id="newPost" class="button-add" role="button">Add new Post</button>
+          <button id="newTheme" class="button-add" role="button">Add new Theme</button>
         </div>
       </div>
       <div class="posts-container-info">
         <h1 id="orderP">Order by: Default.</h1>
-        <h1 id="themeName">Theme Name: </h1>
+        <h1>Theme Name: <?php echo returnThemeName($id_theme) ?></h1>
         <h1 id="countPostP"></h1>
       </div>
-
+      <div id="posts-group" class="posts-group">
+        <?php
+        $posts = returnPostsDefault($id_theme);
+        if (sizeof($posts) == 0) {
+          echo "Hola";
+        } else {
+          for ($i = 0; $i < sizeof($posts); $i++) {
+            echo '<div class="post-container">
+                    <div class="post-container-1">
+                      <h1>Posted by: '.returnNombreUsu($posts[$i][3]).'.</h1>
+                      <p>Posted on: '.$posts[$i][2].'.</p>
+                      <div class="post-card-views">
+                      <img src="Images/view.svg" alt="" />
+                      <p>Views: 1</p>
+                      </div>';
+                      if ($posts[$i][3] == $id_usu_theme || $username == "admin") {
+                        echo '<div class="post-card-6-edit">
+                                  <button class="editThemeBtn" id="editCard-' . $posts[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
+                                  <button class="deleteThemeBtn" id="deleteCard-' . $posts[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
+                                </div>';
+                      }
+                    echo'</div>
+                  <div class="post-container-2">
+                    <p>'.$posts[$i][1].'</p>
+                  </div>
+                </div>';
+          }
+        }
+        ?>
+      </div>
     </article>
 
-    <div id="new-post-modal" class="modal">
-      <h2>Add new Post</h2>
+    <div id="new-theme-modal" class="modal">
+      <h2>Add Theme to the Forum</h2>
       <div class="themeFormContainer">
         <div class="inputContainer">
-          <label for="">Enter Post Messagge:</label>
-          <input placeholder="New Post Messagge" class="inputText" type="text" name="post_msg" id="post_msg">
+          <label for="">Enter Theme Name:</label>
+          <input placeholder="New Theme Name" class="inputText" type="text" name="Theme_Name" id="Theme_Name">
         </div>
         <div class="checkbox-wrapper-46">
           <input type="checkbox" id="cbx-46" class="inp-cbx" />
@@ -92,11 +122,36 @@
           </label>
         </div>
         <p id="cbxError">You need to accept Privacy Policy to add a new Theme</p>
-        <p id="nameError">You need to add a neme to the new Theme</p>
+        <p id="nameError">You need to add a name to the new Theme</p>
 
         <div class="themes-btnCont">
           <button id="CloseThemeBtn" class="backTheme">Close</button>
           <button id="addThemeBtn" class="confirmTheme">Confirm New Theme</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="edit-theme-modal" class="modal">
+      <h2>Edit theme</h2>
+      <div class="themeFormContainer">
+        <div class="inputContainer">
+          <label for="">Enter new Theme Name:</label>
+          <input placeholder="New Theme Name" class="inputText" type="text" name="New_Theme_Name" id="New_Theme_Name">
+        </div>
+        <div class="checkbox-wrapper-46">
+          <input type="checkbox" id="cbx-462" class="inp-cbx" />
+          <label for="cbx-462" class="cbx"><span>
+              <svg viewBox="0 0 12 10" height="10px" width="12px">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg></span><span id="privacyThemeEdit">Accept Privacy and Policy</span>
+          </label>
+        </div>
+        <p id="cbxErrorEdit">You need to accept Privacy Policy to edit the Theme</p>
+        <p id="nameErrorEdit">You need to add a name to the new Theme</p>
+
+        <div class="themes-btnCont">
+          <button id="CloseEditThemeBtn" class="backTheme">Close</button>
+          <button id="editThemeBtn" class="confirmTheme">Confirm New Name</button>
         </div>
       </div>
     </div>
@@ -128,29 +183,52 @@
   ?>
 </body>
 <script>
-      $(document).ready(function () {
-    $("#newPost").on("click", function () {
-      // Abre el modal al hacer clic
-      $("#new-post-modal").modal({
-        fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false
-      });
-    });
+  actualizarPostP();
+  function actualizarPostP() {
+    let totalPosts = document.querySelectorAll(".post-container");
+    countPost = "Showing: " + totalPosts.length + " Posts.";
 
-    $("#privacyTheme").on("click", function () {
-      // Abre el modal al hacer clic
-      $("#new-theme-privacy").modal({
-        fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false
-      });
-    });
-
-    $("#CloseThemeBtn").on("click", function () {
-      $.modal.close();
-    });
-
-  })
+    let countPostP = document.getElementById("countPostP");
+    countPostP.textContent = countPost;
+  }
 </script>
+<?php
+function returnIdUsu($id_nombre)
+{
+  // CONSULTA A EJECUTAR
+  $consulta = "SELECT id FROM users WHERE username = ?";
+  include "PHP/Forum/conexion.php";
+
+  // VERIFICAR LA CONEXIÓN
+  if (!$con) {
+    return "Error: No se pudo conectar a la base de datos";
+  }
+
+  // INICIAR EL STATEMENT
+  $stmt = mysqli_stmt_init($con);
+
+  // PREPARAR LA CONSULTA
+  if (mysqli_stmt_prepare($stmt, $consulta)) {
+    // ENLAZAR LOS PARÁMETROS
+    mysqli_stmt_bind_param($stmt, "s", $id_nombre);
+
+    // EJECUTAR EL STATEMENT
+    mysqli_stmt_execute($stmt);
+
+    // OBTENER EL RESULTADO
+    mysqli_stmt_bind_result($stmt, $id_usuario);
+    mysqli_stmt_fetch($stmt);
+
+    // CERRAR EL STATEMENT
+    mysqli_stmt_close($stmt);
+
+    // DEVOLVER EL ID DEL USUARIO
+    return $id_usuario;
+  } else {
+    // MANEJO DE ERRORES SI LA PREPARACIÓN DE LA CONSULTA FALLA
+    return "Error: No se pudo preparar la consulta";
+  }
+} ?>
+
+
 </html>

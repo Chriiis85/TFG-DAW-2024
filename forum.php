@@ -98,7 +98,7 @@
                   <div class="post-card-6-info">
                     <div class="post-card-views">
                       <img src="Images/view.svg" alt="" />
-                      <p>16</p>
+                      <p>'.$themes[$i][4].'</p>
                     </div>
                     <div class="post-card-msg">
                       <img src="Images/msg.svg" alt="" />

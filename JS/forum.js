@@ -53,7 +53,7 @@
 deleteBtn();
 editBtn();
 jqueryModal();
-
+actualizarPostP();
 function getCookie(name) {
   let nameEQ = name + "=";
   let ca = document.cookie.split(";");
@@ -367,7 +367,6 @@ function deleteBtn() {
     });
   }
 }
-
 function actualizarPostP() {
   let totalPosts = document.querySelectorAll(".post-card-container");
   countPost = "Showing: " + totalPosts.length + " Posts.";
@@ -397,7 +396,7 @@ filter.addEventListener("change", () => {
       tipo = "Default";
       break;
   }
-
+  orderP.textContent = "Order by: "+tipo+".";
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {

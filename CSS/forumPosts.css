@@ -78,6 +78,7 @@ header {
   justify-content: center;
   flex-direction: row;
   background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   border-radius: 10px;
 }
 .main-bar-filter {
@@ -106,6 +107,64 @@ header {
   padding-right: 5%;
 }
 
+.posts-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post-container {
+  width: 90%;
+  height: 200px;
+  border-top: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: white;
+}
+
+.post-container-1 {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post-container-1 {
+  font-weight: bold;
+}
+
+.post-container-2 {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid gray;
+}
+
+.post-container-2 > p{
+  padding: 5%;
+  margin: 0;
+}
+
+.img-noresult {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-noresult > img {
+  width: 50%;
+}
+
 .posts-container {
   width: 100%;
   padding-top: 3%;
@@ -115,7 +174,7 @@ header {
   justify-content: center;
   flex-direction: column;
   background-color: #f3f3f3;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #f3f3f3;
 }
 
 .posts-container-info {
@@ -127,9 +186,204 @@ header {
   text-align: center;
 }
 
+.post-card-container {
+  width: 90%;
+  height: 200px;
+  margin-bottom: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-card {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  transition: 0.3s;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: white;
+  border: 1px solid gray;
+}
+
+.post-card:hover {
+  cursor: pointer;
+  /*transform: scale(0.98);*/
+  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+}
+
+.post-card-1 {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  flex-direction: column;
+  border-right: 1px solid gray;
+}
+
+.post-card-1 > p {
+  font-weight: bold;
+}
+
+.post-card-1 > p,
 h1 {
   padding-left: 3%;
   padding-right: 3%;
+}
+
+.post-card-2 {
+  width: 75%;
+  height: 100%;
+}
+
+.post-card-3 {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid gray;
+}
+
+.post-card-3 > h1 {
+  margin: 0;
+  padding-left: 3%;
+}
+
+.post-card-4 {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.post-card-5 {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  overflow: hidden;
+  border-right: 1px solid gray;
+}
+
+.post-card-5 > p {
+  width: 90%;
+  height: 90%;
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+
+.post-card-6 {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.post-card-6-info {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: justify;
+}
+
+.post-card-6-edit {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: justify;
+  border-top: 1px solid gray;
+}
+
+.editThemeBtn{
+  width: 40%;
+  height: 70%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  transition: 0.5s;
+}
+
+.deleteThemeBtn{
+  width: 40%;
+  height: 70%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  transition: 0.5s;
+}
+
+.deleteThemeBtn:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.editThemeBtn:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.post-card-views {
+  width: 40%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post-card-views > img {
+  width: 25px;
+}
+
+.post-card-views > p {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.post-card-msg {
+  width: 40%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post-card-msg > img {
+  width: 25px;
+}
+
+.post-card-msg > p {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 /*---------------------------------------------------------SEARCH INPUT----------------------------------------------------------------------*/
@@ -157,6 +411,10 @@ h1 {
   transition: 0.3s ease;
 }
 
+.input::placeholder {
+  color: #9e9ea7;
+}
+
 .input:focus,
 input:hover {
   outline: none;
@@ -178,6 +436,10 @@ input:hover {
 .select {
   width: 70%;
   position: relative;
+}
+
+#select3 {
+  display: none;
 }
 select {
   appearance: none;
@@ -251,8 +513,37 @@ select {
   opacity: 0.75;
 }
 
+/*-------------------------------------------------------------PAGINATION---------------------------------------------------------------------*/
+.pagination {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.buttonPagination {
+  font-size: 1.25em;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2%;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
 /*------------------------------------------------------------------MODAL---------------------------------------------------------------------*/
-#new-post-modal {
+#new-theme-modal {
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 600px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+#edit-theme-modal {
   width: 80%;
   height: 80%;
   max-width: 800px;
@@ -271,10 +562,10 @@ select {
 }
 
 .close-modal {
-    position: absolute;
-    z-index: 99;
-    margin: 5%;
-  }
+  position: absolute;
+  z-index: 99;
+  margin: 5%;
+}
 
 /*------------------------------------------------------------------FORM----------------------------------------------------------------------*/
 
@@ -379,6 +670,17 @@ select {
   color: blue;
 }
 
+#privacyThemeEdit {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#privacyThemeEdit:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+
 #cbxError {
   display: none;
   color: red;
@@ -386,6 +688,18 @@ select {
 }
 
 #nameError {
+  display: none;
+  color: red;
+  margin: 0;
+}
+
+#cbxErrorEdit {
+  display: none;
+  color: red;
+  margin: 0;
+}
+
+#nameErrorEdit {
   display: none;
   color: red;
   margin: 0;
@@ -509,5 +823,11 @@ select {
     width: 100%;
     padding: 0;
     margin-bottom: -5%;
+  }
+}
+
+@media (max-width: 700px) {
+  .post-card {
+    font-size: 0.9em;
   }
 }
