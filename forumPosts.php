@@ -258,8 +258,9 @@ filter.addEventListener("change", () => {
                 viewParagraph.textContent = 'Views: 1';
                 postCardViews.appendChild(viewParagraph);
                 postContainer1.appendChild(postCardViews);*/
+                let username = getCookie("username");
 
-                /*if (postUserId == id_usu_theme || username == "admin") {
+                if (postUserId == username || username == "admin") {
                     const postCardEdit = document.createElement('div');
                     postCardEdit.className = 'post-card-6-edit';
 
@@ -282,7 +283,7 @@ filter.addEventListener("change", () => {
                     postCardEdit.appendChild(deleteButton);
 
                     postContainer1.appendChild(postCardEdit);
-                }*/
+                }
 
                 postContainer.appendChild(postContainer1);
 
