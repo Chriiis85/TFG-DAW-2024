@@ -1,6 +1,6 @@
 jqueryModal();
 actualizarPostP();
-
+deleteBtn();
 function getCookie(name) {
   let nameEQ = name + "=";
   let ca = document.cookie.split(";");
@@ -179,18 +179,18 @@ logout.addEventListener("click", () => {
 });
 
 function deleteBtn() {
-    let deleteBtn = document.querySelectorAll(".deleteThemeBtn");
+    let deleteBtn = document.querySelectorAll(".deletePostBtn");
     for (const btnDelete of deleteBtn) {
       btnDelete.addEventListener("click", () => {
         event.stopPropagation();
-        let id_theme = btnDelete.id;
-        id_theme = id_theme.split("-")[1];
+        let id_post = btnDelete.id;
+        id_post = id_post.split("-")[1];
   
-        let nameTheme = document.getElementById("nameTheme-" + id_theme);
+        let postContent = document.getElementById("postContent-" + id_post);
   
         Swal.fire({
           title: "Do you want to delete this Post?",
-          text: "Deleting post: '" + nameTheme.textContent + "'",
+          text: "Deleting post: '" + postContent .textContent + "'",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "green",
@@ -206,8 +206,8 @@ function deleteBtn() {
                 if (this.status == 200) {
                   if (this.responseText == 1) {
                     Swal.fire({
-                      title: "Theme Deleted!",
-                      text: "The theme was deleted successfully.",
+                      title: "Post Deleted!",
+                      text: "The post was deleted successfully.",
                       icon: "success",
                       showConfirmButton: true,
                     }).then((result) => {
@@ -216,19 +216,19 @@ function deleteBtn() {
                       }
                     });
                   } else {
-                    Swal.fire("Error!", "Theme not deleted.", "error");
+                    Swal.fire("Error!", "Post not deleted.", "error");
                   }
                 } else {
-                  Swal.fire("Error!", "Theme not deleted.", "error");
+                  Swal.fire("Error!", "Post not deleted.", "error");
                 }
               }
             };
-            xhttp.open("POST", "PHP/Forum/deleteTheme.php", true);
+            xhttp.open("POST", "PHP/Forum/deletePost.php", true);
             xhttp.setRequestHeader(
               "Content-type",
               "application/x-www-form-urlencoded"
             );
-            xhttp.send("id_theme=" + id_theme);
+            xhttp.send("id_post=" + id_post);
           } else {
             Swal.fire("Cancelled", "Operation cancelled.", "info");
           }

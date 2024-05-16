@@ -316,7 +316,7 @@ h1 {
   border-top: 1px solid gray;
 }
 
-.editThemeBtn{
+.editPostBtn{
   width: 40%;
   height: 70%;
   border-radius: 10px;
@@ -327,7 +327,7 @@ h1 {
   transition: 0.5s;
 }
 
-.deleteThemeBtn{
+.deletePostBtn{
   width: 40%;
   height: 70%;
   border-radius: 10px;
@@ -338,12 +338,12 @@ h1 {
   transition: 0.5s;
 }
 
-.deleteThemeBtn:hover{
+.deletePostBtn:hover{
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.editThemeBtn:hover{
+.editPostBtn:hover{
   cursor: pointer;
   transform: scale(1.1);
 }
