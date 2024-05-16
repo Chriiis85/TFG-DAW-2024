@@ -28,7 +28,9 @@
   ?>
   <header>
     <?php
-    echo '<div class="header-container"></div>';
+    echo '<div class="header-container">
+      <h1 onclick="window.location.href = \'forum.php\'">MOTORING COMMUNITY FORUM</h1>
+    </div>';
     echo '<div class="user">
       <p>Welcome Back: ' . $username . '!</p>
       <button id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
@@ -45,7 +47,7 @@
             <select id="filter">
               <option value="Default">Default</option>
               <option value="Popularity">Popularity</option>
-              <option value="Views">Views</option>
+              <!--<option value="Views">Views</option>-->
               <option value="Newest">Newest</option>
             </select>
           </div>
@@ -96,13 +98,13 @@
                 </div>
                 <div class="post-card-6">
                   <div class="post-card-6-info">
-                    <div class="post-card-views">
+                    <!--<div class="post-card-views">
                       <img src="Images/view.svg" alt="" />
                       <p>'.$themes[$i][4].'</p>
-                    </div>
+                    </div>-->
                     <div class="post-card-msg">
                       <img src="Images/msg.svg" alt="" />
-                      <p>' . returnNumberPosts($themes[$i][0]) . '</p>
+                      <p>Posts: ' . returnNumberPosts($themes[$i][0]) . '.</p>
                     </div>
                   </div>';
               if ($themes[$i][3] == $id_usu_theme || $username == "admin") {

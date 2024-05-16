@@ -445,10 +445,10 @@ filter.addEventListener("change", () => {
         var postCard6Info = document.createElement("div");
         postCard6Info.className = "post-card-6-info";
 
-        var postCardViews = document.createElement("div");
+        /*var postCardViews = document.createElement("div");
         postCardViews.className = "post-card-views";
         postCardViews.innerHTML =
-          "<img src='Images/view.svg' alt='' /><p>16</p>";
+          "<img src='Images/view.svg' alt='' /><p>16</p>";*/
 
         var postCardMsg = document.createElement("div");
         postCardMsg.className = "post-card-msg";
@@ -468,7 +468,7 @@ filter.addEventListener("change", () => {
         postCardEditBtn.innerHTML = "<img src='Images/edit.svg' alt='' />";
         postCardEditBtn.setAttribute("id", "editCard-" + theme[0]);
 
-        postCard6Info.appendChild(postCardViews);
+        //postCard6Info.appendChild(postCardViews);
         postCard6Info.appendChild(postCardMsg);
         postCard6.appendChild(postCard6Info);
 
@@ -573,10 +573,10 @@ function searchTheme(letra) {
         var postCard6Info = document.createElement("div");
         postCard6Info.className = "post-card-6-info";
 
-        var postCardViews = document.createElement("div");
+        /*var postCardViews = document.createElement("div");
         postCardViews.className = "post-card-views";
         postCardViews.innerHTML =
-          "<img src='Images/view.svg' alt='' /><p>16</p>";
+          "<img src='Images/view.svg' alt='' /><p>16</p>";*/
 
         var postCardMsg = document.createElement("div");
         postCardMsg.className = "post-card-msg";
@@ -596,7 +596,7 @@ function searchTheme(letra) {
         postCardEditBtn.innerHTML = "<img src='Images/edit.svg' alt='' />";
         postCardEditBtn.setAttribute("id", "editCard-" + theme[0]);
 
-        postCard6Info.appendChild(postCardViews);
+        //postCard6Info.appendChild(postCardViews);
         postCard6Info.appendChild(postCardMsg);
         postCard6.appendChild(postCard6Info);
 
@@ -629,106 +629,3 @@ function searchTheme(letra) {
   xhttp.send("letra=" + letra);
 }
 
-function createPostCardContainer(theme) {
-  var postCardContainer = document.createElement("div");
-  postCardContainer.id = "post-card-container";
-  postCardContainer.classList.add("post-card-container");
-
-  var postCard = document.createElement("div");
-  postCard.id = "postCard" + theme[0];
-  postCard.classList.add("post-card");
-  postCard.onclick = function () {
-    window.location.href = "forumPosts.php?id=" + theme[0];
-  };
-
-  var postCard1 = document.createElement("div");
-  postCard1.classList.add("post-card-1");
-  var postedBy = document.createElement("h1");
-  postedBy.textContent = "Posted by: " /*+ returnNombreUsu(theme[3])*/;
-  var postedOn = document.createElement("p");
-  postedOn.textContent = "Posted on: " + theme[2];
-  postCard1.appendChild(postedBy);
-  postCard1.appendChild(postedOn);
-
-  var postCard2 = document.createElement("div");
-  postCard2.classList.add("post-card-2");
-
-  var postCard3 = document.createElement("div");
-  postCard3.classList.add("post-card-3");
-  var nameTheme = document.createElement("h1");
-  nameTheme.id = "nameTheme-" + theme[0];
-  nameTheme.textContent = theme[1];
-  postCard3.appendChild(nameTheme);
-
-  var postCard4 = document.createElement("div");
-  postCard4.classList.add("post-card-4");
-
-  var postCard5 = document.createElement("div");
-  postCard5.classList.add("post-card-5");
-  var pLimit = document.createElement("p");
-  pLimit.id = "pLimit";
-  /*pLimit.textContent = returnLastPost(theme[0]);*/
-  postCard5.appendChild(pLimit);
-
-  var postCard6 = document.createElement("div");
-  postCard6.classList.add("post-card-6");
-  var postCard6Info = document.createElement("div");
-  postCard6Info.classList.add("post-card-6-info");
-
-  var postCardViews = document.createElement("div");
-  postCardViews.classList.add("post-card-views");
-  var viewsImg = document.createElement("img");
-  viewsImg.src = "Images/view.svg";
-  var viewsCount = document.createElement("p");
-  viewsCount.textContent = "16";
-  postCardViews.appendChild(viewsImg);
-  postCardViews.appendChild(viewsCount);
-
-  var postCardMsg = document.createElement("div");
-  postCardMsg.classList.add("post-card-msg");
-  var msgImg = document.createElement("img");
-  msgImg.src = "Images/msg.svg";
-  var msgCount = document.createElement("p");
-  /*msgCount.textContent = returnNumberPosts(theme[0]);*/
-  postCardMsg.appendChild(msgImg);
-  postCardMsg.appendChild(msgCount);
-
-  postCard6Info.appendChild(postCardViews);
-  postCard6Info.appendChild(postCardMsg);
-  postCard6.appendChild(postCard6Info);
-
-  //if (theme[3] == id_usu_theme || username == "admin") {
-  var postCard6Edit = document.createElement("div");
-  postCard6Edit.classList.add("post-card-6-edit");
-  var editBtn = document.createElement("button");
-  editBtn.classList.add("editThemeBtn");
-  editBtn.id = "editCard-" + theme[0];
-  var editImg = document.createElement("img");
-  editImg.src = "Images/edit.svg";
-  editBtn.appendChild(editImg);
-
-  var deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("deleteThemeBtn");
-  deleteBtn.id = "deleteCard-" + theme[0];
-  var deleteImg = document.createElement("img");
-  deleteImg.src = "Images/delete.svg";
-  deleteBtn.appendChild(deleteImg);
-
-  postCard6Edit.appendChild(editBtn);
-  postCard6Edit.appendChild(deleteBtn);
-  postCard6.appendChild(postCard6Edit);
-  //}
-
-  postCard4.appendChild(postCard5);
-  postCard4.appendChild(postCard6);
-
-  postCard2.appendChild(postCard3);
-  postCard2.appendChild(postCard4);
-
-  postCard.appendChild(postCard1);
-  postCard.appendChild(postCard2);
-
-  postCardContainer.appendChild(postCard);
-
-  //return postCardContainer;
-}

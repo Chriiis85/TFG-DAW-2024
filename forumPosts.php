@@ -31,7 +31,9 @@
   ?>
   <header>
     <?php
-    echo '<div class="header-container"></div>';
+    echo '<div class="header-container">
+      <h1 onclick="window.location.href = \'forum.php\'">MOTORING COMMUNITY FORUM</h1>
+    </div>';
     echo '<div class="user">
       <p>Welcome Back: ' . $username . '!</p>
       <button id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
@@ -111,7 +113,9 @@
       <div class="themeFormContainer">
         <div class="inputContainer">
           <label for="Post_Content">Enter new Post content:</label>
-          <input placeholder="New Post Content" class="inputText" type="textarea" name="Post_Content" id="Post_Content">
+          <!--<input placeholder="New Post Content" class="inputText" type="textarea" name="Post_Content" id="Post_Content">-->
+          <textarea class="inputTextArea" placeholder="Write the new post content" name="Post_Content" id="Post_Content" rows="10" cols="100"></textarea>
+
         </div>
         <div class="checkbox-wrapper-46">
           <input type="checkbox" id="cbx-46" class="inp-cbx" />
