@@ -16,8 +16,9 @@
   <!-- Link al archivo CSS -->
 </head>
 <?php
- //include "headerForum.php";
-  ?>
+//include "headerForum.php";
+?>
+
 <body>
   <link rel="stylesheet" href="CSS/forumPosts.css" />
   <?php
@@ -51,9 +52,10 @@
           <div class="select">
             <select id="filter">
               <option value="Default">Default</option>
-              <option value="Popularity">Popularity</option>
-              <option value="Views">Views</option>
               <option value="Newest">Newest</option>
+              <option value="Oldest">Oldest</option>
+              <option value="Popularity">Popularity</option>
+
             </select>
           </div>
         </div>
@@ -80,14 +82,14 @@
       </div>
       <div id="posts-group" class="posts-group">
         <?php
-        $posts = returnPostsDefault($id_theme);
+        $posts = returnPostsDate($id_theme);
         if (sizeof($posts) == 0) {
           echo "Hola";
         } else {
           for ($i = 0; $i < sizeof($posts); $i++) {
             echo '<div class="post-container">
                     <div class="post-container-1">
-                      <h1>Posted by: ' . returnNombreUsu($posts[$i][3]) . '.</h1>
+                      <h1 id="'.$posts[$i][3].'" class="usu">Posted by: ' . returnNombreUsu($posts[$i][3]) . '.</h1>
                       <p>Posted on: ' . $posts[$i][2] . '.</p>
                       <!--<div class="post-card-views">
                       <img src="Images/view.svg" alt="" />
@@ -101,7 +103,7 @@
             }*/
             echo '</div>
                   <div class="post-container-2">
-                    <p id="postContent-'.$posts[$i][0].'">' . $posts[$i][1] . '</p>
+                    <p id="postContent-' . $posts[$i][0] . '">' . $posts[$i][1] . '</p>
                   </div>
                 </div>';
           }
@@ -116,7 +118,8 @@
         <div class="inputContainer">
           <label for="Post_Content">Enter new Post content:</label>
           <!--<input placeholder="New Post Content" class="inputText" type="textarea" name="Post_Content" id="Post_Content">-->
-          <textarea class="inputTextArea" placeholder="Write the new post content" name="Post_Content" id="Post_Content" rows="10" cols="100"></textarea>
+          <textarea class="inputTextArea" placeholder="Write the new post content" name="Post_Content" id="Post_Content"
+            rows="10" cols="100"></textarea>
 
         </div>
         <div class="checkbox-wrapper-46">
@@ -189,6 +192,124 @@
   ?>
 </body>
 <script>
+
+let filter = document.getElementById("filter");
+filter.addEventListener("change", () => {
+    let selectedValue = filter.value;
+    let postsGrupo = document.getElementById("posts-group");
+    let orderP = document.getElementById("orderP");
+    let tipo = "";
+    let main = document.querySelector(".main");
+    let id_theme = main.id;
+
+    switch (selectedValue) {
+        case "Newest":
+            tipo = "Newest";
+            break;
+        case "Popularity":
+            tipo = "Popularity";
+            break;
+        case "Oldest":
+            tipo = "Oldest";
+            break;
+        default:
+            tipo = "Default";
+            break;
+    }
+
+    orderP.textContent = "Order by: " + tipo + ".";
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            var posts = JSON.parse(this.responseText); // Parsear JSON a objeto JavaScript
+            console.log(posts);
+            let postsGroup = document.getElementById("posts-group");
+            postsGroup.innerHTML = "";
+
+            posts.forEach(post => {
+                const postId = post[0];
+                const postContent = post[1];
+                const postDate = post[2];
+                const postUserId = post[3];
+
+                const postContainer = document.createElement('div');
+                postContainer.className = 'post-container';
+
+                const postContainer1 = document.createElement('div');
+                postContainer1.className = 'post-container-1';
+
+                const postTitle = document.createElement('h1');
+                postTitle.textContent = "Posted by: "+postUserId;
+                postContainer1.appendChild(postTitle);
+
+                const postDateParagraph = document.createElement('p');
+                postDateParagraph.textContent = `Posted on: ${postDate}.`;
+                postContainer1.appendChild(postDateParagraph);
+
+                /*const postCardViews = document.createElement('div');
+                postCardViews.className = 'post-card-views';
+                const viewImage = document.createElement('img');
+                viewImage.src = 'Images/view.svg';
+                viewImage.alt = '';
+                postCardViews.appendChild(viewImage);
+                const viewParagraph = document.createElement('p');
+                viewParagraph.textContent = 'Views: 1';
+                postCardViews.appendChild(viewParagraph);
+                postContainer1.appendChild(postCardViews);*/
+
+                /*if (postUserId == id_usu_theme || username == "admin") {
+                    const postCardEdit = document.createElement('div');
+                    postCardEdit.className = 'post-card-6-edit';
+
+                    const editButton = document.createElement('button');
+                    editButton.className = 'editPostBtn';
+                    editButton.id = `editCard-${postId}`;
+                    const editImage = document.createElement('img');
+                    editImage.src = 'Images/edit.svg';
+                    editImage.alt = '';
+                    editButton.appendChild(editImage);
+                    postCardEdit.appendChild(editButton);
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.className = 'deletePostBtn';
+                    deleteButton.id = `deleteCard-${postId}`;
+                    const deleteImage = document.createElement('img');
+                    deleteImage.src = 'Images/delete.svg';
+                    deleteImage.alt = '';
+                    deleteButton.appendChild(deleteImage);
+                    postCardEdit.appendChild(deleteButton);
+
+                    postContainer1.appendChild(postCardEdit);
+                }*/
+
+                postContainer.appendChild(postContainer1);
+
+                const postContainer2 = document.createElement('div');
+                postContainer2.className = 'post-container-2';
+
+                const postParagraph = document.createElement('p');
+                postParagraph.id = `postContent-${postId}`;
+                postParagraph.textContent = postContent;
+                postContainer2.appendChild(postParagraph);
+
+                postContainer.appendChild(postContainer2);
+
+                postsGroup.appendChild(postContainer);
+            });
+
+            deleteBtn();
+            //editBtn();
+            jqueryModal();
+            actualizarPostP();
+        }
+    };
+
+    xhttp.open("POST", "PHP/Forum/returnPosts.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("filter=" + tipo + "&id_theme=" + id_theme); // Correct query string
+});
 
 
 
