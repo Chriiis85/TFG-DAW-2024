@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motoring Community - Forum</title>
-  <script defer src="JS/forum.js"></script>
+  <script defer src="JS/post.js"></script>
   <!-- SCRIPT JQUERY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <!-- SCRIPT JQUERY MODALS ALERT -->
@@ -40,7 +40,7 @@
 
   </header>
 
-  <section class="main">
+  <section class="main" id="<?php echo $id_theme; ?>">
     <article class="posts-container" id="postsContainer">
       <div class="main-bar">
         <div class="main-bar-filter">
@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="main-bar-add">
-          <button id="newTheme" class="button-add" role="button">Add new Theme</button>
+          <button id="newPost" class="button-add" role="button">Add new Post</button>
         </div>
       </div>
       <div class="posts-container-info">
@@ -83,21 +83,21 @@
           for ($i = 0; $i < sizeof($posts); $i++) {
             echo '<div class="post-container">
                     <div class="post-container-1">
-                      <h1>Posted by: '.returnNombreUsu($posts[$i][3]).'.</h1>
-                      <p>Posted on: '.$posts[$i][2].'.</p>
+                      <h1>Posted by: ' . returnNombreUsu($posts[$i][3]) . '.</h1>
+                      <p>Posted on: ' . $posts[$i][2] . '.</p>
                       <div class="post-card-views">
                       <img src="Images/view.svg" alt="" />
                       <p>Views: 1</p>
                       </div>';
-                      if ($posts[$i][3] == $id_usu_theme || $username == "admin") {
-                        echo '<div class="post-card-6-edit">
+            if ($posts[$i][3] == $id_usu_theme || $username == "admin") {
+              echo '<div class="post-card-6-edit">
                                   <button class="editThemeBtn" id="editCard-' . $posts[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
                                   <button class="deleteThemeBtn" id="deleteCard-' . $posts[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
                                 </div>';
-                      }
-                    echo'</div>
+            }
+            echo '</div>
                   <div class="post-container-2">
-                    <p>'.$posts[$i][1].'</p>
+                    <p>' . $posts[$i][1] . '</p>
                   </div>
                 </div>';
           }
@@ -106,12 +106,12 @@
       </div>
     </article>
 
-    <div id="new-theme-modal" class="modal">
-      <h2>Add Theme to the Forum</h2>
+    <div id="new-post-modal" class="modal">
+      <h2>Add new Post to the Forum</h2>
       <div class="themeFormContainer">
         <div class="inputContainer">
-          <label for="">Enter Theme Name:</label>
-          <input placeholder="New Theme Name" class="inputText" type="text" name="Theme_Name" id="Theme_Name">
+          <label for="Post_Content">Enter new Post content:</label>
+          <input placeholder="New Post Content" class="inputText" type="textarea" name="Post_Content" id="Post_Content">
         </div>
         <div class="checkbox-wrapper-46">
           <input type="checkbox" id="cbx-46" class="inp-cbx" />
@@ -121,17 +121,17 @@
               </svg></span><span id="privacyTheme">Accept Privacy and Policy</span>
           </label>
         </div>
-        <p id="cbxError">You need to accept Privacy Policy to add a new Theme</p>
-        <p id="nameError">You need to add a name to the new Theme</p>
+        <p id="cbxError">You need to accept Privacy Policy to add a new Post</p>
+        <p id="nameError">You need to add content to the new Post</p>
 
         <div class="themes-btnCont">
-          <button id="CloseThemeBtn" class="backTheme">Close</button>
-          <button id="addThemeBtn" class="confirmTheme">Confirm New Theme</button>
+          <button id="ClosePostBtn" class="backTheme">Close</button>
+          <button id="addPostBtn" class="confirmTheme">Confirm New Post</button>
         </div>
       </div>
     </div>
 
-    <div id="edit-theme-modal" class="modal">
+    <div id="edit-post-modal" class="modal">
       <h2>Edit theme</h2>
       <div class="themeFormContainer">
         <div class="inputContainer">
@@ -183,14 +183,9 @@
   ?>
 </body>
 <script>
-  actualizarPostP();
-  function actualizarPostP() {
-    let totalPosts = document.querySelectorAll(".post-container");
-    countPost = "Showing: " + totalPosts.length + " Posts.";
 
-    let countPostP = document.getElementById("countPostP");
-    countPostP.textContent = countPost;
-  }
+
+
 </script>
 <?php
 function returnIdUsu($id_nombre)
