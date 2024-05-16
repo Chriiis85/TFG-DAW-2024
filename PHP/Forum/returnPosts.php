@@ -21,7 +21,7 @@ if($filterType=="Default"){
     echo json_encode($posts);
 }
 else if($filterType=="Oldest"){
-    //echo "Newest";
+    //echo "Oldest";
     $posts = returnPostsDateReverse($id_theme2);
     for ($i = 0; $i < sizeof($posts); $i++) {
         $posts[$i][3] = returnNombreUsu($posts[$i][3]);

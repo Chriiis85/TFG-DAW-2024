@@ -236,3 +236,123 @@ function deleteBtn() {
       });
     }
   }
+
+  
+let filter = document.getElementById("filter");
+filter.addEventListener("change", () => {
+    let selectedValue = filter.value;
+    let postsGrupo = document.getElementById("posts-group");
+    let orderP = document.getElementById("orderP");
+    let tipo = "";
+    let main = document.querySelector(".main");
+    let id_theme = main.id;
+
+    switch (selectedValue) {
+        case "Newest":
+            tipo = "Newest";
+            break;
+        case "Popularity":
+            tipo = "Popularity";
+            break;
+        case "Oldest":
+            tipo = "Oldest";
+            break;
+        default:
+            tipo = "Default";
+            break;
+    }
+
+    orderP.textContent = "Order by: " + tipo + ".";
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            var posts = JSON.parse(this.responseText); // Parsear JSON a objeto JavaScript
+            console.log(posts);
+            let postsGroup = document.getElementById("posts-group");
+            postsGroup.innerHTML = "";
+
+            posts.forEach(post => {
+                const postId = post[0];
+                const postContent = post[1];
+                const postDate = post[2];
+                const postUserId = post[3];
+
+                const postContainer = document.createElement('div');
+                postContainer.className = 'post-container';
+
+                const postContainer1 = document.createElement('div');
+                postContainer1.className = 'post-container-1';
+
+                const postTitle = document.createElement('h1');
+                postTitle.textContent = "Posted by: "+postUserId;
+                postContainer1.appendChild(postTitle);
+
+                const postDateParagraph = document.createElement('p');
+                postDateParagraph.textContent = `Posted on: ${postDate}.`;
+                postContainer1.appendChild(postDateParagraph);
+
+                /*const postCardViews = document.createElement('div');
+                postCardViews.className = 'post-card-views';
+                const viewImage = document.createElement('img');
+                viewImage.src = 'Images/view.svg';
+                viewImage.alt = '';
+                postCardViews.appendChild(viewImage);
+                const viewParagraph = document.createElement('p');
+                viewParagraph.textContent = 'Views: 1';
+                postCardViews.appendChild(viewParagraph);
+                postContainer1.appendChild(postCardViews);*/
+                let username = getCookie("username");
+
+                if (postUserId == username || username == "admin") {
+                    const postCardEdit = document.createElement('div');
+                    postCardEdit.className = 'post-card-6-edit';
+
+                    const editButton = document.createElement('button');
+                    editButton.className = 'editPostBtn';
+                    editButton.id = `editCard-${postId}`;
+                    const editImage = document.createElement('img');
+                    editImage.src = 'Images/edit.svg';
+                    editImage.alt = '';
+                    editButton.appendChild(editImage);
+                    postCardEdit.appendChild(editButton);
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.className = 'deletePostBtn';
+                    deleteButton.id = `deleteCard-${postId}`;
+                    const deleteImage = document.createElement('img');
+                    deleteImage.src = 'Images/delete.svg';
+                    deleteImage.alt = '';
+                    deleteButton.appendChild(deleteImage);
+                    postCardEdit.appendChild(deleteButton);
+
+                    postContainer1.appendChild(postCardEdit);
+                }
+
+                postContainer.appendChild(postContainer1);
+
+                const postContainer2 = document.createElement('div');
+                postContainer2.className = 'post-container-2';
+
+                const postParagraph = document.createElement('p');
+                postParagraph.id = `postContent-${postId}`;
+                postParagraph.textContent = postContent;
+                postContainer2.appendChild(postParagraph);
+
+                postContainer.appendChild(postContainer2);
+
+                postsGroup.appendChild(postContainer);
+            });
+
+            deleteBtn();
+            //editBtn();
+            jqueryModal();
+            actualizarPostP();
+        }
+    };
+
+    xhttp.open("POST", "PHP/Forum/returnPosts.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("filter=" + tipo + "&id_theme=" + id_theme); // Correct query string
+});
