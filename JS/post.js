@@ -1,6 +1,7 @@
 jqueryModal();
 actualizarPostP();
 deleteBtn();
+editBtn();
 function getCookie(name) {
   let nameEQ = name + "=";
   let ca = document.cookie.split(";");
@@ -68,6 +69,96 @@ function jqueryModal() {
   });
 }
 
+function editBtn() {
+  let editBtn = document.querySelectorAll(".editPostBtn");
+  for (const btnEdit of editBtn) {
+    btnEdit.addEventListener("click", () => {
+      event.stopPropagation();
+      let id_post = btnEdit.id;
+      id_post = id_post.split("-")[1];
+
+      let ConfirmeditBtn = document
+        .getElementById("editPostBtn")
+        .addEventListener("click", () => {
+          let postContent = document.getElementById("New_Post_Content");
+          let cbxTheme = document.getElementById("cbx-462");
+          let cbxError = document.getElementById("cbxErrorEdit");
+          let nameError = document.getElementById("nameErrorEdit");
+
+          let postPrev = document.getElementById("postContent-" + id_post);
+          if (!cbxTheme.checked) {
+            cbxError.style.display = "block";
+          }
+          if (postContent.value == "") {
+            nameError.style.display = "block";
+          }
+
+          if (cbxTheme.checked) {
+            cbxError.style.display = "none";
+          }
+          if (!postContent.value == "") {
+            nameError.style.display = "none";
+          }
+
+          if (!postContent.value == "" && cbxTheme.checked) {
+            Swal.fire({
+              title:
+                "Do you want to edit this Post: " +
+                postPrev.textContent +
+                " ?",
+              text: "New content: " + postContent.value,
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "green",
+              confirmButtonText: "Confirm!",
+              cancelButtonText: "No, go back.",
+              allowOutsideClick: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                let username = getCookie("username");
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                  if (this.readyState == 4) {
+                    if (this.status == 200) {
+                      if (this.responseText == 1) {
+                        Swal.fire({
+                          title: "Post Edited!",
+                          text: "The post was edited successfully.",
+                          icon: "success",
+                          showConfirmButton: true,
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            location.reload();
+                          }
+                        });
+                      } else {
+                        Swal.fire("Error!", "Theme not edited.", "error");
+                      }
+                    } else {
+                      Swal.fire("Error!", "Theme not edited.", "error");
+                    }
+                  }
+                };
+                xhttp.open("POST", "PHP/Forum/editPost.php", true);
+                xhttp.setRequestHeader(
+                  "Content-type",
+                  "application/x-www-form-urlencoded"
+                );
+                xhttp.send(
+                  "content=" +
+                    encodeURIComponent(postContent.value) +
+                    "&id_post=" +
+                    id_post
+                );
+              } else {
+                Swal.fire("Cancelled", "Operation cancelled.", "info");
+              }
+            });
+          }
+        });
+    });
+  }
+}
 
 let addPost = document
 .getElementById("addPostBtn")
@@ -346,7 +437,7 @@ filter.addEventListener("change", () => {
             });
 
             deleteBtn();
-            //editBtn();
+            editBtn();
             jqueryModal();
             actualizarPostP();
         }
@@ -453,7 +544,7 @@ xhttp.onreadystatechange = function () {
     }
 
     deleteBtn(); // Reinitialize delete button functionality
-    //editBtn(); // Reinitialize edit button functionality if you have this function
+    editBtn(); // Reinitialize edit button functionality if you have this function
     jqueryModal(); // Reinitialize modal functionality if you have this function
     actualizarPostP(); // Reinitialize any other post-update functionality
   }
