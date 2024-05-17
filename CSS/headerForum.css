@@ -218,6 +218,7 @@ body {
 }
 
 .logOutBtn {
+  font-family: "Bebas Neue";
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -227,8 +228,8 @@ body {
   background: white;
   color: black;
   border-radius: 8px;
-  padding: 14px 24px 16px;
-  font-size: 18px;
+  padding: 3%;
+  font-size: 1.3em;
   font-weight: 700;
   line-height: 1;
   width: 150px;
