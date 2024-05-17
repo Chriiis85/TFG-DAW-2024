@@ -52,7 +52,6 @@ h1 {
   flex-direction: column;
   padding-top: 5%;
   font-family: "F1Regular";
-
 }
 
 .drivers-title-container {
@@ -81,8 +80,6 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10%;
-  margin-top: 5%;
-  margin-bottom: 5%;
 }
 
 .card-driver{

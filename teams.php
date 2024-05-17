@@ -29,7 +29,9 @@
         // Reemplazar espacios en el nombre del equipo para evitar problemas con los nombres de archivos
         $nombre_equipo = str_replace(' ', '', $clasificacionesEquipos[$i]['Constructor']['name']);
 
-        echo '<div class="team-card-container" style="border:solid 5px var(--' . $nombre_equipo . ');border-left: none;
+        echo '<div class="team-card-container" style="border:solid 5px var(--' . $nombre_equipo . ');box-shadow: 0 0 20px black, 0 0 1px black, 0 0 20px var(--'.$nombre_equipo .'), 0 0 20px var(--'.$nombre_equipo .'), 
+        0 0 20px var(--'.$nombre_equipo .'), 0 0 10px var(--'.$nombre_equipo .'); border-left: none; 
+        "
         border-bottom: none;">
         <div class="team-card-title">
         <h1>' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</h1>

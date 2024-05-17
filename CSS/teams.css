@@ -90,6 +90,8 @@ h1 {
   margin-left: 3%;
   margin-right: 3%;
   transition: 0.3s;
+  background-position: center;
+  background-size: 300%;
 }
 
 .team-card-container:hover {
