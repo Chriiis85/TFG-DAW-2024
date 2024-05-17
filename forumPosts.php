@@ -20,7 +20,6 @@
 ?>
 
 <body>
-  <link rel="stylesheet" href="CSS/forumPosts.css" />
   <?php
   $id_theme = $_GET["id"];
   include "PHP/Forum/returnPosts.php";
@@ -31,19 +30,10 @@
     header('Location: users.php');
   }
   $id_usu_theme = returnIdUsu($username);
+  include "headerForum.php";
   ?>
-  <header>
-    <?php
-    echo '<div class="header-container">
-      <h1 onclick="window.location.href = \'forum.php\'">MOTORING COMMUNITY FORUM</h1>
-    </div>';
-    echo '<div class="user">
-      <p>Welcome Back: ' . $username . '!</p>
-      <button id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
-    </div>';
-    ?>
 
-  </header>
+<link rel="stylesheet" href="CSS/forumPosts.css" />
 
   <section class="main" id="<?php echo $id_theme; ?>">
     <article class="posts-container" id="postsContainer">

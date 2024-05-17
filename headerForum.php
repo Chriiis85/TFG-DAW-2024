@@ -13,6 +13,14 @@
 
   <link rel="stylesheet" href="CSS/headerForum.css" />
 </head>
+<?php
+if (isset($_COOKIE["username"])) {
+  $username = $_COOKIE["username"];
+} else {
+  // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
+  header('Location: users.php');
+}
+?>
 
 <body>
   <!--CONTENEDOR QUE TIENE Y ACTUA COMO EL HEADER IGUAL EN TODAS LAS PAGINAS SIMPLIFICANDO EL CODIGO-->
@@ -33,7 +41,14 @@
         <p onclick="window.location.href = 'standings.php'">SEASON STANDINGS</p>
         <p onclick="window.location.href = 'forum.php'">FORUM</p>
       </div>
-      <div class="header-container3"></div>
+      <div class="header-container3">
+        <?php
+        echo '<div class="user">
+          <p>Welcome Back: ' . $username . '!</p>
+          <button id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
+        </div>';
+        ?>
+      </div>
     </article>
     <!--CONTENIDO QUE SE DESPLIEGA AL HACER HOVER SOBRE LOS CONTENIDOS-->
     <div id="header-drop-container-formulaone" class="header-drop-container">
@@ -55,7 +70,7 @@
       </div>
     </div>
     <!--TITULO QUE SE CAMBIA EN CADA PAGINA PARA MOSTRAR EL CONTENIDO-->
-    <h1 id="title-header" class="title-header-container"></h1>
+    <!--<h1 id="title-header" class="title-header-container"></h1>-->
   </section>
 </body>
 

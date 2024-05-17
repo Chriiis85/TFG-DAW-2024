@@ -17,7 +17,6 @@
 </head>
 
 <body>
-  <link rel="stylesheet" href="CSS/forum.css" />
   <?php
   if (isset($_COOKIE["username"])) {
     $username = $_COOKIE["username"];
@@ -26,18 +25,10 @@
     header('Location: users.php');
   }
   ?>
-  <header>
     <?php
-    echo '<div class="header-container">
-      <h1 onclick="window.location.href = \'forum.php\'">MOTORING COMMUNITY FORUM</h1>
-    </div>';
-    echo '<div class="user">
-      <p>Welcome Back: ' . $username . '!</p>
-      <button id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
-    </div>';
+    include "headerForum.php";
     ?>
-
-  </header>
+  <link rel="stylesheet" href="CSS/forum.css" />
 
   <section class="main">
     <article class="posts-container" id="postsContainer">
