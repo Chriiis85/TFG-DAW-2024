@@ -20,19 +20,6 @@ header {
   flex-direction: row;
 }
 
-.header-container{
-  width: 70%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-container>h1{
-  cursor: pointer;
-  text-align: center;
-}
-
 .user {
   width: 30%;
   height: 100%;
@@ -129,7 +116,6 @@ header {
 
 .post-container {
   width: 90%;
-  height: 200px;
   border-top: 3px solid black;
   display: flex;
   align-items: center;
@@ -153,6 +139,7 @@ header {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  border-right: 1px solid gray;
 }
 
 .post-container-1 >p{
@@ -175,24 +162,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid gray;
 }
 
 .post-container-2 > p{
   padding: 5%;
   margin: 0;
-}
-
-.img-noresult {
-  width: 500px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.img-noresult > img {
-  width: 50%;
 }
 
 .posts-container {
@@ -216,143 +190,20 @@ header {
   text-align: center;
 }
 
-.post-card-container {
-  width: 90%;
-  height: 200px;
-  margin-bottom: 3%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.post-card {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  transition: 0.3s;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background-color: white;
-  border: 1px solid gray;
-}
-
-.post-card:hover {
-  cursor: pointer;
-  /*transform: scale(0.98);*/
-  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
-}
-
-.post-card-1 {
-  width: 25%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
-  flex-direction: column;
-  border-right: 1px solid gray;
-}
-
-.post-card-1 > p {
-  font-weight: bold;
-}
-
-.post-card-1 > p {
-  padding-left: 3%;
-  padding-right: 3%;
-}
-
-.post-card-1 > h1 {
-  padding-left: 3%;
-  padding-right: 3%;
-}
-
-.post-card-2 {
-  width: 75%;
-  height: 100%;
-}
-
-.post-card-3 {
+.post-card-6-edit {
   width: 100%;
   height: 30%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  border-bottom: 1px solid gray;
-}
-
-.post-card-3 > h1 {
-  margin: 0;
-  padding-left: 3%;
-}
-
-.post-card-4 {
-  width: 100%;
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-}
-
-.post-card-5 {
-  width: 80%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  overflow: hidden;
-  border-right: 1px solid gray;
-}
-
-.post-card-5 > p {
-  width: 90%;
-  height: 90%;
-  padding: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-}
-
-.post-card-6 {
-  width: 20%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  text-align: justify;
-}
-
-.post-card-6-info {
-  width: 100%;
-  height: 70%;
-  display: flex;
-  align-items: center;
   justify-content: space-around;
   flex-direction: row;
-  text-align: justify;
-}
-
-.post-card-6-edit {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
-  text-align: justify;
-  padding-top: 10px;
   border-top: 1px solid gray;
 }
 
 .editPostBtn{
   width: 40%;
-  height: 50%;
+  height: 10%;
+  margin: 3%;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -363,7 +214,8 @@ header {
 
 .deletePostBtn{
   width: 40%;
-  height: 50%;
+  height: 10%;
+  margin: 3%;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -382,50 +234,8 @@ header {
   transform: scale(1.1);
 }
 
-.post-card-views {
-  width: 40%;
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.post-card-views > img {
-  width: 25px;
-}
-
-.post-card-views > p {
-  margin: 0;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.post-card-msg {
-  width: 40%;
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.post-card-msg > img {
-  width: 25px;
-}
-
-.post-card-msg > p {
-  margin: 0;
-  font-size: 1em;
-  font-weight: bold;
-}
-
 .posts-container-info>h1{
   font-size: 1.5em;
-}
-
-.imgnoresult{
-  width: 500px;
 }
 /*---------------------------------------------------------SEARCH INPUT----------------------------------------------------------------------*/
 .group {
@@ -452,10 +262,6 @@ header {
   transition: 0.3s ease;
 }
 
-.input::placeholder {
-  color: #9e9ea7;
-}
-
 .input:focus,
 input:hover {
   outline: none;
@@ -477,10 +283,6 @@ input:hover {
 .select {
   width: 70%;
   position: relative;
-}
-
-#select3 {
-  display: none;
 }
 select {
   appearance: none;
@@ -555,24 +357,6 @@ select {
 }
 
 /*-------------------------------------------------------------PAGINATION---------------------------------------------------------------------*/
-.pagination {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-}
-.buttonPagination {
-  font-size: 1.25em;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2%;
-  border-radius: 50%;
-  background-color: transparent;
-}
 
 /*------------------------------------------------------------------MODAL---------------------------------------------------------------------*/
 #new-post-modal {
@@ -602,12 +386,6 @@ select {
   font-size: 2em;
 }
 
-.close-modal {
-  position: absolute;
-  z-index: 99;
-  margin: 5%;
-}
-
 /*------------------------------------------------------------------FORM----------------------------------------------------------------------*/
 
 .themeFormContainer {
@@ -628,25 +406,6 @@ select {
   justify-content: space-around;
   font-size: 1.25em;
   font-weight: bold;
-}
-
-.inputText {
-  width: 50%;
-  height: 50px;
-  border: 3px solid #000;
-  border-radius: 5px;
-  line-height: normal;
-  color: #282828;
-  display: block;
-  box-sizing: border-box;
-  user-select: auto;
-  font-size: 16px;
-  padding: 0 6px;
-  padding-left: 12px;
-}
-
-.inputText:focus {
-  border: 3px solid #5551ff;
 }
 
 .inputTextArea {
@@ -848,6 +607,18 @@ select {
   }
 }
 
+.img-noresult {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-noresult > img {
+  width: 50%;
+}
+
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 @media (max-width: 1400px) {
   .main-bar-search {
@@ -876,10 +647,16 @@ select {
   .main-bar-filter {
     width: 30%;
   }
-  .header-container>h1{
-    font-size: 1.75em;
+}
+
+@media (max-width: 1000px) {
+  .posts-container-info>h1{
+    font-size: 1.25em;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 }
+
 @media (max-width: 700px) {
   .main-bar {
     height: 200px;
@@ -912,12 +689,6 @@ select {
   .deletePostBtn>img{
     width: 20px;
   }
-  .post-card-msg>img{
-    width: 20px;
-  }
-  .header-container>h1{
-    font-size: 1.25em;
-  }
   .user{
     width: 50%;
   }
@@ -927,12 +698,6 @@ select {
   }
   
   .post-container-1 >h1{
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 700px) {
-  .post-card {
     font-size: 0.9em;
   }
 }

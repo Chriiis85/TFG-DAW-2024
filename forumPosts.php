@@ -82,7 +82,7 @@
         <?php
         $posts = returnPostsDate($id_theme);
         if (sizeof($posts) == 0) {
-          echo '<img class="imgnoresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="" />';
+          echo '<img class="img-noresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="" />';
         } else {
           for ($i = 0; $i < sizeof($posts); $i++) {
             echo '<div class="post-container">
