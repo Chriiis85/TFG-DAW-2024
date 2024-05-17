@@ -21,9 +21,9 @@
   </button>
   <section class="container-select-data"></section>
   <section class="main">
-    <article class="teams-title-container">
+    <!--<article class="teams-title-container">
       <h1 class="teams-title">2024 Formula One Season Standings</h1>
-    </article>
+    </article>-->
     <article class="standings-selector">
       <div id="DriverStan">
         <h1>Drivers Standings</h1>
