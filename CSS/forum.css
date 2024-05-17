@@ -853,9 +853,6 @@ select {
   .header-container>h1{
     font-size: 1.25em;
   }
-  .user{
-    width: 50%;
-  }
 
   #new-theme-modal {
     width: 95%; 

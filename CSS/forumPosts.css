@@ -625,9 +625,6 @@ select {
   .deletePostBtn>img{
     width: 20px;
   }
-  .user{
-    width: 50%;
-  }
 
   .post-container-1 >p{
     font-size: 0.9em;
