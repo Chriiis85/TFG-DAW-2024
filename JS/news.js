@@ -69,6 +69,7 @@ async function mostrarNoticiasFormula1() {
 // Llamamos a la función para mostrar las noticias de Fórmula 1 inmediatamente
 mostrarNoticiasFormula1();
 
-// Luego, configuramos para que se ejecute cada día
-const milisegundosEnUnDia = 24 * 60 * 60 * 1000; // 24 horas * 60 minutos * 60 segundos * 1000 milisegundos
-setInterval(mostrarNoticiasFormula1, milisegundosEnUnDia);
+
+
+// Actualizar las noticias cada 5 minutos (300000 milisegundos)
+setInterval(mostrarNoticiasFormula1, 300000); // 300000 milisegundos = 5 minutos
