@@ -369,7 +369,7 @@ function deleteBtn() {
 }
 function actualizarPostP() {
   let totalPosts = document.querySelectorAll(".post-card-container");
-  countPost = "Showing: " + totalPosts.length + " Posts.";
+  countPost = "Showing: " + totalPosts.length + " Themes.";
 
   let countPostP = document.getElementById("countPostP");
   countPostP.textContent = countPost;
@@ -404,6 +404,23 @@ filter.addEventListener("change", () => {
       console.log(themes);
       let postsGroup = document.getElementById("posts-group");
       postsGroup.innerHTML = "";
+
+      if (themes.length == 0) {
+        //alert("Hola");
+        let postsGroup = document.getElementById("posts-group");
+        let postContainer = document.createElement("div"); // Crear un nuevo contenedor
+        postContainer.id = "post-card-container";
+        let imagen = document.createElement("img");
+        let divimg = document.createElement("div");
+        imagen.setAttribute(
+          "src",
+          "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png"
+        );
+        imagen.classList.add("img-noresult");
+        divimg.appendChild(imagen);
+        postContainer.appendChild(divimg);
+        postsGroup.appendChild(postContainer); // Agregar el nuevo contenedor al DOM
+      }
 
       themes.forEach(function (theme) {
         var postCardContainer = document.createElement("div");

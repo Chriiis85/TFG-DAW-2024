@@ -77,8 +77,11 @@
         include "PHP/Forum/returnThemes.php";
         $themes = returnThemesByDefault();
         $id_usu_theme = returnIdUsu($username);
-        for ($i = 0; $i < sizeof($themes); $i++) {
-          echo '<div id="post-card-container" class="post-card-container">
+        if (sizeof($themes) == 0) {
+          echo '<img class="img-noresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="" />';
+        } else {
+          for ($i = 0; $i < sizeof($themes); $i++) {
+            echo '<div id="post-card-container" class="post-card-container">
           <div id="postCard' . $themes[$i][0] . '" onclick="window.location.href = \'forumPosts.php?id=' . $themes[$i][0] . '\'" class="post-card">
             <div class="post-card-1">
               <h1>Posted by: ' . returnNombreUsu($themes[$i][3]) . '</h1>
@@ -100,24 +103,25 @@
                   <div class="post-card-6-info">
                     <!--<div class="post-card-views">
                       <img src="Images/view.svg" alt="" />
-                      <p>'.$themes[$i][4].'</p>
+                      <p>' . $themes[$i][4] . '</p>
                     </div>-->
                     <div class="post-card-msg">
                       <img src="Images/msg.svg" alt="" />
                       <p>Posts: ' . returnNumberPosts($themes[$i][0]) . '.</p>
                     </div>
                   </div>';
-              if ($themes[$i][3] == $id_usu_theme || $username == "admin") {
-                echo '<div class="post-card-6-edit">
+            if ($themes[$i][3] == $id_usu_theme || $username == "admin") {
+              echo '<div class="post-card-6-edit">
                           <button class="editThemeBtn" id="editCard-' . $themes[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
                           <button class="deleteThemeBtn" id="deleteCard-' . $themes[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
                         </div>';
-              }
-              echo '</div>
+            }
+            echo '</div>
               </div>
             </div>
           </div>
         </div>';
+          }
         }
         ?>
       </div>
