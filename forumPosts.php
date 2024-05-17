@@ -139,11 +139,12 @@
     </div>
 
     <div id="edit-post-modal" class="modal">
-      <h2>Edit theme</h2>
+      <h2>Edit Post</h2>
       <div class="themeFormContainer">
         <div class="inputContainer">
-          <label for="">Enter new Theme Name:</label>
-          <input placeholder="New Theme Name" class="inputText" type="text" name="New_Theme_Name" id="New_Theme_Name">
+          <label for="">Enter new Post content:</label>
+          <!--<input placeholder="New Post Content" class="inputText" type="text" name="New_Post_Content" id="New_Post_Content">-->
+          <textarea class="inputTextArea" placeholder="Write the new post content" name="New_Post_Content" id="New_Post_Content"></textarea>
         </div>
         <div class="checkbox-wrapper-46">
           <input type="checkbox" id="cbx-462" class="inp-cbx" />
@@ -157,8 +158,8 @@
         <p id="nameErrorEdit">You need to add a name to the new Theme</p>
 
         <div class="themes-btnCont">
-          <button id="CloseEditThemeBtn" class="backTheme">Close</button>
-          <button id="editThemeBtn" class="confirmTheme">Confirm New Name</button>
+          <button id="CloseEditPostBtn" class="backTheme">Close</button>
+          <button id="editPostBtn" class="confirmTheme">Confirm Post Edit</button>
         </div>
       </div>
     </div>
@@ -190,110 +191,97 @@
   ?>
 </body>
 <script>
+editBtn();
 
-  let search = document.getElementById("search");
-  search.addEventListener("input", () => {
-    console.log(search.value);
-    searchTheme(search.value);
-  });
+function editBtn() {
+  let editBtn = document.querySelectorAll(".editPostBtn");
+  for (const btnEdit of editBtn) {
+    btnEdit.addEventListener("click", () => {
+      event.stopPropagation();
+      let id_post = btnEdit.id;
+      id_post = id_post.split("-")[1];
 
-  function searchTheme(letra) {
-    let main = document.querySelector(".main");
-      let id_theme = main.id;
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(posts);
-      var posts = JSON.parse(this.responseText); // Parse JSON to JavaScript object
-      let postsGroup = document.getElementById("posts-group");
-      postsGroup.innerHTML = ""; // Clear previous posts
+      let ConfirmeditBtn = document
+        .getElementById("editPostBtn")
+        .addEventListener("click", () => {
+          let postContent = document.getElementById("New_Post_Content");
+          let cbxTheme = document.getElementById("cbx-462");
+          let cbxError = document.getElementById("cbxErrorEdit");
+          let nameError = document.getElementById("nameErrorEdit");
 
-
-      if (posts.length == 0) {
-        let postContainer = document.createElement("div"); // Create a new container
-        postContainer.id = "post-card-container";
-        let imagen = document.createElement("img");
-        let divimg = document.createElement("div");
-        imagen.setAttribute(
-          "src",
-          "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png"
-        );
-        imagen.classList.add("img-noresult");
-        divimg.appendChild(imagen);
-        postContainer.appendChild(divimg);
-        postsGroup.appendChild(postContainer); // Add the new container to the DOM
-      } else {
-        posts.forEach(post => {
-          const postId = post[0];
-          const postContent = post[1];
-          const postDate = post[2];
-          const postUserId = post[3];
-
-          const postContainer = document.createElement('div');
-          postContainer.className = 'post-container';
-
-          const postContainer1 = document.createElement('div');
-          postContainer1.className = 'post-container-1';
-
-          const postTitle = document.createElement('h1');
-          postTitle.textContent = "Posted by: " + postUserId;
-          postContainer1.appendChild(postTitle);
-
-          const postDateParagraph = document.createElement('p');
-          postDateParagraph.textContent = `Posted on: ${postDate}.`;
-          postContainer1.appendChild(postDateParagraph);
-
-          let username = getCookie("username");
-
-          if (postUserId == username || username == "admin") {
-            const postCardEdit = document.createElement('div');
-            postCardEdit.className = 'post-card-6-edit';
-
-            const editButton = document.createElement('button');
-            editButton.className = 'editPostBtn';
-            editButton.id = `editCard-${postId}`;
-            const editImage = document.createElement('img');
-            editImage.src = 'Images/edit.svg';
-            editImage.alt = '';
-            editButton.appendChild(editImage);
-            postCardEdit.appendChild(editButton);
-
-            const deleteButton = document.createElement('button');
-            deleteButton.className = 'deletePostBtn';
-            deleteButton.id = `deleteCard-${postId}`;
-            const deleteImage = document.createElement('img');
-            deleteImage.src = 'Images/delete.svg';
-            deleteImage.alt = '';
-            deleteButton.appendChild(deleteImage);
-            postCardEdit.appendChild(deleteButton);
-
-            postContainer1.appendChild(postCardEdit);
+          let postPrev = document.getElementById("postContent-" + id_post);
+          if (!cbxTheme.checked) {
+            cbxError.style.display = "block";
+          }
+          if (postContent.value == "") {
+            nameError.style.display = "block";
           }
 
-          postContainer.appendChild(postContainer1);
+          if (cbxTheme.checked) {
+            cbxError.style.display = "none";
+          }
+          if (!postContent.value == "") {
+            nameError.style.display = "none";
+          }
 
-          const postContainer2 = document.createElement('div');
-          postContainer2.className = 'post-container-2';
-
-          const postParagraph = document.createElement('p');
-          postParagraph.id = `postContent-${postId}`;
-          postParagraph.textContent = postContent;
-          postContainer2.appendChild(postParagraph);
-
-          postContainer.appendChild(postContainer2);
-          postsGroup.appendChild(postContainer);
+          if (!postContent.value == "" && cbxTheme.checked) {
+            Swal.fire({
+              title:
+                "Do you want to edit this Post: " +
+                postPrev.textContent +
+                " ?",
+              text: "New content: " + postContent.value,
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "green",
+              confirmButtonText: "Confirm!",
+              cancelButtonText: "No, go back.",
+              allowOutsideClick: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                let username = getCookie("username");
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                  if (this.readyState == 4) {
+                    if (this.status == 200) {
+                      if (this.responseText == 1) {
+                        Swal.fire({
+                          title: "Post Edited!",
+                          text: "The post was edited successfully.",
+                          icon: "success",
+                          showConfirmButton: true,
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            location.reload();
+                          }
+                        });
+                      } else {
+                        Swal.fire("Error!", "Theme not edited.", "error");
+                      }
+                    } else {
+                      Swal.fire("Error!", "Theme not edited.", "error");
+                    }
+                  }
+                };
+                xhttp.open("POST", "PHP/Forum/editPost.php", true);
+                xhttp.setRequestHeader(
+                  "Content-type",
+                  "application/x-www-form-urlencoded"
+                );
+                xhttp.send(
+                  "content=" +
+                    encodeURIComponent(postContent.value) +
+                    "&id_post=" +
+                    id_post
+                );
+              } else {
+                Swal.fire("Cancelled", "Operation cancelled.", "info");
+              }
+            });
+          }
         });
-      }
-
-      deleteBtn(); // Reinitialize delete button functionality
-      //editBtn(); // Reinitialize edit button functionality if you have this function
-      jqueryModal(); // Reinitialize modal functionality if you have this function
-      actualizarPostP(); // Reinitialize any other post-update functionality
-    }
-  };
-  xhttp.open("POST", "PHP/Forum/search_post.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("letra=" + letra + "&id_theme=" + id_theme);
+    });
+  }
 }
 
 

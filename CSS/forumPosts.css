@@ -584,7 +584,7 @@ select {
   overflow-x: hidden;
 }
 
-#edit-theme-modal {
+#edit-post-modal {
   width: 80%;
   height: 80%;
   max-width: 800px;

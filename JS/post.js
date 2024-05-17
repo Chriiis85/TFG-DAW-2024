@@ -31,9 +31,9 @@ function jqueryModal() {
       });
     });
 
-    $(".editThemeBtn").on("click", function () {
+    $(".editPostBtn").on("click", function () {
       // Abre el modal al hacer clic
-      $("#edit-theme-modal").modal({
+      $("#edit-post-modal").modal({
         fadeDuration: 300,
         escapeClose: false,
         clickClose: false,
@@ -356,3 +356,109 @@ filter.addEventListener("change", () => {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("filter=" + tipo + "&id_theme=" + id_theme); // Correct query string
 });
+
+
+let search = document.getElementById("search");
+search.addEventListener("input", () => {
+  console.log(search.value);
+  searchTheme(search.value);
+});
+
+function searchTheme(letra) {
+  let main = document.querySelector(".main");
+    let id_theme = main.id;
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    console.log(posts);
+    var posts = JSON.parse(this.responseText); // Parse JSON to JavaScript object
+    let postsGroup = document.getElementById("posts-group");
+    postsGroup.innerHTML = ""; // Clear previous posts
+
+
+    if (posts.length == 0) {
+      let postContainer = document.createElement("div"); // Create a new container
+      postContainer.id = "post-card-container";
+      let imagen = document.createElement("img");
+      let divimg = document.createElement("div");
+      imagen.setAttribute(
+        "src",
+        "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png"
+      );
+      imagen.classList.add("img-noresult");
+      divimg.appendChild(imagen);
+      postContainer.appendChild(divimg);
+      postsGroup.appendChild(postContainer); // Add the new container to the DOM
+    } else {
+      posts.forEach(post => {
+        const postId = post[0];
+        const postContent = post[1];
+        const postDate = post[2];
+        const postUserId = post[3];
+
+        const postContainer = document.createElement('div');
+        postContainer.className = 'post-container';
+
+        const postContainer1 = document.createElement('div');
+        postContainer1.className = 'post-container-1';
+
+        const postTitle = document.createElement('h1');
+        postTitle.textContent = "Posted by: " + postUserId;
+        postContainer1.appendChild(postTitle);
+
+        const postDateParagraph = document.createElement('p');
+        postDateParagraph.textContent = `Posted on: ${postDate}.`;
+        postContainer1.appendChild(postDateParagraph);
+
+        let username = getCookie("username");
+
+        if (postUserId == username || username == "admin") {
+          const postCardEdit = document.createElement('div');
+          postCardEdit.className = 'post-card-6-edit';
+
+          const editButton = document.createElement('button');
+          editButton.className = 'editPostBtn';
+          editButton.id = `editCard-${postId}`;
+          const editImage = document.createElement('img');
+          editImage.src = 'Images/edit.svg';
+          editImage.alt = '';
+          editButton.appendChild(editImage);
+          postCardEdit.appendChild(editButton);
+
+          const deleteButton = document.createElement('button');
+          deleteButton.className = 'deletePostBtn';
+          deleteButton.id = `deleteCard-${postId}`;
+          const deleteImage = document.createElement('img');
+          deleteImage.src = 'Images/delete.svg';
+          deleteImage.alt = '';
+          deleteButton.appendChild(deleteImage);
+          postCardEdit.appendChild(deleteButton);
+
+          postContainer1.appendChild(postCardEdit);
+        }
+
+        postContainer.appendChild(postContainer1);
+
+        const postContainer2 = document.createElement('div');
+        postContainer2.className = 'post-container-2';
+
+        const postParagraph = document.createElement('p');
+        postParagraph.id = `postContent-${postId}`;
+        postParagraph.textContent = postContent;
+        postContainer2.appendChild(postParagraph);
+
+        postContainer.appendChild(postContainer2);
+        postsGroup.appendChild(postContainer);
+      });
+    }
+
+    deleteBtn(); // Reinitialize delete button functionality
+    //editBtn(); // Reinitialize edit button functionality if you have this function
+    jqueryModal(); // Reinitialize modal functionality if you have this function
+    actualizarPostP(); // Reinitialize any other post-update functionality
+  }
+};
+xhttp.open("POST", "PHP/Forum/search_post.php", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("letra=" + letra + "&id_theme=" + id_theme);
+}
