@@ -3,9 +3,17 @@ error_reporting(0);
 
 $filterType = $_POST["filter"];
 
-//$themes = returnThemesByDate();
-
-if ($filterType == "Newest") {
+if ($filterType == "Oldest") {
+    //echo "Se filtra por newest";
+    $themes = returnThemesByDateOldest();
+    for ($i = 0; $i < sizeof($themes); $i++) {
+        $themes[$i][3] = returnNombreUsu($themes[$i][3]);
+        $themes[$i][4] = returnNumberPosts($themes[$i][0]);
+        $themes[$i][5] = returnLastPost($themes[$i][0]);
+    }
+    echo json_encode($themes);
+} 
+else if ($filterType == "Newest") {
     //echo "Se filtra por newest";
     $themes = returnThemesByDate();
     for ($i = 0; $i < sizeof($themes); $i++) {
@@ -24,8 +32,6 @@ if ($filterType == "Newest") {
     }
     echo json_encode($themes);
 } else if ($filterType == "Popularity") {
-    echo "Se filtra por Popularity";
-} else if ($filterType == "Views") {
     
     $themes = returnThemesByDefault();
     for ($i = 0; $i < sizeof($themes); $i++) {
@@ -71,6 +77,21 @@ function returnThemesByDate()
     include "conexion.php";
     // CONSULTA QUE VAMOS A REALIZAR
     $consulta = "SELECT * FROM `themes` ORDER BY date DESC;";
+
+    //EJECUTAMOS LA CONSULTA
+    $result = mysqli_query($con, $consulta);
+
+    // Obtener todos los resultados
+    $themes = mysqli_fetch_all($result);
+
+    return $themes;
+}
+
+function returnThemesByDateOldest()
+{
+    include "conexion.php";
+    // CONSULTA QUE VAMOS A REALIZAR
+    $consulta = "SELECT * FROM `themes` ORDER BY date ASC;";
 
     //EJECUTAMOS LA CONSULTA
     $result = mysqli_query($con, $consulta);

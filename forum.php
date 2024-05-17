@@ -47,8 +47,8 @@
             <select id="filter">
               <option value="Default">Default</option>
               <option value="Popularity">Popularity</option>
-              <!--<option value="Views">Views</option>-->
               <option value="Newest">Newest</option>
+              <option value="Oldest">Oldest</option>
             </select>
           </div>
         </div>

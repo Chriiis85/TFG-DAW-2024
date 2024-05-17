@@ -389,8 +389,8 @@ filter.addEventListener("change", () => {
     case "Popularity":
       tipo = "Popularity";
       break;
-    case "Views":
-      tipo = "Views";
+    case "Oldest":
+      tipo = "Oldest";
       break;
     default:
       tipo = "Default";
@@ -453,7 +453,7 @@ filter.addEventListener("change", () => {
         var postCardMsg = document.createElement("div");
         postCardMsg.className = "post-card-msg";
         postCardMsg.innerHTML =
-          "<img src='Images/msg.svg' alt='' /><p>" + theme[4] + "</p>";
+          "<img src='Images/msg.svg' alt='' /><p>Posts: " + theme[4] + "</p>";
 
         var postCard6Edit = document.createElement("div");
         postCard6Edit.className = "post-card-6-edit";
@@ -581,7 +581,7 @@ function searchTheme(letra) {
         var postCardMsg = document.createElement("div");
         postCardMsg.className = "post-card-msg";
         postCardMsg.innerHTML =
-          "<img src='Images/msg.svg' alt='' /><p>" + theme[4] + "</p>";
+          "<img src='Images/msg.svg' alt='' /><p>Posts: " + theme[4] + "</p>";
 
         var postCard6Edit = document.createElement("div");
         postCard6Edit.className = "post-card-6-edit";
