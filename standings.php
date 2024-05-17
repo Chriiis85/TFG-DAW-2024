@@ -52,13 +52,14 @@
           $apellido2 = substr($nombre_completo2, $primerEspacio2 + 1);
 
           echo '<div id="standings-teams" class="standings-teams">
-            <div class="position">' . $clasificacionesEquipos[$i]['position'] . '</div>
-            <div class="bar" style="background-color:var(--' . $nombre_equipo . ')"></div>
-            <div class="name">' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</div>
+            <div class="position">' . $clasificacionesEquipos[$i]['position'] . '<div class="bar" style="background-color:var(--' . $nombre_equipo . ')"></div></div>
+            
+            <div class="nameTeam">' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</div>
             <div class="driversname">' . $apellido1 . '/' . $apellido2 . '</div>
-            <div class="team"><img src="Images/Teams/' . $nombre_equipo . '.png" alt=""></div>
-            <div class="points">' . $clasificacionesEquipos[$i]['points'] . ' PTS.</div>
-            <div class="arrow"><img src="Images/arrowdown-svgrepo-com.svg" alt=""></div>
+            <div class="teamCons"><img src="Images/Teams/' . $nombre_equipo . '.png" alt=""></div>
+            <div class="points-cont"><div class="points">' . $clasificacionesEquipos[$i]['points'] . ' PTS.</div></div>
+
+            <!--<div class="arrow"><img src="Images/arrowdown-svgrepo-com.svg" alt=""></div>-->
           </div>';
 
           echo '<div id="standings-teams-info" class="standings-teams-info" style="display: none">
@@ -198,11 +199,10 @@
             class="standings-driver-container"
           >';
           echo '<div id="standings-driver" class="standings-driver">';
-          echo '<div class="position">' . $clasificacionesPilotos[$i]['position'] . '</div>';
-          echo '<div class="bar" style="background-color:var(--' . $nombre_equipo . ')";></div>';
+          echo '<div class="position">' . $clasificacionesPilotos[$i]['position'] . '<div class="bar" style="background-color:var(--' . $nombre_equipo . ')";></div></div>';
           echo '<div class="name">' . $clasificacionesPilotos[$i]['Driver']['givenName'] . " " . $clasificacionesPilotos[$i]['Driver']['familyName'] . '</div>';
           echo '<div class="team">' . $clasificacionesPilotos[$i]['Constructors'][0]['name'] . '<img src="Images/Teams/' . $nombre_equipo . '.png" alt=""></div>';
-          echo '<div class="points">' . $clasificacionesPilotos[$i]['points'] . ' PTS.</div>';
+          echo '<div class="points-cont"><div class="points">' . $clasificacionesPilotos[$i]['points'] . ' PTS.</div></div>';
           echo '<div class="arrow"><img src="Images/arrowdown-svgrepo-com.svg" alt=""></div>';
           echo '</div>';
           echo '<div

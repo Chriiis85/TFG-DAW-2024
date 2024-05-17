@@ -67,7 +67,7 @@ body {
 }
 /*-------------------------------------------------------------DRIVER STANDINGS---------------------------------------------------------------*/
 .standings-selector {
-  width: 70%;
+  width: 80%;
   height: 50px;
   display: flex;
   align-items: center;
@@ -102,7 +102,7 @@ body {
   position: absolute;
   width: 20%;
   height: 4px;
-  margin-top: 2%;
+  margin-top: 30px;
   background-color: #00b9ff;
 }
 
@@ -133,6 +133,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   margin-top: 1%;
   gap: 1%;
   font-family: "F1RegularBold";
@@ -150,13 +151,16 @@ body {
   display: none;
 }
 
+.standings-teams > .nameTean {
+  font-size: 1.3em;
+}
+
 .standings-driver {
-  width: 70%;
+  width: 80%;
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5%;
+  justify-content: space-between;
   flex-direction: row;
   background-color: white;
   border-radius: 5px;
@@ -165,7 +169,7 @@ body {
 }
 
 .standings-teams {
-  width: 70%;
+  width: 80%;
   height: 70px;
   display: flex;
   align-items: center;
@@ -193,7 +197,7 @@ body {
 }
 
 .standings-driver-info {
-  width: 70%;
+  width: 80%;
   height: 275px;
   margin-top: 0%;
   margin-bottom: 1%;
@@ -209,7 +213,7 @@ body {
 }
 
 .standings-teams-info {
-  width: 70%;
+  width: 80%;
   height: 250px;
   margin-top: -1%;
   margin-bottom: 1%;
@@ -475,26 +479,30 @@ body {
 .bar {
   width: 7px;
   height: 50%;
+  margin-left: 5%;
   background-color: red;
   border: 1px solid black;
-  margin-left: -18%;
 }
 
-.points {
-  width: 10%;
+.points-cont {
+  width: 20%;
   height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.points{
+  font-size: 1.1em;
   border-radius: 50px;
   color: white;
-  font-size: 1.1em;
+  padding: 3%;
   background-color: gray;
-  margin-right: -5%;
 }
 
 .position {
   width: 20%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -504,6 +512,7 @@ body {
 
 .team {
   width: 20%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -518,6 +527,23 @@ body {
   border-radius: 5px;
 }
 
+.teamCons {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5%;
+  font-size: 1.1em;
+}
+
+.teamCons > img {
+  width: 35%;
+  background-color: white;
+  border-radius: 5px;
+}
+
 .name {
   width: 30%;
   display: flex;
@@ -527,19 +553,28 @@ body {
   font-size: 1.3em;
 }
 
-.driversname {
-  width: 10%;
+.nameTean {
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  font-size: 1.1em;
+  font-size: 2.5em;
+}
+
+.driversname {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 1em;
   color: rgba(0, 0, 0, 0.6);
 }
 
 .arrow {
   width: 20%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: row;
@@ -575,12 +610,20 @@ body {
   transform: scale(1.1);
 }
 
+/*---------------------------------------------------------------------RESPONSIVE-------------------------------------------------------------*/
 @media (max-width: 1700px) {
   .standings-selector > div {
     width: 40%;
   }
   .standings-selector-bar{
     width: 400px;
+  }
+  .standings-driver-info-info-main-name{
+    font-size: 1.4em;
+  }
+  .standings-driver-info-info-main-number{
+    font-size: 1.4em;
+
   }
 }
 
@@ -606,10 +649,88 @@ body {
   }
   
   .standings-selector-bar{
-    margin-top: 3%;
+    margin-top: 30px;
     width: 400px;
   }
 
+  .standings-driver-info-info-main-name{
+    font-size: 1.2em;
+  }
+  .standings-driver-info-info-main-number{
+    font-size: 1.2em;
+  }
+  .standings-driver-info-info-extra{
+    font-size: 1em;
+  }
+
+
+  .standings-teams-info-info-main-name{
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 1040px) {
+  .driversname{
+    display: none;
+  }
+  .nameTeam{
+    font-size: 1em;
+  }
+  .teamCons>img{
+    width: 30px;
+  }
+  .standings-driver-info-info-main-number{
+    margin-left: 20px;
+  }
+  .standings-driver-info-info-main-number>img{
+    width: 30px;
+  }
+  .standings-driver-info-info-main-helmet>img{
+    width: 50px;
+  }
+}
+
+@media (max-width: 1000px) {
+.position{
+  font-size: 1em;
+}
+.name{
+  font-size: 1em;
+}
+.team{
+  font-size: 1em;
+}
+.points{
+  font-size: 0.9em;
+}
+.standings-driver-container{
+  margin-bottom: 3%;
+}
+#standings-driver-info{
+  top: -10%;
+}
+}
+
+@media (max-width: 900px) {
+  
+  .standings-driver-info-info-main-name{
+    font-size: 1.1em;
+  }
+  .standings-driver-info-info-main-number{
+    font-size: 1.1em;
+  }
+  .standings-driver-info-info-extra{
+    font-size: 0.8em;
+  }
+  .standings-teams-info-info-extra{
+    font-size: 1em;
+  }
+  .standings-teams-info-info-main-logo>img{
+    width: 30px;
+  }
+  .standings-teams-info-info-main-number>img{
+    width: 30px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -618,11 +739,37 @@ body {
   }
 
   .standings-selector-bar{
-    margin-top: 4%;
+    margin-top: 30px;
     width: 300px;
+  }
+  .standings-teams-info-info-extra{
+    font-size: 0.8em;
+  }
+  .standings-teams-info-info-main-name{
+    font-size: 1em;
+  }
+  .standings-teams{
+    margin-bottom: 3%;
   }
 }
 
+@media (max-width: 600px) {
+  .position{
+    font-size: 0.8em;
+  }
+  .name{
+    font-size: 0.8em;
+  }
+  .team{
+    font-size: 0.8em;
+  }
+  .points{
+    font-size: 0.8em;
+  }
+  .points-cont{
+    width: 30%;
+  }
+  }
 
 @media (max-width: 500px) {
   .standings-selector {
@@ -632,5 +779,10 @@ body {
     margin-top: 5%;
     width: 200px;
   }
-
+  .standings-driver-info-info-main-number>img{
+    width: 20px;
+  }
+  .standings-driver-info-info-main-helmet>img{
+    width: 40px;
+  }
 }
