@@ -18,32 +18,37 @@
   <section class="main">
     <!--FORMULARIO PARA EL REGISTRO-->
     <article id="formRegister" class="main-info-Register">
-      <h1>Motoring Community Register</h1>
-      <div class="formField">
-        <input type="text" required="" />
-        <span>Username/Mail</span>
-      </div>
-      <div class="formField">
-        <input type="text" required="" />
-        <span>Name</span>
-      </div>
-      <div class="formField">
-        <input type="text" required="" />
-        <span>Surname</span>
-      </div>
-      <div class="formField">
-        <input type="password" id="passwordField1" required />
-        <span>Password</span>
-        <button type="button" id="togglePasswordBtn" onclick="togglePasswordVisibility1()">
-          <i id="passwordIcon" class="fa fa-eye-slash"></i>
+      <form class="main-info-Login" role="form" method="post" action="PHP/Forum/registrar_usuario.php">
+        <h1>Motoring Community Register</h1>
+        <div class="formField">
+          <input type="text" required="" id="mail" name="mail" />
+          <span>Username/Mail</span>
+        </div>
+        <div class="formField">
+          <input type="text" required="" id="name" name="name" />
+          <span>Name</span>
+        </div>
+        <div class="formField">
+          <input type="text" required="" id="surname" name="surname" />
+          <span>Surname</span>
+        </div>
+        <div class="formField">
+          <input type="password" name="passwordRegister" id="passwordRegister" required />
+          <span>Password</span>
+
+          <button type="button" id="togglePasswordBtn" onclick="togglePasswordVisibility()">
+            <i id="passwordIconReg" class="fa fa-eye-slash"></i>
+            <!--<img src="Images/eye_see.svg" alt="">-->
+          </button>
+        </div>
+        <p onclick="window.location.href = 'users.php'" id="loginFormChange">Have an account? Login here.</p>
+        <button type="submit" id="register" class="buttons" role="button">Register</button>
+        <button type="button" onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
+          Go Home
         </button>
-      </div>
-      <p onclick="window.location.href = 'users.php'" id="loginFormChange">Have an account? Login here.</p>
-      <button id="register" class="buttons" role="button">Register</button>
-      <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
-        Go Home
-      </button>
+      </form>
     </article>
+
     <!--FOTO DEL FORMULARIO-->
     <article id="foto" class="main-foto">
       <img id="img" src="Images/Login-img.jpg" alt="" />
@@ -67,10 +72,10 @@
         </div>
         <p id="registerFormChange">Don´t have an account? Register here.</p>
         <button type="submit" id="login" class="buttons" role="button">Login</button>
-      <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
-        Go Home
-      </button>
-      <!--<p id="pwdFormChange">Forgot your password? Reset here.</p>-->
+        <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
+          Go Home
+        </button>
+        <!--<p id="pwdFormChange">Forgot your password? Reset here.</p>-->
       </form>
     </article>
 

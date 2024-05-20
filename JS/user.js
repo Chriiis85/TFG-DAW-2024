@@ -1,6 +1,6 @@
 /*FUNCION PARA CAMBIAR LA VISIBILIDAD DE LA CONTRASEÑA Y EL ICONO*/
-function togglePasswordVisibility1() {
-  var passwordField = document.getElementById("passwordField1");
+function togglePasswordVisibility2() {
+  var passwordField = document.getElementById("pwdLogin");
   var passwordIcon = document.getElementById("passwordIcon");
 
   if (passwordField.type === "password") {
@@ -15,9 +15,9 @@ function togglePasswordVisibility1() {
 }
 
 /*FUNCION PARA CAMBIAR LA VISIBILIDAD DE LA CONTRASEÑA Y EL ICONO*/
-function togglePasswordVisibility2() {
-  var passwordField = document.getElementById("pwdLogin");
-  var passwordIcon = document.getElementById("passwordIcon");
+function togglePasswordVisibility() {
+  var passwordField = document.getElementById("pwdRegister");
+  var passwordIcon = document.getElementById("passwordIconReg");
 
   if (passwordField.type === "password") {
     passwordField.type = "text";
