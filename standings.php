@@ -5,17 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Formula One - Motoring Community</title>
+  <!--HOJA DE ESTILOS STANDINGS-->
   <link rel="stylesheet" href="CSS/standings.css" />
-  <link rel="stylesheet" href="CSS/footer.css" />
+  <!--SCRIPT JQUERY-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--SCRIPT PAGINA PRINCIPAL-->
   <script defer src="JS/script.js"></script>
+  <!--SCRIPT STANDINGS-->
+
   <script defer src="JS/standings.js"></script>
 </head>
 
 <body>
+  <!--IMPLEMENTAR HEADER IGUAL QUE EN TODAS LAS PAGINAS-->
   <?php
   include "header.php";
   ?>
+  <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
     <img src="Images/UPARROW.svg" alt="" />
   </button>
@@ -24,6 +30,7 @@
     <!--<article class="teams-title-container">
       <h1 class="teams-title">2024 Formula One Season Standings</h1>
     </article>-->
+    <!--SELECTOR DONDE EL USUARIO ELIGE QUE CLASIFICACION MOSTRAR-->
     <article class="standings-selector">
       <div id="DriverStan">
         <h1>Drivers Standings</h1>
@@ -38,19 +45,21 @@
       <article id="standings-teams-container" class="standings-driver-container">
         <?php
         include ("PHP/driverTeam.php");
+        include ("PHP/returnDrivers.php");
         include ("PHP/returnTeamStanding.php");
         for ($i = 0; $i < sizeof($escuderias); $i++) {
           $nombre_equipo = str_replace(' ', '', $clasificacionesEquipos[$i]['Constructor']['name']);
-          // Obtener el nombre completo del piloto
+          // NOMBRE DEL PILOTO
           $nombre_completo1 = $escuderias[$clasificacionesEquipos[$i]['Constructor']['name']][0];
           $nombre_completo2 = $escuderias[$clasificacionesEquipos[$i]['Constructor']['name']][1];
-          // Encontrar la posición del primer espacio en el nombre del piloto
+          // SEPARAR NOMBRE Y APELLIDO
           $primerEspacio = strpos($nombre_completo1, ' ');
           $primerEspacio2 = strpos($nombre_completo2, ' ');
-          // Obtener el apellido del piloto usando substr desde el primer espacio hasta el final
+          // OBTENER APELLIDO
           $apellido1 = substr($nombre_completo1, $primerEspacio + 1);
           $apellido2 = substr($nombre_completo2, $primerEspacio2 + 1);
 
+          //MOSTRAR LAS CARTAS DE LOS EQUIPOS
           echo '<div id="standings-teams" class="standings-teams">
             <div class="position">' . $clasificacionesEquipos[$i]['position'] . '<div class="bar" style="background-color:var(--' . $nombre_equipo . ')"></div></div>
             
@@ -102,98 +111,25 @@
 
     <article class="standings-drivers-container">
       <?php
-      function calcularEdad($fechaNacimiento)
-      {
-        // Convertir la fecha de nacimiento a un objeto DateTime
-        $fechaNacimiento = new DateTime($fechaNacimiento);
-
-        // Obtener la fecha actual
-        $fechaActual = new DateTime();
-
-        // Calcular la diferencia entre la fecha actual y la fecha de nacimiento
-        $diferencia = $fechaActual->diff($fechaNacimiento);
-
-        // Obtener la diferencia en años
-        $edad = $diferencia->y;
-
-        return $edad;
-      }
-
-      function nacionalidadAPais($nacionalidad)
-      {
-        switch ($nacionalidad) {
-          case 'Dutch':
-            return 'Netherlands';
-            break;
-          case 'Mexican':
-            return 'Mexico';
-            break;
-          case 'Monegasque':
-            return 'Monaco';
-            break;
-          case 'Spanish':
-            return 'Spain';
-            break;
-          case 'British':
-            return 'Great-Britain';
-            break;
-          case 'Australian':
-            return 'Australia';
-            break;
-          case 'Canadian':
-            return 'Canada';
-            break;
-          case 'Japanese':
-            return 'Japan';
-            break;
-          case 'German':
-            return 'Germany';
-            break;
-          case 'Danish':
-            return 'Denmark';
-            break;
-          case 'Chinese':
-            return 'China';
-            break;
-          case 'French':
-            return 'France';
-            break;
-          case 'Finnish':
-            return 'Finland';
-            break;
-          case 'American':
-            return 'United%20States';
-            break;
-          case 'Thai':
-            return 'Thailand';
-            break;
-          case 'Italian':
-            return 'Italy';
-            break;
-          case 'Austrian':
-            return 'Austria';
-            break;
-          case 'Swiss':
-            return 'Switzerland';
-            break;
-        }
-      }
-      // URL de la API
+      // URL DE LA API PARA RECOGER LOS PILOTOS
       $url = 'https://ergast.com/api/f1/2024/driverStandings.json';
 
-      // Obtener los datos JSON de la API
+      // OBTENER LOS DATOS EN FORMATO JSON
       $data = file_get_contents($url);
 
-      // Decodificar los datos JSON en un array PHP
+      // DECODIFICAR DATOS EN JSON PARA LEERLO Y PINTARLO MEJOR
       $resultado = json_decode($data, true);
 
-      // Verificar si se obtuvo una respuesta válida
+      // VERIFICAR SI LLEGAN DATOS PARA PREVENIR ERRORES Y DEBUGEAR
       if ($resultado && isset($resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'])) {
-        // Obtener la lista de clasificaciones de pilotos
+
+        // GUARDAR EN EL ARRAY QUE MUESTRA LOS PILOTOS
         $clasificacionesPilotos = $resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'];
 
+        //BUCLE PAR APODER ITERAR EL ARRAY QUE CONTIENE LOS PILoTOS
         for ($i = 0; $i < sizeof($clasificacionesPilotos); $i++) {
           $nombre_equipo = str_replace(' ', '', $clasificacionesPilotos[$i]['Constructors'][0]['name']);
+          //MOSTRAR LAS CARTAS DE LOS PILOTOS
           echo '<article
             id="standings-driver-container"
             class="standings-driver-container"
@@ -256,37 +192,18 @@
       }
       ?>
   </section>
+  <!--IMPLEMENTAR FOOTER IGUAL QUE EN TODAS LAS PAGINAS-->
   <?php
-    include "footer.php";
+  include "footer.php";
   ?>
 </body>
 <script>
+  //SCRIPT QUE DEFINE EL TITULO DE LA PAGINA EN EL HEADER Y ESTABLECE LA IMAGEN DE FONDO DE LA CABECERA-->
   let tituloPrincipal = document.getElementById("title-header");
   tituloPrincipal.textContent = "Formula One Season Standings";
 
   let headerContainer = document.getElementById("header-container");
   headerContainer.style.backgroundImage = "url('https://img2.rtve.es/i/?w=1600&i=1680083321103.JPG')";
-
-  document.getElementById("upBtn").classList.add("hidden");
-  window.onscroll = function () { scrollFunction() };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
-      document.getElementById("upBtn").classList.remove("hidden");
-    } else {
-      document.getElementById("upBtn").classList.add("hidden");
-    }
-  }
-
-  function scrollToTop() {
-    const scrollStep = -window.scrollY / (500 / 15);
-    const scrollInterval = setInterval(function () {
-      if (window.scrollY != 0) {
-        window.scrollBy(0, scrollStep);
-      }
-      else clearInterval(scrollInterval);
-    }, 15);
-  }
 </script>
 
 </html>
