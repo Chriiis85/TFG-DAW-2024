@@ -1,19 +1,19 @@
 <?php
-// URL de la API
+// URL DE LA API CON LOS EQUIPOS EN ORDEN DE MUNDIAL
 $url = 'https://ergast.com/api/f1/2024/constructorStandings.json';
 
-// Obtener los datos JSON de la API
+// OBTENER LOS DATOS EN FORMATO JSON
 $data = file_get_contents($url);
 
-// Decodificar los datos JSON en un array PHP
+// DECODIFICAR DATOS EN JSON PARA LEERLO Y PINTARLO MEJOR
 $resultado = json_decode($data, true);
 
-// Verificar si se obtuvo una respuesta válida
+// VERIFICAR SI SE OBTIENE ALGO DE LA API PARA PODER DEBUGEAR Y MOSTRAR ERRORES
 if ($resultado && isset($resultado['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStandings'])) {
-    // Obtener la lista de clasificaciones de equipos
+    //ARRAY QUE NOS PERMITE PINTAR LOS EQUIPOS EN EL APARTADO DE ESCUDERIAS
     $clasificacionesEquipos = $resultado['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStandings'];
 } else {
-    echo "No se pudo obtener la información de la API.";
+    echo "No se pudo mostrar la información de la API.";
 }
 
 ?>

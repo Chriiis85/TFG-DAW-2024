@@ -1,15 +1,15 @@
 <?php
 
-// URL de la API
+// URL DE LA API PARA RECOGER LOS PILOTOS
 $url = 'https://ergast.com/api/f1/2024/driverStandings.json';
 
-// Obtener los datos JSON de la API
+// OBTENER LOS DATOS EN FORMATO JSON
 $data = file_get_contents($url);
 
-// Decodificar los datos JSON en un array PHP
+// DECODIFICAR DATOS EN JSON PARA LEERLO Y PINTARLO MEJOR
 $resultado = json_decode($data, true);
 
-// Función para obtener los pilotos de una escudería
+// FUNCION QUE SE LE PASA EL ARRAY Y LA ESCUDERIA Y OBTIENE LOS DOS PILOTOS
 function damePilotos($escuderia, $resultado) {
     $pilotos = [];
     foreach ($resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'] as $item) {
@@ -23,7 +23,7 @@ function damePilotos($escuderia, $resultado) {
     return $pilotos;
 }
 
-// Obtener cada escudería con sus dos pilotos
+// BUCLE QUE OBTIENE LAS ESCUDERIAS Y SUS PILOTOS Y SE JUNTA EN UN ARRAY PARA PODER SER PINTADO
 $escuderias = [];
 foreach ($resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings'] as $item) {
     $constructores = $item['Constructors'];
