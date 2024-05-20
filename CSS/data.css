@@ -1,3 +1,4 @@
+/*--------------------------------------------------------------IMPORT FONTS-------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
@@ -119,7 +120,6 @@ h1 {
 .content-table tbody tr:last-of-type {
   border-bottom: 2px solid #00b9ff;
 }
-/**/
 /* Estilo base para el select */
 .select {
   width: 300px;
@@ -131,9 +131,7 @@ h1 {
 }
 select {
   appearance: none;
-  /*  safari  */
   -webkit-appearance: none;
-  /*  other styles for aesthetics */
   width: 100%;
   font-size: 1.15rem;
   padding: 0.675em 2em 0.675em 1em;
