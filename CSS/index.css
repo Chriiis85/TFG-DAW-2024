@@ -1015,7 +1015,7 @@ span {
 }
 
 .about-image-container {
-  z-index: 99;
+  z-index: 1;
   width: 75%;
   height: 75%;
   display: flex;

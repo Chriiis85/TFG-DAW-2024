@@ -26,7 +26,7 @@
         <p class="progress-bar" id="formulaone">
           FORMULA ONE &nbsp;&nbsp;<img src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />
         </p>
-        <p onclick="window.location.href = 'data.php'" class="progress-bar">
+        <p onclick="window.location.href = 'data.php'">
           HISTORIC DATA
         </p>
         <p onclick="window.location.href = 'standings.php'">SEASON STANDINGS</p>
