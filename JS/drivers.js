@@ -1,4 +1,4 @@
-async function getActualDrivers() {
+/*async function getActualDrivers() {
     fetch('https://ergast.com/api/f1/2024/driverStandings.json')
     .then(response => response.json())
     .then(data => {
@@ -12,4 +12,4 @@ async function getActualDrivers() {
     });
 }
 
-getActualDrivers();
+getActualDrivers();*/

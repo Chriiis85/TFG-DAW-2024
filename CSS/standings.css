@@ -244,6 +244,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: top;
+  border-bottom-left-radius: 15px;
 }
 
 .standings-teams-info-photo {
@@ -750,8 +751,11 @@ body {
   .standings-teams-info-info-main-name{
     font-size: 1em;
   }
-  .standings-teams{
+  .standings-teams-info{
     margin-bottom: 3%;
+  }
+  .standings-teams{
+    margin-top: 2%;
   }
 }
 

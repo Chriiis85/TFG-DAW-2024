@@ -35,6 +35,7 @@ foreach ($resultado['MRData']['StandingsTable']['StandingsLists'][0]['DriverStan
     }
 }
 
+//FUNCION QUE CALCULA AL EDAD DEL PILOTO PARA PODER PINTARLA
 function calcularEdad($fechaNacimiento)
 {
   // Convertir la fecha de nacimiento a un objeto DateTime
@@ -52,6 +53,7 @@ function calcularEdad($fechaNacimiento)
   return $edad;
 }
 
+//FUNCION QUE PASA LA NACIONALIDAD Y TE DEVUELVE EL PAIS PARA PODER TENER UNA MAYOR COMPATIBILIDAD CON LOS DATOS DE LA API
 function nacionalidadAPais($nacionalidad)
 {
   switch ($nacionalidad) {

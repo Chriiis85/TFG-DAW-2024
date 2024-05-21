@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Formula One - Motoring Community</title>
+  <title>F1 Standings - Motoring Community</title>
   <!--HOJA DE ESTILOS STANDINGS-->
   <link rel="stylesheet" href="CSS/standings.css" />
   <!--SCRIPT JQUERY-->
@@ -12,7 +12,6 @@
   <!--SCRIPT PAGINA PRINCIPAL-->
   <script defer src="JS/script.js"></script>
   <!--SCRIPT STANDINGS-->
-
   <script defer src="JS/standings.js"></script>
 </head>
 
@@ -23,7 +22,7 @@
   ?>
   <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
-    <img src="Images/UPARROW.svg" alt="" />
+    <img src="Images/UPARROW.svg" alt="Up Arrow" />
   </button>
   <section class="container-select-data"></section>
   <section class="main">
@@ -44,8 +43,11 @@
     <article class="standings-teams-container">
       <article id="standings-teams-container" class="standings-driver-container">
         <?php
+        //ARCHIVO QUE NOS DEVUELVE 
         include ("PHP/driverTeam.php");
+        //IMPLEMENTAMOS ARCHIVO QUE NOS DEVUELVE LA CLASIFICACION DE LOS PILOTOS
         include ("PHP/returnDrivers.php");
+        //IMPLEMENTAMOS ARCHIVO QUE NOS DEVUELVE LA CLASIFICACION DE ESCUDERIAS
         include ("PHP/returnTeamStanding.php");
         for ($i = 0; $i < sizeof($escuderias); $i++) {
           $nombre_equipo = str_replace(' ', '', $clasificacionesEquipos[$i]['Constructor']['name']);
@@ -65,7 +67,7 @@
             
             <div class="nameTeam">' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</div>
             <div class="driversname">' . $apellido1 . '/' . $apellido2 . '</div>
-            <div class="teamCons"><img src="Images/Teams/' . $nombre_equipo . '.png" alt=""></div>
+            <div class="teamCons"><img src="Images/Teams/' . $nombre_equipo . '.png" alt="Team Logo"></div>
             <div class="points-cont"><div class="points">' . $clasificacionesEquipos[$i]['points'] . ' PTS.</div></div>
 
             <!--<div class="arrow"><img src="Images/arrowdown-svgrepo-com.svg" alt=""></div>-->
@@ -73,7 +75,7 @@
 
           echo '<div id="standings-teams-info" class="standings-teams-info" style="display: none">
           <div class="standings-teams-info-photo">
-            <img src="Images/Cars/' . $nombre_equipo . '.png" alt="">
+            <img src="Images/Cars/' . $nombre_equipo . '.png" alt="Car Img">
           </div>
           <div class="standings-teams-info-info">
             <div class="standings-teams-info-info-main">
@@ -84,10 +86,10 @@
                 <h1></h1>
                 <img
                   src="https://media.formula1.com/content/dam/fom-website/flags/' . nacionalidadAPais($clasificacionesEquipos[$i]['Constructor']['nationality']) . '.jpg"
-                  alt="" />
+                  alt="Country Flag" />
               </div>
               <div class="standings-teams-info-info-main-logo">
-              <img src="Images/Teams/' . $nombre_equipo . '.png" alt="">
+              <img src="Images/Teams/' . $nombre_equipo . '.png" alt="Team Logo">
               </div>
             </div>
             <div class="standings-teams-info-info-extra">
@@ -137,7 +139,7 @@
           echo '<div id="standings-driver" class="standings-driver">';
           echo '<div class="position">' . $clasificacionesPilotos[$i]['position'] . '<div class="bar" style="background-color:var(--' . $nombre_equipo . ')";></div></div>';
           echo '<div class="name">' . $clasificacionesPilotos[$i]['Driver']['givenName'] . " " . $clasificacionesPilotos[$i]['Driver']['familyName'] . '</div>';
-          echo '<div class="team">' . $clasificacionesPilotos[$i]['Constructors'][0]['name'] . '<img src="Images/Teams/' . $nombre_equipo . '.png" alt=""></div>';
+          echo '<div class="team">' . $clasificacionesPilotos[$i]['Constructors'][0]['name'] . '<img src="Images/Teams/' . $nombre_equipo . '.png" alt="Team Logo"></div>';
           echo '<div class="points-cont"><div class="points">' . $clasificacionesPilotos[$i]['points'] . ' PTS.</div></div>';
           echo '<div class="arrow"><img src="Images/arrowdown-svgrepo-com.svg" alt=""></div>';
           echo '</div>';
@@ -148,7 +150,7 @@
             >';
           echo '<div class="standings-driver-info-photo" ><img
                       src="https://media.formula1.com/content/dam/fom-website/drivers/2024Drivers/' . $clasificacionesPilotos[$i]['Driver']['familyName'] . '.jpg.img.1920.medium.jpg/1708344615576.jpg)"
-                      alt=""
+                      alt="Driver Image"
                     />
             </div>';
           echo '<div class="standings-driver-info-info">';
@@ -160,13 +162,13 @@
           echo '<h1>' . $clasificacionesPilotos[$i]['Driver']['permanentNumber'] . '</h1>';
           echo '<img
                       src="https://media.formula1.com/content/dam/fom-website/flags/' . nacionalidadAPais($clasificacionesPilotos[$i]['Driver']['nationality']) . '.jpg"
-                      alt=""
+                      alt="Country Flag"
                     />';
           echo '</div>';
           echo '<div class="standings-driver-info-info-main-helmet">';
           echo '<img
                       src="https://media.formula1.com/content/dam/fom-website/manual/Helmets2024/' . $clasificacionesPilotos[$i]['Driver']['familyName'] . '.png"
-                      alt=""
+                      alt="Driver Helmet"
                     />';
           echo '</div>';
           echo '</div>';

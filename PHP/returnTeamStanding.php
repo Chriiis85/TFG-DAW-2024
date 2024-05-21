@@ -13,6 +13,7 @@ if ($resultado && isset($resultado['MRData']['StandingsTable']['StandingsLists']
     //ARRAY QUE NOS PERMITE PINTAR LOS EQUIPOS EN EL APARTADO DE ESCUDERIAS
     $clasificacionesEquipos = $resultado['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStandings'];
 } else {
+    //SALIDA EN EL CASO DE QUE SE DE UN ERROR
     echo "No se pudo mostrar la información de la API.";
 }
 

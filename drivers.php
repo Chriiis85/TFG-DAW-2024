@@ -77,5 +77,67 @@
   let headerContainer = document.getElementById("header-container");
   headerContainer.style.backgroundImage = "url('https://cdn.topgear.es/sites/navi.axelspringer.es/public/media/image/2023/03/fernando-alonso-aston-martin-f1-2975194.jpg?tf=1200x')";
 </script>
+<?php
 
+/*FUNCION QUE NOS DEVUELVE EL PAIS DE SU GENTILICIO PARA PODER COGER LA BANDERA DE LA API*/
+function nacionalidadAPais($nacionalidad)
+{
+  switch ($nacionalidad) {
+    case 'Dutch':
+      return 'Netherlands';
+      break;
+    case 'Mexican':
+      return 'Mexico';
+      break;
+    case 'Monegasque':
+      return 'Monaco';
+      break;
+    case 'Spanish':
+      return 'Spain';
+      break;
+    case 'British':
+      return 'Great-Britain';
+      break;
+    case 'Australian':
+      return 'Australia';
+      break;
+    case 'Canadian':
+      return 'Canada';
+      break;
+    case 'Japanese':
+      return 'Japan';
+      break;
+    case 'German':
+      return 'Germany';
+      break;
+    case 'Danish':
+      return 'Denmark';
+      break;
+    case 'Chinese':
+      return 'China';
+      break;
+    case 'French':
+      return 'France';
+      break;
+    case 'Finnish':
+      return 'Finland';
+      break;
+    case 'American':
+      return 'United%20States';
+      break;
+    case 'Thai':
+      return 'Thailand';
+      break;
+    case 'Italian':
+      return 'Italy';
+      break;
+    case 'Austrian':
+      return 'Austria';
+      break;
+    case 'Swiss':
+      return 'Switzerland';
+      break;
+  }
+}
+?>
 </html>
