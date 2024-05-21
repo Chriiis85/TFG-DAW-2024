@@ -20,10 +20,10 @@
     ?>
   <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
-    <img src="Images/UPARROW.svg" alt="" />
+    <img src="Images/UPARROW.svg" alt="Up Arrow" />
   </button>
   <!--SECCION MAIN DE LA PAGINA CON LOS CONTENEDORES DENTRO Y BOTONES QUE REDIRIGEN A LAS OTRAS SECCIONES-->
-  <section class="main">
+  <section class="main" role="main">
     <article class="main-about">
       <h1>About Formula One</h1>
       <p>
