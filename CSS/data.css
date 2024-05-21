@@ -85,7 +85,7 @@ h1 {
 
 }
 
-/**/
+/*-------------------------------------------------TABLA DE LOS CONTENIDOS QUE SE PINTAN------------------------------------------------------*/
 .content-table {
   width: 100%;
   border-collapse: collapse;
@@ -120,7 +120,8 @@ h1 {
 .content-table tbody tr:last-of-type {
   border-bottom: 2px solid #00b9ff;
 }
-/* Estilo base para el select */
+
+/*------------------------------------------ESTILOS PARA LOS SELECT QUE PERMITEN FILTRAR LA INFORMACIÓN---------------------------------------*/
 .select {
   width: 300px;
   position: relative;

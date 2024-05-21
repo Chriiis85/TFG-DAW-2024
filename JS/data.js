@@ -1,23 +1,29 @@
+//RECOGER LOS TRES SELECTS
 let select1 = document.getElementById("select1");
 let select2 = document.getElementById("select2");
 let select3 = document.getElementById("select3");
 
+//FUNCION PARA RECOGER LA CLASIFICACION DE PILOTOS POR AÑO, QUE SE LE PASA POR PARAMETRO
 async function obtenerStandingsDriverYear(year) {
   return new Promise((resolve, reject) => {
+    //SOLICITUD AJAX QUE ENVIA POR JS A PHP MEDIANTE POST UNA PETICION AL ARCHIVO QUE RECOGE LOS DATOS DE LOS PILOTOS
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
+            //RECOGER EL RESULTADO DE LA RESPUESTA PARA PODER PINTAR LUEGO EN LA TABLA CON EL ARRAY DATA QUE CONTIENE EL JSON
               let result = JSON.parse(this.responseText);
               let data = result.MRData.StandingsTable.StandingsLists[0].DriverStandings;
               resolve(data);
           }
       };
+      //MANDAR LA SOLICITUD CON EL AÑO COMO PARAMETRO
       xhttp.open("POST", "PHP/getDataDrivers.php", true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send("year=" + year);
   });
 }
 
+//FUNCION PARA RECOGER LA CLASIFICACION DE CONSTRUCTORES POR AÑO
 async function obtenerStandingsConstructorYear(year) {
   return new Promise((resolve, reject) => {
       var xhttp = new XMLHttpRequest();
@@ -34,6 +40,7 @@ async function obtenerStandingsConstructorYear(year) {
   });
 }
 
+//FUNCION PARA RECOGER LAS CARRERAS POR AÑO Y MOSTRAR EN EL SELECT CADA CARRERA DE CADA AÑO INTRODUCIDO
 async function obtenerRacesYear(year) {
   return new Promise((resolve, reject) => {
       var xhttp = new XMLHttpRequest();
@@ -50,6 +57,7 @@ async function obtenerRacesYear(year) {
   });
 }
 
+//FUNCION QUE OBTIENE LOS RESULTADOS DE LA CARRERA DEL AÑO QUE SE LE PASA Y DE LA CARRERA EXACTA PARA VER EL RESTULTADO
 async function obtenerRacesResult(year,round) {
   return new Promise((resolve, reject) => {
       var xhttp = new XMLHttpRequest();
@@ -66,11 +74,13 @@ async function obtenerRacesResult(year,round) {
   });
 }
 
+//FUNCION QUE PINTA Y MUESTRA LOS RESULTADOS EN LA TABLA MEDIANTE LAS OPCIONES Y FILTROS DE LOS SELECTS
 function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2, opcionSeleccionada3) {
+  //CONSTRUCTORES
   if (opcionSeleccionada2 == "Constructors") {
     select3.style.display="none";
     obtenerStandingsConstructorYear(opcionSeleccionada1).then((resultados) => {
-      //console.log(resultados);
+      //CREAR LA TABLA MEDIANTE JS DINAMICAMENTE Y PINTAR LOS DATOS
       let tablaTBody = document.getElementById("tabla-tbody");
       tablaTBody.innerHTML = "";
       let tablaTHead = document.getElementById("tabla-thead");
@@ -90,6 +100,7 @@ function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2, opcionSelec
 
       tablaTHead.appendChild(tablaTHeadtr)
 
+      //FILAS Y COLUMNAS QUE SE PINTAN RECORRIENDO EL ARRAY DE NOS DEVUELVE LA PETICION DE LA API
       for (const escuderia of resultados) {
         let tr = document.createElement("tr");
         let tdPosicion = document.createElement("td");
@@ -105,15 +116,16 @@ function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2, opcionSelec
         tr.appendChild(tdPuntos);
         tablaTBody.appendChild(tr);
       }
+
+      //ACTUALIZAR TITULO
       let titulo = document.getElementById("title");
       titulo.textContent = opcionSeleccionada1 + " Constructors Standings";
     });
+  //PILOTOS
   } else if (opcionSeleccionada2 == "Drivers") {
     select3.style.display="none";
     obtenerStandingsDriverYear(opcionSeleccionada1).then((resultados) => {
-      //console.log(resultados);
-
-      /* Pintar datos en la tabla */
+      //CREAR LA TABLA MEDIANTE JS DINAMICAMENTE Y PINTAR LOS DATOS
       let tablaTBody = document.getElementById("tabla-tbody");
       tablaTBody.innerHTML = "";
       let tablaTHead = document.getElementById("tabla-thead");
@@ -133,6 +145,7 @@ function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2, opcionSelec
 
       tablaTHead.appendChild(tablaTHeadtr);
 
+      //FILAS Y COLUMNAS QUE SE PINTAN RECORRIENDO EL ARRAY DE NOS DEVUELVE LA PETICION DE LA API
       for (const piloto of resultados) {
         let tr = document.createElement("tr");
         let tdPosicion = document.createElement("td");
@@ -149,16 +162,16 @@ function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2, opcionSelec
         tr.appendChild(tdPuntos);
         tablaTBody.appendChild(tr);
       }
+
+      //ACTUALIZAR TITULO
       let titulo = document.getElementById("title");
       titulo.textContent = opcionSeleccionada1 + " Driver Standings";
     });
+  //CARRERAS
   }else if (opcionSeleccionada2 == "Race") {
     select3.style.display="block";
     obtenerRacesResult(opcionSeleccionada1, opcionSeleccionada3).then((resultados) => {
-      //console.log(resultados)
-      //console.log(opcionSeleccionada1)
-
-      /* Pintar datos en la tabla */
+      //CREAR LA TABLA MEDIANTE JS DINAMICAMENTE Y PINTAR LOS DATOS
       let tablaTBody = document.getElementById("tabla-tbody");
       tablaTBody.innerHTML = "";
       let tablaTHead = document.getElementById("tabla-thead");
@@ -178,6 +191,7 @@ function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2, opcionSelec
 
       tablaTHead.appendChild(tablaTHeadtr);
 
+      //FILAS Y COLUMNAS QUE SE PINTAN RECORRIENDO EL ARRAY DE NOS DEVUELVE LA PETICION DE LA API
       for (const piloto of resultados) {
         let tr = document.createElement("tr");
         let tdPosicion = document.createElement("td");
@@ -194,12 +208,15 @@ function mostrarResultados(opcionSeleccionada1, opcionSeleccionada2, opcionSelec
         tr.appendChild(tdPuntos);
         tablaTBody.appendChild(tr);
       }
+      //ACTUALIZAR TITULO
       let titulo = document.getElementById("title");
       titulo.textContent = opcionSeleccionada1 +" "+ select3.options[select3.selectedIndex].textContent +" Results";
     });
   }
 }
 
+//OBTENER CARRERAS POR LA CARRERA/RONDA SELECCIONADA Y POSTERIORMENTE SE OBTIENE LA RONDA Y MEDIANTE LA FUNCION OBTENERRACESYEAR SE OBTIENE
+//TODA LA INFORMACION DE LA CARRERA SELECCIONADA
 function obtenerCarreras(opcionSeleccionada){
   select3.innerHTML="";
   obtenerRacesYear(opcionSeleccionada).then((resultados) => {
@@ -213,19 +230,19 @@ function obtenerCarreras(opcionSeleccionada){
   });
 }
 
-//Select manejo de la estructura
- 
+//AÑADIR UN EVENTO PARA CADA SELECT QUE DETECTA UN CAMBIO Y MOSTRAR Y OBTENER LOS RESULTADOS/CARRERAS PARA SER PINTADOS
   select2.addEventListener("change", function () {
-    // Obtener el valor seleccionado
+    //OBTENER VALOR SELECCIONADO
     const opcionSeleccionada1 = select1.value;
     const opcionSeleccionada2 = select2.value;
     const opcionSeleccionada3 = select3.value;
+    //MOSTRAR Y BOTENER LAS CARRERAS DEPENDIENDO DE LOS VALORES SELECCIONADOS
     mostrarResultados(opcionSeleccionada1, opcionSeleccionada2,opcionSeleccionada3);
     obtenerCarreras(opcionSeleccionada1);
   });
   
   select1.addEventListener("change", function () {
-    // Obtener el valor seleccionado
+    //OBTENER VALOR SELECCIONADO
     const opcionSeleccionada1 = select1.value;
     const opcionSeleccionada2 = select2.value;
     const opcionSeleccionada3 = select3.value;
@@ -234,21 +251,23 @@ function obtenerCarreras(opcionSeleccionada){
   });
 
   select3.addEventListener("change", function () {
+    //OBTENER VALOR SELECCIONADO
     const opcionSeleccionada1 = select1.value;
     const opcionSeleccionada2 = select2.value;
     const opcionSeleccionada3 = select3.value;
+    //MOSTRAR RESULTADO DE LA CARRERA SELECCIONADA
     mostrarResultados(opcionSeleccionada1, opcionSeleccionada2,opcionSeleccionada3);
   });
   
-  //Rellenar los años disponibles  for (let i = 2024; i > 1949; i--) {
+  //RELLENAR EL PRIMER SELECT CON TODOS LOS AÑOS DISPONIBLES PARA FILTRAR
   for (let i = 2024; i > 1979; i--) {
     let option = document.createElement("option");
-    option.value = i; // Aquí corregimos el error
-    option.textContent = i; // Establecemos el texto de la opción como el año
+    option.value = i;
+    option.textContent = i;
     select1.appendChild(option);
   }
   
-  // Mostrar los resultados por defecto al cargar la página
+  //MOSTRAR POR DEFECTO AL CARGAR LA PAGINA LOS RESULTADOS QUE ESTAN SELECCIONADOS EN EL SELECT
   document.addEventListener("DOMContentLoaded", function () {
     const opcionSeleccionada1 = select1.value;
     const opcionSeleccionada2 = select2.value;
@@ -257,6 +276,7 @@ function obtenerCarreras(opcionSeleccionada){
 
   
 
+  //FUNCION PARA EL BOTON QUE PERMITE AL USUARIO VOLVER ARRIBA
   document.getElementById("upBtn").classList.add("hidden");
   window.onscroll = function () { scrollFunction() };
 

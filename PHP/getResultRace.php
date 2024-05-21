@@ -1,9 +1,16 @@
 <?php
+//RECOGEMOS EL AÑO PARA PODER OBTENER EL RESULTADO DE LA CARRERA DE X AÑO, EN LA URL PARA PODER OBTENER LA API
 $year = $_POST['year'];
+
+//RECOGEMOS LA RONDA DE LA CARRERA PARA PODER FILTRAR POR ELLA
 $round = $_POST['round'];
-//$year = 2024;
-//$round = 1;
-$url = 'https://ergast.com/api/f1/'.$year.'/'.$round.'/results.json';
+
+//MEDIANTE EL AÑO Y LA RONDA BUSCAMOS EN LA API LOS RESULTADOS DE DICHA CARRERA
+$url = 'https://ergast.com/api/f1/' . $year . '/' . $round . '/results.json';
+
+// OBTENER LOS DATOS DE LA URL Y GUARDARLO EN EL ARRAY DATA
 $data = file_get_contents($url);
+
+//MANDAR LOS DATOS PARA RECOGERLOS POSTERIORMENTE EN LA RESPUESTA DEL AJAX
 echo $data;
 ?>

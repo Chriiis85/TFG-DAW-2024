@@ -1,6 +1,13 @@
 <?php
+//RECOGEMOS EL AÑO PARA PODER FILTRAR Y BUSCAR EL AÑO DE LA CALSIFICACION DE LOS CONSTRUCTORES, EN LA URL PARA PODER OBTENER LA API
 $year = $_POST['year'];
-$url = 'https://ergast.com/api/f1/'.$year.'/constructorStandings.json';
+
+// URL DE LA API PARA RECOGER LOS CONSTRUCTORES POR AÑO
+$url = 'https://ergast.com/api/f1/' . $year . '/constructorStandings.json';
+
+// OBTENER LOS DATOS DE LA URL Y GUARDARLO EN EL ARRAY DATA
 $data = file_get_contents($url);
+
+//MANDAR LOS DATOS PARA RECOGERLOS POSTERIORMENTE EN LA RESPUESTA DEL AJAX
 echo $data;
 ?>

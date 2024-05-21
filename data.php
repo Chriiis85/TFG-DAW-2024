@@ -21,7 +21,7 @@
   <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
 
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
-    <img src="Images/UPARROW.svg" alt="" />
+    <img src="Images/UPARROW.svg" alt="Up Arrow" />
   </button>
   <!--CONTENEDOR DONDE SE MUESTRA LA TABLA Y EL FILTRO-->
   <section class="data-container">
