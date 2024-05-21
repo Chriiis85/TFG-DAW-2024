@@ -7,6 +7,7 @@ $(document).ready(function () {
   $("#formulaone, #header-drop-container-formulaone").hover(
     function () {
       clearTimeout(timeout);
+      //SE DESPLIEGA EL CONTENEDOR
       $("#header-drop-container-formulaone")
         .stop()
         .slideDown(function () {

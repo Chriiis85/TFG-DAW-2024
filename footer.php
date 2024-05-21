@@ -9,7 +9,7 @@
   <!-- SCRIPT JQUERY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
-  <!-- SCRIPT MODAL Y HOJA DE ESTILOS JQUERY -->
+  <!-- SCRIPT MODAL Y HOJA DE ESTILOS JQUERY MODAL-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
@@ -18,6 +18,7 @@
 </head>
 
 <body>
+  <!--CONTENIDO DEL FOOTER-->
   <footer>
     <section class="footer-top">
       <article class="footer-top-col1">
@@ -26,14 +27,14 @@
         </div>
         <!--REDES SOCIALES CONTENEDOR-->
         <div class="social-buttons">
-          <a href="#" class="social-button github">
+          <a href="https://github.com/Chriiis85" class="social-button github">
             <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19">
               <path
                 d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z">
               </path>
             </svg>
           </a>
-          <a href="#" class="social-button linkedin">
+          <a href="https://www.linkedin.com/in/christian-moreno-díaz-109024292/" class="social-button linkedin">
             <svg viewBox="0 -2 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="Icons" stroke="none" stroke-width="1">
@@ -45,7 +46,7 @@
               </g>
             </svg>
           </a>
-          <a href="#" class="social-button instagram">
+          <a href="https://www.instagram.com/christiaan.85/" class="social-button instagram">
             <svg width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="Page-1" stroke="none" stroke-width="1">
@@ -134,6 +135,7 @@
   </p>
 </div>
 
+<!-- CONTEINDO MODAL Y ACORDEON PREGUNTAS FRECUENTES -->
 <div id="faq-modal" class="modal">
   <h2>Preguntas Frecuentes (F&Q)</h2>
   <div class="accordion">
@@ -147,7 +149,7 @@
         funcionen de manera más eficiente, así como para proporcionar información a los propietarios del sitio.
       </div>
     </div>
-
+    <!--ACORDEON JQUERY USO DE COOKIES-->
     <div class="accordion-item">
       <h3 class="accordion-header">¿Cómo usamos las cookies?
 
@@ -161,7 +163,7 @@
 
       </div>
     </div>
-
+    <!--ACORDEON JQUERY COOKIES-->
     <div class="accordion-item">
       <h3 class="accordion-header">¿Qué son las cookies?
         <span class="arrow">&#9662;</span>
@@ -172,7 +174,7 @@
         funcionen de manera más eficiente, así como para proporcionar información a los propietarios del sitio.
       </div>
     </div>
-
+    <!--ACORDEON JQUERY DATOS RECOPILADOS-->
     <div class="accordion-item">
       <h3 class="accordion-header">¿Qué datos recopilamos?
         <span class="arrow">&#9662;</span>
@@ -187,7 +189,7 @@
 
       </div>
     </div>
-
+    <!--ACORDEON JQUERY USO DE DATOS-->
     <div class="accordion-item">
       <h3 class="accordion-header">¿Como usamos sus datos?
         <span class="arrow">&#9662;</span>
@@ -204,6 +206,7 @@
       </div>
     </div>
 
+    <!--ACORDEON JQUERY PROTECCION DE DATOS-->
     <div class="accordion-item">
       <h3 class="accordion-header">Protección de Datos
         <span class="arrow">&#9662;</span>
@@ -216,6 +219,7 @@
       </div>
     </div>
 
+    <!--ACORDEON DERECHOS USUARIO-->
     <div class="accordion-item">
       <h3 class="accordion-header">Derechos de Usuario
         <span class="arrow">&#9662;</span>
@@ -228,6 +232,7 @@
       </div>
     </div>
 
+    <!--ACORDEON JQUERY CAMBIOS EN LA POLITICA-->
     <div class="accordion-item">
       <h3 class="accordion-header">Cambios en la Política
         <span class="arrow">&#9662;</span>
@@ -243,37 +248,49 @@
 </div>
 
 <script>
+  //FUNCIONALIDAD DE LOS MODAL CON JQUERY Y SUS EFECTOS
   $(document).ready(function () {
     $("#faq").on("click", function () {
-      // Abre el modal al hacer clic
+      // MODAL DE F&Q QUE SE ABRE AL CLICAR CON UN EFECTO FADE
       $("#faq-modal").modal({
         fadeDuration: 300,
         escapeClose: false,
         clickClose: false
       });
 
-      // Configura el acordeón dentro del modal
+      // CONFIGURACION DEL ACORDEON DENTRO DEL MODAL
       $(".accordion-header").click(function () {
         $(this).toggleClass("active");
         $(this).next(".accordion-content").slideToggle("fast");
       });
     });
 
+    //MODAL DE COOKIES Y SUS FUNCIONALIDADES CON EFECTO FADE
     $("#cookies-usage").on("click", function () {
       $("#cookies-modal").modal({
-        fadeDuration: 300
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false
       });
     });
+
+    //MODAL DE POLITICAS DE PRIVACIDAD Y SUS FUNCIONALIDADES CON EFECTO FADE
     $("#privacy-policy").on("click", function () {
       // Abre el modal al hacer clic
       $("#privacy-modal").modal({
-        fadeDuration: 300
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false
       });
     });
+
+    //MODAL DE USO DE DATOS Y SUS FUNCIONALIDADES CON EFECTO FADE
     $("#data-usage").on("click", function () {
       // Abre el modal al hacer clic
       $("#data-usage-modal").modal({
-        fadeDuration: 300
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false
       });
     });
 

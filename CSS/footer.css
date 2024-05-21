@@ -157,18 +157,6 @@ footer {
   height: 20px;
 }
 
-.facebook {
-  background-color: #3b5998;
-}
-
-.facebook svg {
-  fill: #f2f2f2;
-}
-
-.facebook:hover svg {
-  fill: #3b5998;
-}
-
 .github {
   background-color: #333;
 }
@@ -242,10 +230,6 @@ footer {
   padding: 10px;
 }
 
-.active .accordion-content {
-  display: block;
-}
-
 .arrow {
   position: absolute;
   right: 10px;
@@ -259,12 +243,12 @@ footer {
 }
 
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .footer-top {
     flex-direction: column;
   }
   footer {
-    height: 900px;
+    height: 1000px;
   }
   .footer-top-col1 {
     margin-right: 0;

@@ -10,7 +10,6 @@
   <!--SCRIPT HEADER PARA LA PAGINA-->
   <script defer src="JS/header.js"></script>
   <!--HOJA DE ESTILOS HEADER-->
-
   <link rel="stylesheet" href="CSS/header.css" />
 </head>
 
