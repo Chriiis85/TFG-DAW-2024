@@ -1,7 +1,7 @@
 <?php
-//URL PARA RECOGER LA API
+//URL PARA RECOGER LA API CON LAS CARRERAS DEL CALENDARIO DEL AÑO ACTUAL
 $url = 'https://ergast.com/api/f1/current.json';
-//INICIALIZAR CURL PARA CONECTAR LA API Y LAS OPCIONES
+//INICIALIZAR CURL PARA CONECTAR LA API Y LAS OPCIONES DE COMO DEVOLVER LOS DATOS Y DE QUE URL
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -64,7 +64,7 @@ function formatHora($hora)
     return $hora_parseada;
 }
 
-//FUNCION QUE SUMA UNA HORA A LA HORA DE LA CARRERA PARA ESTABLECER EL FINAL
+//FUNCION QUE SUMA UNA HORA A LA SESION PARA ESTABLECER EL FINAL
 function sumarUnaHora($hora)
 {
     $hora_dt = DateTime::createFromFormat('H:i:s\Z', $hora);
@@ -85,8 +85,6 @@ function sumarDosHora($hora)
     $hora_dt->modify('0 hour');
     return $hora_dt->format('H:i');
 }
-
-
 
 //CERRAR LA CONEXION A LA API
 curl_close($curl);

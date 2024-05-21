@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Formula One - Motoring Community</title>
+  <title>Formula One Calendar - Motoring Community</title>
   <!--SCRIPT JQUERY-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!--SCRIPT PRINCIPAL PAGINA-->
@@ -20,10 +20,10 @@
   ?>
   <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
-    <img src="Images/UPARROW.svg" alt="" />
+    <img src="Images/UPARROW.svg" alt="Up Arrow" />
   </button>
   <!--SECCION PROXIMA CARRERA MUESTRA LA HORA Y UNA CUENTA ATRAS DE LA CARRERA CON EL NOMBRE, IMAGEN Y DESCRIPCION DEL CIRCUITO-->
-  <section class="next-race">
+  <section class="next-race" aria-labelledby="next-race-title">
     <div class="next-race-container">
       <div class="row">
         <div class="col-md-7 col-lg-8 col-xl-9">
@@ -78,7 +78,7 @@
     </div>
   </section>
   <!--CONTENEDOR DONDE SE MUESTRAN LAS TARJETAS DEL CALENDARIO-->
-  <section class="calendar-season-container">
+  <section class="calendar-season-container" aria-labelledby="calendar-title">
     <article class="calendar-season">
       <!--ARCHIVO QUE INCLUYE LAS FUNCIONES QUE PERMITEN LA RECOGIDA DE LA API DE LOS DATOS DEL CALENDARIO-->
       <?php
@@ -126,14 +126,14 @@
                       </div>
                       <div class="race-container-title">
                           <h1>' . $dia2 . '-' . $dia1 . ' ' . dameMes($mes) . '</h1>
-                          <img src="https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/' . $pais . '-flag.png.transform/2col/image.png" alt="">
+                          <img src="https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/' . $pais . '-flag.png.transform/2col/image.png" alt="Img Circuit">
                       </div>
                       <div class="race-container-desc">
                           <h1>' . $raceName . '</h1>
                           <p>' . $circuitName . '</p>
                       </div>
                       <div class="race-container-img">
-                          <img src="Images/Tracks/' . $circuitImg . '.png" alt="">
+                          <img src="Images/Tracks/' . $circuitImg . '.png" alt="Layout Circuit">
                       </div>
                     </div>
                     <div id="race-container-back" class="race-container-back">
@@ -142,7 +142,7 @@
                         </div>
                         <div class="race-container-title">
                             <h1>' . $dia2 . '-' . $dia1 . ' ' . dameMes($mes) . '</h1>
-                            <img src="https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/' . $pais . '-flag.png.transform/2col/image.png" alt="">
+                            <img src="https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/' . $pais . '-flag.png.transform/2col/image.png" alt="Country Flag">
                         </div>
                         ';
         if ($tipoCarrera == "Normal") {
@@ -254,15 +254,23 @@
         }, 200);
         flippedCard = card;
       }
+      card.setAttribute("aria-pressed", card.style.transform === "rotateY(180deg)" ? "true" : "false");
+    });
+    //GIRAR LAS TARJETAS CON LAS TECLAS ENTER O ESPACIO (PRUEBA)
+    card.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        card.click();
+      }
     });
   }
+  
   //SCRIPT QUE DEFINE EL TITULO DE LA PAGINA EN EL HEADER Y ESTABLECE LA IMAGEN DE FONDO DE LA CABECERA-->
   let tituloPrincipal = document.getElementById("title-header");
   tituloPrincipal.textContent = "Formula One 2024 Calendar";
 
   let headerContainer = document.getElementById("header-container");
   headerContainer.style.backgroundImage = "url('https://corp.formula1.com/wp-content/uploads/2023/07/F1-2024-Calendar-16x9-1-1024x576-1.jpg')";
-
 </script>
 
 </html>
