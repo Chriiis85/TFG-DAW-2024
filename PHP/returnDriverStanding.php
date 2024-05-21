@@ -1,5 +1,5 @@
 <?php
-// URL de la API
+/*// URL de la API
 $url = 'https://ergast.com/api/f1/2024/driverStandings.json';
 
 // Obtener los datos JSON de la API
@@ -15,5 +15,5 @@ if ($resultado && isset($resultado['MRData']['StandingsTable']['StandingsLists']
     
 } else {
     echo "No se pudo obtener la información de la API.";
-}
+}*/
 ?>

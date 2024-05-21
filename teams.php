@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Constructors - Motoring Community</title>
+  <title>F1 Constructors - Motoring Community</title>
   <!--HOJA DE ESTILOS CALENDARIO-->
   <link rel="stylesheet" href="CSS/teams.css">
   <!--SCRIPT MAIN-->
@@ -18,8 +18,9 @@
   ?>
   <!--BOTON QUE PERMITE VOLVER ARRIBA DE LA PAGINA EN CUALQUIER MOMENTO-->
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
-    <img src="Images/UPARROW.svg" alt="" />
+    <img src="Images/UPARROW.svg" alt="Up Arrow" />
   </button>
+  <!--SECCION MAIN CON LAS CARTAS-->
   <section class="main">
     <article class="teams-container">
       <?php
@@ -37,7 +38,7 @@
         border-bottom: none;">
         <div class="team-card-title">
         <h1>' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</h1>
-          <img src="Images/Teams/' . $nombre_equipo . '.png" alt="">
+          <img src="Images/Teams/' . $nombre_equipo . '.png" alt="Team Logo">
         </div>';
 
 
@@ -49,11 +50,11 @@
 
           echo '<div class="team-card-driver">
           <h1>' . $nombre_completo . '</h1>
-          <img src="Images/Drivers/' . $apellido . '.png" alt="">
+          <img src="Images/Drivers/' . $apellido . '.png" alt="Driver Image">
             </div>';
         }
         echo '      <div class="team-card-car">
-                  <img src="Images/Cars/' . $nombre_equipo . '.png" alt="">
+                  <img src="Images/Cars/' . $nombre_equipo . '.png" alt="Car Image">
                   </div>
               </div>';
       }
