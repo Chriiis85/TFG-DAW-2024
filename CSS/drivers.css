@@ -1,3 +1,4 @@
+/*--------------------------------------------------------------IMPORT FONTS-------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("../CSS/header.css");
@@ -43,7 +44,7 @@ body {
 h1 {
   margin: 0;
 }
-
+/*----------------------------------------------------------------------UPBTN------------------------------------------------------------------*/
 .up-button {
   position: fixed;
   bottom: 20px;
@@ -166,7 +167,7 @@ h1 {
   justify-content: center;
   flex-direction: column;
   gap: 10%;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .driverHelmet{
@@ -241,4 +242,38 @@ h1 {
 .driver-image>img{
   width: 130%;
   opacity: 0.9;
+}
+
+/*--------------------------------------------------------------------RESPONSIVE-------------------------------------------------------------*/
+@media (max-width: 600px) {
+  .card-driver{
+    width: 300px;
+    height: 400px;
+    margin-right: 20px;
+  }
+  .driverNumber{
+    font-size: 1.5em;
+  }
+  .driverHelmet>img{
+    width: 70px;
+  }
+  .driverFlag>img{
+    width: 40px;
+    margin-left: -5px;
+    border-radius: 5px;
+  }
+  .card-driver-name > .name{
+    font-size: 1.2em;  
+  }
+  .card-driver-name > .surname{
+    font-size: 1.7em;  
+  }
+  .driver-image{
+    margin: 0;
+    margin-top: 100px;
+    margin-left: 40px;
+  }
+  .driver-image > img{
+    width: 300px;
+  }
 }
