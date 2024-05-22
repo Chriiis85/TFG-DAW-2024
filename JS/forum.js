@@ -190,7 +190,6 @@ let addTheme = document
 
 let logout = document.getElementById("logout");
 logout.addEventListener("click", () => {
-  document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   Swal.fire({
     title: "Do you want to Log Out?",
     text: "Login Out: ",
@@ -209,6 +208,7 @@ logout.addEventListener("click", () => {
         showConfirmButton: true,
       }).then((result) => {
         if (result.isConfirmed) {
+          document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           location.reload();
         }
       });
