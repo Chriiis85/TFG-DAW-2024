@@ -1,22 +1,29 @@
-<!--96 HORAS APROX. INVERTIDAS-->
+<!--101 HORAS APROX. INVERTIDAS-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Page - Motoring Community</title>
+    <!--SCRIPT LIBRERIA DE LAS NOTICIAS-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--SCRIPT JQUERY-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--SCRIPT PRINCIPAL PARA LA PAGINA-->
     <script defer src="JS/script.js"></script>
+    <!--SCRIPT PARA LAS NOTICIAS-->
     <script defer src="JS/news.js"></script>
-
+    <!--HOJA DE ESTILOS PRINCIPAL-->
     <link rel="stylesheet" href="CSS/index.css" />
   </head>
   <body>
+    <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
     <button onclick="scrollToTop()" id="upBtn" class="up-button">
       <img src="Images/UPARROW.svg" alt="" />
     </button>
+    <!--SECCION PRINCIPAL-->
     <section class="main">
+        <!--INCLUIR EL HEADER DE LA PAGINA-->
         <?php
             include "headerMain.php";
         ?>
@@ -53,6 +60,7 @@
         </div>
       </div>
 
+      <!--SLIDER CON IMAGENES DE FONDO-->
       <article class="slider">
         <ul class="slideshow">
           <li>
@@ -70,7 +78,7 @@
         </ul>
       </article>
     </section>
-
+    <!--CONTENEDOR DE LA PROXIMA CARRERA-->
     <section class="next-race">
       <div class="next-race-container">
         <div class="row">
@@ -129,6 +137,7 @@
         </div>
       </div>
     </section>
+    <!--SECCION DE LAS ULTIMAS NOTICIAS DEL MOTOR-->
     <section class="latest-news-container">
       <h1>FORMULA ONE NEWS</h1>
       <article class="latest-news">
@@ -180,6 +189,7 @@
         <img src="Images/arrowdown-svgrepo-com.svg" alt="" />
       </p>-->
     </section>
+    <!--SECCION SOBRE LA PAGINA WEB-->
     <section class="about">
       <article class="about-us">
         <h1 class="about-title">¿What is Motoring Community?</h1>
@@ -225,6 +235,7 @@
         </div>
       </article>
     </section>
+    <!--INCLUIR EL FOOTER-->
     <?php
     include "footer.php";
     ?>

@@ -1,3 +1,4 @@
+/*--------------------------------------------------------------IMPORT FONTS-------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i");
@@ -69,7 +70,7 @@ h1 {
   height: 100%;
   background-color: #222222;
 }
-
+/*------------------------------------------------------------SLIDER-------------------------------------------------------------------------*/
 .slider {
   width: 100%;
   height: 100%;
@@ -133,6 +134,7 @@ h1 {
   animation-delay: 18s;
 }
 
+/*ANIMACIONES PARA PASAR LAS IMAGENES*/
 @-webkit-keyframes imageAnimation {
   0% {
     opacity: 0;
@@ -197,8 +199,7 @@ h1 {
   }
 }
 
-/*MAIN GROUP CONTAINERS PRINCIPAL SECTION*/
-
+/*--------------------------------------------------MAIN GROUP CONTAINERS PRINCIPAL SECTION--------------------------------------------------*/
 .main-group {
   position: absolute;
   z-index: 97;
@@ -252,7 +253,6 @@ h1 {
 }
 
 /*---------------------------------------------------------NEXT RACE--------------------------------------------------------------------------*/
-
 .next-race-container {
   width: 100%;
   padding-right: 10px;
@@ -947,33 +947,11 @@ span {
   font-size: 1em;
 }
 
-/*.notices{
-  width: 100%;
-  height: 10%;
-  background-color: white;
-}
-
-.twitter-timeline-container{
-  margin-top: 5%;
-  margin-bottom: 5%;
-  width: 38%;
-  height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.twitter-timeline{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}*/
-
 /*------------------------------------------------------ABOUT THE WEBPAGE---------------------------------------------------------------------*/
 
 .about {
-  opacity: 0; /* El contenido estará inicialmente oculto */
-  transition: opacity 1s ease-in; /* Transición suave de la opacidad */
+  opacity: 0;
+  transition: opacity 1s ease-in; 
   width: 100%;
   height: 600px;
   display: flex;
@@ -985,7 +963,7 @@ span {
 }
 
 .show {
-  opacity: 1; /* Se muestra el contenido cuando se aplica la clase .show */
+  opacity: 1;
 }
 
 .about-us > h1 {
@@ -1050,7 +1028,7 @@ span {
   margin: 5%;
 }
 
-/*------------------------------------------------------------NEXT RACE-------------------------------------------------------------------*/
+/*---------------------------------------------------------------RESPONSIVE-------------------------------------------------------------------*/
 @media (max-width: 1700px) {
   .main-title {
     font-size: 4.5em;
@@ -1180,13 +1158,11 @@ span {
 }
 
 @media (max-width: 800px) {
-  /*NEXT RACE RESPONSIVE*/
   .next-race {
     padding-left: 7%;
     padding-right: 7%;
   }
 
-  /*NOTICIAS RESPONSIVE*/
   .latest-news-notice1-info > h1 {
     font-size: 1.5em;
   }

@@ -118,6 +118,7 @@ body {
   margin-top: 20px;
 }
 
+
 .main-info-Register > p:hover {
   cursor: pointer;
   text-decoration: 2px solid #00b9ff underline;
@@ -149,6 +150,10 @@ body {
 }
 
 
+.main-info-Register > #titRegister {
+  font-size: 2em;
+  margin-bottom: -30px;
+}
 
 /*-------------------------------------------------------------INPUT USERNAME y PWD-----------------------------------------------------------*/
 .formField {
@@ -271,6 +276,10 @@ body {
 #home{
   margin-bottom: 20px;
 }
+
+#tit-register{
+  font-size: 2em;
+}
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 @media (max-width: 1600px) {
   .main-info-Register > h1 {
@@ -288,7 +297,11 @@ body {
     text-align: center;
   }
 }
-
+@media (max-width: 1000px) {
+#tit-register{
+  font-size: 2em;
+}
+}
 @media (max-width: 800px) {
   .formField input {
     width: 200px;

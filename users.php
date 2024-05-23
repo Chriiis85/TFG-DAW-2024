@@ -19,7 +19,7 @@
     <!--FORMULARIO PARA EL REGISTRO-->
     <article id="formRegister" class="main-info-Register">
       <form class="main-info-Login" role="form" method="post" action="PHP/Forum/registrar_usuario.php">
-        <h1>Motoring Community Register</h1>
+        <h1 id="tit-register">Motoring Community Register</h1>
         <div class="formField">
           <input type="text" required="" id="mail" name="mail" />
           <span>Username/Mail</span>
