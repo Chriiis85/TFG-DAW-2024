@@ -5,7 +5,10 @@ $user = "root";
 $pwd = "";
 $bd = "motoring_community";
 
+//CREAR LA CONEXION CON LOS PARAMETROS PREVIOS
 $con = new mysqli($host, $user, $pwd, $bd);
+
+//COMPROBAR CONEXION
 if ($con->connect_error) {
     //print("Error de conexión: " . $con->connect_error);
 }else{

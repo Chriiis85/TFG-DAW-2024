@@ -1,71 +1,78 @@
-// Función para detectar cuándo el contenido está en la parte superior de la ventana o cerca de ella
-function isElementNearTop(element) {
+// DETECTAR CUANDO EL CONTENIDO ESTA ARRIBA PARA MOSTRAR U OCULTAR EL CONTENIDO DE ABOUT
+function screenTop(element) {
   const rect = element.getBoundingClientRect();
   return rect.top <= window.innerHeight / 1;
 }
 
-// Función para mostrar u ocultar el contenido con un fade in según la posición del scroll
-function handleContentVisibility() {
+// FUNCION QUE MUESTRA U OCULTA EL CONTENIDO DE ABOUT CAMBIANDO LA OPACIDAD
+function mostrarAbout() {
   const content = document.querySelector(".about");
-  if (isElementNearTop(content)) {
+  if (screenTop(content)) {
     content.style.opacity = "1";
   } else {
     content.style.opacity = "0";
   }
 }
 
-// Agregar un event listener para detectar el scroll de la página
-window.addEventListener("scroll", handleContentVisibility);
+// CUANDO LA PAGINA HAGA SCROLL LLAMAMOS A LA FUNCION PARA CAMBIAR LA VISIBILIDAD DEL ABOUT
+window.addEventListener("scroll", mostrarAbout);
 
+//CREAR Y MOSTRAR EL CONTENIDO QUE SE DESPLIEGA DEL HEADER
 $(document).ready(function () {
-  $("#header-drop-container-formulaone").hide(); // Ocultar el contenido al cargar la página
+  //POR DEFECTO SE MUESTRA CERRADO
+  $("#header-drop-container-formulaone").hide();
 
-  var timeout; // Variable para almacenar el temporizador
+  var timeout;
 
+  //AL HACER HOVER EN LA SECCION QUE ABRE EL MENU DESPLEGABLE SE REALIZA LO SIGUIENTE:
   $("#formulaone, #header-drop-container-formulaone").hover(
     function () {
-      clearTimeout(timeout); // Limpiar el temporizador para evitar cierres automáticos
+      //LIMPIAR EL TIMEOUT AL INICIO PARA EVITAR ERRORES
+      clearTimeout(timeout);
+      //DETECTAR EL CONTENEDOR Y HACER LA ANIMACION DE DESPLIEGUE(SLIDEDOWN) Y AGREGARLE FLEX PARA QUE SE ABRE Y SE MUESTREN LOS CONTENIDOS
       $("#header-drop-container-formulaone")
         .stop()
         .slideDown(function () {
-          $(this).css("display", "flex"); // Cambiar a display: flex cuando se completa la animación slideDown
-        }); // Mostrar el contenido con animación slideDown
+          $(this).css("display", "flex");
+        });
     },
     function () {
-      // Iniciar un temporizador para cerrar el contenido después de 500ms (medio segundo)
+      // EL CONTENIDO SE CERRARÁ SI EL USUARIO NO HACE HOVER SOBRE EL PASADO LOS 500 MS
       timeout = setTimeout(function () {
-        $("#header-drop-container-formulaone").stop().slideUp(); // Ocultar el contenido con animación slideUp
+        //MEDIANTE SLIDE UP SUBIR OTRA VEZ EL CONTENEDOR
+        $("#header-drop-container-formulaone").stop().slideUp();
       }, 500);
     }
   );
 
-  // Cancelar el cierre si se pasa el ratón sobre el contenido mientras el temporizador está activo
+  // SI SE VUELVE HACER HOVER ENCIMA DEL CONTENDOR QUE SE DESPLIEGA SE VUELVE A REINICIAR EL TEMPORIZADOR PARA CREAR EL BUCLE Y MANTENER EL CONTENIDO DESPLEGADO
   $("#header-drop-container-formulaone").mouseenter(function () {
-    clearTimeout(timeout); // Limpiar el temporizador
+    clearTimeout(timeout);
   });
 });
 
 /*----------------------------------------------------------------NEXT RACE-------------------------------------------------------------------*/
-// URL de la API
+// URL DE LA API PARA RECOGER LAS CARRERAS DE LA TEMPORADA ACTUAL
 const apiUrl = 'https://ergast.com/api/f1/current.json';
 
-// Función para obtener la carrera más cercana
+// OBTENER LA CARRERA MAS CERCANA
 async function obtenerCarreraMasCercana() {
   try {
-    // Obtenemos los datos de la API
+    // RECOGER LOS DATOS DE LA API CON UN FETCH Y GUARDARLO EN UN JSON
     const response = await fetch(apiUrl);
     const data = await response.json();
 
-    // Extraemos la lista de carreras
+    //ACCEDER AL DATO EN CONCRETO DEL JSON
     const carreras = data.MRData.RaceTable.Races;
 
-    // Obtenemos la fecha actual
+    // FECHA ACTUAL
     const fechaActual = new Date();
 
-    // Buscamos la carrera más cercana que aún no haya pasado
+    // LA CARERA MAS CERCANA POR DEFECTO EN NULL
     let carreraMasCercana = null;
     let tiempoMinimo = Infinity;
 
+    //RECORRER TODAS LAS CARRERAS HASTA QUE MEDIANTE EL FOR RECORRIENDO LOS DIAS DE LA PROXIMA CARRERA Y EL DIA ACTUAL PODRAMOS OBTENER LA PROXIMA CARREA
     for (let i = 0; i < carreras.length; i++) {
       const carreraActual = carreras[i];
       const tiempoActual = new Date(carreraActual.date + 'T' + carreraActual.time) - fechaActual;
@@ -76,17 +83,17 @@ async function obtenerCarreraMasCercana() {
       }
     }
 
-    // Si no hay carreras futuras, seleccionamos la última carrera
+    // SI NO SE ENCUNTRAN CARRERAS SE MUESTRA LA ULTIMA, LA MAS CERCANA YA PASADA
     if (!carreraMasCercana) {
       carreraMasCercana = carreras[carreras.length - 1];
     }
 
-    // Calculamos el tiempo restante hasta la próxima carrera
+    // TIEMPO QUE QUEDA PARA LA PROXIMA CARRERA
     const dias = Math.floor(tiempoMinimo / (1000 * 60 * 60 * 24));
     const horas = Math.floor((tiempoMinimo % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutos = Math.floor((tiempoMinimo % (1000 * 60 * 60)) / (1000 * 60));
 
-    // Devolvemos la carrera más cercana, su fecha, días, horas, minutos restantes y la ronda en la que se encuentra
+    // DEVOLVEMOS EN UN JSON LA CARRERA MAS CERCANA PARA PINTARLA EN EL DOM
     return {
       nombre: carreraMasCercana.raceName,
       fecha: carreraMasCercana.date,
@@ -96,15 +103,19 @@ async function obtenerCarreraMasCercana() {
       ronda: carreraMasCercana.round
     };
   } catch (error) {
+    //CATCH POR SI NO LLEGAN LOS DATOS
     console.error('Error al obtener los datos:', error);
   }
 }
 
 
-// Llamamos a la función para obtener la carrera más cercana y mostramos los resultados
+// LLAMAR A LA FUNCION MOSTRAR CARRERA MAS CERCANA Y PINTAR LOS DATOS
 async function mostrarCarreraMasCercana() {
   try {
+    //RECOGER JSON
     const carrera = await obtenerCarreraMasCercana();
+
+    //RECOGER MEDIANTE IDS LOS CONTENEDORES QUE VAMOS A RELLENAR
     let nextracetitle = document.getElementById('next-race-title');
     let nextracefecha = document.getElementById('next-race-date');
     let nextracedias = document.getElementById('next-race-days');
@@ -113,10 +124,12 @@ async function mostrarCarreraMasCercana() {
     let nextraceround = document.getElementById('round-number');
     let imgCircuit = document.getElementById('next-race-circuito');
 
+    //DIVIDIR EL NOMBRE PARA HACER MATCH CON LOS NOMBRES DE LAS IMAGENES DE LOS CIRCUITOS
     let nombrecircuitoimg = carrera.nombre.replace(" ","");
     nombrecircuitoimg = nombrecircuitoimg.replace(" ","");
     nombrecircuitoimg = nombrecircuitoimg.replace(" ","");
     
+    //A LOS P/H1 RELLENAMOS CON LOS DATOS Y PONEMOS EL SRC(RUTA) DE LA IMAGEN
     nextracetitle.textContent = carrera.nombre;
     nextracefecha.textContent = await formatearFecha(carrera.fecha);
     nextracedias.textContent = carrera.dias;
@@ -125,17 +138,21 @@ async function mostrarCarreraMasCercana() {
     nextraceround.textContent = carrera.ronda;
     imgCircuit.setAttribute("src", "Images/Tracks/"+nombrecircuitoimg+".png");
   } catch (error) {
+    //ERROR DEL CATCH PARA MOSTRAR EL ERROR
     console.error('Error al obtener la carrera más cercana:', error);
   }
 }
 
-
+//FORMATEAR LA FECHA PARA QUE SE MUESTRE EL DIA Y LA ABREVIATURA DE MES
 async function formatearFecha(fecha) {
-  let partesFecha = fecha.split('-'); // Dividir la fecha por guiones
+  //DIVIDR LA FECHA EN DIA Y MES
+  let partesFecha = fecha.split('-');
 
-  let dia = partesFecha[2]; // El día es la última parte
-  let mes = partesFecha[1]; // El mes es la parte del medio
+  //GUARDAR LA DIVISION DE LA FECHA
+  let dia = partesFecha[2]; 
+  let mes = partesFecha[1];
 
+  //SWITCH PARA LA ABREVIATURA DE LOS MESES
   switch (mes) {
     case "01":
       mes = "Jan";
@@ -177,16 +194,21 @@ async function formatearFecha(fecha) {
       break;
   }
 
+  //DEVOLVER EL DIA Y EL MES
   return dia + " " + mes;
 }
 
 
-// Llamamos a la función para mostrar la carrera más cercana
+// LLAMAR LA FUNCION MOSTRAR CARRERA CADA SEGUNDO Y ASI ACTUALIZAR EL CONTADOR
 setInterval(mostrarCarreraMasCercana, 1000);
 
+/*--------------------------------------------FUNCIONALIDAD DEL ELEMENTO DE BOTON VOLVER ARRIBA------------------------------------------------*/
+//RECOGER EL BOTON
 document.getElementById("upBtn").classList.add("hidden");
+//CUANDO SE DETECTE SCROLL LLAMAR A LA FUNCION DE SCROLLEO
 window.onscroll = function() {scrollFunction()};
 
+//DETECTAR CUANDO SE VA A MOSTRAR EL BOTON, CUANDO PASE DE LA PARTE PRINCIPAL DE LA PAGINA
 function scrollFunction() {
   if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
     document.getElementById("upBtn").classList.remove("hidden");
@@ -195,6 +217,7 @@ function scrollFunction() {
   }
 }
 
+//FUNCION PARA VOLVER ARRIBA DE LA PAGIINA
 function scrollToTop() {
   const scrollStep = -window.scrollY / (500 / 15);
   const scrollInterval = setInterval(function(){
