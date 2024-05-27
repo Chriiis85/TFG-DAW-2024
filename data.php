@@ -38,7 +38,7 @@
             <option value="Race">Race Result</option>
           </select>
         </div>
-        <div class="select">
+        <div id="select3Group" class="select">
           <select id="select3">
           </select>
         </div>
