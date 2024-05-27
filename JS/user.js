@@ -1,10 +1,14 @@
 /*FUNCION PARA CAMBIAR LA VISIBILIDAD DE LA CONTRASEÑA Y EL ICONO*/
 function togglePasswordVisibility2() {
+  //RECOGER EL CAMPO Y EL ICONO
   var passwordField = document.getElementById("pwdLogin");
   var passwordIcon = document.getElementById("passwordIcon");
 
+  //CAMBIAR ENTRE MOSTRAR EL CAMPO(TEXTO DE LA PWD) Y CAMBIAR LOS ICONOS
   if (passwordField.type === "password") {
+    //CAMBIAR TYPO DE INPUT
     passwordField.type = "text";
+    //CAMBIAR ICONOS
     passwordIcon.classList.remove("fa-eye-slash");
     passwordIcon.classList.add("fa-eye");
   } else {
@@ -16,7 +20,7 @@ function togglePasswordVisibility2() {
 
 /*FUNCION PARA CAMBIAR LA VISIBILIDAD DE LA CONTRASEÑA Y EL ICONO*/
 function togglePasswordVisibility() {
-  var passwordField = document.getElementById("pwdRegister");
+  var passwordField = document.getElementById("passwordRegister");
   var passwordIcon = document.getElementById("passwordIconReg");
 
   if (passwordField.type === "password") {
@@ -37,6 +41,7 @@ let changeForm = document
     let formLogin = document.getElementById("formLogin");
     formLogin.style.display = "none";
 
+    //CAMBIAR LAS IMAGENES Y EL CONTENEDOR PARA AJUSTARSE AL NUEVO
     let image = document.getElementById("foto");
     image.style.borderTopRightRadius = "11px";
     image.style.borderBottomRightRadius = "11px";
@@ -44,15 +49,17 @@ let changeForm = document
     image.style.borderBottomLeftRadius = "0px";
     image.style.borderLeft = "0px";
 
+    //AGREGAR EL NUEVO SRC DE LA NUEVA IMAGEN
     let img = document.getElementById("img");
     img.setAttribute("src", "Images/Register-img.jpg");
 
+    //MOSTRAR EL CONTENEDOR AL CUAL VAMOS A CAMBIAR Y MOSTRAR
     let formRegister = document.getElementById("formRegister");
     formRegister.style.display = "flex";
   });
 
 /*FORMA PARA CAMBIAR ENTRE FORMULARIOS FORM DE LOGIN A CAMBIO PWD*/
-let changeForm1 = document
+/*let changeForm1 = document
   .getElementById("pwdFormChange")
   .addEventListener("click", () => {
     let formLogin = document.getElementById("formLogin");
@@ -63,7 +70,7 @@ let changeForm1 = document
 
     let formPwd = document.getElementById("formPwd");
     formPwd.style.display = "flex";
-  });
+  });*/
 
 /*FORMA PARA CAMBIAR ENTRE FORMULARIOS FORM DE REGISTRO A LOGIN*/
 let changeForm2 = document
@@ -85,3 +92,41 @@ let changeForm2 = document
     let formRegister = document.getElementById("formLogin");
     formRegister.style.display = "flex";
   });
+
+/*CONTROLAR QUE LA CONTRASEÑA SEA SEGURA Y CONTENGA CARACTERES QUE LA HAGAN FUERTE*/
+var pwdErrorP = document.getElementById("pwdError");
+
+function validatePWD(pwd) {
+  // VERIFICAR SI LA CONTRASEÑA ES DE AL MENOS 8 CARACTERES ALFANUMERICOS
+  if (pwd.length < 8) {
+    return false;
+  }
+
+  // COMROBAR SI MEDIANTE PATTERNS LA CONTRASEÑA TIENE LOS PATTERN SIGUIENTES
+  var tieneMayuscula = /[A-Z]/.test(pwd);
+  var tieneMinuscula = /[a-z]/.test(pwd);
+  var tieneNumero = /[0-9]/.test(pwd);
+  var tieneCaracterEspecial = /[^A-Za-z0-9]/.test(pwd);
+
+  //TEST DEVUELVE TRUE O FALSE, DEVOLVEMOS LA VAR
+  return (
+    tieneMayuscula && tieneMinuscula && tieneNumero && tieneCaracterEspecial
+  );
+}
+
+//RECOGER EL INPUT DE LA PWD
+var passwordFieldRegister = document.getElementById("passwordRegister");
+
+//CADA LETRA QUE SE SE ESCRIBA SE VA VERIFICANDO
+passwordFieldRegister.addEventListener("input", function () {
+  //SI CUMPLE EL PATTERN Y LA LONGITUD OCULTAMOS
+  if (validatePWD(passwordFieldRegister.value)) {
+    pwdErrorP.style.display = "none";
+  }
+  //SI NO CUMPLE EL PATTERN Y LA LONGITUD MUESTRA EL ERROR
+  else {
+    pwdErrorP.style.display = "block";
+    pwdErrorP.textContent =
+      "The password is not safe enough.Pwd must contain 1 Upcase, 1 LowCase, 1 Character and at least 8 Character/Numbers";
+  }
+});

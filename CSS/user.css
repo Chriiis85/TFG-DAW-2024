@@ -215,7 +215,20 @@ body {
 #passwordIcon {
   color: #333;
 }
-
+/* Estilo para mostrar los errores */
+#pwdError{
+  display: none;
+  margin: 0;
+  margin-top: -25px;
+  margin-bottom: -25px;
+  font-size: 0.9em;
+  color: red;
+  width: 120%;
+}
+#pwdError:hover{
+  text-decoration: none;
+  cursor: default;
+}
 /*-------------------------------------------------------------------BUTTONS------------------------------------------------------------------*/
 
 .buttons {
@@ -287,6 +300,13 @@ body {
   }
 }
 
+@media (max-width: 1300px) {
+  #tit-register{
+    font-size: 1.65em;
+    margin-bottom: -20px;
+  }
+}
+
 @media (max-width: 1200px) {
   .formField input {
     width: 300px;
@@ -297,11 +317,7 @@ body {
     text-align: center;
   }
 }
-@media (max-width: 1000px) {
-#tit-register{
-  font-size: 2em;
-}
-}
+
 @media (max-width: 800px) {
   .formField input {
     width: 200px;
@@ -338,6 +354,9 @@ body {
   }
   .main-info-Register {
     width: 100%;
+  }
+  #tit-register{
+    margin-bottom: 0px;
   }
 }
 
