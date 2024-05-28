@@ -1,59 +1,10 @@
-/* pagination();
-  function pagination() {
-    let postsContainer = document.getElementById("posts-group");
-    let pagination = document.getElementById("pagination");
-    let postContainers = document.querySelectorAll(".post-card-container");
-    let postsPerPage = 2;
-    let numPages = Math.ceil(postContainers.length / postsPerPage);
-    let currentPage = 1;
-
-    // Mostrar las tarjetas para la página actual
-    function showPage(pageNum) {
-      let start = (pageNum - 1) * postsPerPage;
-      let end = start + postsPerPage;
-
-      postContainers.forEach(function (container, index) {
-        if (index >= start && index < end) {
-          container.style.display = "flex";
-        } else {
-          container.style.display = "none";
-        }
-      });
-    }
-
-    // Generar botones de paginación
-    for (let i = 1; i <= numPages; i++) {
-      let button = document.createElement("button");
-      button.textContent = "Page: " + i;
-      button.addEventListener("click", function () {
-        currentPage = parseInt(this.textContent.split(":")[1].trim());
-        showPage(currentPage);
-      });
-      pagination.appendChild(button);
-    }
-
-    // Mostrar la primera página por defecto
-    showPage(currentPage);
-
-    let filterSelect = document.getElementById("filter");
-    let orderP = document.getElementById("orderP");
-
-    // Agregar un event listener para el evento "change" del select
-    filterSelect.addEventListener("change", function () {
-      // Obtener el valor seleccionado
-      let selectedValue = this.value;
-
-      // Actualizar el contenido del párrafo con el valor seleccionado
-      orderP.textContent = "Order by: " + selectedValue + ".";
-    });
-
-    actualizarPostP();
-
-  }*/
+//FUNCIONES QUE CONTIENEN LA FUNCIONALIDAD DE ELIMINAR Y BORAR, LOS MODAL PARA LAS ACCIONES
 deleteBtn();
 editBtn();
 jqueryModal();
 actualizarPostP();
+
+//FUNCION QUE PERMITE RECOGER Y OBTENER UNA COOKIE
 function getCookie(name) {
   let nameEQ = name + "=";
   let ca = document.cookie.split(";");
@@ -64,54 +15,59 @@ function getCookie(name) {
   }
   return null;
 }
-function jqueryModal(){
-$(document).ready(function () {
-  $("#newTheme").on("click", function () {
-    // Abre el modal al hacer clic
-    $("#new-theme-modal").modal({
-      fadeDuration: 300,
-      escapeClose: false,
-      clickClose: false,
+
+//FUNCION QUE LLAMA A LAS ACCIONES CUANDO SE CLICA Y A DE ABRIRSE UN MODAL POR MEDIO DE JQUERY
+function jqueryModal() {
+  $(document).ready(function () {
+    $("#newTheme").on("click", function () {
+      //AL HACER CLIC SE ABRE UN MODAL DON UN EFECTO FADE Y CON UN ELEMENTO (X) PARA CERRARLO
+      $("#new-theme-modal").modal({
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false,
+      });
+    });
+
+    $(".editThemeBtn").on("click", function () {
+      //AL HACER CLIC SE ABRE UN MODAL CON UN EFECTO FADE Y CON UN ELEMENTO (X) PARA CERRARLO
+      $("#edit-theme-modal").modal({
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false,
+      });
+    });
+
+    $("#privacyTheme").on("click", function () {
+      //AL HACER CLIC SE ABRE UN MODAL DON UN EFECTO FADE Y CON UN ELEMENTO (X) PARA CERRARLO
+      $("#new-theme-privacy").modal({
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false,
+      });
+    });
+
+    $("#privacyThemeEdit").on("click", function () {
+      //AL HACER CLIC SE ABRE UN MODAL DON UN EFECTO FADE Y CON UN ELEMENTO (X) PARA CERRARLO
+      $("#new-theme-privacy").modal({
+        fadeDuration: 300,
+        escapeClose: false,
+        clickClose: false,
+      });
+    });
+
+    //AL CLICAR SOBRE EL CLOSE BTN SE CIERRA EL MODAL
+    $("#CloseThemeBtn").on("click", function () {
+      $.modal.close();
+    });
+
+    //AL CLICAR SOBRE EL CLOSE BTN SE CIERRA EL MODAL
+    $("#CloseEditThemeBtn").on("click", function () {
+      $.modal.close();
     });
   });
-
-  $(".editThemeBtn").on("click", function () {
-    // Abre el modal al hacer clic
-    $("#edit-theme-modal").modal({
-      fadeDuration: 300,
-      escapeClose: false,
-      clickClose: false,
-    });
-  });
-
-  $("#privacyTheme").on("click", function () {
-    // Abre el modal al hacer clic
-    $("#new-theme-privacy").modal({
-      fadeDuration: 300,
-      escapeClose: false,
-      clickClose: false,
-    });
-  });
-
-  $("#privacyThemeEdit").on("click", function () {
-    // Abre el modal al hacer clic
-    $("#new-theme-privacy").modal({
-      fadeDuration: 300,
-      escapeClose: false,
-      clickClose: false,
-    });
-  });
-
-  $("#CloseThemeBtn").on("click", function () {
-    $.modal.close();
-  });
-
-  $("#CloseEditThemeBtn").on("click", function () {
-    $.modal.close();
-  });
-});
 }
 
+//AL CLCIAR EL BOTON DE AÑADIR THEME AÑADIMOS UN EVENT LISTENER
 let addTheme = document
   .getElementById("addThemeBtn")
   .addEventListener("click", () => {
@@ -120,6 +76,7 @@ let addTheme = document
     let cbxError = document.getElementById("cbxError");
     let nameError = document.getElementById("nameError");
 
+    //COMPROBAMOS QUE ESTAN RELLENOS LOS CAMPOS Y VERIFICAMOS QUE SE CHECKEA LAS CONDICIONES
     if (!cbxTheme.checked) {
       cbxError.style.display = "block";
     }
@@ -134,7 +91,9 @@ let addTheme = document
       nameError.style.display = "none";
     }
 
+    //SI LAS CONDICIONES SE VALIDAN SIGUE ADELANTE
     if (!nameTheme.value == "" && cbxTheme.checked) {
+      //EJEMPLO DE COMO SE CONSTRUYE UNA ALERTA SWEET DE JQUERY PARA PREGUNTAR SI SE QUIERE CREAR UN NUEVO TEMA
       Swal.fire({
         title: "Do you want to create the new Theme?",
         text: "New theme name: " + nameTheme.value,
@@ -145,12 +104,15 @@ let addTheme = document
         cancelButtonText: "No, go back.",
         allowOutsideClick: false,
       }).then((result) => {
+        //SI SE CONFIRMA INICIA EL PROCESO DE CREACION DE UN NUEVO TEMA
         if (result.isConfirmed) {
           let username = getCookie("username");
+          //PARA REGISTRAR UN NUEVO TEMA SE REALIZA MEDIANTE UNA PETICION AJAX QUE LA CREAMOS A CONTINUACION
           var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function () {
             if (this.readyState == 4) {
               if (this.status == 200) {
+                //SI LA RESPUESTA Y EL ESTADO DE LA PETICION ES CORECTO MOSTRAMOS QUE SE CREA EL TEMA POR LO CONTRRAIO MOSTRAMOS MENSAJE DE ERROR
                 if (this.responseText == 1) {
                   Swal.fire({
                     title: "Theme Created!",
@@ -170,6 +132,7 @@ let addTheme = document
               }
             }
           };
+          //ENVIAMOS LA PETICION POR POST AL ARCHIVO INSERTAR TEMA Y LAS VARIABLES QUE PASAMOS EN LA CABECERA
           xhttp.open("POST", "PHP/Forum/insertTheme.php", true);
           xhttp.setRequestHeader(
             "Content-type",
@@ -188,6 +151,7 @@ let addTheme = document
     }
   });
 
+//FUNCIONALIDAD PARA EL BOTON DE LOGOUT
 let logout = document.getElementById("logout");
 logout.addEventListener("click", () => {
   Swal.fire({
@@ -207,8 +171,10 @@ logout.addEventListener("click", () => {
         icon: "success",
         showConfirmButton: true,
       }).then((result) => {
+        //SI CONFIRMA QUE QUIERE CERRAR SESION ELIMINAMOS LA COOKIE Y DEVOLVEMOS A LA PAGINA DE INICIO DE SESION
         if (result.isConfirmed) {
-          document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          document.cookie =
+            "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           location.reload();
         }
       });
@@ -218,6 +184,7 @@ logout.addEventListener("click", () => {
   });
 });
 
+//FUNCIONALIDAD PARA EL BOTON EDITAR UN TEMA
 function editBtn() {
   let editBtn = document.querySelectorAll(".editThemeBtn");
   for (const btnEdit of editBtn) {
@@ -226,6 +193,7 @@ function editBtn() {
       let id_theme = btnEdit.id;
       id_theme = id_theme.split("-")[1];
 
+      //AL CLICAR EL BOTON INICIALIZAMOS EL PROCESO DE EDICION DEL TEMA
       let ConfirmeditBtn = document
         .getElementById("editThemeBtn")
         .addEventListener("click", () => {
@@ -234,6 +202,7 @@ function editBtn() {
           let cbxError = document.getElementById("cbxErrorEdit");
           let nameError = document.getElementById("nameErrorEdit");
 
+          //VERIFICAMOS QUE CUMPLE LOS REQUISITOS PARA EDITAR EL TEMA
           let ThemeName = document.getElementById("nameTheme-" + id_theme);
           if (!cbxTheme.checked) {
             cbxError.style.display = "block";
@@ -249,6 +218,7 @@ function editBtn() {
             nameError.style.display = "none";
           }
 
+          //SI SE CUMPLEN LOS REQUISITOS INNICAMOS LA ACCION DE EDICION DEL TEMA
           if (!nameTheme.value == "" && cbxTheme.checked) {
             Swal.fire({
               title:
@@ -263,12 +233,14 @@ function editBtn() {
               cancelButtonText: "No, go back.",
               allowOutsideClick: false,
             }).then((result) => {
+              //SI SE CONFIRMA LA REALIZACION DE LA EDICION HACEMOS UNA PETICION POST PARA EDITAR EL TEMA
               if (result.isConfirmed) {
                 let username = getCookie("username");
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                   if (this.readyState == 4) {
                     if (this.status == 200) {
+                      //SI LA RESPUESTA TIENE STATUS VALIDO MOSTRAMOS AL USUARIO LA RESPUESTA
                       if (this.responseText == 1) {
                         Swal.fire({
                           title: "Theme Edited!",
@@ -288,6 +260,7 @@ function editBtn() {
                     }
                   }
                 };
+                //PETICION MEDIANTE POST Y MANDAR VARIABLES POR LA CABECERA
                 xhttp.open("POST", "PHP/Forum/editTheme.php", true);
                 xhttp.setRequestHeader(
                   "Content-type",
@@ -309,6 +282,7 @@ function editBtn() {
   }
 }
 
+//FUNCION PARA ELIMINAR UN POST
 function deleteBtn() {
   let deleteBtn = document.querySelectorAll(".deleteThemeBtn");
   for (const btnDelete of deleteBtn) {
@@ -319,6 +293,7 @@ function deleteBtn() {
 
       let nameTheme = document.getElementById("nameTheme-" + id_theme);
 
+      //INDICAR SI DESEA ELIMINAR EL TEMA
       Swal.fire({
         title: "Do you want to delete this Theme?",
         text: "Deleting theme: '" + nameTheme.textContent + "'",
@@ -331,6 +306,7 @@ function deleteBtn() {
       }).then((result) => {
         if (result.isConfirmed) {
           let username = getCookie("username");
+          //PETICION PARA ELIMINAR EL TEMA
           var xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function () {
             if (this.readyState == 4) {
@@ -354,6 +330,7 @@ function deleteBtn() {
               }
             }
           };
+          //ENVIO DE LA PETICION Y DE LAS VARIABLES PARA EDITAR EL TEMA
           xhttp.open("POST", "PHP/Forum/deleteTheme.php", true);
           xhttp.setRequestHeader(
             "Content-type",
@@ -367,6 +344,8 @@ function deleteBtn() {
     });
   }
 }
+
+//FUNCION PARA ACUTALIZAR EL NUMERO DE TEMAS QUE SE MUESTRAN
 function actualizarPostP() {
   let totalPosts = document.querySelectorAll(".post-card-container");
   countPost = "Showing: " + totalPosts.length + " Themes.";
@@ -375,6 +354,7 @@ function actualizarPostP() {
   countPostP.textContent = countPost;
 }
 
+//FILTRO DE LA PAGINA PARA FILTRAR POR TEMAS
 let filter = document.getElementById("filter");
 filter.addEventListener("change", () => {
   let selectedValue = filter.value;
@@ -382,6 +362,7 @@ filter.addEventListener("change", () => {
   let orderP = document.getElementById("orderP");
   let tipo = "";
 
+  //RECOGER EL VALOR SELECCIONADO EN EL INPUT
   switch (selectedValue) {
     case "Newest":
       tipo = "Newest";
@@ -396,19 +377,21 @@ filter.addEventListener("change", () => {
       tipo = "Default";
       break;
   }
-  orderP.textContent = "Order by: "+tipo+".";
+  orderP.textContent = "Order by: " + tipo + ".";
+
+  //REALIZAR LA SOLICITUD AJAX PARA FILTRAR TEMAS
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      var themes = JSON.parse(this.responseText); // Parsear JSON a objeto JavaScript
+      var themes = JSON.parse(this.responseText);
       console.log(themes);
       let postsGroup = document.getElementById("posts-group");
       postsGroup.innerHTML = "";
 
+      //SI NO HAY TEMAS QUE MOSTRAR SE LE INDICA AL USUARIO
       if (themes.length == 0) {
-        //alert("Hola");
         let postsGroup = document.getElementById("posts-group");
-        let postContainer = document.createElement("div"); // Crear un nuevo contenedor
+        let postContainer = document.createElement("div");
         postContainer.id = "post-card-container";
         let imagen = document.createElement("img");
         let divimg = document.createElement("div");
@@ -419,9 +402,10 @@ filter.addEventListener("change", () => {
         imagen.classList.add("img-noresult");
         divimg.appendChild(imagen);
         postContainer.appendChild(divimg);
-        postsGroup.appendChild(postContainer); // Agregar el nuevo contenedor al DOM
+        postsGroup.appendChild(postContainer);
       }
 
+      //RECORRER EL ARRAY Y MOSTRAR DINAMICAMENTE LOS TEMAS
       themes.forEach(function (theme) {
         var postCardContainer = document.createElement("div");
         postCardContainer.className = "post-card-container";
@@ -447,7 +431,7 @@ filter.addEventListener("change", () => {
         var postCard3 = document.createElement("div");
         postCard3.className = "post-card-3";
         postCard3.innerHTML =
-        "<h1 id='nameTheme-" + theme[0] + "'>" + theme[1] + "</h1>"
+          "<h1 id='nameTheme-" + theme[0] + "'>" + theme[1] + "</h1>";
 
         var postCard4 = document.createElement("div");
         postCard4.className = "post-card-4";
@@ -490,13 +474,11 @@ filter.addEventListener("change", () => {
         postCard6.appendChild(postCard6Info);
 
         let user = getCookie("username");
-        if(theme[3] == user){
-        postCard6Edit.appendChild(postCardEditBtn);
-        postCard6Edit.appendChild(postCardDeleteBtn);
-        postCard6.appendChild(postCard6Edit);
+        if (theme[3] == user) {
+          postCard6Edit.appendChild(postCardEditBtn);
+          postCard6Edit.appendChild(postCardDeleteBtn);
+          postCard6.appendChild(postCard6Edit);
         }
-        
-
 
         postCard4.appendChild(postCard5);
         postCard4.appendChild(postCard6);
@@ -507,34 +489,40 @@ filter.addEventListener("change", () => {
         postCardContainer.appendChild(postCard);
         postsGroup.appendChild(postCardContainer);
       });
+
+      //LLAMAR A LA FUNCIONALIDAD DE LOS BOTONES MODALS Y ACTUALIZAR LOS POSTS QUE SE ESTAN MOSTRANDO
       deleteBtn();
       editBtn();
       jqueryModal();
       actualizarPostP();
     }
   };
+  //ENVIO DE LA PETICION Y DE LAS VARIABLES PARA EDITAR EL TEMA
   xhttp.open("POST", "PHP/Forum/returnThemes.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("filter=" + tipo);
 });
 
+//DETECTAR EL INPUT SEARCH Y RECOGER LOS VALORES PARA MANDARLO A LA FUNCION QUE REALIZA LA BUSQUEDA MEDIANTE AJAX
 let search = document.getElementById("search");
 search.addEventListener("input", () => {
   console.log(search.value);
   searchTheme(search.value);
 });
 
+//FUNCION QUE BUSCA EL STRING EN LA BASE D EDATOS
 function searchTheme(letra) {
+  //PETICION AJAX EN LA QUE SE BUSCA Y SE MUESTRA LOS RESULTADOS DE LA BUSQEUDA
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      var themes = JSON.parse(this.responseText); // Parsear JSON a objeto JavaScript
+      var themes = JSON.parse(this.responseText);
       console.log(themes);
       let postsGroup = document.getElementById("posts-group");
       postsGroup.innerHTML = "";
 
+      //SI NO HAY TEMAS QUE MOSTRAR SE LE INDICA AL USUARIO
       if (themes.length == 0) {
-        //alert("Hola");
         let postsGroup = document.getElementById("posts-group");
         let postContainer = document.createElement("div"); // Crear un nuevo contenedor
         postContainer.id = "post-card-container";
@@ -550,6 +538,7 @@ function searchTheme(letra) {
         postsGroup.appendChild(postContainer); // Agregar el nuevo contenedor al DOM
       }
 
+      //PINTAR DINAMICAMENTE LOS TEMAS AL USUARIO
       themes.forEach(function (theme) {
         var postCardContainer = document.createElement("div");
         postCardContainer.className = "post-card-container";
@@ -575,7 +564,7 @@ function searchTheme(letra) {
         var postCard3 = document.createElement("div");
         postCard3.className = "post-card-3";
         postCard3.innerHTML =
-        "<h1 id='nameTheme-" + theme[0] + "'>" + theme[1] + "</h1>"
+          "<h1 id='nameTheme-" + theme[0] + "'>" + theme[1] + "</h1>";
 
         var postCard4 = document.createElement("div");
         postCard4.className = "post-card-4";
@@ -618,13 +607,11 @@ function searchTheme(letra) {
         postCard6.appendChild(postCard6Info);
 
         let user = getCookie("username");
-        if(theme[3] == user){
-        postCard6Edit.appendChild(postCardEditBtn);
-        postCard6Edit.appendChild(postCardDeleteBtn);
-        postCard6.appendChild(postCard6Edit);
+        if (theme[3] == user) {
+          postCard6Edit.appendChild(postCardEditBtn);
+          postCard6Edit.appendChild(postCardDeleteBtn);
+          postCard6.appendChild(postCard6Edit);
         }
-        
-
 
         postCard4.appendChild(postCard5);
         postCard4.appendChild(postCard6);
@@ -635,14 +622,16 @@ function searchTheme(letra) {
         postCardContainer.appendChild(postCard);
         postsGroup.appendChild(postCardContainer);
       });
+
+      //LLAMAR A LA FUNCIONALIDAD DE LOS BOTONES MODALS Y ACTUALIZAR LOS POSTS QUE SE ESTAN MOSTRANDO
       deleteBtn();
       editBtn();
       jqueryModal();
       actualizarPostP();
     }
   };
+  //ENVIO DE LA PETICION Y DE LAS VARIABLES PARA EDITAR EL TEMA
   xhttp.open("POST", "PHP/Forum/search_theme.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("letra=" + letra);
 }
-
