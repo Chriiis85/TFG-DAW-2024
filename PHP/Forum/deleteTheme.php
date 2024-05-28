@@ -27,7 +27,7 @@ try {
         mysqli_stmt_close($stmtPosts);
     } else {
         //LANZAR LA EXCEPCION PARA CONTROLAR POSIBLES ERRORES
-        throw new Exception("Error: No se pudo preparar la consulta para eliminar los posts relacionados con el tema");
+        throw new Exception("Error: No se pudo preparar la consulta para eliminar los posts relacionados con el tema ERROR:".mysqli_error($con));
     }
 
     //CONSULTA PARA ELIMINAR EL TEMA
@@ -52,7 +52,7 @@ try {
         mysqli_stmt_close($stmtThemes);
     } else {
         //LANZAR LA EXCEPCION PARA CONTROLAR POSIBLES ERRORES
-        throw new Exception("Error: No se pudo preparar la consulta para eliminar el tema");
+        throw new Exception("Error: No se pudo preparar la consulta para eliminar el tema. ERROR:".mysqli_error($con));
     }
 
     //CONFIRMAR LA TRANSACCION EN CASO DE QUE HAYA IDO TODO BIEN

@@ -39,7 +39,7 @@ try {
         mysqli_stmt_close($stmt);
     } else {
         //SI LA CONSULTA FALLA MOSTRAMOS UN MENSAJE DE ERROR
-        echo "Error: No se pudo preparar la consulta";
+        echo "Error: No se pudo preparar la consulta. ERROR:".mysqli_error($con);
         // REVERTIR LA TRANSACCIÓN EN CASO DE ERROR
         mysqli_rollback($con);
     }
