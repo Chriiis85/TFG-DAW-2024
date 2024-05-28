@@ -285,8 +285,8 @@ h1 {
 
 @media (max-width: 900px) {
   .header-drop-container-options > h1 {
-    font-size: 2em;
-    margin-left: -12%;
+    font-size: 1.75em;
+    /*margin-left: -12%;*/
   }
 
   .header-drop-container-options > h3 {
