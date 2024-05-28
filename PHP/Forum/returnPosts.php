@@ -1,37 +1,65 @@
 <?php
+//OMITIR LOS ERRORES PARA LAS PRUEBAS
 error_reporting(0);
 
+//RECOGEMOS EL TIPO DE FILTRO PARA DEFINIR POR QUE SE FILTRAN Y MUESTRAN LOS POSTS
 $filterType = $_POST["filter"];
+
+//RECOGER EL ID DEL TEMA PARA FILTRAR, BUSCAR Y MOSTRAR LOS FILTROS DE DICHO TEMA POR SU ID
 $id_theme2 = $_POST["id_theme"];
 
-
-if($filterType=="Default"){
+//DEPENDIENDO DEL STRING CON EL FILTRADO ESCOGIDO EN LA LISTA SE APLICARÁ UN FILTRO U OTRO
+if ($filterType == "Default") {
+    //FILTRO POR DEFECTO
     //echo "Default";
+
+    //LLAMAMOS A LA FUNCION Y GUARDAMOS EN UN ARRAY
     $posts = returnPostsDefault($id_theme2);
+
+    //RECOGEMOS EL NOMBRE DEL USUARIO PARA POSTERIORMENTE MOSTRARLO
     for ($i = 0; $i < sizeof($posts); $i++) {
-    $posts[$i][3] = returnNombreUsu($posts[$i][3]);
+        $posts[$i][3] = returnNombreUsu($posts[$i][3]);
     }
+
+    //CODIFICAMOS EL ARRAY EN UN JSON PARA POSTERIORMENTE MOSTRARLO DINAMICAMENTE
     echo json_encode($posts);
-}else if($filterType=="Newest"){
+} else if ($filterType == "Newest") {
+    //FILTRO POR LOS POSTS MAS NUEVOS
     //echo "Newest";
+
+    //LLAMAMOS A LA FUNCION Y GUARDAMOS EN UN ARRAY
     $posts = returnPostsDate($id_theme2);
+
+    //RECOGEMOS EL NOMBRE DEL USUARIO PARA POSTERIORMENTE MOSTRARLO
     for ($i = 0; $i < sizeof($posts); $i++) {
         $posts[$i][3] = returnNombreUsu($posts[$i][3]);
-        }
+    }
+
+    //CODIFICAMOS EL ARRAY EN UN JSON PARA POSTERIORMENTE MOSTRARLO DINAMICAMENTE
     echo json_encode($posts);
-}
-else if($filterType=="Oldest"){
+} else if ($filterType == "Oldest") {
+    //FILTRO POR LOS POSTS MAS VIEJOS
     //echo "Oldest";
+
+    //LLAMAMOS A LA FUNCION Y GUARDAMOS EN UN ARRAY
     $posts = returnPostsDateReverse($id_theme2);
+
+    //RECOGEMOS EL NOMBRE DEL USUARIO PARA POSTERIORMENTE MOSTRARLO
     for ($i = 0; $i < sizeof($posts); $i++) {
         $posts[$i][3] = returnNombreUsu($posts[$i][3]);
-        }
+    }
+
+    //CODIFICAMOS EL ARRAY EN UN JSON PARA POSTERIORMENTE MOSTRARLO DINAMICAMENTE
     echo json_encode($posts);
 }
+
+//FUNCION QUE NOS DEVUELVE LOS POSTS POR DEFECTO DE UN TEMA POR SU ID
 function returnPostsDefault($id_theme)
 {
     //CONSULTA A EJECUTAR
     $consulta = "SELECT * FROM posts WHERE id_theme = ?";
+
+    //INCLUIR EL ARCHIVO QUE CONTIENE LA CONEXION
     include "conexion.php";
 
     //INICIAR EL STATEMENT
@@ -44,26 +72,31 @@ function returnPostsDefault($id_theme)
 
         //EJECUTAR EL STATEMENT
         mysqli_stmt_execute($stmt);
+
+        //OBTENER EN UN ARRAY LOS POSTS
         $result = mysqli_stmt_get_result($stmt);
 
-        //OBTENER EL RESULTADO
+        //OBTENER EL RESULTADO EN OTRO ARRAY
         $posts = mysqli_fetch_all($result);
 
         //CERRAR EL STATEMENT
         mysqli_stmt_close($stmt);
 
-        //DEVOLVER EL NOMBRE DE USUARIO
+        //DEVOLVER EN UN ARRAY LOS POSTS
         return $posts;
     } else {
-        // Manejo de errores si la preparación de la consulta falla
-        return "Error: No se pudo preparar la consulta";
+        //MANEJO DE ERRORES EN EL CASO DE QUE LA CONSULTA NO SE REALIZE CORRECTAMENTE
+        echo "Error: No se pudo preparar la consulta. ERROR:" . mysqli_error($con);
     }
 }
 
+//FUNCION QUE NOS DEVUELVE LOS POSTS POR LOS MAS NUEVOS PRIMERO DE UN TEMA POR SU ID
 function returnPostsDate($id_theme)
 {
     //CONSULTA A EJECUTAR
     $consulta = "SELECT * FROM posts WHERE id_theme = ? ORDER BY date DESC";
+
+    //INCLUIR EL ARCHIVO QUE CONECTA LA BD
     include "conexion.php";
 
     //INICIAR EL STATEMENT
@@ -76,26 +109,31 @@ function returnPostsDate($id_theme)
 
         //EJECUTAR EL STATEMENT
         mysqli_stmt_execute($stmt);
+
+        //OBTENER EN UN ARRAY LOS POSTS
         $result = mysqli_stmt_get_result($stmt);
 
-        //OBTENER EL RESULTADO
+        //OBTENER EL RESULTADO EN OTRO ARRAY
         $posts = mysqli_fetch_all($result);
 
         //CERRAR EL STATEMENT
         mysqli_stmt_close($stmt);
 
-        //DEVOLVER EL NOMBRE DE USUARIO
+        //DEVOLVER EL ARRAY PARA MOSTRARLO
         return $posts;
     } else {
-        // Manejo de errores si la preparación de la consulta falla
-        return "Error: No se pudo preparar la consulta";
+        //MANEJO DE ERRORES EN EL CASO DE QUE LA CONSULTA NO SE REALIZE CORRECTAMENTE
+        echo "Error: No se pudo preparar la consulta. ERROR:" . mysqli_error($con);
     }
 }
 
+//FUNCION QUE NOS DEVUELVE LOS POSTS POR LOS MAS VIEJOS DE UN TEMA POR SU ID
 function returnPostsDateReverse($id_theme)
 {
     //CONSULTA A EJECUTAR
     $consulta = "SELECT * FROM posts WHERE id_theme = ? ORDER BY date ASC";
+
+    //INCLUIR EL ARCHIVO DE LA CONEXION
     include "conexion.php";
 
     //INICIAR EL STATEMENT
@@ -108,26 +146,31 @@ function returnPostsDateReverse($id_theme)
 
         //EJECUTAR EL STATEMENT
         mysqli_stmt_execute($stmt);
+
+        //OBTENER EN UN ARRAY LOS POSTS
         $result = mysqli_stmt_get_result($stmt);
 
-        //OBTENER EL RESULTADO
+        //OBTENER EL RESULTADO EN OTRO ARRAY
         $posts = mysqli_fetch_all($result);
 
         //CERRAR EL STATEMENT
         mysqli_stmt_close($stmt);
 
-        //DEVOLVER EL NOMBRE DE USUARIO
+        //DEVOLVER EL ARRAY DE LOS POSTS
         return $posts;
     } else {
-        // Manejo de errores si la preparación de la consulta falla
-        return "Error: No se pudo preparar la consulta";
+        //MANEJO DE ERRORES EN EL CASO DE QUE LA CONSULTA NO SE REALIZE CORRECTAMENTE
+        echo "Error: No se pudo preparar la consulta. ERROR:" . mysqli_error($con);
     }
 }
 
+//DEVOLVER EL NOMBRE DEL TEMA MEDIANTE EL ID DEL TEMA
 function returnThemeName($id_theme)
 {
     //CONSULTA A EJECUTAR
     $consulta = "SELECT titulo_tema FROM themes WHERE id = ?";
+
+    //INCLUIR EL ARCHIVO DE LA CONEXION
     include "conexion.php";
 
     //INICIAR EL STATEMENT
@@ -148,18 +191,21 @@ function returnThemeName($id_theme)
         //CERRAR EL STATEMENT
         mysqli_stmt_close($stmt);
 
-        //DEVOLVER EL NOMBRE DE USUARIO
+        //DEVOLVER EL NOMBRE DEL TEMA
         return $theme_name;
     } else {
-        // Manejo de errores si la preparación de la consulta falla
-        return "Error: No se pudo preparar la consulta";
+    //MANEJO DE ERRORES EN EL CASO DE QUE LA CONSULTA NO SE REALIZE CORRECTAMENTE
+    echo "Error: No se pudo preparar la consulta. ERROR:".mysqli_error($con);
     }
 }
 
+//DEVOLVER EL NOMBRE DEL USUARIO PARA PONERLO EN EL POST
 function returnNombreUsu($id_usu)
 {
     //CONSULTA A EJECUTAR
     $consulta = "SELECT username FROM users WHERE id = ?";
+
+    //INCLUIR EL ARCHIVO DE LA CONEXION
     include "conexion.php";
 
     //INICIAR EL STATEMENT
@@ -183,8 +229,8 @@ function returnNombreUsu($id_usu)
         //DEVOLVER EL NOMBRE DE USUARIO
         return $nombre_usuario;
     } else {
-        // Manejo de errores si la preparación de la consulta falla
-        return "Error: No se pudo preparar la consulta";
+    //MANEJO DE ERRORES EN EL CASO DE QUE LA CONSULTA NO SE REALIZE CORRECTAMENTE
+    echo "Error: No se pudo preparar la consulta. ERROR:".mysqli_error($con);
     }
 }
 
