@@ -270,7 +270,7 @@
   tituloPrincipal.textContent = "Formula One 2024 Calendar";
 
   let headerContainer = document.getElementById("header-container");
-  headerContainer.style.backgroundImage = "url('https://corp.formula1.com/wp-content/uploads/2023/07/F1-2024-Calendar-16x9-1-1024x576-1.jpg')";
+  headerContainer.style.backgroundImage = "url('https://e0.365dm.com/24/02/2048x1152/skysports-f1-2024-graphic_6468800.jpg?20240225120251')";
 </script>
 
 </html>
