@@ -94,77 +94,67 @@
 </body>
 <!-- CONTENIDO MODAL COOKIES -->
 <div id="cookies-modal" class="modal">
-  <h1>Política de Cookies</h1>
-  <p>Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario y para ayudarnos a comprender cómo se
-    utiliza nuestro sitio. Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita
-    nuestro sitio web.
+  <h1>Cookie Policy</h1>
+  <p>Our website uses cookies to enhance user experience and to help us understand how our site is used. Cookies are
+    small text files that are stored on your device when you visit our website.
+    By using our website, you consent to the use of cookies in accordance with this policy. If you do not accept the use
+    of these cookies, please disable cookies by following the instructions provided by your Internet browser.</p>
 
-    Al utilizar nuestro sitio web, usted acepta el uso de cookies de acuerdo con esta política. Si no acepta el uso de
-    estas cookies, por favor desactive las cookies siguiendo las instrucciones proporcionadas por su navegador de
-    Internet.</p>
-
-  <h1>Cookies de terceros
-  </h1>
-  <p>En algunos casos especiales, también utilizamos cookies proporcionadas por terceros de confianza. La siguiente
-    sección detalla qué cookies de terceros puede encontrar a través de este sitio.
-  </p>
-
-  <p>Esperamos que esta política de cookies le haya aclarado las cosas y, como se mencionó anteriormente, si hay algo de
-    lo que no está seguro si necesita o no, suele ser más seguro dejar las cookies habilitadas en caso de que interactúe
-    con una de las funciones que utiliza en nuestro sitio.
-
-    Sin embargo, si aún está buscando más información, puede contactarnos a través de uno de nuestros métodos de
-    contacto preferidos.</p>
+  <h1>Third-Party Cookies</h1>
+  <p>In some special cases, we also use cookies provided by trusted third parties. The following section details which
+    third-party cookies you may encounter through this site.</p>
+  <p>We hope this cookie policy has clarified things for you and, as mentioned above, if there is something you are not
+    sure whether you need or not, it is usually safer to leave cookies enabled in case you interact with one of the
+    features you use on our site.
+    However, if you are still looking for more information, you can contact us through one of our preferred contact
+    methods.</p>
 </div>
 
 <!-- CONTEINDO MODAL POLITICAS -->
 <div id="privacy-modal" class="modal">
-  <h1>Política de Privacidad</h2>
-    <p>En Motoring Community, estamos comprometidos a proteger la privacidad de nuestros usuarios y a garantizar que su
-      información personal se mantenga confidencial y segura. Esta política describe cómo recopilamos, utilizamos y
-      protegemos la información que obtenemos a través de nuestros servicios en línea.
-    </p>
+
+  <h1>Privacy Policy</h1>
+  <p>At Motoring Community, we are committed to protecting the privacy of our users and ensuring that their personal
+    information remains confidential and secure. This policy describes how we collect, use, and protect the information
+    we obtain through our online services.</p>
 </div>
 
 <!-- CONTEINDO MODAL USO DATOS -->
 <div id="data-usage-modal" class="modal">
-  <h2>Uso de Datos</h2>
-  <p>En Motoring Community, nos tomamos muy en serio la privacidad de nuestros usuarios y la protección de sus datos
-    personales. Esta política describe cómo recopilamos, utilizamos y protegemos la información que obtenemos a través
-    de nuestros servicios en línea.
-  </p>
+  <h2>Data Usage</h2>
+  <p>At Motoring Community, we take the privacy of our users and the protection of their personal data very seriously.
+    This policy describes how we collect, use, and protect the information we obtain through our online services.</p>
 </div>
 
 <!-- CONTEINDO MODAL Y ACORDEON PREGUNTAS FRECUENTES -->
 <div id="faq-modal" class="modal">
-  <h2>Preguntas Frecuentes (F&Q)</h2>
+  <h2>Frecuently Asked Questions (F&Q)</h2>
   <div class="accordion">
     <div class="accordion-item">
-      <h3 class="accordion-header">¿Qué son las cookies?
+      <h3 class="accordion-header">¿What are the cookies?
         <span class="arrow">&#9662;</span>
       </h3>
       <div class="accordion-content">
-        Las cookies son archivos de texto que contienen pequeñas cantidades de información que se descargan en su
-        dispositivo cuando visita un sitio web. Las cookies se utilizan ampliamente para hacer que los sitios web
-        funcionen de manera más eficiente, así como para proporcionar información a los propietarios del sitio.
+        Cookies are text files that contain small amounts of information which are downloaded to your device when you
+        visit a website. Cookies are widely used to make websites work more efficiently, as well as to provide
+        information to the site owners.
       </div>
     </div>
     <!--ACORDEON JQUERY USO DE COOKIES-->
     <div class="accordion-item">
-      <h3 class="accordion-header">¿Cómo usamos las cookies?
+      <h3 class="accordion-header">¿How do we use cookies?
 
         <span class="arrow">&#9662;</span>
       </h3>
       <div class="accordion-content">
-        Utilizamos cookies por varias razones, que se detallan a continuación. Desafortunadamente, en la mayoría de los
-        casos, no hay opciones estándar de la industria para deshabilitar las cookies sin deshabilitar completamente la
-        funcionalidad y las características que agregan a este sitio. Se recomienda que deje todas las cookies activadas
-        si no está seguro de si las necesita o no, en caso de que se utilicen para proporcionar un servicio que utiliza.
-
+        We use cookies for several reasons, which are detailed below. Unfortunately, in most cases, there are no
+        industry standard options for disabling cookies without completely disabling the functionality and features they
+        add to this site. It is recommended that you leave all cookies enabled if you are unsure whether you need them
+        or not, in case they are used to provide a service that you use.
       </div>
     </div>
     <!--ACORDEON JQUERY COOKIES-->
-    <div class="accordion-item">
+    <!--<div class="accordion-item">
       <h3 class="accordion-header">¿Qué son las cookies?
         <span class="arrow">&#9662;</span>
       </h3>
@@ -173,74 +163,70 @@
         dispositivo cuando visita un sitio web. Las cookies se utilizan ampliamente para hacer que los sitios web
         funcionen de manera más eficiente, así como para proporcionar información a los propietarios del sitio.
       </div>
-    </div>
+    </div>-->
     <!--ACORDEON JQUERY DATOS RECOPILADOS-->
     <div class="accordion-item">
-      <h3 class="accordion-header">¿Qué datos recopilamos?
+      <h3 class="accordion-header">¿What data do we save?
         <span class="arrow">&#9662;</span>
       </h3>
       <div class="accordion-content">
-        Recopilamos información personal de diferentes maneras, incluidas las interacciones directas cuando usted nos
-        proporciona información al crear una cuenta, completar formularios en nuestro sitio web o en nuestras
-        aplicaciones, o al comunicarse con nosotros por correo electrónico, teléfono u otros medios.
+        We collect personal information in various ways, including direct interactions when you provide us with
+        information by creating an account, completing forms on our website or in our applications, or when
+        communicating with us via email, phone, or other means.
 
-        También recopilamos información automáticamente cuando usted utiliza nuestros servicios, incluida la información
-        sobre su dispositivo y la actividad de navegación, mediante el uso de cookies y otras tecnologías similares.
-
+        We also collect information automatically when you use our services, including information about your device and
+        browsing activity, through the use of cookies and other similar technologies.
       </div>
     </div>
     <!--ACORDEON JQUERY USO DE DATOS-->
     <div class="accordion-item">
-      <h3 class="accordion-header">¿Como usamos sus datos?
+      <h3 class="accordion-header">¿How do we use your data?
         <span class="arrow">&#9662;</span>
       </h3>
       <div class="accordion-content">
-        Utilizamos la información que recopilamos para proporcionar, mantener y mejorar nuestros servicios, así como
-        para personalizar su experiencia y para comunicarnos con usted. Esto puede incluir el envío de comunicaciones de
-        marketing si usted ha dado su consentimiento para recibirlas.
+        We use the information we collect to provide, maintain, and improve our services, as well as to personalize your
+        experience and to communicate with you. This may include sending marketing communications if you have given
+        consent to receive them.
 
-        No vendemos ni alquilamos su información personal a terceros sin su consentimiento explícito. Sin embargo,
-        podemos compartir su información con terceros proveedores de servicios que nos ayudan a operar nuestro negocio y
-        a prestar servicios en su nombre, siempre y cuando se comprometan a mantener la confidencialidad de su
-        información.
+        We do not sell or rent your personal information to third parties without your explicit consent. However, we may
+        share your information with third-party service providers who assist us in operating our business and providing
+        services on your behalf, provided they commit to maintaining the confidentiality of your information.
       </div>
     </div>
 
     <!--ACORDEON JQUERY PROTECCION DE DATOS-->
     <div class="accordion-item">
-      <h3 class="accordion-header">Protección de Datos
+      <h3 class="accordion-header">Data Protection
         <span class="arrow">&#9662;</span>
       </h3>
       <div class="accordion-content">
-        Tomamos medidas para proteger la seguridad de su información personal y para asegurarnos de que se utilice de
-        acuerdo con esta política. Esto incluye la implementación de medidas técnicas y organizativas para proteger
-        contra el acceso no autorizado, la divulgación, la alteración o la destrucción de su información personal.
-
+        We take measures to protect the security of your personal information and to ensure that it is used in
+        accordance with this policy. This includes implementing technical and organizational measures to protect against
+        unauthorized access, disclosure, alteration, or destruction of your personal information.
       </div>
     </div>
 
     <!--ACORDEON DERECHOS USUARIO-->
     <div class="accordion-item">
-      <h3 class="accordion-header">Derechos de Usuario
+      <h3 class="accordion-header">User Rights
         <span class="arrow">&#9662;</span>
       </h3>
       <div class="accordion-content">
-        Usted tiene ciertos derechos en relación con sus datos personales, incluido el derecho a acceder, corregir,
-        eliminar, limitar o protestar contra el procesamiento de su información personal. Si desea ejercer alguno de
-        estos derechos, por favor contáctenos utilizando la información de contacto proporcionada al final de esta
-        política.
+        You have certain rights regarding your personal data, including the right to access, correct, delete, restrict,
+        or object to the processing of your personal information. If you wish to exercise any of these rights, please
+        contact us using the contact information provided at the end of this policy.
       </div>
     </div>
 
     <!--ACORDEON JQUERY CAMBIOS EN LA POLITICA-->
     <div class="accordion-item">
-      <h3 class="accordion-header">Cambios en la Política
+      <h3 class="accordion-header">Politics changes
         <span class="arrow">&#9662;</span>
       </h3>
       <div class="accordion-content">
-        Podemos actualizar esta política de vez en cuando para reflejar cambios en nuestras prácticas de recopilación y
-        uso de datos. Le recomendamos que revise periódicamente esta página para obtener la información más reciente
-        sobre nuestras políticas y prácticas de privacidad.
+        We may update this policy from time to time to reflect changes in our data collection and usage practices. We
+        recommend that you periodically review this page for the latest information on our privacy policies and
+        practices.
       </div>
     </div>
 

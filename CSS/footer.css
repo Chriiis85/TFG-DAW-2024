@@ -7,7 +7,11 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
-
+.close-modal {
+  z-index: 99;
+  margin-right: 30px;
+  margin-top: 30px;
+}
 /*-----------------------------------------------------------------FOOTER---------------------------------------------------------------------*/
 footer {
   bottom: 0;
