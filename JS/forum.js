@@ -236,6 +236,7 @@ function editBtn() {
               //SI SE CONFIRMA LA REALIZACION DE LA EDICION HACEMOS UNA PETICION POST PARA EDITAR EL TEMA
               if (result.isConfirmed) {
                 let username = getCookie("username");
+                //PETICION AJAX PARA EDITAR EL TEMA
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                   if (this.readyState == 4) {
@@ -282,7 +283,7 @@ function editBtn() {
   }
 }
 
-//FUNCION PARA ELIMINAR UN POST
+//FUNCION PARA ELIMINAR UN TEMA
 function deleteBtn() {
   let deleteBtn = document.querySelectorAll(".deleteThemeBtn");
   for (const btnDelete of deleteBtn) {
