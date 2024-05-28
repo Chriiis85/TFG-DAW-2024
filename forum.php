@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motoring Community - Forum</title>
+  <!-- SCRIPT DEL FORO -->
   <script defer src="JS/forum.js"></script>
   <!-- SCRIPT JQUERY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -12,24 +13,26 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- SCRIPT Y HOJA DE ESTILOS JQUERY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <!-- LINK AL CSS DE JQUERY -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-  <!-- Link al archivo CSS -->
 </head>
 
 <body>
   <?php
+  /*SI LA COOKIE ESTA INCIALIZADA GUARDAMOS EN LA VARIABLE USER EL NOMBRE DEL USUARIO*/
   if (isset($_COOKIE["username"])) {
     $username = $_COOKIE["username"];
   } else {
-    // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
+    //SI LA COOKIE NO ESTA ESTABLECIDA MANDAMOS A LA PAGINA DE INICIO DE SESION
     header('Location: users.php');
   }
+  //INCLUIR EL HEADER DE FORO
+  include "headerForum.php";
   ?>
-    <?php
-    include "headerForum.php";
-    ?>
+  <!--LINK AL CSS DEL FOTO-->
   <link rel="stylesheet" href="CSS/forum.css" />
 
+  <!--SECCION PRINCIPAL DEL FORO-->
   <section class="main">
     <article class="posts-container" id="postsContainer">
       <div class="main-bar">
@@ -65,12 +68,20 @@
       </div>
       <div id="posts-group" class="posts-group">
         <?php
+        //INLCUIR EL ARCHIVO QUE DEVUELVE LOS TEMAS
         include "PHP/Forum/returnThemes.php";
+
+        //OBTENER EN UN ARRAY LOS TEMAS POR DEFECTO DE LA FUNCION EXPLICADA EN RETURN THEMES
         $themes = returnThemesByDefault();
+
+        //OBTNER EL ID DE USUARIO
         $id_usu_theme = returnIdUsu($username);
+
+        //SI NO HAY TEMAS QUE MOSTRAR INDICAR AL USUARIO
         if (sizeof($themes) == 0) {
-          echo '<img class="img-noresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="" />';
+          echo '<img class="img-noresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="No result Image" />';
         } else {
+          //RECORRER EL ARRAY MOSTRANDO LOS TEMAS EN EL CONTENEDOR
           for ($i = 0; $i < sizeof($themes); $i++) {
             echo '<div id="post-card-container" class="post-card-container">
           <div id="postCard' . $themes[$i][0] . '" onclick="window.location.href = \'forumPosts.php?id=' . $themes[$i][0] . '\'" class="post-card">
@@ -101,6 +112,7 @@
                       <p>Posts: ' . returnNumberPosts($themes[$i][0]) . '.</p>
                     </div>
                   </div>';
+            //VERIFICAR QUIEN ES EL USUARIO PARA PERMITIR LA ELIMINACION O LA EDICION DE DICHO TEMA
             if ($themes[$i][3] == $id_usu_theme || $username == "admin") {
               echo '<div class="post-card-6-edit">
                           <button class="editThemeBtn" id="editCard-' . $themes[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
@@ -118,6 +130,7 @@
       </div>
     </article>
 
+    <!--MODAL PARA CREAR UN NUEVO TEMA-->
     <div id="new-theme-modal" class="modal">
       <h2>Add Theme to the Forum</h2>
       <div class="themeFormContainer">
@@ -143,6 +156,7 @@
       </div>
     </div>
 
+    <!--MODAL PARA EDITAR UN NUEVO TEMA-->
     <div id="edit-theme-modal" class="modal">
       <h2>Edit theme</h2>
       <div class="themeFormContainer">
@@ -168,6 +182,7 @@
       </div>
     </div>
 
+    <!--MODAL DE LA PRIVACIDAD Y CONDICIONES DEL FORO-->
     <div id="new-theme-privacy" class="modal">
       <h2>Privacy Policy</h2>
       <p>At Motoring Community team, we strive to maintain a friendly and respectful environment where all members can
@@ -190,50 +205,10 @@
         The Motoring Community Team.</p>
     </div>
   </section>
+  <!--INCLUIR EL FOOTER DE LA PAGINA-->
   <?php
   include "footer.php";
   ?>
 </body>
-<script>
-
-</script>
-<?php
-function returnIdUsu($id_nombre)
-{
-  // CONSULTA A EJECUTAR
-  $consulta = "SELECT id FROM users WHERE username = ?";
-  include "PHP/Forum/conexion.php";
-
-  // VERIFICAR LA CONEXIÓN
-  if (!$con) {
-    return "Error: No se pudo conectar a la base de datos";
-  }
-
-  // INICIAR EL STATEMENT
-  $stmt = mysqli_stmt_init($con);
-
-  // PREPARAR LA CONSULTA
-  if (mysqli_stmt_prepare($stmt, $consulta)) {
-    // ENLAZAR LOS PARÁMETROS
-    mysqli_stmt_bind_param($stmt, "s", $id_nombre);
-
-    // EJECUTAR EL STATEMENT
-    mysqli_stmt_execute($stmt);
-
-    // OBTENER EL RESULTADO
-    mysqli_stmt_bind_result($stmt, $id_usuario);
-    mysqli_stmt_fetch($stmt);
-
-    // CERRAR EL STATEMENT
-    mysqli_stmt_close($stmt);
-
-    // DEVOLVER EL ID DEL USUARIO
-    return $id_usuario;
-  } else {
-    // MANEJO DE ERRORES SI LA PREPARACIÓN DE LA CONSULTA FALLA
-    return "Error: No se pudo preparar la consulta";
-  }
-} ?>
-
 
 </html>

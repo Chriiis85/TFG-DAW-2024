@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Header - Motoring Community</title>
+  <title>Header Forum - Motoring Community</title>
   <!--SCRIPT JQUERY-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!--SCRIPT HEADER PARA LA PAGINA-->
   <script defer src="JS/header.js"></script>
   <!--HOJA DE ESTILOS HEADER-->
-
   <link rel="stylesheet" href="CSS/headerForum.css" />
 </head>
 <?php
+/*SI LA COOKIE ESTA INCIALIZADA GUARDAMOS EN LA VARIABLE USER EL NOMBRE DEL USUARIO*/
 if (isset($_COOKIE["username"])) {
   $username = $_COOKIE["username"];
 } else {
-  // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
+  //SI LA COOKIE NO ESTA ESTABLECIDA MANDAMOS A LA PAGINA DE INICIO DE SESION
   header('Location: users.php');
 }
 ?>
