@@ -12,29 +12,36 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- SCRIPT Y HOJA DE ESTILOS JQUERY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <!-- LINK CSS DE JQUERY MODAL -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-  <!-- Link al archivo CSS -->
 </head>
-<?php
-//include "headerForum.php";
-?>
 
 <body>
   <?php
+  //RECOGER EL ID DEL TEMA PARA MOSTRAR LOS POSTS MEDIANTE EL ID
   $id_theme = $_GET["id"];
+
+  //INCLUIR EL ARCHIVO PHP QUE PERMITE DEVOLVER LOS POSTS
   include "PHP/Forum/returnPosts.php";
+
+  /*SI LA COOKIE ESTA INCIALIZADA GUARDAMOS EN LA VARIABLE USER EL NOMBRE DEL USUARIO*/
   if (isset($_COOKIE["username"])) {
     $username = $_COOKIE["username"];
   } else {
-    // Si no está establecida, muestra un mensaje indicando que no se encontró la cookie
+    //SI LA COOKIE NO ESTA ESTABLECIDA MANDAMOS A LA PAGINA DE INICIO DE SESION
     header('Location: users.php');
   }
+
+  //RECOGER EL ID DEL USUARIO DEL CREADOR DEL TEMA
   $id_usu_theme = returnIdUsu($username);
+
+  //INCLUIR LA CABECERA DEL FORO
   include "headerForum.php";
   ?>
+  <!-- LINK AL CSS DEL FORO - POST -->
+  <link rel="stylesheet" href="CSS/forumPosts.css" />
 
-<link rel="stylesheet" href="CSS/forumPosts.css" />
-
+  <!--SECCION PRINCIPAL DEL FORO - POSTS-->
   <section class="main" id="<?php echo $id_theme; ?>">
     <article class="posts-container" id="postsContainer">
       <div class="main-bar">
@@ -70,10 +77,14 @@
       </div>
       <div id="posts-group" class="posts-group">
         <?php
+        //GUARDAR EN UN ARRAY MEDIANTE LA FUNCION RETURN POSTS PARA PINTARLOS
         $posts = returnPostsDate($id_theme);
+
+        //DETECTAR SI LA ARRAY ESTA VACIA PARA INFORMAR AL USUARIO
         if (sizeof($posts) == 0) {
           echo '<img class="img-noresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="" />';
         } else {
+          //ITERAR LA ARRAY Y MOSTRAR TODOS LOS POSTS
           for ($i = 0; $i < sizeof($posts); $i++) {
             echo '<div class="post-container">
                     <div class="post-container-1">
@@ -100,6 +111,7 @@
       </div>
     </article>
 
+    <!--MODAL PARA CREAR UN NUEVO POST-->
     <div id="new-post-modal" class="modal">
       <h2>Add new Post to the Forum</h2>
       <div class="themeFormContainer">
@@ -128,13 +140,15 @@
       </div>
     </div>
 
+    <!--MODAL PARA EDITAR UN NUEVO POST-->
     <div id="edit-post-modal" class="modal">
       <h2>Edit Post</h2>
       <div class="themeFormContainer">
         <div class="inputContainer">
           <label for="">Enter new Post content:</label>
           <!--<input placeholder="New Post Content" class="inputText" type="text" name="New_Post_Content" id="New_Post_Content">-->
-          <textarea class="inputTextArea" placeholder="Write the new post content" name="New_Post_Content" id="New_Post_Content"></textarea>
+          <textarea class="inputTextArea" placeholder="Write the new post content" name="New_Post_Content"
+            id="New_Post_Content"></textarea>
         </div>
         <div class="checkbox-wrapper-46">
           <input type="checkbox" id="cbx-462" class="inp-cbx" />
@@ -153,7 +167,7 @@
         </div>
       </div>
     </div>
-
+    <!--MODAL PRIVACIDAD Y CONDICIONES DE USUARIO-->
     <div id="new-theme-privacy" class="modal">
       <h2>Privacy Policy</h2>
       <p>At Motoring Community team, we strive to maintain a friendly and respectful environment where all members can
@@ -176,49 +190,10 @@
         The Motoring Community Team.</p>
     </div>
   </section>
+  <!--INCLUIR FOOTER DEL FORO-->
   <?php
   include "footer.php";
   ?>
 </body>
-<script>
-</script>
-<?php
-function returnIdUsu($id_nombre)
-{
-  // CONSULTA A EJECUTAR
-  $consulta = "SELECT id FROM users WHERE username = ?";
-  include "PHP/Forum/conexion.php";
-
-  // VERIFICAR LA CONEXIÓN
-  if (!$con) {
-    return "Error: No se pudo conectar a la base de datos";
-  }
-
-  // INICIAR EL STATEMENT
-  $stmt = mysqli_stmt_init($con);
-
-  // PREPARAR LA CONSULTA
-  if (mysqli_stmt_prepare($stmt, $consulta)) {
-    // ENLAZAR LOS PARÁMETROS
-    mysqli_stmt_bind_param($stmt, "s", $id_nombre);
-
-    // EJECUTAR EL STATEMENT
-    mysqli_stmt_execute($stmt);
-
-    // OBTENER EL RESULTADO
-    mysqli_stmt_bind_result($stmt, $id_usuario);
-    mysqli_stmt_fetch($stmt);
-
-    // CERRAR EL STATEMENT
-    mysqli_stmt_close($stmt);
-
-    // DEVOLVER EL ID DEL USUARIO
-    return $id_usuario;
-  } else {
-    // MANEJO DE ERRORES SI LA PREPARACIÓN DE LA CONSULTA FALLA
-    return "Error: No se pudo preparar la consulta";
-  }
-} ?>
-
 
 </html>
