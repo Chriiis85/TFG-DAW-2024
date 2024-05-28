@@ -23,7 +23,6 @@ async function mostrarNoticiasFormula1() {
     const noticia2 = noticias[1];
     const noticia3 = noticias[2];
     const noticia4 = noticias[3];
-    console.log(noticias);
     // FORMATEAR FECHA PARA MOSTRARLA EN EL CONTENEDOR
     const formatearFecha = (fecha) => {
       return new Date(fecha).toLocaleDateString("es-ES", {
