@@ -1,35 +1,55 @@
 <?php
+// RECOGER EL ID DEL POST PARA ELIMINAR EL POST EXACTO
 $id_post = $_POST["id_post"];
 
+// INCLUIR LA CONEXION A LA BASE DE DATOS
 include "conexion.php";
 
-//CONSULTA A EJECUTAR
-$consulta = "DELETE FROM posts WHERE id=?";
+//SE REALIZA LA ELIMINACION DEL POST CON TRANSACCIONES PARA EVITAR FALLOS DURANTE LA ELIMINACION DE LA MISMA Y PODER SER REVERTIDOS EN CASO DE ERROR
+try {
+    //INICIAR LA TRANSACCION
+    mysqli_begin_transaction($con);
 
-//INICIAR EL STATEMENT
-$stmt = mysqli_stmt_init($con);
-//PREPARAR LA CONSULTA
-if (mysqli_stmt_prepare($stmt, $consulta)) {
-    //ENLAZAR LOS PARAMETROS
-    mysqli_stmt_bind_param($stmt, "i", $id_post);
+    // CONSULTA A EJECUTAR
+    $consulta = "DELETE FROM posts WHERE id=?";
 
-    //EJECUTAR EL STATEMENT
-    mysqli_stmt_execute($stmt);
+    // INICIAR EL STATEMENT
+    $stmt = mysqli_stmt_init($con);
 
-    // Verificar si se insertó correctamente una fila
-    if (mysqli_affected_rows($con) > 0) {
-        echo 1; // Indicar que se insertó correctamente
+    // PREPARAR LA CONSULTA
+    if (mysqli_stmt_prepare($stmt, $consulta)) {
+        // ENLAZAR LOS PARÁMETROS
+        mysqli_stmt_bind_param($stmt, "i", $id_post);
+
+        // EJECUTAR EL STATEMENT
+        mysqli_stmt_execute($stmt);
+
+        // VERIFICAR SI LA FILA HA SIDO ELIMINADA MEDIANTE LA FUNCIÓN QUE DETECTA SI SE HA AFECTADO/CAMBIADO ALGUNA FILA EN LA BD DE LA CONEXIÓN
+        if (mysqli_affected_rows($con) > 0) {
+            // CONFIRMAR LA TRANSACCIÓN
+            mysqli_commit($con);
+            echo 1; // SE ELIMINÓ CORRECTAMENTE
+        } else {
+            //REVERTIR LA TRANSACCION MEDIANTE ROLLBACK EN CASO DE ERROR
+            mysqli_rollback($con);
+            echo 2; // NO SE PUDO ELIMINAR
+        }
+
+        // CERRAR EL STATEMENT
+        mysqli_stmt_close($stmt);
     } else {
-        echo 2; // Indicar que no se pudo insertar
+        //SI LA CONSULTA FALLA MOSTRAMOS UN MENSAJE DE ERROR
+        echo "Error: No se pudo preparar la consulta";
+        // REVERTIR LA TRANSACCIÓN EN CASO DE ERROR
+        mysqli_rollback($con);
     }
-
-    //CERRAR EL STATEMENT
-    mysqli_stmt_close($stmt);
-} else {
-    // Manejo de errores si la preparación de la consulta falla
-    echo "Error: No se pudo preparar la consulta";
+} catch (Exception $e) {
+    //MANEJO DE LOS ERRORES MEDIANTE EXCEPCIONES
+    echo "Error: " . $e->getMessage();
+    //REVERTIR LA TRANSACCIÓN EN CASO DE FALLO
+    mysqli_rollback($con);
 }
 
-// Cerrar la conexión
+//CERRAR LA CONEXION
 mysqli_close($con);
 ?>
