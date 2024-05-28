@@ -20,7 +20,7 @@
     ?>
   <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
-    <img src="Images/UPARROW.svg" alt="Up Arrow" />
+    <img src="Images/UPARROW.svg" alt="Up Arrow" aria-label="Scroll to top"/>
   </button>
   <!--SECCION MAIN DE LA PAGINA CON LOS CONTENEDORES DENTRO Y BOTONES QUE REDIRIGEN A LAS OTRAS SECCIONES-->
   <section class="main" role="main">
@@ -70,7 +70,7 @@
       <br />
       <div class="about-teams-container1">
         <div class="about-teams1">
-          <button class="about-button" onclick="window.location.href = 'teams.php'" class="teams-button">
+          <button class="about-button" onclick="window.location.href = 'teams.php'" class="teams-button" aria-label="Meet the Teams">
             Meet the Teams
           </button>
         </div>
@@ -99,7 +99,7 @@
       </p>
       <div class="about-teams-container2">
         <div class="about-teams2">
-          <button class="about-button" onclick="window.location.href = 'drivers.php'" class="drivers-button">
+          <button class="about-button" onclick="window.location.href = 'drivers.php'" class="drivers-button" aria-label="Meet the Drivers">
             Meet the Drivers
           </button>
         </div>
@@ -131,7 +131,7 @@
       </p>
       <div class="about-teams-container3">
         <div class="about-teams3">
-          <button class="about-button" onclick="window.location.href = 'calendar.php'" class="drivers-button">
+          <button class="about-button" onclick="window.location.href = 'calendar.php'" class="drivers-button" aria-label="Meet the Calendar">
             Meet the Calendar
           </button>
         </div>
