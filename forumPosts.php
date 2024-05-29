@@ -86,7 +86,7 @@
         } else {
           //ITERAR LA ARRAY Y MOSTRAR TODOS LOS POSTS
           for ($i = 0; $i < sizeof($posts); $i++) {
-            echo '<div class="post-container">
+            echo '<div tabindex="0" class="post-container">
                     <div class="post-container-1">
                       <h1 id="' . $posts[$i][3] . '" class="usu">Posted by: ' . returnNombreUsu($posts[$i][3]) . '.</h1>
                       <p>Posted on: ' . $posts[$i][2] . '.</p>

@@ -27,25 +27,25 @@ if (isset($_COOKIE["username"])) {
   <section id="header-container" class="header-container">
     <article class="header">
       <div class="header-container1">
-        <h1 tabindex="1" onclick="window.location.href = 'index.html'">
+        <h1 tabindex="2" onclick="window.location.href = 'index.html'">
           MOTORING COMMUNITY
         </h1>
       </div>
       <div class="header-container2">
-        <p tabindex="2" class="progress-bar" id="formulaone">
+        <a tabindex="2" class="progress-bar" id="formulaone">
           FORMULA ONE &nbsp;&nbsp;<img src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />
-        </p>
-        <p tabindex="7" onclick="window.location.href = 'data.php'" class="progress-bar">
+        </a>
+        <a href="data.php">
           HISTORIC DATA
-        </p>
-        <p tabindex="8" onclick="window.location.href = 'standings.php'">SEASON STANDINGS</p>
-        <p tabindex="9"onclick="window.location.href = 'forum.php'">FORUM</p>
+        </a>
+        <a href="standings.php">SEASON STANDINGS</a>
+        <a  href="forum.php">FORUM</a>
       </div>
       <div class="header-container3">
         <?php
         echo '<div class="user">
           <p>Welcome Back: ' . $username . '!</p>
-          <button tabindex="10" id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
+          <button id="logout" class="logOutBtn">Log Out<img src="Images/logout.svg" alt=""></button>
         </div>';
         ?>
       </div>
