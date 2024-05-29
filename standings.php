@@ -31,14 +31,14 @@
     </article>-->
     <!--SELECTOR DONDE EL USUARIO ELIGE QUE CLASIFICACION MOSTRAR-->
     <article class="standings-selector">
-      <div id="DriverStan">
-        <h1>Drivers Standings</h1>
-        <div id="barDriverStan" class="standings-selector-bar"></div>
-      </div>
-      <div id="ConstStan">
-        <h1>Constructors Standings</h1>
-        <div id="barConstStan" class="standings-selector-bar"></div>
-      </div>
+        <div id="DriverStan">
+            <h1 tabindex="0">Drivers Standings</h1>
+            <div id="barDriverStan" class="standings-selector-bar"></div>
+        </div>
+        <div id="ConstStan">
+            <h1 tabindex="0">Constructors Standings</h1>
+            <div id="barConstStan" class="standings-selector-bar"></div>
+        </div>
     </article>
     <article class="standings-teams-container">
       <article id="standings-teams-container" class="standings-driver-container">
@@ -62,7 +62,7 @@
           $apellido2 = substr($nombre_completo2, $primerEspacio2 + 1);
 
           //MOSTRAR LAS CARTAS DE LOS EQUIPOS
-          echo '<div id="standings-teams" class="standings-teams">
+          echo '<div tabindex="0" id="standings-teams" class="standings-teams">
             <div class="position">' . $clasificacionesEquipos[$i]['position'] . '<div class="bar" style="background-color:var(--' . $nombre_equipo . ')"></div></div>
             
             <div class="nameTeam">' . $clasificacionesEquipos[$i]['Constructor']['name'] . '</div>
@@ -136,7 +136,7 @@
             id="standings-driver-container"
             class="standings-driver-container"
           >';
-          echo '<div id="standings-driver" class="standings-driver">';
+          echo '<div tabindex="0" id="standings-driver" class="standings-driver">';
           echo '<div class="position">' . $clasificacionesPilotos[$i]['position'] . '<div class="bar" style="background-color:var(--' . $nombre_equipo . ')";></div></div>';
           echo '<div class="name">' . $clasificacionesPilotos[$i]['Driver']['givenName'] . " " . $clasificacionesPilotos[$i]['Driver']['familyName'] . '</div>';
           echo '<div class="team">' . $clasificacionesPilotos[$i]['Constructors'][0]['name'] . '<img src="Images/Teams/' . $nombre_equipo . '.png" alt="Team Logo"></div>';
