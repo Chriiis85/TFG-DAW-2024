@@ -44,12 +44,12 @@
             alt="Down Arrow" />About Formula One</h3>
       </div>
       <div class="header-drop-container-options2">
-        <p tabindex="4" onclick="window.location.href = 'drivers.php'"><img src="Images/down-arrow-svgrepo-com.svg"
-            alt="Down Arrow" />Season Drivers</p>
-        <p tabindex="5" onclick="window.location.href = 'teams.php'"><img src="Images/down-arrow-svgrepo-com.svg"
-            alt="Down Arrow" />Season Constructors</p>
-        <p tabindex="6" onclick="window.location.href = 'calendar.php'"><img src="Images/down-arrow-svgrepo-com.svg"
-            alt="Down Arrow" />Season Calendar</p>
+        <a tabindex="4" href="drivers.php"><img src="Images/down-arrow-svgrepo-com.svg"
+            alt="Down Arrow" />Season Drivers</a>
+        <a tabindex="5" href="teams.php"><img src="Images/down-arrow-svgrepo-com.svg"
+            alt="Down Arrow" />Season Constructors</a>
+        <a tabindex="6" href="calendar.php"><img src="Images/down-arrow-svgrepo-com.svg"
+            alt="Down Arrow" />Season Calendar</a>
       </div>
     </div>
 </body>
