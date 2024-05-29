@@ -119,7 +119,7 @@
         }
         //PINTAR LA PARTE FRONTAL DE LA CARTA SIN DIFERENCIAR QUE TIPO DE CARRERA ES
         echo '
-                <div id="race-container" class="race-container">
+                <div id="race-container" class="race-container" tabindex="0">
                   <div class="race-container-front">
                       <div class="race-container-round">
                           <h1>ROUND ' . ($i + 1) . '</h1>
