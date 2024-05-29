@@ -19,7 +19,7 @@
 
 <body>
   <!--CONTENIDO DEL FOOTER-->
-  <footer>
+  <footer id="footer">
     <section class="footer-top">
       <article class="footer-top-col1">
         <div>
@@ -27,16 +27,16 @@
         </div>
         <!--REDES SOCIALES CONTENEDOR-->
         <div class="social-buttons">
-          <a href="https://github.com/Chriiis85" class="social-button github">
-            <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19">
-              <path
+          <a href="https://github.com/Chriiis85" class="social-button github" aria-label="GitHub">
+            <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19" alt="GitHub">
+            <path
                 d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z">
-              </path>
-            </svg>
+              </path>            </svg>
           </a>
-          <a href="https://www.linkedin.com/in/christian-moreno-díaz-109024292/" class="social-button linkedin">
+          <a href="https://www.linkedin.com/in/christian-moreno-díaz-109024292/" class="social-button linkedin"
+            aria-label="LinkedIn">
             <svg viewBox="0 -2 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
+              xmlns:xlink="http://www.w3.org/1999/xlink" alt="LinkedIn">
               <g id="Icons" stroke="none" stroke-width="1">
                 <g transform="translate(-702.000000, -265.000000)">
                   <path
@@ -46,9 +46,9 @@
               </g>
             </svg>
           </a>
-          <a href="https://www.instagram.com/christiaan.85/" class="social-button instagram">
+          <a href="https://www.instagram.com/christiaan.85/" class="social-button instagram" aria-label="Instagram">
             <svg width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
+              xmlns:xlink="http://www.w3.org/1999/xlink" alt="Instagram">
               <g id="Page-1" stroke="none" stroke-width="1">
                 <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -7439.000000)">
                   <g id="icons" transform="translate(56.000000, 160.000000)">
@@ -67,22 +67,22 @@
       <article class="footer-top-col2">
         <h1>Menu</h1>
         <div class="footer-top-col2-bar"></div>
-        <p onclick="window.location.href = 'index.html'">Main Page</p>
-        <p onclick="window.location.href = 'aboutf1.php'">About Formula One</p>
-        <p onclick="window.location.href = 'forum.php'">Motoring Community Forum</p>
+        <a href="index.html">Main Page</a>
+        <a href="aboutf1.php">About Formula One</a>
+        <a href="forum.php">Motoring Community Forum</a>
       </article>
       <article class="footer-top-col2">
         <h1>Privacy Policy</h1>
         <div class="footer-top-col2-bar"></div>
-        <p id="privacy-policy">Privacy Policy</p>
-        <p id="data-usage">Data Usage</p>
-        <p id="cookies-usage">Cookies Usage</p>
+        <a href="#footer" id="privacy-policy">Privacy Policy</a>
+        <a href="#footer" id="data-usage">Data Usage</a>
+        <a href="#footer" id="cookies-usage">Cookies Usage</a>
       </article>
       <article class="footer-top-col2">
         <h1>Get Help</h1>
         <div class="footer-top-col2-bar"></div>
-        <p id="faq">F&Q</p>
-        <p onclick="window.location.href = 'aboutf1.php'">Learn More</p>
+        <a href="#footer" id="faq">F&Q</a>
+        <a href="aboutf1.php">Learn More</a>
       </article>
     </section>
     <section class="footer-bot">
@@ -249,6 +249,13 @@
         $(this).toggleClass("active");
         $(this).next(".accordion-content").slideToggle("fast");
       });
+
+      //CERRAR EL MODAL SI SE CLICA FUERA DE EL CONTENEDOR
+      $(".jquery-modal").on("click", function (event) {
+        if ($(event.target).hasClass("jquery-modal")) {
+          $.modal.close();
+        }
+      });
     });
 
     //MODAL DE COOKIES Y SUS FUNCIONALIDADES CON EFECTO FADE
@@ -258,25 +265,46 @@
         escapeClose: false,
         clickClose: false
       });
+
+      //CERRAR EL MODAL SI SE CLICA FUERA DE EL CONTENEDOR
+      $(".jquery-modal").on("click", function (event) {
+        if ($(event.target).hasClass("jquery-modal")) {
+          $.modal.close();
+        }
+      });
     });
 
     //MODAL DE POLITICAS DE PRIVACIDAD Y SUS FUNCIONALIDADES CON EFECTO FADE
     $("#privacy-policy").on("click", function () {
-      // Abre el modal al hacer clic
+      //MODAL DE COOKIES Y SUS FUNCIONALIDADES CON EFECTO FADE
       $("#privacy-modal").modal({
         fadeDuration: 300,
         escapeClose: false,
         clickClose: false
       });
+
+      //CERRAR EL MODAL SI SE CLICA FUERA DE EL CONTENEDOR
+      $(".jquery-modal").on("click", function (event) {
+        if ($(event.target).hasClass("jquery-modal")) {
+          $.modal.close();
+        }
+      });
     });
 
     //MODAL DE USO DE DATOS Y SUS FUNCIONALIDADES CON EFECTO FADE
     $("#data-usage").on("click", function () {
-      // Abre el modal al hacer clic
+      //ABRIR MODAL AL HACER CLICK
       $("#data-usage-modal").modal({
         fadeDuration: 300,
         escapeClose: false,
         clickClose: false
+      });
+
+      //CERRAR EL MODAL SI SE CLICA FUERA DE EL CONTENEDOR
+      $(".jquery-modal").on("click", function (event) {
+        if ($(event.target).hasClass("jquery-modal")) {
+          $.modal.close();
+        }
       });
     });
 

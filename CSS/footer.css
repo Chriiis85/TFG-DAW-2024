@@ -82,7 +82,14 @@ footer {
   margin-top: 10%;
 }
 
-.footer-top-col2 > p {
+footer a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1em;
+  opacity: 0.8;
+}
+
+.footer-top-col2 > a {
   margin: 0;
   margin-bottom: 3%;
   font-size: 1.2em;
@@ -91,7 +98,7 @@ footer {
   position: relative;
 }
 
-.footer-top-col2 > p::after {
+.footer-top-col2 > a::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -102,11 +109,11 @@ footer {
   transition: width 0.3s;
 }
 
-.footer-top-col2 > p:hover::after {
+.footer-top-col2 > a:hover::after {
   width: 100%;
 }
 
-.footer-top-col2 > p:hover {
+.footer-top-col2 > a:hover {
   cursor: pointer;
   color: rgba(255, 255, 255, 1.5);
   transform: translateX(10px);
@@ -197,6 +204,10 @@ footer {
 
 .instagram:hover svg {
   fill: #c13584;
+}
+
+.social-buttons a{
+  opacity: 1;
 }
 /*----------------------------------------------------------MODAL Y ACORDEON JQUERY-----------------------------------------------------------*/
 
