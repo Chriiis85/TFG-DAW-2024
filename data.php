@@ -23,39 +23,36 @@
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
     <img src="Images/UPARROW.svg" alt="Up Arrow" />
   </button>
-  <!--CONTENEDOR DONDE SE MUESTRA LA TABLA Y EL FILTRO-->
   <section class="data-container">
-    <article class="data">
-      <!--FILTROS PARA LA BUSQUEDA-->
-      <div class="data-select">
-        <div class="select">
-          <select id="select1"></select>
-        </div>
-        <div class="select">
-          <select id="select2">
-            <option value="Constructors">Constructors Standings</option>
-            <option value="Drivers">Drivers Standings</option>
-            <option value="Race">Race Result</option>
-          </select>
-        </div>
-        <div id="select3Group" class="select">
-          <select id="select3">
-          </select>
-        </div>
+  <article class="data">
+    <!--FILTROS PARA LA BUSQUEDA-->
+    <div class="data-select">
+      <div class="select">
+        <select id="select1" aria-label="Select Option 1"></select>
       </div>
-      <!--CONTENEDOR PARA LA TABLA DONDE SE MOSTRARÁ LA INFORMACIÓN-->
-      <div class="data-content">
-        <h1 id="title">2024 Driver Standings</h1>
-        <div class="data-table">
-          <table id="tabla" class="content-table">
-            <thead id="tabla-thead">
-            </thead>
-            <tbody id="tabla-tbody"></tbody>
-          </table>
-        </div>
+      <div class="select">
+        <select id="select2" aria-label="Select Option 2">
+          <option value="Constructors">Constructors Standings</option>
+          <option value="Drivers">Drivers Standings</option>
+          <option value="Race">Race Result</option>
+        </select>
       </div>
-    </article>
-  </section>
+      <div id="select3Group" class="select">
+        <select id="select3" aria-label="Select Option 3"></select>
+      </div>
+    </div>
+    <!--CONTENEDOR PARA LA TABLA DONDE SE MOSTRARÁ LA INFORMACIÓN-->
+    <div class="data-content">
+      <h1 id="title">2024 Driver Standings</h1>
+      <div class="data-table" aria-labelledby="title">
+        <table id="tabla" class="content-table">
+          <thead id="tabla-thead"></thead>
+          <tbody id="tabla-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </article>
+</section>
   <!--IMPLEMENTAR FOOTER IGUAL QUE EN TODAS LAS PAGINAS-->
   <?php
   include "footer.php"
