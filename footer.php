@@ -240,8 +240,8 @@
       // MODAL DE F&Q QUE SE ABRE AL CLICAR CON UN EFECTO FADE
       $("#faq-modal").modal({
         fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false
+        escapeClose: true,
+        clickClose: true
       });
 
       // CONFIGURACION DEL ACORDEON DENTRO DEL MODAL
@@ -262,8 +262,8 @@
     $("#cookies-usage").on("click", function () {
       $("#cookies-modal").modal({
         fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false
+        escapeClose: true,
+        clickClose: true
       });
 
       //CERRAR EL MODAL SI SE CLICA FUERA DE EL CONTENEDOR
@@ -279,8 +279,8 @@
       //MODAL DE COOKIES Y SUS FUNCIONALIDADES CON EFECTO FADE
       $("#privacy-modal").modal({
         fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false
+        escapeClose: true,
+        clickClose: true
       });
 
       //CERRAR EL MODAL SI SE CLICA FUERA DE EL CONTENEDOR
@@ -296,8 +296,8 @@
       //ABRIR MODAL AL HACER CLICK
       $("#data-usage-modal").modal({
         fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false
+        escapeClose: true,
+        clickClose: true
       });
 
       //CERRAR EL MODAL SI SE CLICA FUERA DE EL CONTENEDOR

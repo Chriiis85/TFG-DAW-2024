@@ -30,37 +30,41 @@ function jqueryModal() {
   $(document).ready(function () {
     $("#newPost").on("click", function () {
       //AL HACER CLIC SE ABRE UN MODAL DON UN EFECTO FADE Y CON UN ELEMENTO (X) PARA CERRARLO
+      //PARA MEJORAR LA ACCESIBILIDAD SE CIERRA TAMBIEN MEDIANTE LA TECLA ESC O CLICANDO FUERA DEL MISMO
       $("#new-post-modal").modal({
         fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false,
+        escapeClose: true,
+        clickClose: true
       });
     });
 
     $(".editPostBtn").on("click", function () {
       //AL HACER CLIC SE ABRE UN MODAL CON UN EFECTO FADE Y CON UN ELEMENTO (X) PARA CERRARLO
+      //PARA MEJORAR LA ACCESIBILIDAD SE CIERRA TAMBIEN MEDIANTE LA TECLA ESC O CLICANDO FUERA DEL MISMO
       $("#edit-post-modal").modal({
         fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false,
+        escapeClose: true,
+        clickClose: true
       });
     });
 
     $("#privacyTheme").on("click", function () {
       //AL HACER CLIC SE ABRE UN MODAL CON UN EFECTO FADE Y CON UN ELEMENTO (X) PARA CERRARLO
+      //PARA MEJORAR LA ACCESIBILIDAD SE CIERRA TAMBIEN MEDIANTE LA TECLA ESC O CLICANDO FUERA DEL MISMO
       $("#new-theme-privacy").modal({
         fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false,
+        escapeClose: true,
+        clickClose: true
       });
     });
 
     $("#privacyThemeEdit").on("click", function () {
       //AL HACER CLIC SE ABRE UN MODAL CON UN EFECTO FADE Y CON UN ELEMENTO (X) PARA CERRARLO
+      //PARA MEJORAR LA ACCESIBILIDAD SE CIERRA TAMBIEN MEDIANTE LA TECLA ESC O CLICANDO FUERA DEL MISMO
       $("#new-theme-privacy").modal({
         fadeDuration: 300,
-        escapeClose: false,
-        clickClose: false,
+        escapeClose: true,
+        clickClose: true
       });
     });
 
