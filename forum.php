@@ -84,7 +84,7 @@
           //RECORRER EL ARRAY MOSTRANDO LOS TEMAS EN EL CONTENEDOR
           for ($i = 0; $i < sizeof($themes); $i++) {
             echo '<div id="post-card-container" class="post-card-container">
-          <div tabindex="0" id="postCard' . $themes[$i][0] . '" onclick="window.location.href = \'forumPosts.php?id=' . $themes[$i][0] . '\'" class="post-card">
+          <div tabindex="0" id="postCard' . $themes[$i][0] . '" class="post-card">
             <div class="post-card-1">
               <h1>Posted by: ' . returnNombreUsu($themes[$i][3]) . '</h1>
               <p>Posted on: ' . $themes[$i][2] . '</p>

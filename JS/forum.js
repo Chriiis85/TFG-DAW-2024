@@ -25,7 +25,7 @@ function jqueryModal() {
       $("#new-theme-modal").modal({
         fadeDuration: 300,
         escapeClose: true,
-        clickClose: true
+        clickClose: true,
       });
     });
 
@@ -35,7 +35,7 @@ function jqueryModal() {
       $("#edit-theme-modal").modal({
         fadeDuration: 300,
         escapeClose: true,
-        clickClose: true
+        clickClose: true,
       });
     });
 
@@ -45,7 +45,7 @@ function jqueryModal() {
       $("#new-theme-privacy").modal({
         fadeDuration: 300,
         escapeClose: true,
-        clickClose: true
+        clickClose: true,
       });
     });
 
@@ -55,7 +55,7 @@ function jqueryModal() {
       $("#new-theme-privacy").modal({
         fadeDuration: 300,
         escapeClose: true,
-        clickClose: true
+        clickClose: true,
       });
     });
 
@@ -640,3 +640,29 @@ function searchTheme(letra) {
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("letra=" + letra);
 }
+//REDIRIGIR A LA PAGINA DE POSTS CADA TEMA PARA VER SUS RESPECTIVOS POSTS Y AÑADIRLE FUNCIONES DE ACCESIBILIDAD
+function redireccionPostsCards() {
+  //RECOGER TODAS LAS TARJETAS
+  let postsCardArr = document.querySelectorAll(".post-card");
+  for (const postCard of postsCardArr) {
+    //OBTENER EL ID DE LAS TARJETAS PARA REDIRIGIR
+    let id_themeString = postCard.id;
+    let id_theme = id_themeString.slice(-1);
+    //AÑADIR EVENTO PARA REDIRIGIR MEDIANTE CLICK
+    postCard.addEventListener("click", () => {
+      window.location.href = "forumPosts.php?id=" + id_theme;
+    });
+
+    //AÑADIR EVENTO PARA REDIRIGIR MEDIANTE LA TECLA ESPACIO
+    postCard.addEventListener("keydown", (event) => {
+      if (event.key === " " || event.key === "Spacebar") {
+        event.preventDefault();
+        window.location.href = "forumPosts.php?id=" + id_theme;
+      }
+    });
+
+    //LAS TARJETAS PODRÁN SER SELECCIONADAS MEDIANTE TAB
+    postCard.setAttribute("tabindex", "0");
+  }
+}
+redireccionPostsCards();
