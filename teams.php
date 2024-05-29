@@ -17,7 +17,7 @@
   include "header.php";
   ?>
   <!--BOTON QUE PERMITE VOLVER ARRIBA DE LA PAGINA EN CUALQUIER MOMENTO-->
-  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+  <button onclick="scrollToTop()" id="upBtn" class="up-button" aria-label="Scroll to top">
     <img src="Images/UPARROW.svg" alt="Up Arrow" />
   </button>
   <!--SECCION MAIN CON LAS CARTAS-->
@@ -32,7 +32,7 @@
       for ($i = 0; $i < sizeof($escuderias); $i++) {
         $nombre_equipo = str_replace(' ', '', $clasificacionesEquipos[$i]['Constructor']['name']);
 
-        echo '<div class="team-card-container" style="border:solid 5px var(--' . $nombre_equipo . ');box-shadow: 0 0 20px black, 0 0 1px black, 0 0 20px var(--' . $nombre_equipo . '), 0 0 20px var(--' . $nombre_equipo . '), 
+        echo '<div class="team-card-container" tabindex="0" style="border:solid 5px var(--' . $nombre_equipo . ');box-shadow: 0 0 20px black, 0 0 1px black, 0 0 20px var(--' . $nombre_equipo . '), 0 0 20px var(--' . $nombre_equipo . '), 
         0 0 20px var(--' . $nombre_equipo . '), 0 0 10px var(--' . $nombre_equipo . '); border-left: none; 
         "
         border-bottom: none;">
