@@ -49,6 +49,17 @@ async function mostrarNoticiasFormula1() {
         window.location.href = "" + noticia1.url + "";
       });
 
+    //PERMITIR LA REDIRECCION POR MEDIO DEL TECLADO TAMBIEN
+    document
+      .getElementById("latest-news-notice1")
+      .addEventListener("keypress", (event) => {
+        //VERIFICAR CUANDO SE TECLEA LA TECLA ESPACIO
+        if (event.which === 32 || event.keyCode === 32) {
+          event.preventDefault();
+          //REDIRIGIR
+          window.location.href = "" + noticia1.url + "";
+        }
+      });
     //RECOGER LOS ELEMENTOS DEL DOM Y PINTAR LOS DATOS DE LA API PARA LA NOTICIA 2
     document.getElementById("notice-title2").textContent = noticia2.title + ".";
     document.getElementById("notice-author2").textContent =
@@ -64,6 +75,18 @@ async function mostrarNoticiasFormula1() {
       .getElementById("latest-news-notice2")
       .addEventListener("click", () => {
         window.location.href = "" + noticia2.url + "";
+      });
+
+    //PERMITIR LA REDIRECCION POR MEDIO DEL TECLADO TAMBIEN
+    document
+      .getElementById("latest-news-notice2")
+      .addEventListener("keypress", (event) => {
+        //VERIFICAR CUANDO SE TECLEA LA TECLA ESPACIO
+        if (event.which === 32 || event.keyCode === 32) {
+          event.preventDefault();
+          //REDIRIGIR
+          window.location.href = "" + noticia2.url + "";
+        }
       });
 
     //RECOGER LOS ELEMENTOS DEL DOM Y PINTAR LOS DATOS DE LA API PARA LA NOTICIA 3
@@ -83,6 +106,18 @@ async function mostrarNoticiasFormula1() {
         window.location.href = "" + noticia3.url + "";
       });
 
+    //PERMITIR LA REDIRECCION POR MEDIO DEL TECLADO TAMBIEN
+    document
+      .getElementById("latest-news-notice3")
+      .addEventListener("keypress", (event) => {
+        //VERIFICAR CUANDO SE TECLEA LA TECLA ESPACIO
+        if (event.which === 32 || event.keyCode === 32) {
+          event.preventDefault();
+          //REDIRIGIR
+          window.location.href = "" + noticia3.url + "";
+        }
+      });
+
     //RECOGER LOS ELEMENTOS DEL DOM Y PINTAR LOS DATOS DE LA API PARA LA NOTICIA 4
     document.getElementById("notice-title4").textContent = noticia4.title + ".";
     document.getElementById("notice-author4").textContent =
@@ -100,6 +135,18 @@ async function mostrarNoticiasFormula1() {
         window.location.href = "" + noticia4.url + "";
       });
 
+    //PERMITIR LA REDIRECCION POR MEDIO DEL TECLADO TAMBIEN
+    document
+      .getElementById("latest-news-notice4")
+      .addEventListener("keypress", (event) => {
+        //VERIFICAR CUANDO SE TECLEA LA TECLA ESPACIO
+        if (event.which === 32 || event.keyCode === 32) {
+          event.preventDefault();
+          //REDIRIGIR
+          window.location.href = "" + noticia4.url + "";
+        }
+      });
+
     //ERROR EN EL CASO DE NO MOSTRAR NOTICIAS
   } catch (error) {
     console.error("Error al mostrar noticias:", error);
@@ -110,4 +157,4 @@ async function mostrarNoticiasFormula1() {
 mostrarNoticiasFormula1();
 
 // ACTUALIZAR LAS NOTICIAS CADA 5 MINUTOS(EJEMPLO) PARA OBTENER LAS ULTIMAS
-setInterval(mostrarNoticiasFormula1, 300000); // 300000 milisegundos = 5 minutos
+setInterval(mostrarNoticiasFormula1, 300000); // 300000 MS = 5 MINS
