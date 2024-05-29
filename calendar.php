@@ -19,7 +19,7 @@
   include "header.php";
   ?>
   <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
-  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+  <button onclick="scrollToTop()" id="upBtn" class="up-button" aria-label="Scroll to top">
     <img src="Images/UPARROW.svg" alt="Up Arrow" />
   </button>
   <!--SECCION PROXIMA CARRERA MUESTRA LA HORA Y UNA CUENTA ATRAS DE LA CARRERA CON EL NOMBRE, IMAGEN Y DESCRIPCION DEL CIRCUITO-->

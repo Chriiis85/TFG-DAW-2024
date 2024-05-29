@@ -22,9 +22,9 @@
   ?>
   <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
   <button onclick="scrollToTop()" id="upBtn" class="up-button">
-    <img src="Images/UPARROW.svg" alt="Up Arrow" />
+    <img src="Images/UPARROW.svg" alt="Up Arrow" aria-label="Scroll to top" />
   </button>
-  <section class="main">
+  <section class="main" aria-labelledby="main-title">
     <article class="card-driver-container">
       <?php
       /*BUCLE QUE EN SU ITERACION SE CREAN LAS TARJETAS Y SE MUESTRA LA INFORMACION DEL ARRAY*/
@@ -32,7 +32,7 @@
         $team = $clasificacionesPilotos[$i]["Constructors"][0]["name"];
         $team = str_replace(' ', '', $team);
         echo '
-      <div class="card-driver" style=" 
+      <div tabindex="0" class="card-driver" style=" 
           box-shadow: 0 0 2px black, 0 0 10px black, 0 0 20px var(--' . $team . '), 0 0 30px var(--' . $team . '), 
           0 0 40px var(--' . $team . '), 0 0 50px var(--' . $team . '); 
           background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\'https://media.formula1.com/content/dam/fom-website/manual/Helmets2024/' . $clasificacionesPilotos[$i]["Driver"]["familyName"] . '.png\');
@@ -85,58 +85,40 @@ function nacionalidadAPais($nacionalidad)
   switch ($nacionalidad) {
     case 'Dutch':
       return 'Netherlands';
-      break;
     case 'Mexican':
       return 'Mexico';
-      break;
     case 'Monegasque':
       return 'Monaco';
-      break;
     case 'Spanish':
       return 'Spain';
-      break;
     case 'British':
       return 'Great-Britain';
-      break;
     case 'Australian':
       return 'Australia';
-      break;
     case 'Canadian':
       return 'Canada';
-      break;
     case 'Japanese':
       return 'Japan';
-      break;
     case 'German':
       return 'Germany';
-      break;
     case 'Danish':
       return 'Denmark';
-      break;
     case 'Chinese':
       return 'China';
-      break;
     case 'French':
       return 'France';
-      break;
     case 'Finnish':
       return 'Finland';
-      break;
     case 'American':
       return 'United%20States';
-      break;
     case 'Thai':
       return 'Thailand';
-      break;
     case 'Italian':
       return 'Italy';
-      break;
     case 'Austrian':
       return 'Austria';
-      break;
     case 'Swiss':
       return 'Switzerland';
-      break;
   }
 }
 ?>
