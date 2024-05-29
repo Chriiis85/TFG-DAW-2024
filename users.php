@@ -41,7 +41,7 @@
           </button>
         </div>
         <p id="pwdError">Pwd must contain 1 Upcase, 1 LowCase, 1 Character and at least 8 Character/Numbers</p>
-        <p onclick="window.location.href = 'users.php'" id="loginFormChange">Have an account? Login here.</p>
+        <p tabindex="0" onclick="window.location.href = 'users.php'" id="loginFormChange">Have an account? Login here.</p>
         <button type="submit" id="register" class="buttons" role="button">Register</button>
         <button type="button" onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
           Go Home
@@ -70,7 +70,7 @@
             <!--<img src="Images/eye_see.svg" alt="">-->
           </button>
         </div>
-        <p id="registerFormChange">Don´t have an account? Register here.</p>
+        <p tabindex="0" id="registerFormChange">Don´t have an account? Register here.</p>
         <button type="submit" id="login" class="buttons" role="button">Login</button>
         <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
           Go Home

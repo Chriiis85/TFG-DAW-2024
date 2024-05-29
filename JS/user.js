@@ -35,28 +35,43 @@ function togglePasswordVisibility() {
 }
 
 /*FORMA PARA CAMBIAR ENTRE FORMULARIOS FORM DE LOGIN A REGISTRO*/
-let changeForm = document
+/*AÑADIR EVENTOS DE ESCUCHA TANTO PARA TECLADO COMO PARA RATON PARA NAVEGAR POR LA WEB*/
+document.getElementById("registerFormChange").addEventListener("click", () => {
+  changeFormRegister();
+});
+
+document
   .getElementById("registerFormChange")
-  .addEventListener("click", () => {
-    let formLogin = document.getElementById("formLogin");
-    formLogin.style.display = "none";
-
-    //CAMBIAR LAS IMAGENES Y EL CONTENEDOR PARA AJUSTARSE AL NUEVO
-    let image = document.getElementById("foto");
-    image.style.borderTopRightRadius = "11px";
-    image.style.borderBottomRightRadius = "11px";
-    image.style.borderTopLeftRadius = "0px";
-    image.style.borderBottomLeftRadius = "0px";
-    image.style.borderLeft = "0px";
-
-    //AGREGAR EL NUEVO SRC DE LA NUEVA IMAGEN
-    let img = document.getElementById("img");
-    img.setAttribute("src", "Images/Register-img.jpg");
-
-    //MOSTRAR EL CONTENEDOR AL CUAL VAMOS A CAMBIAR Y MOSTRAR
-    let formRegister = document.getElementById("formRegister");
-    formRegister.style.display = "flex";
+  .addEventListener("keypress", (event) => {
+    //COMRPOBAR QUE SE TECLEA LA TECLA ESPACIO
+    if (event.which === 32 || event.keyCode === 32) {
+      event.preventDefault();
+      //CAMBIAR DE FORMULARIO
+      changeFormRegister();
+    }
   });
+
+//FUNCIONALIDAD QUE CAMBIA DE FORMULARIOS MOSTRANDO UNO U OTRO
+function changeFormRegister() {
+  let formLogin = document.getElementById("formLogin");
+  formLogin.style.display = "none";
+
+  //CAMBIAR LAS IMAGENES Y EL CONTENEDOR PARA AJUSTARSE AL NUEVO
+  let image = document.getElementById("foto");
+  image.style.borderTopRightRadius = "11px";
+  image.style.borderBottomRightRadius = "11px";
+  image.style.borderTopLeftRadius = "0px";
+  image.style.borderBottomLeftRadius = "0px";
+  image.style.borderLeft = "0px";
+
+  //AGREGAR EL NUEVO SRC DE LA NUEVA IMAGEN
+  let img = document.getElementById("img");
+  img.setAttribute("src", "Images/Register-img.jpg");
+
+  //MOSTRAR EL CONTENEDOR AL CUAL VAMOS A CAMBIAR Y MOSTRAR
+  let formRegister = document.getElementById("formRegister");
+  formRegister.style.display = "flex";
+}
 
 /*FORMA PARA CAMBIAR ENTRE FORMULARIOS FORM DE LOGIN A CAMBIO PWD*/
 /*let changeForm1 = document
@@ -73,25 +88,44 @@ let changeForm = document
   });*/
 
 /*FORMA PARA CAMBIAR ENTRE FORMULARIOS FORM DE REGISTRO A LOGIN*/
-let changeForm2 = document
+/*AÑADIR EVENTOS DE ESCUCHA TANTO PARA TECLADO COMO PARA RATON PARA NAVEGAR POR LA WEB*/
+document
   .getElementById("loginFormChange")
-  .addEventListener("click", () => {
-    let formLogin = document.getElementById("formRegister");
-    formLogin.style.display = "none";
+  .addEventListener("click", changeFormLogin);
 
-    let image = document.getElementById("foto");
-    image.style.borderTopRightRadius = "0px";
-    image.style.borderBottomRightRadius = "0px";
-    image.style.borderTopLeftRadius = "11px";
-    image.style.borderBottomLeftRadius = "11px";
-    image.style.borderLeft = "0px";
-
-    let img = document.getElementById("img");
-    img.setAttribute("src", "Images/Login-img.jpg");
-
-    let formRegister = document.getElementById("formLogin");
-    formRegister.style.display = "flex";
+document
+  .getElementById("loginFormChange")
+  .addEventListener("keypress", function (event) {
+    //COMRPOBAR QUE SE TECLEA LA TECLA ESPACIO
+    if (event.which === 32 || event.keyCode === 32) {
+      event.preventDefault();
+      //CAMBIAR DE FORMULARIO
+      changeFormLogin();
+    }
   });
+
+/*FORMA PARA CAMBIAR ENTRE FORMULARIOS FORM DE LOGIN A REGISTRO*/
+/*AÑADIR EVENTOS DE ESCUCHA TANTO PARA TECLADO COMO PARA RATON PARA NAVEGAR POR LA WEB*/
+function changeFormLogin() {
+  let formLogin = document.getElementById("formRegister");
+  formLogin.style.display = "none";
+
+  //CAMBIAR IMAGENES Y ESTILO
+  let image = document.getElementById("foto");
+  image.style.borderTopRightRadius = "0px";
+  image.style.borderBottomRightRadius = "0px";
+  image.style.borderTopLeftRadius = "11px";
+  image.style.borderBottomLeftRadius = "11px";
+  image.style.borderLeft = "0px";
+
+  //CAMBIAR LA IMAGEN
+  let img = document.getElementById("img");
+  img.setAttribute("src", "Images/Login-img.jpg");
+
+    //MOSTRAR EL CONTENEDOR AL CUAL VAMOS A CAMBIAR Y MOSTRAR
+  let formRegister = document.getElementById("formLogin");
+  formRegister.style.display = "flex";
+}
 
 /*CONTROLAR QUE LA CONTRASEÑA SEA SEGURA Y CONTENGA CARACTERES QUE LA HAGAN FUERTE*/
 var pwdErrorP = document.getElementById("pwdError");
