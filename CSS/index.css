@@ -241,6 +241,8 @@ h1 {
 .main-devices > img {
   width: 600px;
   margin-top: 20%;
+  filter: brightness(0.85);
+
 }
 
 .main-group2 {
