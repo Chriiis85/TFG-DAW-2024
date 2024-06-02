@@ -98,6 +98,12 @@ body {
 .post-container:hover {
   opacity: 1;
   background-color: white;
+  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+
+}
+.post-container:focus {
+  cursor: pointer;
+  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
 }
 
 .post-container-1 {
@@ -201,6 +207,14 @@ body {
 .editPostBtn:hover{
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.editPostBtn:focus{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.deletePostBtn:focus{
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .posts-container-info>h1{

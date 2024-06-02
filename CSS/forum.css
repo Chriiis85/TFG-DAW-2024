@@ -158,6 +158,12 @@ header {
   box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
 }
 
+.post-card:focus {
+  cursor: pointer;
+  /*transform: scale(0.98);*/
+  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+}
+
 .post-card-1 {
   width: 25%;
   height: 100%;
@@ -292,6 +298,14 @@ header {
 .editThemeBtn:hover{
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.editThemeBtn:focus{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.deleteThemeBtn:focus{
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .post-card-views {

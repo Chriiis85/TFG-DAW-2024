@@ -64,6 +64,11 @@ h1 {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+.up-button:focus {
+  cursor: pointer;
+  border: 5px solid white;
+}
 /*---------------------------------------------------------MAIN PAGE--------------------------------------------------------------------------*/
 .main {
   width: 100%;
@@ -814,6 +819,12 @@ span {
   overflow: hidden;
 }
 
+.latest-news-notice1:focus {
+  cursor: pointer;
+  transform: scale(0.97);
+  overflow: hidden;
+}
+
 .latest-news-notice2 {
   width: 50%;
   height: 600px;
@@ -846,6 +857,12 @@ span {
 }
 
 .latest-news-notice3:hover {
+  cursor: pointer;
+  transform: scale(0.97);
+  overflow: hidden;
+}
+
+.latest-news-notice3:focus {
   cursor: pointer;
   transform: scale(0.97);
   overflow: hidden;
@@ -905,6 +922,12 @@ span {
   overflow: hidden;
 }
 
+.latest-news-notice5:focus {
+  cursor: pointer;
+  transform: scale(0.97);
+  overflow: hidden;
+}
+
 .latest-news-notice6 {
   width: 47%;
   height: 100%;
@@ -928,6 +951,11 @@ span {
 }
 
 .latest-news-notice6:hover {
+  cursor: pointer;
+  transform: scale(0.97);
+}
+
+.latest-news-notice6:focus {
   cursor: pointer;
   transform: scale(0.97);
 }

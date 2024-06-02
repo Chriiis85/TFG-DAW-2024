@@ -313,16 +313,17 @@ span {
   position: relative;
 }
 
-.race-container:hover{
+.race-container:hover {
   cursor: pointer;
-  box-shadow: rgb(255, 0, 0) 0px 2px 4px,
-  rgb(255, 0, 0) 0px 7px 13px -3px, rgb(255, 0, 0) 0px -3px 0px inset;}
+  box-shadow: rgb(255, 0, 0) 0px 2px 4px, rgb(255, 0, 0) 0px 7px 13px -3px,
+    rgb(255, 0, 0) 0px -3px 0px inset;
+}
 
-  .race-container:focus{
-    cursor: pointer;
-    box-shadow: rgb(255, 0, 0) 0px 2px 4px,
-    rgb(255, 0, 0) 0px 7px 13px -3px, rgb(255, 0, 0) 0px -3px 0px inset;}
-
+.race-container:focus {
+  cursor: pointer;
+  box-shadow: rgb(255, 0, 0) 0px 2px 4px, rgb(255, 0, 0) 0px 7px 13px -3px,
+    rgb(255, 0, 0) 0px -3px 0px inset;
+}
 
 .race-container-front {
   width: 95%;
@@ -490,7 +491,6 @@ span {
 .race-container-img > img {
   width: 50%;
 }
-
 
 .next-race-title {
   margin-bottom: 10px;

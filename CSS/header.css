@@ -326,6 +326,11 @@ h1 {
   opacity: 1;
 }
 
+#upBtn:focus {
+  cursor: pointer;
+  border: 5px solid white;
+}
+
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 @media (max-width: 1500px) {
   .title-header-container {
