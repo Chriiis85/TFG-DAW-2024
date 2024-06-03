@@ -110,7 +110,8 @@ h1 {
 
 .header-container3 {
   height: 100%;
-  padding-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   color: white;
   display: flex;
   align-items: center;
