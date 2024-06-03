@@ -41,9 +41,9 @@
           </button>
         </div>
         <p id="pwdError">Pwd must contain 1 Upcase, 1 LowCase, 1 Character and at least 8 Character/Numbers</p>
-        <p tabindex="0" onclick="window.location.href = 'users.php'" id="loginFormChange">Have an account? Login here.</p>
+        <p tabindex="0" title="Go to Register Page" onclick="window.location.href = 'users.php'" id="loginFormChange">Have an account? Login here.</p>
         <button type="submit" id="register" class="buttons" role="button">Register</button>
-        <button type="button" onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
+        <button type="button" title="Go to Main Page" onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
           Go Home
         </button>
       </form>
@@ -72,7 +72,7 @@
         </div>
         <p tabindex="0" id="registerFormChange">Don´t have an account? Register here.</p>
         <button type="submit" id="login" class="buttons" role="button">Login</button>
-        <button onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
+        <button title="Go to Main Page" onclick="window.location.href = 'index.html'" id="home" class="buttons" role="button">
           Go Home
         </button>
         <!--<p id="pwdFormChange">Forgot your password? Reset here.</p>-->
@@ -103,7 +103,7 @@
         </button>
       </div>
       <button id="confirmPwd" class="buttons" role="button">Confirm</button>
-      <button onclick="window.location.href = 'users.php'" id="home" class="buttons" role="button">
+      <button title="Go to Users Page" onclick="window.location.href = 'users.php'" id="home" class="buttons" role="button">
         Go Back
       </button>
     </article>

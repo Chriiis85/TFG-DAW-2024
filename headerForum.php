@@ -35,11 +35,11 @@ if (isset($_COOKIE["username"])) {
         <a tabindex="2" class="progress-bar" id="formulaone">
           FORMULA ONE &nbsp;&nbsp;<img src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />
         </a>
-        <a href="standings.php">SEASON STANDINGS</a>
-        <a href="data.php">
+        <a title="Go to Standings Page" href="standings.php">SEASON STANDINGS</a>
+        <a title="Go to Data Page" href="data.php">
           HISTORIC DATA
         </a>
-        <a  href="forum.php">FORUM</a>
+        <a title="Go to Forum Page" href="forum.php">FORUM</a>
       </div>
       <div class="header-container3">
         <?php
@@ -61,11 +61,11 @@ if (isset($_COOKIE["username"])) {
             alt="Down Arrow" />About Formula One</h3>
       </div>
       <div class="header-drop-container-options2">
-        <a tabindex="4" href="drivers.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a tabindex="4" title="Go to DriversPage" href="drivers.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Drivers</a>
-        <a tabindex="5" href="teams.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a tabindex="5" title="Go to Teams Page" href="teams.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Constructors</a>
-        <a tabindex="6" href="calendar.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a tabindex="6" title="Go to Calendar Page" href="calendar.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Calendar</a>
       </div>
     </div>

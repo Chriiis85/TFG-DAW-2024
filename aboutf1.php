@@ -70,7 +70,7 @@
       <br />
       <div class="about-teams-container1">
         <div class="about-teams1">
-          <button class="about-button" onclick="window.location.href = 'teams.php'" class="teams-button" aria-label="Meet the Teams">
+          <button class="about-button" title="Go to Teams Page" onclick="window.location.href = 'teams.php'" class="teams-button" aria-label="Meet the Teams">
             Meet the Teams
           </button>
         </div>
@@ -99,7 +99,7 @@
       </p>
       <div class="about-teams-container2">
         <div class="about-teams2">
-          <button class="about-button" onclick="window.location.href = 'drivers.php'" class="drivers-button" aria-label="Meet the Drivers">
+          <button class="about-button" title="Go to Drivers Page" onclick="window.location.href = 'drivers.php'" class="drivers-button" aria-label="Meet the Drivers">
             Meet the Drivers
           </button>
         </div>
@@ -131,7 +131,7 @@
       </p>
       <div class="about-teams-container3">
         <div class="about-teams3">
-          <button class="about-button" onclick="window.location.href = 'calendar.php'" class="drivers-button" aria-label="Meet the Calendar">
+          <button class="about-button" title="Go to Calendar Page" onclick="window.location.href = 'calendar.php'" class="drivers-button" aria-label="Meet the Calendar">
             Meet the Calendar
           </button>
         </div>

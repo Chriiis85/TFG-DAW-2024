@@ -26,22 +26,22 @@
         <a tabindex="2" class="progress-bar" id="formulaone">
           FORMULA ONE &nbsp;&nbsp;<img src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />
         </a>
-        <a href="standings.php">SEASON STANDINGS</a>
-        <a href="data.php">
+        <a title="Go to Standings Page" href="standings.php">SEASON STANDINGS</a>
+        <a title="Go to Data Page" href="data.php">
           HISTORIC DATA
         </a>
-        <a  href="forum.php">FORUM</a>
+        <a  title="Go to Forum Page" href="forum.php">FORUM</a>
       </div>
       <div class="header-container3">
         <h1>Social Media: </h1>
         <div class="social-buttonsHeader">
-          <a target="_blank" href="https://github.com/Chriiis85" class="social-buttonHeader github" aria-label="GitHub">
+          <a target="_blank" title="Go to Chris Github Page" href="https://github.com/Chriiis85" class="social-buttonHeader github" aria-label="GitHub">
             <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19" alt="GitHub">
             <path
                 d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z">
               </path>            </svg>
           </a>
-          <a target="_blank" href="https://www.linkedin.com/in/christian-moreno-díaz-109024292/" class="social-buttonHeader linkedin"
+          <a target="_blank" title="Go to Chris LinkedIn Page" href="https://www.linkedin.com/in/christian-moreno-díaz-109024292/" class="social-buttonHeader linkedin"
             aria-label="LinkedIn">
             <svg viewBox="0 -2 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" alt="LinkedIn">
@@ -54,7 +54,7 @@
               </g>
             </svg>
           </a>
-          <a target="_blank" href="https://www.instagram.com/christiaan.85/" class="social-buttonHeader instagram" aria-label="Instagram">
+          <a target="_blank" title="Go to Chris Instagram Page" href="https://www.instagram.com/christiaan.85/" class="social-buttonHeader instagram" aria-label="Instagram">
             <svg width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" alt="Instagram">
               <g id="Page-1" stroke="none" stroke-width="1">
@@ -82,11 +82,11 @@
             alt="Down Arrow" />About Formula One</h3>
       </div>
       <div class="header-drop-container-options2">
-        <a tabindex="4" href="drivers.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a title="Go to Drivers Page" tabindex="4" href="drivers.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Drivers</a>
-        <a tabindex="5" href="teams.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a title="Go to Teams Page" tabindex="5" href="teams.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Constructors</a>
-        <a tabindex="6" href="calendar.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a title="Go to Calendar Page" tabindex="6" href="calendar.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Calendar</a>
       </div>
     </div>

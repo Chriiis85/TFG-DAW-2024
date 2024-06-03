@@ -96,7 +96,7 @@
               <div>
                 <p>Wins: ' . $clasificacionesEquipos[$i]['wins'] . '.</p>
                 <p>Total Points: ' . $clasificacionesEquipos[$i]['points'] . ' PTS.</p>
-                <a href="' . $clasificacionesEquipos[$i]['Constructor']['url'] . '">Access to the biography.</a>
+                <a title="Go to ' . $clasificacionesEquipos[$i]['Constructor']['name'] . ' Biography Page" href="' . $clasificacionesEquipos[$i]['Constructor']['url'] . '">Access to the biography.</a>
               </div>
               <div>
                 <p>Nationality: ' . $clasificacionesEquipos[$i]['Constructor']['nationality'] . '.</p>
@@ -177,7 +177,7 @@
           echo '<p>Wins: ' . $clasificacionesPilotos[$i]['wins'] . '</p>';
           echo '<p>Total Points: ' . $clasificacionesPilotos[$i]['points'] . ' PTS.</p>';
           echo '<p>Constructor: ' . $clasificacionesPilotos[$i]['Constructors'][0]['name'] . '</p>';
-          echo '<a href="' . $clasificacionesPilotos[$i]['Driver']['url'] . '">Access to the biography</a>';
+          echo '<a title="Go to Biography'. $clasificacionesPilotos[$i]['Driver']['givenName'] .' Page" href="' . $clasificacionesPilotos[$i]['Driver']['url'] . '">Access to the biography</a>';
           echo '</div>';
           echo '<div>';
           echo '<p>Nationality: ' . $clasificacionesPilotos[$i]['Driver']['nationality'] . '.</p>';
