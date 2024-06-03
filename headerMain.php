@@ -17,7 +17,7 @@
   <!--CONTENEDOR DEL HEADER-->
   <article class="header">
       <div class="header-container1">
-        <h1 tabindex="1" onclick="window.location.href = 'index.html'">
+        <h1 tabindex="1" title="Go to Main Page" onclick="window.location.href = 'index.html'">
           MOTORING COMMUNITY
         </h1>
       </div>
@@ -79,7 +79,7 @@
         </h1>
       </div>
       <div class="header-drop-container-options">
-        <h3 tabindex="3" onclick="window.location.href = 'aboutf1.php'"><img src="Images/down-arrow-svgrepo-com.svg"
+        <h3 tabindex="3" title="Go to About F1 Page" onclick="window.location.href = 'aboutf1.php'"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />About Formula One</h3>
       </div>
       <div class="header-drop-container-options2">
