@@ -204,21 +204,21 @@ footer a {
   fill: #c13584;
 }
 
-.social-buttons a{
+.social-buttons a {
   opacity: 1;
 }
 /*----------------------------------------------------------MODAL Y ACORDEON JQUERY-----------------------------------------------------------*/
 
 #faq-modal {
-  width: 80%; 
-  height: 80%; 
-  max-width: 800px; 
-  max-height: 600px; 
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 600px;
   overflow: auto;
   overflow-x: hidden;
 }
 
-.modal{
+.modal {
   font-family: "Open Sans", sans-serif;
   text-align: justify;
 }
@@ -304,7 +304,7 @@ footer a {
 
 @media (max-width: 600px) {
   footer {
-    height: 90%;
+    height: 900px;
   }
   .footer-top-col2-bar {
     width: 50%;

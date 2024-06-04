@@ -118,13 +118,12 @@ body {
   margin-top: 20px;
 }
 
-
 .main-info-Register > p:hover {
   cursor: pointer;
   text-decoration: 2px solid #00b9ff underline;
 }
 
-.main-info-Pwd{
+.main-info-Pwd {
   width: 60%;
   height: 100%;
   margin-bottom: 3%;
@@ -148,7 +147,6 @@ body {
   cursor: pointer;
   text-decoration: 2px solid #00b9ff underline;
 }
-
 
 .main-info-Register > #titRegister {
   font-size: 2em;
@@ -216,7 +214,7 @@ body {
   color: #333;
 }
 /* Estilo para mostrar los errores */
-#pwdError{
+#pwdError {
   display: none;
   margin: 0;
   margin-top: -25px;
@@ -225,7 +223,7 @@ body {
   color: red;
   width: 120%;
 }
-#pwdError:hover{
+#pwdError:hover {
   text-decoration: none;
   cursor: default;
 }
@@ -286,11 +284,11 @@ body {
   text-align: center;
 }
 
-#home{
+#home {
   margin-bottom: 20px;
 }
 
-#tit-register{
+#tit-register {
   font-size: 2em;
 }
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
@@ -301,7 +299,7 @@ body {
 }
 
 @media (max-width: 1300px) {
-  #tit-register{
+  #tit-register {
     font-size: 1.65em;
     margin-bottom: -20px;
   }
@@ -355,7 +353,7 @@ body {
   .main-info-Register {
     width: 100%;
   }
-  #tit-register{
+  #tit-register {
     margin-bottom: 0px;
   }
 }
@@ -367,5 +365,11 @@ body {
 
   #home {
     margin-bottom: 10%;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-info-Login > h1 {
+    font-size: 1.75em;
   }
 }

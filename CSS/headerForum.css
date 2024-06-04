@@ -32,7 +32,7 @@ body {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;*/
 }
-.header a{
+.header a {
   text-decoration: none;
   color: white;
 }
@@ -204,7 +204,7 @@ body {
   transform: rotate(270deg);
 }
 
-.header-drop-container a{
+.header-drop-container a {
   text-decoration: none;
   color: white;
 }
@@ -251,7 +251,7 @@ body {
   transform: scale(1.05);
 }
 
-.logOutBtn:focus{
+.logOutBtn:focus {
   background: rgb(204, 204, 204);
   border: 3px solid black;
 }
@@ -263,7 +263,7 @@ body {
   align-items: center;
   text-align: center;
   justify-content: center;
- /* background-image: url(https://www.f1-fansite.com/wp-content/uploads/2023/06/SI202306040579.jpg);*/
+  /* background-image: url(https://www.f1-fansite.com/wp-content/uploads/2023/06/SI202306040579.jpg);*/
   background-size: cover;
 }
 
@@ -301,19 +301,19 @@ body {
 }
 
 @media (max-width: 1300px) {
-  .user{
+  .user {
     width: 100%;
     align-items: center;
     justify-content: space-around;
   }
-  .user >p{
+  .user > p {
     font-size: 1.25em;
   }
-  .logOutBtn{
+  .logOutBtn {
     width: 120px;
     font-size: 1em;
   }
-  .logOutBtn>img{
+  .logOutBtn > img {
     width: 20px;
   }
 }
@@ -324,10 +324,10 @@ body {
     flex-direction: column;
     height: 30%;
   }
-  .header-container{
+  .header-container {
     height: 30%;
   }
-  .header-drop-container{
+  .header-drop-container {
     top: 30%;
   }
 
@@ -344,22 +344,25 @@ body {
     border-left: none;
   }
 
-  .header-container3{
+  .header-container3 {
     border-top: 2px solid #00b9ff;
     width: 100%;
     height: 30%;
-    display: flex;    align-items: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
 
-  .user >p{
+  .user > p {
     font-size: 1.5em;
   }
-  .logOutBtn{
+  .logOutBtn {
     width: 150px;
+    height: 20px;
+    padding: 20px;
     font-size: 1em;
   }
-  .logOutBtn>img{
+  .logOutBtn > img {
     width: 20px;
   }
 }
@@ -403,12 +406,11 @@ body {
   }
 }
 
-
 @media (max-width: 850px) {
   .title-header-container {
     font-size: 3em;
   }
-  .header-container3{
+  .header-container3 {
     width: 100%;
   }
 }
@@ -417,7 +419,7 @@ body {
   .title-header-container {
     font-size: 2em;
   }
-  .user{
+  .user {
     width: 100%;
   }
 }
@@ -455,20 +457,20 @@ body {
   .header-drop-container-options > h3 {
     font-size: 1em;
   }
-  .user{
+  .user {
     width: 100%;
     align-items: center;
     justify-content: space-around;
   }
-  .user >p{
+  .user > p {
     font-size: 1em;
   }
-  .logOutBtn{
+  .logOutBtn {
     width: 120px;
     height: 30px;
     font-size: 0.75em;
   }
-  .logOutBtn>img{
+  .logOutBtn > img {
     width: 15px;
   }
 }

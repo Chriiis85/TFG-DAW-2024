@@ -46,8 +46,9 @@ body {
   justify-content: center;
   flex-direction: row;
   background-color: white;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
+  margin-right: 15px;
 }
 .main-bar-filter {
   width: 25%;
@@ -81,6 +82,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-right: 15px;
 }
 
 .post-container {
@@ -99,7 +101,6 @@ body {
   opacity: 1;
   background-color: white;
   box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
-
 }
 .post-container:focus {
   cursor: pointer;
@@ -117,14 +118,14 @@ body {
   border-right: 1px solid gray;
 }
 
-.post-container-1 >p{
+.post-container-1 > p {
   font-weight: bold;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
 }
 
-.post-container-1 >h1{
+.post-container-1 > h1 {
   font-weight: bold;
   padding-left: 20px;
   padding-right: 20px;
@@ -139,7 +140,7 @@ body {
   justify-content: center;
 }
 
-.post-container-2 > p{
+.post-container-2 > p {
   padding: 5%;
   margin: 0;
 }
@@ -152,7 +153,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .posts-container-info {
@@ -163,6 +163,7 @@ body {
   flex-direction: row;
   text-align: center;
   color: white;
+  margin-right: 15px;
 }
 
 .post-card-6-edit {
@@ -175,7 +176,7 @@ body {
   border-top: 1px solid gray;
 }
 
-.editPostBtn{
+.editPostBtn {
   width: 40%;
   height: 10%;
   margin: 3%;
@@ -187,7 +188,7 @@ body {
   transition: 0.5s;
 }
 
-.deletePostBtn{
+.deletePostBtn {
   width: 40%;
   height: 10%;
   margin: 3%;
@@ -199,25 +200,25 @@ body {
   transition: 0.5s;
 }
 
-.deletePostBtn:hover{
+.deletePostBtn:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.editPostBtn:hover{
+.editPostBtn:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.editPostBtn:focus{
+.editPostBtn:focus {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.deletePostBtn:focus{
+.deletePostBtn:focus {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.posts-container-info>h1{
+.posts-container-info > h1 {
   font-size: 1.5em;
 }
 /*---------------------------------------------------------SEARCH INPUT----------------------------------------------------------------------*/
@@ -514,7 +515,7 @@ select {
   margin: 0;
 }
 
-.checkbox-wrapper-46{
+.checkbox-wrapper-46 {
   padding-top: 5%;
 }
 
@@ -626,7 +627,7 @@ select {
 }
 
 @media (max-width: 1000px) {
-  .posts-container-info>h1{
+  .posts-container-info > h1 {
     font-size: 1.25em;
     margin-left: 2%;
     margin-right: 2%;
@@ -656,30 +657,30 @@ select {
     padding: 0;
     margin-bottom: -5%;
   }
-  .posts-container-info>h1{
+  .posts-container-info > h1 {
     font-size: 1.25em;
   }
-  .editPostBtn>img{
+  .editPostBtn > img {
     width: 20px;
   }
-  .deletePostBtn>img{
+  .deletePostBtn > img {
     width: 20px;
   }
 
-  .post-container-1 >p{
+  .post-container-1 > p {
     font-size: 0.9em;
   }
-  
-  .post-container-1 >h1{
+
+  .post-container-1 > h1 {
     font-size: 0.9em;
   }
 }
 
 @media (max-width: 500px) {
-.editPostBtn>img{
-  width: 15px;
-}
-.deletePostBtn>img{
-  width: 15px;
-}
+  .editPostBtn > img {
+    width: 15px;
+  }
+  .deletePostBtn > img {
+    width: 15px;
+  }
 }

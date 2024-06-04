@@ -6,7 +6,7 @@ body {
   height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  font-family: "Open Sans", sans-serif;  
+  font-family: "Open Sans", sans-serif;
 }
 
 header {
@@ -57,8 +57,9 @@ header {
   justify-content: center;
   flex-direction: row;
   background-color: white;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 10px;
+  margin-right: 15px;
 }
 .main-bar-filter {
   width: 30%;
@@ -92,6 +93,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-right: 15px;
 }
 
 .img-noresult {
@@ -105,8 +107,9 @@ header {
 .img-noresult > img {
   width: 50%;
 }
-.posts-container-info{
+.posts-container-info {
   color: white;
+  margin-right: 15px;
 }
 
 .posts-container {
@@ -117,7 +120,6 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .posts-container-info {
@@ -147,7 +149,7 @@ header {
   flex-direction: row;
   transition: 0.3s;
   border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background-color: white;
   border: 1px solid gray;
 }
@@ -268,7 +270,7 @@ header {
   border-top: 1px solid gray;
 }
 
-.editThemeBtn{
+.editThemeBtn {
   width: 40%;
   height: 70%;
   border-radius: 10px;
@@ -279,7 +281,7 @@ header {
   transition: 0.5s;
 }
 
-.deleteThemeBtn{
+.deleteThemeBtn {
   width: 40%;
   height: 70%;
   border-radius: 10px;
@@ -290,21 +292,21 @@ header {
   transition: 0.5s;
 }
 
-.deleteThemeBtn:hover{
+.deleteThemeBtn:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.editThemeBtn:hover{
+.editThemeBtn:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.editThemeBtn:focus{
+.editThemeBtn:focus {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.deleteThemeBtn:focus{
+.deleteThemeBtn:focus {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -565,7 +567,7 @@ select {
   color: #282828;
   display: block;
   box-sizing: border-box;
-  user-select: auto;
+  /*user-select: auto;*/
   font-size: 16px;
   padding: 0 6px;
   padding-left: 12px;
@@ -766,38 +768,37 @@ select {
   .main-bar-filter {
     width: 30%;
   }
-  .header-container>h1{
+  .header-container > h1 {
     font-size: 1.75em;
   }
 }
 
 @media (max-width: 1200px) {
-  .modal{
+  .modal {
     z-index: 99;
   }
 }
 
 @media (max-width: 900px) {
-.themes-btnCont{
-  flex-direction: column;
-  gap: 10%;
-  width: 100%;
-}
-#CloseThemeBtn{
-  width: 70%;
-}
-#addThemeBtn{
-  width: 70%;
-}
-  
-#edit-theme-modal {
-  width: 90%; 
-}
+  .themes-btnCont {
+    flex-direction: column;
+    gap: 10%;
+    width: 100%;
+  }
+  #CloseThemeBtn {
+    width: 70%;
+  }
+  #addThemeBtn {
+    width: 70%;
+  }
 
+  #edit-theme-modal {
+    width: 90%;
+  }
 
-.inputContainer{
-  width: 100%;
-}
+  .inputContainer {
+    width: 100%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -823,28 +824,28 @@ select {
     padding: 0;
     margin-bottom: -5%;
   }
-  .posts-container-info>h1{
+  .posts-container-info > h1 {
     font-size: 1.25em;
   }
-  .editThemeBtn>img{
+  .editThemeBtn > img {
     width: 20px;
   }
-  .deleteThemeBtn>img{
+  .deleteThemeBtn > img {
     width: 20px;
   }
-  .post-card-msg>img{
+  .post-card-msg > img {
     width: 20px;
   }
-  .header-container>h1{
+  .header-container > h1 {
     font-size: 1.25em;
   }
 
   #new-theme-modal {
-    width: 95%; 
+    width: 95%;
   }
-  
+
   #edit-theme-modal {
-    width: 95%; 
+    width: 95%;
   }
 }
 
@@ -855,39 +856,39 @@ select {
 }
 
 @media (max-width: 600px) {
-  .inputContainer{
+  .inputContainer {
     flex-direction: column;
     justify-content: center;
-    gap:5%;
+    gap: 5%;
     height: 200px;
     width: 90%;
   }
-  .inputContainer> .inputText{
+  .inputContainer > .inputText {
     height: 50px;
     width: 200px;
   }
-  #CloseThemeBtn{
+  #CloseThemeBtn {
     width: 90%;
   }
-  #addThemeBtn{
+  #addThemeBtn {
     width: 90%;
   }
-  #CloseThemeBtn{
+  #CloseThemeBtn {
     width: 90%;
   }
-  #addThemeBtn{
+  #addThemeBtn {
     width: 90%;
   }
-  .themeFormContainer{
+  .themeFormContainer {
     height: 400px;
   }
 }
 
 @media (max-width: 500px) {
-.editThemeBtn>img{
-  width: 15px;
-}
-.deleteThemeBtn>img{
-  width: 15px;
-}
+  .editThemeBtn > img {
+    width: 15px;
+  }
+  .deleteThemeBtn > img {
+    width: 15px;
+  }
 }
