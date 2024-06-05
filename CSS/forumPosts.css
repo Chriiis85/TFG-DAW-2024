@@ -269,10 +269,8 @@ input:hover {
   position: relative;
 }
 select {
-  appearance: none;
-  /*  safari  */
   -webkit-appearance: none;
-  /*  other styles for aesthetics */
+  appearance: none;
   width: 100%;
   font-size: 1.15rem;
   padding: 0.675em 2em 0.675em 1em;
@@ -329,8 +327,8 @@ select {
   position: relative;
   text-align: center;
   text-transform: none;
-  user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   touch-action: manipulation;
   width: 60%;
 }
@@ -407,7 +405,7 @@ select {
   color: #282828;
   display: block;
   box-sizing: border-box;
-  user-select: auto;
+  /*user-select: auto;*/
   font-size: 16px;
   padding: 0 6px;
   padding-left: 12px;
