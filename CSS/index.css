@@ -1057,7 +1057,13 @@ span {
 /*---------------------------------------------------------------RESPONSIVE-------------------------------------------------------------------*/
 @media (max-width: 1700px) {
   .main-title {
-    font-size: 4.5em;
+    font-size: 3.5em;
+  }
+  .main-devices > img {
+    width: 80%;
+  }
+  .main-group2 > h2 {
+    font-size: 2em;
   }
 }
 
@@ -1126,12 +1132,6 @@ span {
   }
 }
 
-@media (max-height: 800px) {
-  .main-devices > img {
-    width: 10%;
-  }
-}
-
 @media (max-width: 1025px) {
   .slider {
     margin-top: -10%;
@@ -1182,11 +1182,11 @@ span {
     align-items: center;
     justify-content: center;
     height: 300px;
-    padding-top: -10%;
+    margin-top: -30px;
   }
   .main-devices > img {
     margin: 0;
-    width: 60%;
+    width: 50%;
   }
   .main-group2 {
     display: flex;
@@ -1299,7 +1299,7 @@ span {
   }
   .main-devices > img {
     margin: 0;
-    width: 80%;
+    width: 70%;
   }
   .main-group2 {
     height: 100px;
