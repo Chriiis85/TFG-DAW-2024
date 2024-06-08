@@ -231,10 +231,11 @@ header {
 
 .post-card-5 > p {
   width: 90%;
-  height: 80%;
+  min-height: 10%;
+  max-height: 80%;
   /*padding: 5%;*/
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: justify;
   overflow: hidden;
