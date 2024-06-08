@@ -194,8 +194,34 @@ function editBtn() {
   for (const btnEdit of editBtn) {
     btnEdit.addEventListener("click", () => {
       event.stopPropagation();
+
+      //RECOGER EL ID DEL TEMA DEL BOTON QUE AL CLICAR SE RECOGE PARA SABER QUE TEMA SE VA A EDITAR
       let id_theme = btnEdit.id;
       id_theme = id_theme.split("-")[1];
+
+      //PETICION AJAX PARA DEVOLVER EL TITULO DEL TEMA QUE SE VA EDITAR
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            let themes = JSON.parse(this.responseText);
+            if (themes.length > 0) {
+              //MOSTRAR EL TIRULO DEL TEMA QUE SE VA A EDITAR
+              let input = document.getElementById("New_Theme_Name");
+              input.value = themes[0].titulo_tema;
+            } else {
+              console.error('No themes found.');
+            }
+          //MANEJO DE ERRORES SI EXISTE UN ERROR EN LA PETICION AJAX
+          } else {
+            console.error('Error: ' + this.status);
+          }
+        }
+      };
+      //ENVIAR LA CABECERA POR POST, CON EL ID DEL TEMA PARA QUE NOS DEVUELVA EL TITULO DEL TEMA
+      xhttp.open("POST", "PHP/Forum/returnTheme.php", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("id_theme=" + encodeURIComponent(id_theme));
 
       //AL CLICAR EL BOTON INICIALIZAMOS EL PROCESO DE EDICION DEL TEMA
       let ConfirmeditBtn = document
@@ -293,6 +319,8 @@ function deleteBtn() {
   for (const btnDelete of deleteBtn) {
     btnDelete.addEventListener("click", () => {
       event.stopPropagation();
+
+      //RECOGER EL ID DEL TEMA DEL BOTON QUE AL CLICAR SE RECOGE PARA SABER QUE TEMA SE VA A ELIMINAR
       let id_theme = btnDelete.id;
       id_theme = id_theme.split("-")[1];
 

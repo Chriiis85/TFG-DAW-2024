@@ -34,7 +34,7 @@ function jqueryModal() {
       $("#new-post-modal").modal({
         fadeDuration: 300,
         escapeClose: true,
-        clickClose: true
+        clickClose: true,
       });
     });
 
@@ -44,7 +44,7 @@ function jqueryModal() {
       $("#edit-post-modal").modal({
         fadeDuration: 300,
         escapeClose: true,
-        clickClose: true
+        clickClose: true,
       });
     });
 
@@ -54,7 +54,7 @@ function jqueryModal() {
       $("#new-theme-privacy").modal({
         fadeDuration: 300,
         escapeClose: true,
-        clickClose: true
+        clickClose: true,
       });
     });
 
@@ -64,7 +64,7 @@ function jqueryModal() {
       $("#new-theme-privacy").modal({
         fadeDuration: 300,
         escapeClose: true,
-        clickClose: true
+        clickClose: true,
       });
     });
 
@@ -85,8 +85,37 @@ function editBtn() {
   for (const btnEdit of editBtn) {
     btnEdit.addEventListener("click", () => {
       event.stopPropagation();
+
+      //RECOGER EL ID DEL POST DEL BOTON QUE AL CLICAR SE RECOGE PARA SABER QUE POST SE VA A EDITAR
       let id_post = btnEdit.id;
       id_post = id_post.split("-")[1];
+
+      //PETICION AJAX PARA DEVOLVER EL TITULO DEL TEMA QUE SE VA EDITAR
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            let posts = JSON.parse(this.responseText);
+            if (posts.length > 0) {
+              //MOSTRAR EL TIRULO DEL TEMA QUE SE VA A EDITAR
+              let input = document.getElementById("New_Post_Content");
+              input.value = posts[0].contenido;
+            } else {
+              console.error("No posts found.");
+            }
+            //MANEJO DE ERRORES SI EXISTE UN ERROR EN LA PETICION AJAX
+          } else {
+            console.error("Error: " + this.status);
+          }
+        }
+      };
+      //ENVIAR LA CABECERA POR POST, CON EL ID DEL TEMA PARA QUE NOS DEVUELVA EL TITULO DEL TEMA
+      xhttp.open("POST", "PHP/Forum/returnPost.php", true);
+      xhttp.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+      );
+      xhttp.send("id_post=" + encodeURIComponent(id_post));
 
       //AL CLICAR EL BOTON INICIALIZAMOS EL PROCESO DE EDICION DEL TEMA
       let ConfirmeditBtn = document
@@ -304,6 +333,8 @@ function deleteBtn() {
   for (const btnDelete of deleteBtn) {
     btnDelete.addEventListener("click", () => {
       event.stopPropagation();
+
+      //RECOGER EL ID DEL POST DEL BOTON QUE AL CLICAR SE RECOGE PARA SABER QUE POST SE VA A ELIMINAR
       let id_post = btnDelete.id;
       id_post = id_post.split("-")[1];
 
@@ -346,7 +377,7 @@ function deleteBtn() {
               }
             }
           };
-          //ENVIO DE LA PETICION Y DE LAS VARIABLES PARA EDITAR EL TEMA
+          //ENVIO DE LA PETICION Y DE LAS VARIABLES PARA ELIMINAR EL TEMA
           xhttp.open("POST", "PHP/Forum/deletePost.php", true);
           xhttp.setRequestHeader(
             "Content-type",

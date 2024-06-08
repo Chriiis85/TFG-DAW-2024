@@ -117,7 +117,6 @@
       <div class="themeFormContainer">
         <div class="inputContainer">
           <label for="Post_Content">Enter new Post content:</label>
-          <!--<input placeholder="New Post Content" class="inputText" type="textarea" name="Post_Content" id="Post_Content">-->
           <textarea class="inputTextArea" placeholder="Write the new post content" name="Post_Content" id="Post_Content"
             rows="10" cols="100"></textarea>
 
@@ -145,7 +144,7 @@
       <h2>Edit Post</h2>
       <div class="themeFormContainer">
         <div class="inputContainer">
-          <label for="">Enter new Post content:</label>
+          <label for="New_Post_Content">Enter new Post content:</label>
           <!--<input placeholder="New Post Content" class="inputText" type="text" name="New_Post_Content" id="New_Post_Content">-->
           <textarea class="inputTextArea" placeholder="Write the new post content" name="New_Post_Content"
             id="New_Post_Content"></textarea>

@@ -135,7 +135,7 @@
       <h2>Add Theme to the Forum</h2>
       <div class="themeFormContainer">
         <div class="inputContainer">
-          <label for="">Enter Theme Name:</label>
+          <label for="Theme_Name">Enter Theme Name:</label>
           <input placeholder="New Theme Name" class="inputText" type="text" name="Theme_Name" id="Theme_Name">
         </div>
         <div class="checkbox-wrapper-46">
@@ -161,7 +161,7 @@
       <h2>Edit theme</h2>
       <div class="themeFormContainer">
         <div class="inputContainer">
-          <label for="">Enter new Theme Name:</label>
+          <label for="New_Theme_Name">Enter new Theme Name:</label>
           <input placeholder="New Theme Name" class="inputText" type="text" name="New_Theme_Name" id="New_Theme_Name">
         </div>
         <div class="checkbox-wrapper-46">
