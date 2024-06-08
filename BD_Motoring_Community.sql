@@ -28,9 +28,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `name`, `surname`, `pwd`, `verified`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin', 1),
 (2, 'Chris', 'Christian', 'Moreno Diaz', 'Abcdef1*', 1),
-(3, 'Lucia', 'Lucia', 'Garcia Garcia', 'Abcdef1*', 1),
-(4, 'Suriñe', 'Suriñe', 'Garrido Lozoyo', 'Abcdef1*', 1),
-(5, 'Pepe', 'Pepe', 'Suarez Sanchez', 'Abcdef1*', 1);
+(3, 'Suriñe', 'Suriñe', 'Garrido Lozoyo', 'Abcdef1*', 1),
+(4, 'Sheila', 'Sheila', 'Moreno Diaz', 'Abcdef1*', 1),
+(5, 'Nadalina', 'Nani', 'Moreno Diaz', 'Abcdef1*', 1);
 
 -- --------------------------------------------------------
 -- Estructura de tabla para la tabla `themes`
