@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   /*background-color: black;*/
+  text-align: justify;
 }
 
 /*----------------------------------------------------------------------MAIN------------------------------------------------------------------*/
@@ -115,7 +116,7 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  border-right: 1px solid gray;
+  /*border-right: 1px solid gray;*/
 }
 
 .post-container-1 > p {
@@ -138,6 +139,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: justify;
+  border-left: 1px solid gray;
 }
 
 .post-container-2 > p {
@@ -219,7 +222,7 @@ body {
 }
 
 .posts-container-info > h1 {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 /*---------------------------------------------------------SEARCH INPUT----------------------------------------------------------------------*/
 .group {
