@@ -163,13 +163,13 @@ header {
 
 .post-card:focus {
   cursor: pointer;
-  /*transform: scale(0.98);*/
+  transform: scale(1.05);
   box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
 }
 
 .post-card-1 {
   width: 25%;
-  height: 100%;
+  height: 98%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -308,11 +308,13 @@ header {
 }
 
 .editThemeBtn:focus {
-  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+  box-shadow: 0px 3px #00b9ff, 0px 3px #00b9ff;
+  opacity: 0.75;
 }
 
 .deleteThemeBtn:focus {
-  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+  box-shadow: 0px 3px #00b9ff, 0px 3px #00b9ff;
+  opacity: 0.75;
 }
 
 .post-card-views {
@@ -614,7 +616,9 @@ select {
 }
 
 .confirmTheme:focus {
-  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
+  box-shadow: 0px 2px #00b9ff, 0px 2px #00b9ff;
+  border: 3px solid #000;
+  opacity: 0.75;
 }
 
 .backTheme {
@@ -637,7 +641,9 @@ select {
   transform: translateY(-2px);
 }
 .backTheme:focus {
-  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
+  box-shadow: 0px 2px #00b9ff, 0px 2px #00b9ff;
+  border: 3px solid #000;
+  opacity: 0.75;
 }
 
 #privacyTheme {
