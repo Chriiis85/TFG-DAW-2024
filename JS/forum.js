@@ -130,9 +130,15 @@ let addTheme = document
                   });
                 } else {
                   Swal.fire("Error!", "Theme not created.", "error");
+                  $(document).ready(function () {
+                    $.modal.close();
+                  });
                 }
               } else {
                 Swal.fire("Error!", "Theme not created.", "error");
+                $(document).ready(function () {
+                  $.modal.close();
+                });
               }
             }
           };
@@ -150,6 +156,9 @@ let addTheme = document
           );
         } else {
           Swal.fire("Cancelled", "Operation cancelled.", "info");
+          $(document).ready(function () {
+            $.modal.close();
+          });
         }
       });
     }
@@ -184,6 +193,9 @@ logout.addEventListener("click", () => {
       });
     } else {
       Swal.fire("Cancelled", "Coming Back.", "info");
+      $(document).ready(function () {
+        $.modal.close();
+      });
     }
   });
 });
@@ -285,9 +297,15 @@ function editBtn() {
                         });
                       } else {
                         Swal.fire("Error!", "Theme not edited.", "error");
+                        $(document).ready(function () {
+                          $.modal.close();
+                        });
                       }
                     } else {
                       Swal.fire("Error!", "Theme not edited.", "error");
+                      $(document).ready(function () {
+                        $.modal.close();
+                      });
                     }
                   }
                 };
@@ -305,6 +323,9 @@ function editBtn() {
                 );
               } else {
                 Swal.fire("Cancelled", "Operation cancelled.", "info");
+                $(document).ready(function () {
+                  $.modal.close();
+                });
               }
             });
           }
@@ -357,9 +378,15 @@ function deleteBtn() {
                   });
                 } else {
                   Swal.fire("Error!", "Theme not deleted.", "error");
+                  $(document).ready(function () {
+                    $.modal.close();
+                  });
                 }
               } else {
                 Swal.fire("Error!", "Theme not deleted.", "error");
+                $(document).ready(function () {
+                  $.modal.close();
+                });
               }
             }
           };

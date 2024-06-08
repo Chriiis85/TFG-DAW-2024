@@ -157,8 +157,8 @@
               </svg></span><span id="privacyThemeEdit">Accept Privacy and Policy</span>
           </label>
         </div>
-        <p id="cbxErrorEdit">You need to accept Privacy Policy to edit the Theme</p>
-        <p id="nameErrorEdit">You need to add a name to the new Theme</p>
+        <p id="cbxErrorEdit">You need to accept Privacy Policy to edit the Post</p>
+        <p id="nameErrorEdit">You need to add a name to the new Post</p>
 
         <div class="themes-btnCont">
           <button id="CloseEditPostBtn" class="backTheme">Close</button>

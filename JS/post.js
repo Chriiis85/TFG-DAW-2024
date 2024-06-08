@@ -121,10 +121,10 @@ function editBtn() {
       let ConfirmeditBtn = document
         .getElementById("editPostBtn")
         .addEventListener("click", () => {
-          let postContent = document.getElementById("New_Post_Content");
           let cbxTheme = document.getElementById("cbx-462");
           let cbxError = document.getElementById("cbxErrorEdit");
           let nameError = document.getElementById("nameErrorEdit");
+          let postContent = document.getElementById("New_Post_Content");
 
           //VERIFICAMOS QUE CUMPLE LOS REQUISITOS PARA EDITAR EL TEMA
           let postPrev = document.getElementById("postContent-" + id_post);
@@ -176,10 +176,17 @@ function editBtn() {
                           }
                         });
                       } else {
-                        Swal.fire("Error!", "Theme not edited.", "error");
+                        Swal.fire("Error!", "Post not edited.", "error");
+                        $(document).ready(function () {
+                          $.modal.close();
+                        });
                       }
                     } else {
-                      Swal.fire("Error!", "Theme not edited.", "error");
+                      Swal.fire("Error!", "Post not edited.", "error");
+                      $.modal.close();
+                      $(document).ready(function () {
+                        $.modal.close();
+                      });
                     }
                   }
                 };
@@ -197,6 +204,9 @@ function editBtn() {
                 );
               } else {
                 Swal.fire("Cancelled", "Operation cancelled.", "info");
+                $(document).ready(function () {
+                  $.modal.close();
+                });
               }
             });
           }
@@ -267,9 +277,15 @@ let addPost = document
                   });
                 } else {
                   Swal.fire("Error!", "Post not created.", "error");
+                  $(document).ready(function () {
+                    $.modal.close();
+                  });
                 }
               } else {
                 Swal.fire("Error!", "Post not created.", "error");
+                $(document).ready(function () {
+                  $.modal.close();
+                });
               }
             }
           };
@@ -289,6 +305,9 @@ let addPost = document
           );
         } else {
           Swal.fire("Cancelled", "Operation cancelled.", "info");
+          $(document).ready(function () {
+            $.modal.close();
+          });
         }
       });
     }
@@ -323,6 +342,9 @@ logout.addEventListener("click", () => {
       });
     } else {
       Swal.fire("Cancelled", "Coming Back.", "info");
+      $(document).ready(function () {
+        $.modal.close();
+      });
     }
   });
 });
@@ -371,9 +393,15 @@ function deleteBtn() {
                   });
                 } else {
                   Swal.fire("Error!", "Post not deleted.", "error");
+                  $(document).ready(function () {
+                    $.modal.close();
+                  });
                 }
               } else {
                 Swal.fire("Error!", "Post not deleted.", "error");
+                $(document).ready(function () {
+                  $.modal.close();
+                });
               }
             }
           };
@@ -386,6 +414,9 @@ function deleteBtn() {
           xhttp.send("id_post=" + id_post);
         } else {
           Swal.fire("Cancelled", "Operation cancelled.", "info");
+          $(document).ready(function () {
+            $.modal.close();
+          });
         }
       });
     });
