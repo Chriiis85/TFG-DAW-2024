@@ -11,6 +11,7 @@ body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   background-color: #f3f3f3;
+  text-align: center;
   --s: 200px; /* control the size */
   --c1: #222222;
   --c2: #4e4f51;
@@ -356,6 +357,9 @@ body {
   #tit-register {
     margin-bottom: 0px;
   }
+  #pwdError {
+    font-size: 0.75em;
+  }
 }
 
 @media (max-width: 600px) {
@@ -377,5 +381,11 @@ body {
 @media (max-height: 800px) {
   .main {
     height: 670px;
+  }
+  #pwdError {
+    width: 140%;
+  }
+  #loginFormChange {
+    margin-bottom: -10px;
   }
 }
