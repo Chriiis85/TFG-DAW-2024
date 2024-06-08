@@ -210,7 +210,6 @@ function editBtn() {
       //RECOGER EL ID DEL TEMA DEL BOTON QUE AL CLICAR SE RECOGE PARA SABER QUE TEMA SE VA A EDITAR
       let id_theme = btnEdit.id;
       id_theme = id_theme.split("-")[1];
-
       //PETICION AJAX PARA DEVOLVER EL TITULO DEL TEMA QUE SE VA EDITAR
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
@@ -702,7 +701,7 @@ function redireccionPostsCards() {
   for (const postCard of postsCardArr) {
     //OBTENER EL ID DE LAS TARJETAS PARA REDIRIGIR
     let id_themeString = postCard.id;
-    let id_theme = id_themeString.slice(-1);
+    let id_theme = id_themeString.split("postCard")[1];
     //AÑADIR EVENTO PARA REDIRIGIR MEDIANTE CLICK
     postCard.addEventListener("click", () => {
       window.location.href = "forumPosts.php?id=" + id_theme;
