@@ -87,8 +87,8 @@ h1 {
   position: relative;
   text-align: center;
   text-transform: none;
-  user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   touch-action: manipulation;
   width: 20%;
   margin: 5%;
