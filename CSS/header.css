@@ -155,6 +155,7 @@ h1 {
   align-items: top;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .header-drop-container-options2 {
@@ -166,10 +167,10 @@ h1 {
   justify-content: center;
   flex-direction: column;
   transition: 0.5s;
+  text-align: center;
 }
 
 .header-drop-container-options > h1 {
-  margin-left: 25%;
   font-size: 2em;
 }
 
@@ -179,7 +180,6 @@ h1 {
   justify-content: center;
   flex-direction: column;
   flex-direction: row;
-  margin-left: 25%;
   font-size: 1.7em;
   transition: 0.3s;
 }
@@ -378,7 +378,7 @@ h1 {
     font-size: 1.5em;
   }
 
-  .header-drop-container-options2 > p {
+  .header-drop-container-options2 > a {
     font-size: 1.25em;
   }
 }
@@ -391,10 +391,10 @@ h1 {
 
   .header-drop-container-options > h3 {
     font-size: 1.5em;
-    margin-left: -15%;
+    /*margin-left: -15%;*/
   }
 
-  .header-drop-container-options2 > p {
+  .header-drop-container-options2 > a {
     font-size: 1.25em;
     margin-left: -1%;
   }
@@ -437,11 +437,19 @@ h1 {
     align-items: center;
     justify-content: center;
   }
+  .header-drop-container-options{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .header-drop-container-options > h1 {
     font-size: 1.5em;
+    width: 90%;
   }
   .header-drop-container-options > h3 {
     font-size: 1.25em;
+
   }
   .header-drop-container-options {
     margin: 0;
@@ -451,6 +459,7 @@ h1 {
     width: 100%;
     gap: 1%;
     font-size: 0.8em;
+    padding-left: 5px;
   }
 }
 
