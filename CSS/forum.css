@@ -811,6 +811,13 @@ select {
   .inputContainer {
     width: 100%;
   }
+  .post-card-3 > h1{
+    font-size: 1em;
+  }
+  .post-card-5 > p{
+    font-size: 0.9em;
+
+  }
 }
 
 @media (max-width: 700px) {

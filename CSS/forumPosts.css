@@ -138,17 +138,16 @@ body {
 
 .post-container-2 {
   width: 80%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: justify;
   border-left: 1px solid gray;
-}
-
-.post-container-2 > p {
-  padding: 5%;
-  margin: 0;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 1.1em;
 }
 
 .posts-container {
@@ -636,6 +635,7 @@ select {
   .main-bar-filter {
     width: 30%;
   }
+
 }
 
 @media (max-width: 1000px) {
@@ -647,6 +647,9 @@ select {
   .post-container-1 > h1 {
     width: 60%;
     padding-left: 0;
+  }
+  .post-container-2{
+    font-size: 1em;
   }
 }
 
@@ -692,6 +695,9 @@ select {
   }
 
   .post-container-1 > h1 {
+    font-size: 0.9em;
+  }
+  .post-container-2{
     font-size: 0.9em;
   }
 }
