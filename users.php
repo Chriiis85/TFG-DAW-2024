@@ -22,7 +22,7 @@
         <h1 id="tit-register">Motoring Community Register</h1>
         <div class="formField">
           <input type="text" required="" id="mail" name="mail" required/>
-          <span>Username/Mail</span>
+          <span>Username</span>
         </div>
         <div class="formField">
           <input type="text" required="" id="name" name="name" required/>

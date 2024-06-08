@@ -176,6 +176,7 @@ header {
   text-align: center;
   flex-direction: column;
   border-right: 1px solid gray;
+  overflow: hidden;
 }
 
 .post-card-1 > p {
@@ -187,8 +188,10 @@ header {
   padding-right: 3%;
 }
 .post-card-1 > h1 {
-  padding-left: 3%;
-  padding-right: 3%;
+  width: 60%;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
 }
 
 .post-card-2 {
