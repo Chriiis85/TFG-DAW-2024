@@ -26,7 +26,7 @@ if (isset($_COOKIE["username"])) {
   <!--CONTENEDOR QUE TIENE Y ACTUA COMO EL HEADER IGUAL EN TODAS LAS PAGINAS SIMPLIFICANDO EL CODIGO-->
   <section id="header-container" class="header-container">
     <article class="header">
-      <div class="header-container1">
+    <div class="header-container1">
         <h1 tabindex="1" id="redirectFormEnterH1Main" title="Go to Main Page" onclick="window.location.href = 'index.html'">
           MOTORING COMMUNITY
         </h1>
@@ -57,15 +57,15 @@ if (isset($_COOKIE["username"])) {
         </h1>
       </div>
       <div class="header-drop-container-options">
-        <h3 tabindex="3" id="redirectFormEnterH3About" title="Go to About F1 Page" onclick="window.location.href = 'aboutf1.php'"><img src="Images/down-arrow-svgrepo-com.svg"
-            alt="Down Arrow" />About Formula One</h3>
+        <h3 tabindex="3" id="redirectFormEnterH3About" title="Go to About F1 Page" onclick="window.location.href = 'aboutf1.php'"><img
+            src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />About Formula One</h3>
       </div>
       <div class="header-drop-container-options2">
-        <a tabindex="4" title="Go to DriversPage" href="drivers.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a title="Go to Drivers Page" tabindex="4" href="drivers.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Drivers</a>
-        <a tabindex="5" title="Go to Teams Page" href="teams.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a title="Go to Teams Page" tabindex="5" href="teams.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Constructors</a>
-        <a tabindex="6" title="Go to Calendar Page" href="calendar.php"><img src="Images/down-arrow-svgrepo-com.svg"
+        <a title="Go to Calendar Page" tabindex="6" href="calendar.php"><img src="Images/down-arrow-svgrepo-com.svg"
             alt="Down Arrow" />Season Calendar</a>
       </div>
     </div>

@@ -1,9 +1,9 @@
 $(document).ready(function () {
   $("#header-drop-container-formulaone").hide();
-
+  //VARIABLE PARA OBTENER EL TIEMPO QUE ESTA EL CURSOR EN EL CONTENEDOR QUE SE MUESTRA Y PODER MANTENERLO ABIERTO O CERRARLO
   var timeout;
 
-  // Función para desplegar el contenedor
+  //FUNCION PRINCIPAL PARA DESPLEGAR EL CONTENEDOR
   function showContainer() {
     clearTimeout(timeout);
     $("#header-drop-container-formulaone").stop().slideDown(function () {
@@ -11,19 +11,19 @@ $(document).ready(function () {
     });
   }
 
-  // Función para ocultar el contenedor
+  //FUNCION QUE ESONDE DE NUEVO DEL CONTENEDOR DESPLEGABLE CUANDO PASE MEDIA SEGUNDO SIN TENER EL RATON ENCIMA
   function hideContainer() {
     timeout = setTimeout(function () {
       $("#header-drop-container-formulaone").stop().slideUp();
     }, 500);
   }
 
-  // Desplegar el contenedor al enfocar el contenedor formulaone
+  //DESPLEGAR EL CONTENEDOR CUANDO SE HAGA FOCUS PERMITIENDO AUMENTAR LA ACCESIBILIDAD CUANDO UN USUARIO PASE POR ENCIMA
   $("#formulaone").focus(showContainer);
 
-  // Ocultar el contenedor al desenfocar el contenedor formulaone
+  //OCULTAR CUANDO YA NO ESTA "ENFOCADO" EL CONTENEDOR
   $("#formulaone").blur(function () {
-    // Ocultar después de un tiempo si no hay ningún elemento enfocado dentro del contenedor
+    //SI NINGUNO DE LOS ELEMENTOS DENTRO DEL CONTENEDOR ESTA ENFOCADO POR EL TABINDEX ESTE SE CIERRA
     timeout = setTimeout(function () {
       if (!$("#header-drop-container-formulaone").find("*:focus").length) {
         hideContainer();
@@ -31,33 +31,35 @@ $(document).ready(function () {
     }, 500);
   });
 
-  // Mantener desplegado mientras el ratón esté sobre el contenedor desplegable
+  //SI EL RATON ESTA DENTRO O ENCIMA DEL CONTENIDO SE MANTIENE EL CONTENEDOR ABIERTO Y SE RESETEA EL TIMEOUT PARA MANTENERLO
   $("#header-drop-container-formulaone").mouseenter(function () {
     clearTimeout(timeout);
+    //SI EL RATON ABANDONA EL CONTENEDOR SE CIERRA
   }).mouseleave(function () {
     hideContainer();
   });
 
-  // Mantener desplegado mientras algún elemento dentro del contenedor tenga el foco
+  //MANTENER EL CONTENEDOR DESPLEGADO MEINTRAS EL TABINDEX ESTE ENCIMA DE CUALQUIER CONTENIDO DENTRO DEL CONTENEDOR
   $("#header-drop-container-formulaone").find("*").focus(function () {
     clearTimeout(timeout);
+    //SI EL TABINDEX ABANDONA EL CONTENEDOR SE CIERRA
   }).blur(function () {
     if (!$("#header-drop-container-formulaone").find("*:focus").length) {
       hideContainer();
     }
   });
 
+  //REDIRECCION DE TITULOS QUE NO SON ENLACES MEDIANTE LA TECLA ENTER PARA MEJORAR LA ACCESIBILIDAD
   $("#redirectFormEnterH1Main").keydown(function(event) {
     if (event.key === "Enter" || event.keyCode === 13) {
       window.location.href = 'index.html';
     }
   });
+
+  //REDIRECCION DE TITULOS QUE NO SON ENLACES MEDIANTE LA TECLA ENTER PARA MEJORAR LA ACCESIBILIDAD
   $("#redirectFormEnterH3About").keydown(function(event) {
     if (event.key === "Enter" || event.keyCode === 13) {
       window.location.href = 'aboutf1.php';
     }
   });
 });
-
-let redirectFormEnterH1Main = document.getElementById("redirectFormEnterH1Main");
-
