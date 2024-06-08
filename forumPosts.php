@@ -88,8 +88,8 @@
           for ($i = 0; $i < sizeof($posts); $i++) {
             echo '<div tabindex="0" class="post-container">
                     <div class="post-container-1">
-                      <h1 id="' . $posts[$i][3] . '" class="usu">Posted by: ' . returnNombreUsu($posts[$i][3]) . '.</h1>
-                      <p>Posted on: ' . $posts[$i][2] . '.</p>';
+                      <h1 id="' . $posts[$i][3] . '" class="usu">Posted by: ' . returnNombreUsu($posts[$i][3]) . '</h1>
+                      <p>Posted on: ' . $posts[$i][2] . '</p>';
             if ($posts[$i][3] == $id_usu_theme || $username == "admin") {
               echo '<div class="post-card-6-edit">
                                   <button class="editPostBtn" id="editCard-' . $posts[$i][0] . '"><img src="Images/edit.svg" alt="Edit Icon" /></button>
