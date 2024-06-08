@@ -27,13 +27,16 @@
         </div>
         <!--REDES SOCIALES CONTENEDOR-->
         <div class="social-buttons">
-          <a target="_blank" title="Go to Chris GitHub Page" href="https://github.com/Chriiis85" class="social-button github" aria-label="GitHub">
+          <a target="_blank" title="Go to Chris GitHub Page" href="https://github.com/Chriiis85"
+            class="social-button github" aria-label="GitHub">
             <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19" alt="GitHub">
-            <path
+              <path
                 d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z">
-              </path>            </svg>
+              </path>
+            </svg>
           </a>
-          <a target="_blank" title="Go to Chris LinkedIn Page" href="https://www.linkedin.com/in/christian-moreno-díaz-109024292/" class="social-button linkedin"
+          <a target="_blank" title="Go to Chris LinkedIn Page"
+            href="https://www.linkedin.com/in/christian-moreno-díaz-109024292/" class="social-button linkedin"
             aria-label="LinkedIn">
             <svg viewBox="0 -2 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" alt="LinkedIn">
@@ -46,7 +49,8 @@
               </g>
             </svg>
           </a>
-          <a target="_blank" title="Go to Chris Insta Page" href="https://www.instagram.com/christiaan.85/" class="social-button instagram" aria-label="Instagram">
+          <a target="_blank" title="Go to Chris Insta Page" href="https://www.instagram.com/christiaan.85/"
+            class="social-button instagram" aria-label="Instagram">
             <svg width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" alt="Instagram">
               <g id="Page-1" stroke="none" stroke-width="1">
@@ -82,7 +86,7 @@
         <h1>Get Help</h1>
         <div class="footer-top-col2-bar"></div>
         <a title="Go to Footer Section" href="#footer" id="faq">F&Q</a>
-        <a title="Go to About F1 Page"href="aboutf1.php">Learn More</a>
+        <a title="Go to About F1 Page" href="aboutf1.php">Learn More</a>
       </article>
     </section>
     <section class="footer-bot">
@@ -131,105 +135,81 @@
   <h2>Frecuently Asked Questions (F&Q)</h2>
   <div class="accordion">
     <div class="accordion-item">
-      <h3 class="accordion-header">¿What are the cookies?
-        <span class="arrow">&#9662;</span>
+      <h3 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="content1" id="header1">
+        ¿What are the cookies? <span class="arrow">&#9662;</span>
       </h3>
-      <div class="accordion-content">
+      <div class="accordion-content" id="content1" aria-labelledby="header1">
         Cookies are text files that contain small amounts of information which are downloaded to your device when you
         visit a website. Cookies are widely used to make websites work more efficiently, as well as to provide
         information to the site owners.
       </div>
     </div>
-    <!--ACORDEON JQUERY USO DE COOKIES-->
     <div class="accordion-item">
-      <h3 class="accordion-header">¿How do we use cookies?
-
-        <span class="arrow">&#9662;</span>
+      <h3 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="content2" id="header2">
+        ¿How do we use cookies? <span class="arrow">&#9662;</span>
       </h3>
-      <div class="accordion-content">
+      <div class="accordion-content" id="content2" aria-labelledby="header2">
         We use cookies for several reasons, which are detailed below. Unfortunately, in most cases, there are no
         industry standard options for disabling cookies without completely disabling the functionality and features they
         add to this site. It is recommended that you leave all cookies enabled if you are unsure whether you need them
         or not, in case they are used to provide a service that you use.
       </div>
     </div>
-    <!--ACORDEON JQUERY COOKIES-->
-    <!--<div class="accordion-item">
-      <h3 class="accordion-header">¿Qué son las cookies?
-        <span class="arrow">&#9662;</span>
-      </h3>
-      <div class="accordion-content">
-        Las cookies son archivos de texto que contienen pequeñas cantidades de información que se descargan en su
-        dispositivo cuando visita un sitio web. Las cookies se utilizan ampliamente para hacer que los sitios web
-        funcionen de manera más eficiente, así como para proporcionar información a los propietarios del sitio.
-      </div>
-    </div>-->
-    <!--ACORDEON JQUERY DATOS RECOPILADOS-->
     <div class="accordion-item">
-      <h3 class="accordion-header">¿What data do we save?
-        <span class="arrow">&#9662;</span>
+      <h3 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="content3" id="header3">
+        ¿What data do we save? <span class="arrow">&#9662;</span>
       </h3>
-      <div class="accordion-content">
+      <div class="accordion-content" id="content3" aria-labelledby="header3">
         We collect personal information in various ways, including direct interactions when you provide us with
         information by creating an account, completing forms on our website or in our applications, or when
-        communicating with us via email, phone, or other means.
-
-        We also collect information automatically when you use our services, including information about your device and
-        browsing activity, through the use of cookies and other similar technologies.
+        communicating with us via email, phone, or other means. We also collect information automatically when you use
+        our services, including information about your device and browsing activity, through the use of cookies and
+        other similar technologies.
       </div>
     </div>
-    <!--ACORDEON JQUERY USO DE DATOS-->
     <div class="accordion-item">
-      <h3 class="accordion-header">¿How do we use your data?
-        <span class="arrow">&#9662;</span>
+      <h3 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="content4" id="header4">
+        ¿How do we use your data? <span class="arrow">&#9662;</span>
       </h3>
-      <div class="accordion-content">
+      <div class="accordion-content" id="content4" aria-labelledby="header4">
         We use the information we collect to provide, maintain, and improve our services, as well as to personalize your
         experience and to communicate with you. This may include sending marketing communications if you have given
-        consent to receive them.
-
-        We do not sell or rent your personal information to third parties without your explicit consent. However, we may
-        share your information with third-party service providers who assist us in operating our business and providing
-        services on your behalf, provided they commit to maintaining the confidentiality of your information.
+        consent to receive them. We do not sell or rent your personal information to third parties without your explicit
+        consent. However, we may share your information with third-party service providers who assist us in operating
+        our business and providing services on your behalf, provided they commit to maintaining the confidentiality of
+        your information.
       </div>
     </div>
-
-    <!--ACORDEON JQUERY PROTECCION DE DATOS-->
     <div class="accordion-item">
-      <h3 class="accordion-header">Data Protection
-        <span class="arrow">&#9662;</span>
+      <h3 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="content5" id="header5">
+        Data Protection <span class="arrow">&#9662;</span>
       </h3>
-      <div class="accordion-content">
+      <div class="accordion-content" id="content5" aria-labelledby="header5">
         We take measures to protect the security of your personal information and to ensure that it is used in
         accordance with this policy. This includes implementing technical and organizational measures to protect against
         unauthorized access, disclosure, alteration, or destruction of your personal information.
       </div>
     </div>
-
-    <!--ACORDEON DERECHOS USUARIO-->
     <div class="accordion-item">
-      <h3 class="accordion-header">User Rights
-        <span class="arrow">&#9662;</span>
+      <h3 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="content6" id="header6">
+        User Rights <span class="arrow">&#9662;</span>
       </h3>
-      <div class="accordion-content">
+      <div class="accordion-content" id="content6" aria-labelledby="header6">
         You have certain rights regarding your personal data, including the right to access, correct, delete, restrict,
         or object to the processing of your personal information. If you wish to exercise any of these rights, please
         contact us using the contact information provided at the end of this policy.
       </div>
     </div>
-
-    <!--ACORDEON JQUERY CAMBIOS EN LA POLITICA-->
     <div class="accordion-item">
-      <h3 class="accordion-header">Politics changes
-        <span class="arrow">&#9662;</span>
+      <h3 class="accordion-header" tabindex="0" aria-expanded="false" aria-controls="content7" id="header7">
+        Politics changes <span class="arrow">&#9662;</span>
       </h3>
-      <div class="accordion-content">
+      <div class="accordion-content" id="content7" aria-labelledby="header7">
         We may update this policy from time to time to reflect changes in our data collection and usage practices. We
         recommend that you periodically review this page for the latest information on our privacy policies and
         practices.
       </div>
     </div>
-
   </div>
 </div>
 
@@ -246,9 +226,22 @@
 
       // CONFIGURACION DEL ACORDEON DENTRO DEL MODAL
       $(".accordion-header").click(function () {
-        $(this).toggleClass("active");
-        $(this).next(".accordion-content").slideToggle("fast");
+        toggleAccordion($(this));
       });
+
+      //ABRIR EL ACRODEON MEDIANTE LAS TECLA ENTER Y ESPACIO PARA MEJORAR LA ACCESIBILIDAD
+      $(".accordion-header").keypress(function (e) {
+        if (e.which == 13 || e.which == 32) {
+          toggleAccordion($(this));
+        }
+      });
+
+      //FUNCION APRA QUE SE LLAME CUANDO SE ESTE ENCIMA Y SE TECLEE ENTER O ESPACIO DE ESTA MANERA SE DESPLEGARAN LOS CONTENIDOS
+      function toggleAccordion(header) {
+        const isExpanded = header.attr("aria-expanded") === "true";
+        header.attr("aria-expanded", !isExpanded);
+        header.next(".accordion-content").slideToggle("fast");
+      }
 
       //CERRAR EL MODAL SI SE CLICA FUERA DE EL CONTENEDOR
       $(".jquery-modal").on("click", function (event) {

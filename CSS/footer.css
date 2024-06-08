@@ -255,6 +255,22 @@ footer a {
   transform: translateY(-50%) rotate(90deg);
 }
 
+.accordion-header {
+  cursor: pointer;
+}
+
+.accordion-header:focus {
+  outline: 2px solid #000;
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-content[aria-expanded="true"] {
+  display: block;
+}
+
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/
 @media (max-width: 1100px) {
   .footer-top {
