@@ -217,11 +217,11 @@ body {
 }
 
 .editPostBtn:focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 3px 3px #00b9ff, 0 3px 3px #00b9ff;
 }
 
 .deletePostBtn:focus {
-  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 3px 3px #00b9ff, 0 3px 3px #00b9ff;
 }
 
 .posts-container-info > h1 {
@@ -341,7 +341,7 @@ select {
 
 .button-add:hover,
 .button-add:focus {
-  opacity: 0.75;
+  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
 }
 
 /*-------------------------------------------------------------PAGINATION---------------------------------------------------------------------*/
@@ -419,7 +419,7 @@ select {
 }
 
 .inputTextArea:focus {
-  border: 3px solid #5551ff;
+  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
 }
 
 .themes-btnCont {
@@ -452,6 +452,10 @@ select {
 .confirmTheme:hover {
   transform: translateY(-2px);
 }
+.confirmTheme:focus {
+  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
+
+}
 
 .backTheme {
   width: 40%;
@@ -471,6 +475,10 @@ select {
 }
 .backTheme:hover {
   transform: translateY(-2px);
+}
+.backTheme:focus {
+  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
+
 }
 
 #privacyTheme {

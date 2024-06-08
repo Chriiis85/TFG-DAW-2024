@@ -104,19 +104,19 @@
                 <div class="post-card-6">
                   <div class="post-card-6-info">
                     <!--<div class="post-card-views">
-                      <img src="Images/view.svg" alt="" />
+                      <img src="Images/view.svg" alt="View Icon" />
                       <p>' . $themes[$i][4] . '</p>
                     </div>-->
                     <div class="post-card-msg">
-                      <img src="Images/msg.svg" alt="" />
+                      <img src="Images/msg.svg" alt="Message Icon" />
                       <p>Posts: ' . returnNumberPosts($themes[$i][0]) . '.</p>
                     </div>
                   </div>';
             //VERIFICAR QUIEN ES EL USUARIO PARA PERMITIR LA ELIMINACION O LA EDICION DE DICHO TEMA
             if ($themes[$i][3] == $id_usu_theme || $username == "admin") {
               echo '<div class="post-card-6-edit">
-                          <button class="editThemeBtn" id="editCard-' . $themes[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
-                          <button class="deleteThemeBtn" id="deleteCard-' . $themes[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
+                          <button class="editThemeBtn" id="editCard-' . $themes[$i][0] . '"><img src="Images/edit.svg" alt="Edit Icon" /></button>
+                          <button class="deleteThemeBtn" id="deleteCard-' . $themes[$i][0] . '"><img src="Images/delete.svg" alt="Delete Icon" /></button>
                         </div>';
             }
             echo '</div>
@@ -162,7 +162,7 @@
       <div class="themeFormContainer">
         <div class="inputContainer">
           <label for="New_Theme_Name">Enter new Theme Name:</label>
-          <input placeholder="New Theme Name" class="inputText" type="text" name="New_Theme_Name" id="New_Theme_Name">
+          <input tabindex="0" placeholder="New Theme Name" class="inputText" type="text" name="New_Theme_Name" id="New_Theme_Name">
         </div>
         <div class="checkbox-wrapper-46">
           <input type="checkbox" id="cbx-462" class="inp-cbx" />

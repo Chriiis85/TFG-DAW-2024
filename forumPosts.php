@@ -82,7 +82,7 @@
 
         //DETECTAR SI LA ARRAY ESTA VACIA PARA INFORMAR AL USUARIO
         if (sizeof($posts) == 0) {
-          echo '<img class="img-noresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="" />';
+          echo '<img class="img-noresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="No results Found" />';
         } else {
           //ITERAR LA ARRAY Y MOSTRAR TODOS LOS POSTS
           for ($i = 0; $i < sizeof($posts); $i++) {
@@ -91,13 +91,13 @@
                       <h1 id="' . $posts[$i][3] . '" class="usu">Posted by: ' . returnNombreUsu($posts[$i][3]) . '.</h1>
                       <p>Posted on: ' . $posts[$i][2] . '.</p>
                       <!--<div class="post-card-views">
-                      <img src="Images/view.svg" alt="" />
+                      <img src="Images/view.svg" alt="Views Icon" />
                       <p>Views: 1</p>
                       </div>-->';
             if ($posts[$i][3] == $id_usu_theme || $username == "admin") {
               echo '<div class="post-card-6-edit">
-                                  <button class="editPostBtn" id="editCard-' . $posts[$i][0] . '"><img src="Images/edit.svg" alt="" /></button>
-                                  <button class="deletePostBtn" id="deleteCard-' . $posts[$i][0] . '"><img src="Images/delete.svg" alt="" /></button>
+                                  <button class="editPostBtn" id="editCard-' . $posts[$i][0] . '"><img src="Images/edit.svg" alt="Edit Icon" /></button>
+                                  <button class="deletePostBtn" id="deleteCard-' . $posts[$i][0] . '"><img src="Images/delete.svg" alt="Delete Icon" /></button>
                                 </div>';
             }
             echo '</div>
@@ -146,7 +146,7 @@
         <div class="inputContainer">
           <label for="New_Post_Content">Enter new Post content:</label>
           <!--<input placeholder="New Post Content" class="inputText" type="text" name="New_Post_Content" id="New_Post_Content">-->
-          <textarea class="inputTextArea" placeholder="Write the new post content" name="New_Post_Content"
+          <textarea tabindex="0" class="inputTextArea" placeholder="Write the new post content" name="New_Post_Content"
             id="New_Post_Content"></textarea>
         </div>
         <div class="checkbox-wrapper-46">
