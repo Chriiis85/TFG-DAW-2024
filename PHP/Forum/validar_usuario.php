@@ -38,7 +38,7 @@
 
             //SI DEVUELVE MAS DE UNA FILA EXISTE Y LOS DATOS SON VALIDOS
             if ($num_rows > 0) {
-                //CREAMOS LA COOKIE PARA RECOGER EL NOMBRE DEL USUARIO
+                //CREAMOS LA COOKIE PARA RECOGER EL NOMBRE DEL USUARIO POR DEFECTO TENDRÁ UNA HORA DE VALIDEZ
                 setcookie("username", $username, time() + 3600, "/");
                 ?>
                 <!--MOSTRAR UN MENSAJE AL USUARIO DE CONFIRMACION-->
