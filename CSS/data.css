@@ -120,6 +120,15 @@ h1 {
   border-bottom: 2px solid #00b9ff;
 }
 
+
+.content-table tbody tr:hover{
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
+.content-table tbody tr:focus{
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
 /*------------------------------------------ESTILOS PARA LOS SELECT QUE PERMITEN FILTRAR LA INFORMACIÓN---------------------------------------*/
 .select {
   width: 300px;

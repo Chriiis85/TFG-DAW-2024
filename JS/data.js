@@ -111,6 +111,7 @@ function mostrarResultados(
       //FILAS Y COLUMNAS QUE SE PINTAN RECORRIENDO EL ARRAY DE NOS DEVUELVE LA PETICION DE LA API
       for (const escuderia of resultados) {
         let tr = document.createElement("tr");
+        tr.setAttribute("tabindex", 0);
         let tdPosicion = document.createElement("td");
         let tdNombre = document.createElement("td");
         let tdPuntos = document.createElement("td");
@@ -157,6 +158,7 @@ function mostrarResultados(
       //FILAS Y COLUMNAS QUE SE PINTAN RECORRIENDO EL ARRAY DE NOS DEVUELVE LA PETICION DE LA API
       for (const piloto of resultados) {
         let tr = document.createElement("tr");
+        tr.setAttribute("tabindex", 0);
         let tdPosicion = document.createElement("td");
         let tdNombre = document.createElement("td");
         let tdPuntos = document.createElement("td");
@@ -205,6 +207,7 @@ function mostrarResultados(
         //FILAS Y COLUMNAS QUE SE PINTAN RECORRIENDO EL ARRAY DE NOS DEVUELVE LA PETICION DE LA API
         for (const piloto of resultados) {
           let tr = document.createElement("tr");
+          tr.setAttribute("tabindex", 0);
           let tdPosicion = document.createElement("td");
           let tdNombre = document.createElement("td");
           let tdPuntos = document.createElement("td");
