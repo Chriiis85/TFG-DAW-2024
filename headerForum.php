@@ -5,28 +5,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Header Forum - Motoring Community</title>
-  <!--SCRIPT JQUERY-->
+  <!-- SCRIPT JQUERY -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!--SCRIPT HEADER PARA LA PAGINA-->
+  <!-- SCRIPT HEADER PARA LA PAGINA -->
   <script defer src="JS/header.js"></script>
-  <!--HOJA DE ESTILOS HEADER-->
+  <!-- HOJA DE ESTILOS HEADER -->
   <link rel="stylesheet" href="CSS/headerForum.css" />
 </head>
-<?php
-/*SI LA COOKIE ESTA INCIALIZADA GUARDAMOS EN LA VARIABLE USER EL NOMBRE DEL USUARIO*/
-if (isset($_COOKIE["username"])) {
-  $username = $_COOKIE["username"];
-} else {
-  //SI LA COOKIE NO ESTA ESTABLECIDA MANDAMOS A LA PAGINA DE INICIO DE SESION
-  header('Location: users.php');
-}
-?>
-
 <body>
-  <!--CONTENEDOR QUE TIENE Y ACTUA COMO EL HEADER IGUAL EN TODAS LAS PAGINAS SIMPLIFICANDO EL CODIGO-->
+  <?php
+  /*SI LA COOKIE ESTA INCIALIZADA GUARDAMOS EN LA VARIABLE USER EL NOMBRE DEL USUARIO*/
+  if (isset($_COOKIE["username"])) {
+    $username = $_COOKIE["username"];
+  } else {
+    // SI LA COOKIE NO ESTA ESTABLECIDA MANDAMOS A LA PAGINA DE INICIO DE SESION
+    header('Location: users.php');
+  }
+  ?>
+
+  <!-- CONTENEDOR QUE TIENE Y ACTUA COMO EL HEADER IGUAL EN TODAS LAS PAGINAS SIMPLIFICANDO EL CODIGO -->
   <section id="header-container" class="header-container">
     <article class="header">
-    <div class="header-container1">
+      <div class="header-container1">
         <h1 tabindex="1" id="redirectFormEnterH1Main" title="Go to Main Page" onclick="window.location.href = 'index.html'">
           MOTORING COMMUNITY
         </h1>
@@ -50,7 +50,7 @@ if (isset($_COOKIE["username"])) {
         ?>
       </div>
     </article>
-    <!--CONTENIDO QUE SE DESPLIEGA AL HACER HOVER SOBRE LOS CONTENIDOS-->
+    <!-- CONTENIDO QUE SE DESPLIEGA AL HACER HOVER SOBRE LOS CONTENIDOS -->
     <div id="header-drop-container-formulaone" class="header-drop-container">
       <div class="header-drop-container-options">
         <h1>Formula One <div class="header-drop-container-line"></div>
@@ -69,8 +69,6 @@ if (isset($_COOKIE["username"])) {
             alt="Down Arrow" />Season Calendar</a>
       </div>
     </div>
-    <!--TITULO QUE SE CAMBIA EN CADA PAGINA PARA MOSTRAR EL CONTENIDO-->
-    <!--<h1 id="title-header" class="title-header-container"></h1>-->
   </section>
 </body>
 
