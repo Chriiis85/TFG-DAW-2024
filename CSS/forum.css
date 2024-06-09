@@ -230,6 +230,7 @@ header {
   justify-content: center;
   text-align: justify;
   border-right: 1px solid gray;
+  margin-left: -1.5%;
 }
 
 .post-card-5 > p {
@@ -242,6 +243,8 @@ header {
   justify-content: center;
   text-align: justify;
   overflow: hidden;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .post-card-6 {
@@ -844,7 +847,6 @@ select:focus {
   }
   .post-card-5 > p{
     font-size: 0.9em;
-
   }
 }
 

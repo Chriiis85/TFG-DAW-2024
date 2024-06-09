@@ -388,4 +388,15 @@ body {
   #loginFormChange {
     margin-bottom: -10px;
   }
+  #register{
+    margin-top: -30px;
+    margin-bottom: -10px;
+  }
+}
+
+@media (max-height: 900px) {
+  #register{
+    margin-top: -20px;
+    margin-bottom: -10px;
+  }
 }
