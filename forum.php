@@ -29,8 +29,13 @@
   //INCLUIR EL HEADER DE FORO
   include "headerForum.php";
   ?>
-  <!--LINK AL CSS DEL FOTO-->
+  <!--LINK AL CSS DEL FORO-->
   <link rel="stylesheet" href="CSS/forum.css" />
+
+  <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
+  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+    <img src="Images/UPARROW.svg" alt="Up Arrow" aria-label="Scroll to top" />
+  </button>
 
   <!--SECCION PRINCIPAL DEL FORO-->
   <section class="main">

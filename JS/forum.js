@@ -740,3 +740,29 @@ function redireccionPostsCards() {
   }
 }
 redireccionPostsCards();
+
+/*--------------------------------------------FUNCIONALIDAD DEL ELEMENTO DE BOTON VOLVER ARRIBA------------------------------------------------*/
+//RECOGER EL BOTON
+document.getElementById("upBtn").classList.add("hidden");
+//CUANDO SE DETECTE SCROLL LLAMAR A LA FUNCION DE SCROLLEO
+window.onscroll = function() {scrollFunction()};
+
+//DETECTAR CUANDO SE VA A MOSTRAR EL BOTON, CUANDO PASE DE LA PARTE PRINCIPAL DE LA PAGINA
+function scrollFunction() {
+  if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+    document.getElementById("upBtn").classList.remove("hidden");
+  } else {
+    document.getElementById("upBtn").classList.add("hidden");
+  }
+}
+
+//FUNCION PARA VOLVER ARRIBA DE LA PAGIINA
+function scrollToTop() {
+  const scrollStep = -window.scrollY / (500 / 15);
+  const scrollInterval = setInterval(function(){
+    if ( window.scrollY != 0 ) {
+      window.scrollBy( 0, scrollStep );
+    }
+    else clearInterval(scrollInterval);
+  },15);
+}

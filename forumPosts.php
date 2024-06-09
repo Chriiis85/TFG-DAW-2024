@@ -41,6 +41,11 @@
   <!-- LINK AL CSS DEL FORO - POST -->
   <link rel="stylesheet" href="CSS/forumPosts.css" />
 
+  <!--BOTON PARA VOLVER ARRIBA DE LA PAGINA-->
+  <button onclick="scrollToTop()" id="upBtn" class="up-button">
+    <img src="Images/UPARROW.svg" alt="Up Arrow" aria-label="Scroll to top" />
+  </button>
+
   <!--SECCION PRINCIPAL DEL FORO - POSTS-->
   <section class="main" id="<?php echo $id_theme; ?>">
     <article class="posts-container" id="postsContainer">

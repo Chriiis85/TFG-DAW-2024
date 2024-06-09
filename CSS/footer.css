@@ -208,7 +208,6 @@ footer a {
   opacity: 1;
 }
 /*----------------------------------------------------------MODAL Y ACORDEON JQUERY-----------------------------------------------------------*/
-
 #faq-modal {
   width: 80%;
   height: 80%;
@@ -325,4 +324,36 @@ footer a {
   .footer-top-col2-bar {
     width: 50%;
   }
+}
+
+.up-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
+.up-button:focus {
+  cursor: pointer;
+  border: 5px solid white;
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
+.up-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #222222;
+  color: black;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.up-button > img {
+  width: 100%;
 }
