@@ -33,12 +33,14 @@ h1 {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    letter-spacing: 1px;
 }
 
 .header a {
   text-decoration: none;
   color: white;
 }
+
 .header-drop-containerData {
   position: absolute;
   z-index: 99;
@@ -87,6 +89,18 @@ h1 {
 
 .header-container2 > p:hover {
   opacity: 0.6;
+}
+
+.header-container2 > a{
+  transition: 0.3s;
+}
+.header-container2 > a:hover{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
+}
+.header-container2 > a:focus{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
 }
 
 .progress-bar:hover:after {
@@ -214,6 +228,24 @@ h1 {
   opacity: 0.65;
 }
 
+.header-drop-container-options2 > a:focus {
+  text-decoration: #00acee underline;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+#redirectFormEnterH3About:hover {
+  text-decoration: #00acee underline;
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+#redirectFormEnterH3About:focus {
+  text-decoration: #00acee underline;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
 .header-drop-container-options2 > a > img {
   width: 5%;
   margin-right: 3%;
@@ -223,6 +255,17 @@ h1 {
 .header-drop-container a {
   text-decoration: none;
   color: white;
+}
+#redirectFormEnterH1Main{
+  transition: 0.3s;
+}
+#redirectFormEnterH1Main:hover{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
+}
+#redirectFormEnterH1Main:focus{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
 }
 
 /*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/

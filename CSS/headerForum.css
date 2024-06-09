@@ -82,10 +82,23 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
+.header-container2 > a{
+  transition: 0.3s;
+}
+
+.header-container2 > a:hover{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
+}
+.header-container2 > a:focus{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
+}
 
 .header-container2 > p:hover {
   opacity: 0.6;
 }
+
 
 .progress-bar:hover:after {
   width: 100%;
@@ -105,6 +118,29 @@ body {
 
 .progress-bar:hover:after {
   width: 100%;
+}
+
+#redirectFormEnterH3About:hover {
+  text-decoration: #00acee underline;
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+#redirectFormEnterH3About:focus {
+  text-decoration: #00acee underline;
+  cursor: pointer;
+  opacity: 0.75;
+}
+#redirectFormEnterH1Main{
+  transition: 0.3s;
+}
+#redirectFormEnterH1Main:hover{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
+}
+#redirectFormEnterH1Main:focus{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
 }
 
 .header-container3 {
@@ -197,7 +233,12 @@ body {
 .header-drop-container-options2 > a:hover {
   text-decoration: #00acee underline;
   cursor: pointer;
-  opacity: 0.65;
+  opacity: 0.75;
+}
+
+.header-drop-container-options2 > a:focus {
+  text-decoration: #00acee underline;
+  cursor: pointer;
 }
 
 .header-drop-container-options2 > a > img {
@@ -292,6 +333,14 @@ body {
   left: 50%;
   transform: translate(-50%);
   font-size: 5em;
+}
+
+#redirectFormEnterH1Main{
+  transition: 0.3s;
+}
+#redirectFormEnterH1Main:hover{
+  transform: scale(1.05);
+  text-decoration: #00b9ff underline;
 }
 
 /*-----------------------------------------------------------------RESPONSIVE-----------------------------------------------------------------*/

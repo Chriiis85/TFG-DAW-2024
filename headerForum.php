@@ -32,7 +32,7 @@ if (isset($_COOKIE["username"])) {
         </h1>
       </div>
       <div class="header-container2">
-        <a tabindex="2" class="progress-bar" id="formulaone">
+        <a tabindex="2" id="formulaone">
           FORMULA ONE &nbsp;&nbsp;<img src="Images/down-arrow-svgrepo-com.svg" alt="Down Arrow" />
         </a>
         <a title="Go to Standings Page" href="standings.php">SEASON STANDINGS</a>
