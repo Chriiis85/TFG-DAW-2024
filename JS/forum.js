@@ -167,9 +167,11 @@ let addTheme = document
 //FUNCIONALIDAD PARA EL BOTON DE LOGOUT
 let logout = document.getElementById("logout");
 logout.addEventListener("click", () => {
+  let username = getCookie("username");
+
   Swal.fire({
     title: "Do you want to Log Out?",
-    text: "Login Out: ",
+    text: "Login Out: " + username,
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#DD6B55",

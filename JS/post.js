@@ -514,7 +514,7 @@ filter.addEventListener("change", () => {
           postContainer1.appendChild(postTitle);
 
           const postDateParagraph = document.createElement("p");
-          postDateParagraph.textContent = `Posted on: ${postDate}.`;
+          postDateParagraph.textContent = `Posted on: ${postDate}`;
           postContainer1.appendChild(postDateParagraph);
 
           /*const postCardViews = document.createElement('div');
@@ -637,7 +637,7 @@ function searchTheme(letra) {
           postContainer1.appendChild(postTitle);
 
           const postDateParagraph = document.createElement("p");
-          postDateParagraph.textContent = `Posted on: ${postDate}.`;
+          postDateParagraph.textContent = `Posted on: ${postDate}`;
           postContainer1.appendChild(postDateParagraph);
 
           let username = getCookie("username");
