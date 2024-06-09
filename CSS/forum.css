@@ -158,13 +158,13 @@ header {
 .post-card:hover {
   cursor: pointer;
   /*transform: scale(0.98);*/
-  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
 
 .post-card:focus {
   cursor: pointer;
   transform: scale(1.05);
-  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
 
 .post-card-1 {
@@ -282,7 +282,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: #222222;
   transition: 0.5s;
 }
 
@@ -293,28 +293,32 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: #222222;
   transition: 0.5s;
 }
 
 .deleteThemeBtn:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
 }
 
 .editThemeBtn:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
 }
 
 .editThemeBtn:focus {
-  box-shadow: 0px 3px #00b9ff, 0px 3px #00b9ff;
-  opacity: 0.75;
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
 }
 
 .deleteThemeBtn:focus {
-  box-shadow: 0px 3px #00b9ff, 0px 3px #00b9ff;
-  opacity: 0.75;
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
 }
 
 .post-card-views {
@@ -424,6 +428,14 @@ select {
   cursor: pointer;
 }
 
+select:hover {
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
+select:focus {
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
 .select::before,
 .select::after {
   --size: 0.3rem;
@@ -478,9 +490,8 @@ select {
 
 .button-add:hover,
 .button-add:focus {
-  opacity: 0.75;
-  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
-
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
 }
 
 /*-------------------------------------------------------------PAGINATION---------------------------------------------------------------------*/
@@ -541,7 +552,15 @@ select {
   z-index: 99;
   margin: 5%;
 }
+.close-modal:focus {
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border-radius: 50%;
+}
 
+.close-modal:hover {
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border-radius: 50%;
+}
 /*------------------------------------------------------------------FORM----------------------------------------------------------------------*/
 
 .themeFormContainer {
@@ -581,7 +600,11 @@ select {
 }
 
 .inputText:focus {
-  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
+.inputText:hover {
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
 
 .themes-btnCont {
@@ -613,12 +636,10 @@ select {
 
 .confirmTheme:hover {
   transform: translateY(-2px);
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
-
 .confirmTheme:focus {
-  box-shadow: 0px 2px #00b9ff, 0px 2px #00b9ff;
-  border: 3px solid #000;
-  opacity: 0.75;
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
 
 .backTheme {
@@ -639,11 +660,12 @@ select {
 }
 .backTheme:hover {
   transform: translateY(-2px);
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border: 3px solid #000;
 }
 .backTheme:focus {
-  box-shadow: 0px 2px #00b9ff, 0px 2px #00b9ff;
+  box-shadow: 0 0 3px 3px #00b9ff;
   border: 3px solid #000;
-  opacity: 0.75;
 }
 
 #privacyTheme {

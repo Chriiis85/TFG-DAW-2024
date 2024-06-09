@@ -101,12 +101,13 @@ body {
 .post-container:hover {
   opacity: 1;
   background-color: white;
-  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
+
 .post-container:focus {
   cursor: pointer;
   transform: scale(1.05);
-  box-shadow: 0 3px 6px #00b9ff, 0 3px 6px #00b9ff;
+  box-shadow: 0 0 3px 3px #00b9ff;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -192,8 +193,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: #222222;
   transition: 0.5s;
+  margin-top: 10px;
 }
 
 .deletePostBtn {
@@ -204,28 +206,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: #222222;
   transition: 0.5s;
+  margin-top: 10px;
 }
 
 .deletePostBtn:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
+
 }
 
 .editPostBtn:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
+
 }
 
 .editPostBtn:focus {
-  box-shadow: 0px 3px #00b9ff, 0px 3px #00b9ff;
-  opacity: 0.75;
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
 }
 
 .deletePostBtn:focus {
-  box-shadow: 0px 3px #00b9ff, 0px 3px #00b9ff;
-  opacity: 0.75;
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
 }
 
 .posts-container-info > h1 {
@@ -291,6 +300,14 @@ select {
   cursor: pointer;
 }
 
+select:hover {
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
+select:focus {
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
 .select::before,
 .select::after {
   --size: 0.3rem;
@@ -345,7 +362,8 @@ select {
 
 .button-add:hover,
 .button-add:focus {
-  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
+  box-shadow: 0 0 3px 3px #00b9ff;
+  background-color: #000;
 }
 
 /*-------------------------------------------------------------PAGINATION---------------------------------------------------------------------*/
@@ -383,6 +401,18 @@ select {
   z-index: 99;
   margin: 5%;
 }
+
+.close-modal:hover {
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border-radius: 50%;
+
+}
+
+.close-modal:focus {
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border-radius: 50%;
+}
+
 
 /*------------------------------------------------------------------FORM----------------------------------------------------------------------*/
 
@@ -423,7 +453,11 @@ select {
 }
 
 .inputTextArea:focus {
-  box-shadow: 0 2px 2px #00b9ff, 0 2px 2px #00b9ff;
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
+.inputTextArea:hover {
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
 
 .themes-btnCont {
@@ -455,11 +489,10 @@ select {
 
 .confirmTheme:hover {
   transform: translateY(-2px);
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
 .confirmTheme:focus {
-  box-shadow: 0px 3px #00b9ff, 0px 3px #00b9ff;
-  opacity: 0.75;
-  border: 3px solid #000;
+  box-shadow: 0 0 3px 3px #00b9ff;
 }
 
 .backTheme {
@@ -480,10 +513,11 @@ select {
 }
 .backTheme:hover {
   transform: translateY(-2px);
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border: 3px solid #000;
 }
 .backTheme:focus {
-  box-shadow: 0px 3px #00b9ff, 0px 3px #00b9ff;
-  opacity: 0.75;
+  box-shadow: 0 0 3px 3px #00b9ff;
   border: 3px solid #000;
 }
 

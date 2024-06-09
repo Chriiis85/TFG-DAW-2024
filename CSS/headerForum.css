@@ -249,14 +249,16 @@ body {
   padding-left: 20px;
 }
 
-.logOutBtn:hover {
-  transform: scale(1.05);
-}
-
 .logOutBtn:focus {
-  background: rgb(204, 204, 204);
+  box-shadow: 0 0 3px 3px #00b9ff;
   border: 3px solid black;
 }
+
+.logOutBtn:hover {
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border: 3px solid black;
+}
+
 /*-----------------------------------------------------------------HEADER SPECIFICS-----------------------------------------------------------*/
 .header-container {
   width: 100%;
