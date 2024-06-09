@@ -100,6 +100,13 @@ body {
   background-color: white;
 }
 
+#DriverStan:focus, #ConstStan:focus {
+  cursor: pointer;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+}
+
 .standings-selector-bar {
   position: absolute;
   width: 20%;
@@ -191,6 +198,20 @@ body {
 
 .standings-teams:hover {
   background-color: #222222;
+  color: white;
+}
+
+.standings-driver:focus {
+  background-color: #222222;
+  color: white;
+}
+
+.standings-teams:focus{
+  background-color: #222222;
+  color: white;
+}
+
+.standings-teams:focus .driversname{
   color: white;
 }
 

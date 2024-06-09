@@ -142,6 +142,16 @@ select {
   cursor: pointer;
 }
 
+select:hover {
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border: 2px solid black;
+}
+
+select:focus {
+  box-shadow: 0 0 3px 3px #00b9ff;
+  border: 2px solid black;
+}
+
 .select::before,
 .select::after {
   --size: 0.3rem;
