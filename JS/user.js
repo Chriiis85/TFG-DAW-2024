@@ -122,7 +122,7 @@ function changeFormLogin() {
   let img = document.getElementById("img");
   img.setAttribute("src", "Images/Login-img.jpg");
 
-    //MOSTRAR EL CONTENEDOR AL CUAL VAMOS A CAMBIAR Y MOSTRAR
+  //MOSTRAR EL CONTENEDOR AL CUAL VAMOS A CAMBIAR Y MOSTRAR
   let formRegister = document.getElementById("formLogin");
   formRegister.style.display = "flex";
 }
@@ -156,6 +156,9 @@ passwordFieldRegister.addEventListener("input", function () {
   //SI CUMPLE EL PATTERN Y LA LONGITUD OCULTAMOS
   if (validatePWD(passwordFieldRegister.value)) {
     pwdErrorP.style.display = "none";
+    //HABILITAR EL BOTON PARA PODER REGISTRARSE
+    let register = document.getElementById("register");
+    register.disabled = false;
   }
   //SI NO CUMPLE EL PATTERN Y LA LONGITUD MUESTRA EL ERROR
   else {
