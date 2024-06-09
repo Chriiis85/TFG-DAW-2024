@@ -720,3 +720,9 @@ function scrollToTop() {
     else clearInterval(scrollInterval);
   },15);
 }
+/*--------------------------------------------FUNCIONALIDAD DEL ELEMENTO DE BOTON VOLVER ATRÁS-------------------------------------------------*/
+//RECOGER EL BOTON
+document.getElementById("backBtn").addEventListener("click", ()=>{
+  //REDIRIGIR A LA PAGINA ANTERIOR
+  window.location.href = "forum.php";
+});

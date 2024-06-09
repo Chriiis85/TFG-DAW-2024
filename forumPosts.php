@@ -46,6 +46,11 @@
     <img src="Images/UPARROW.svg" alt="Up Arrow" aria-label="Scroll to top" />
   </button>
 
+  <!--BOTON PARA VOLVER ATRÁS DE LA PAGINA-->
+  <button id="backBtn" class="back-button">
+    <img src="Images/backarrow.svg" alt="Back Icon" title="Go to Main Forum" aria-label="Back Page" />
+  </button>
+
   <!--SECCION PRINCIPAL DEL FORO - POSTS-->
   <section class="main" id="<?php echo $id_theme; ?>">
     <article class="posts-container" id="postsContainer">

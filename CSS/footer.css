@@ -357,3 +357,35 @@ footer a {
 .up-button > img {
   width: 100%;
 }
+
+.back-button {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #222222;
+  color: black;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.back-button > img {
+  width: 100%;
+}
+
+.back-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 3px 3px #00b9ff;
+}
+
+.back-button:focus {
+  cursor: pointer;
+  border: 5px solid white;
+  box-shadow: 0 0 3px 3px #00b9ff;
+}

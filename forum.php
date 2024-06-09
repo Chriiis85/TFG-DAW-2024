@@ -37,6 +37,11 @@
     <img src="Images/UPARROW.svg" alt="Up Arrow" aria-label="Scroll to top" />
   </button>
 
+  <!--BOTON PARA VOLVER ATRÁS DE LA PAGINA-->
+  <button id="backBtn" class="back-button">
+    <img src="Images/backarrow.svg" alt="Back Icon" title="Go to Main Page" aria-label="Back Page" />
+  </button>
+
   <!--SECCION PRINCIPAL DEL FORO-->
   <section class="main">
     <article class="posts-container" id="postsContainer">
