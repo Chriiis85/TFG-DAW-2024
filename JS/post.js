@@ -86,6 +86,9 @@ function editBtn() {
     btnEdit.addEventListener("click", () => {
       event.stopPropagation();
 
+      //VARIABLE PARA GUARDAR EL CONTENIDO DEL POST PARA VERIFICAR SI SE CAMBIA O NO
+      let postContentBD;
+
       //RECOGER EL ID DEL POST DEL BOTON QUE AL CLICAR SE RECOGE PARA SABER QUE POST SE VA A EDITAR
       let id_post = btnEdit.id;
       id_post = id_post.split("-")[1];
@@ -97,6 +100,7 @@ function editBtn() {
           if (this.status == 200) {
             let posts = JSON.parse(this.responseText);
             if (posts.length > 0) {
+              postContentBD = posts[0].contenido;
               //MOSTRAR EL TIRULO DEL TEMA QUE SE VA A EDITAR
               let input = document.getElementById("New_Post_Content");
               input.value = posts[0].contenido;
@@ -144,71 +148,86 @@ function editBtn() {
 
           //SI SE CUMPLEN LOS REQUISITOS INNICAMOS LA ACCION DE EDICION DEL TEMA
           if (!postContent.value == "" && cbxTheme.checked) {
-            Swal.fire({
-              title:
-                "Do you want to edit this Post: " + postPrev.textContent + " ?",
-              text: "New content: " + postContent.value,
-              icon: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "green",
-              confirmButtonText: "Confirm!",
-              cancelButtonText: "No, go back.",
-              allowOutsideClick: false,
-            }).then((result) => {
-              //SI SE CONFIRMA LA REALIZACION DE LA EDICION HACEMOS UNA PETICION POST PARA EDITAR EL TEMA
-              if (result.isConfirmed) {
-                let username = getCookie("username");
-                //PETICION AJAX PARA EDITAR EL POST
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                  if (this.readyState == 4) {
-                    if (this.status == 200) {
-                      //SI LA RESPUESTA TIENE STATUS VALIDO MOSTRAMOS AL USUARIO LA RESPUESTA
-                      if (this.responseText == 1) {
-                        Swal.fire({
-                          title: "Post Edited!",
-                          text: "The post was edited successfully.",
-                          icon: "success",
-                          showConfirmButton: true,
-                        }).then((result) => {
-                          if (result.isConfirmed) {
-                            location.reload();
-                          }
-                        });
+            if (postContent.value == postContentBD) {
+              Swal.fire({
+                title: "Post not Edited! Same Content.",
+                text: "The post has the same content.",
+                icon: "info",
+                showConfirmButton: true,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  location.reload();
+                }
+              });
+            } else {
+              Swal.fire({
+                title:
+                  "Do you want to edit this Post: " +
+                  postPrev.textContent +
+                  " ?",
+                text: "New content: " + postContent.value,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "green",
+                confirmButtonText: "Confirm!",
+                cancelButtonText: "No, go back.",
+                allowOutsideClick: false,
+              }).then((result) => {
+                //SI SE CONFIRMA LA REALIZACION DE LA EDICION HACEMOS UNA PETICION POST PARA EDITAR EL TEMA
+                if (result.isConfirmed) {
+                  let username = getCookie("username");
+                  //PETICION AJAX PARA EDITAR EL POST
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                      if (this.status == 200) {
+                        //SI LA RESPUESTA TIENE STATUS VALIDO MOSTRAMOS AL USUARIO LA RESPUESTA
+                        if (this.responseText == 1) {
+                          Swal.fire({
+                            title: "Post Edited!",
+                            text: "The post was edited successfully.",
+                            icon: "success",
+                            showConfirmButton: true,
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              location.reload();
+                            }
+                          });
+                        } else {
+                          Swal.fire("Error!", "Post not edited.", "error");
+                          $(document).ready(function () {
+                            $.modal.close();
+                          });
+                        }
                       } else {
                         Swal.fire("Error!", "Post not edited.", "error");
+                        $.modal.close();
                         $(document).ready(function () {
                           $.modal.close();
                         });
                       }
-                    } else {
-                      Swal.fire("Error!", "Post not edited.", "error");
-                      $.modal.close();
-                      $(document).ready(function () {
-                        $.modal.close();
-                      });
                     }
-                  }
-                };
-                //PETICION MEDIANTE POST Y MANDAR VARIABLES POR LA CABECERA
-                xhttp.open("POST", "PHP/Forum/editPost.php", true);
-                xhttp.setRequestHeader(
-                  "Content-type",
-                  "application/x-www-form-urlencoded"
-                );
-                xhttp.send(
-                  "content=" +
-                    encodeURIComponent(postContent.value) +
-                    "&id_post=" +
-                    id_post
-                );
-              } else {
-                Swal.fire("Cancelled", "Operation cancelled.", "info");
-                $(document).ready(function () {
-                  $.modal.close();
-                });
-              }
-            });
+                  };
+                  //PETICION MEDIANTE POST Y MANDAR VARIABLES POR LA CABECERA
+                  xhttp.open("POST", "PHP/Forum/editPost.php", true);
+                  xhttp.setRequestHeader(
+                    "Content-type",
+                    "application/x-www-form-urlencoded"
+                  );
+                  xhttp.send(
+                    "content=" +
+                      encodeURIComponent(postContent.value) +
+                      "&id_post=" +
+                      id_post
+                  );
+                } else {
+                  Swal.fire("Cancelled", "Operation cancelled.", "info");
+                  $(document).ready(function () {
+                    $.modal.close();
+                  });
+                }
+              });
+            }
           }
         });
     });

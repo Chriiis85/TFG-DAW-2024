@@ -206,10 +206,13 @@ function editBtn() {
   for (const btnEdit of editBtn) {
     btnEdit.addEventListener("click", () => {
       event.stopPropagation();
+      //VARIABLE PARA GUARDAR EL NOMBRE DEL TEMA PARA VERIFICAR SI SE CAMBIA O NO
+      let themeNameBD;
 
       //RECOGER EL ID DEL TEMA DEL BOTON QUE AL CLICAR SE RECOGE PARA SABER QUE TEMA SE VA A EDITAR
       let id_theme = btnEdit.id;
       id_theme = id_theme.split("-")[1];
+
       //PETICION AJAX PARA DEVOLVER EL TITULO DEL TEMA QUE SE VA EDITAR
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
@@ -218,20 +221,24 @@ function editBtn() {
             let themes = JSON.parse(this.responseText);
             if (themes.length > 0) {
               //MOSTRAR EL TIRULO DEL TEMA QUE SE VA A EDITAR
+              themeNameBD = themes[0].titulo_tema;
               let input = document.getElementById("New_Theme_Name");
               input.value = themes[0].titulo_tema;
             } else {
-              console.error('No themes found.');
+              console.error("No themes found.");
             }
-          //MANEJO DE ERRORES SI EXISTE UN ERROR EN LA PETICION AJAX
+            //MANEJO DE ERRORES SI EXISTE UN ERROR EN LA PETICION AJAX
           } else {
-            console.error('Error: ' + this.status);
+            console.error("Error: " + this.status);
           }
         }
       };
       //ENVIAR LA CABECERA POR POST, CON EL ID DEL TEMA PARA QUE NOS DEVUELVA EL TITULO DEL TEMA
       xhttp.open("POST", "PHP/Forum/returnTheme.php", true);
-      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+      );
       xhttp.send("id_theme=" + encodeURIComponent(id_theme));
 
       //AL CLICAR EL BOTON INICIALIZAMOS EL PROCESO DE EDICION DEL TEMA
@@ -261,72 +268,85 @@ function editBtn() {
 
           //SI SE CUMPLEN LOS REQUISITOS INNICAMOS LA ACCION DE EDICION DEL TEMA
           if (!nameTheme.value == "" && cbxTheme.checked) {
-            Swal.fire({
-              title:
-                "Do you want to edit this Theme: " +
-                ThemeName.textContent +
-                " ?",
-              text: "New theme name: " + nameTheme.value,
-              icon: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "green",
-              confirmButtonText: "Confirm!",
-              cancelButtonText: "No, go back.",
-              allowOutsideClick: false,
-            }).then((result) => {
-              //SI SE CONFIRMA LA REALIZACION DE LA EDICION HACEMOS UNA PETICION POST PARA EDITAR EL TEMA
-              if (result.isConfirmed) {
-                let username = getCookie("username");
-                //PETICION AJAX PARA EDITAR EL TEMA
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                  if (this.readyState == 4) {
-                    if (this.status == 200) {
-                      //SI LA RESPUESTA TIENE STATUS VALIDO MOSTRAMOS AL USUARIO LA RESPUESTA
-                      if (this.responseText == 1) {
-                        Swal.fire({
-                          title: "Theme Edited!",
-                          text: "The theme was edited successfully.",
-                          icon: "success",
-                          showConfirmButton: true,
-                        }).then((result) => {
-                          if (result.isConfirmed) {
-                            location.reload();
-                          }
-                        });
+            if (nameTheme.value == themeNameBD) {
+              Swal.fire({
+                title: "Theme not Edited! Same Name.",
+                text: "The theme has the same name.",
+                icon: "info",
+                showConfirmButton: true,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  location.reload();
+                }
+              });
+            } else {
+              Swal.fire({
+                title:
+                  "Do you want to edit this Theme: " +
+                  ThemeName.textContent +
+                  " ?",
+                text: "New theme name: " + nameTheme.value,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "green",
+                confirmButtonText: "Confirm!",
+                cancelButtonText: "No, go back.",
+                allowOutsideClick: false,
+              }).then((result) => {
+                //SI SE CONFIRMA LA REALIZACION DE LA EDICION HACEMOS UNA PETICION POST PARA EDITAR EL TEMA
+                if (result.isConfirmed) {
+                  let username = getCookie("username");
+                  //PETICION AJAX PARA EDITAR EL TEMA
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                      if (this.status == 200) {
+                        //SI LA RESPUESTA TIENE STATUS VALIDO MOSTRAMOS AL USUARIO LA RESPUESTA
+                        if (this.responseText == 1) {
+                          Swal.fire({
+                            title: "Theme Edited!",
+                            text: "The theme was edited successfully.",
+                            icon: "success",
+                            showConfirmButton: true,
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              location.reload();
+                            }
+                          });
+                        } else {
+                          Swal.fire("Error!", "Theme not edited.", "error");
+                          $(document).ready(function () {
+                            $.modal.close();
+                          });
+                        }
                       } else {
                         Swal.fire("Error!", "Theme not edited.", "error");
                         $(document).ready(function () {
                           $.modal.close();
                         });
                       }
-                    } else {
-                      Swal.fire("Error!", "Theme not edited.", "error");
-                      $(document).ready(function () {
-                        $.modal.close();
-                      });
                     }
-                  }
-                };
-                //PETICION MEDIANTE POST Y MANDAR VARIABLES POR LA CABECERA
-                xhttp.open("POST", "PHP/Forum/editTheme.php", true);
-                xhttp.setRequestHeader(
-                  "Content-type",
-                  "application/x-www-form-urlencoded"
-                );
-                xhttp.send(
-                  "name=" +
-                    encodeURIComponent(nameTheme.value) +
-                    "&id_theme=" +
-                    id_theme
-                );
-              } else {
-                Swal.fire("Cancelled", "Operation cancelled.", "info");
-                $(document).ready(function () {
-                  $.modal.close();
-                });
-              }
-            });
+                  };
+                  //PETICION MEDIANTE POST Y MANDAR VARIABLES POR LA CABECERA
+                  xhttp.open("POST", "PHP/Forum/editTheme.php", true);
+                  xhttp.setRequestHeader(
+                    "Content-type",
+                    "application/x-www-form-urlencoded"
+                  );
+                  xhttp.send(
+                    "name=" +
+                      encodeURIComponent(nameTheme.value) +
+                      "&id_theme=" +
+                      id_theme
+                  );
+                } else {
+                  Swal.fire("Cancelled", "Operation cancelled.", "info");
+                  $(document).ready(function () {
+                    $.modal.close();
+                  });
+                }
+              });
+            }
           }
         });
     });
