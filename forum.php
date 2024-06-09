@@ -119,7 +119,7 @@
                     </div>-->
                     <div class="post-card-msg">
                       <img src="Images/msg.svg" alt="Message Icon" />
-                      <p>Posts: ' . returnNumberPosts($themes[$i][0]) . '.</p>
+                      <p>Posts: ' . returnNumberPosts($themes[$i][0]) . '</p>
                     </div>
                   </div>';
             //VERIFICAR QUIEN ES EL USUARIO PARA PERMITIR LA ELIMINACION O LA EDICION DE DICHO TEMA
@@ -172,7 +172,8 @@
       <div class="themeFormContainer">
         <div class="inputContainer">
           <label for="New_Theme_Name">Enter new Theme Name:</label>
-          <input tabindex="0" placeholder="New Theme Name" class="inputText" type="text" name="New_Theme_Name" id="New_Theme_Name">
+          <input tabindex="0" placeholder="New Theme Name" class="inputText" type="text" name="New_Theme_Name"
+            id="New_Theme_Name">
         </div>
         <div class="checkbox-wrapper-46">
           <input type="checkbox" id="cbx-462" class="inp-cbx" />

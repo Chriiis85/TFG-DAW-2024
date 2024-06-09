@@ -84,15 +84,15 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-.header-container2 > a{
+.header-container2 > a {
   transition: 0.3s;
 }
 
-.header-container2 > a:hover{
+.header-container2 > a:hover {
   transform: scale(1.05);
   text-decoration: #00b9ff underline;
 }
-.header-container2 > a:focus{
+.header-container2 > a:focus {
   transform: scale(1.05);
   text-decoration: #00b9ff underline;
 }
@@ -100,7 +100,6 @@ body {
 .header-container2 > p:hover {
   opacity: 0.6;
 }
-
 
 .progress-bar:hover:after {
   width: 100%;
@@ -133,14 +132,14 @@ body {
   cursor: pointer;
   opacity: 0.75;
 }
-#redirectFormEnterH1Main{
+#redirectFormEnterH1Main {
   transition: 0.3s;
 }
-#redirectFormEnterH1Main:hover{
+#redirectFormEnterH1Main:hover {
   transform: scale(1.05);
   text-decoration: #00b9ff underline;
 }
-#redirectFormEnterH1Main:focus{
+#redirectFormEnterH1Main:focus {
   transform: scale(1.05);
   text-decoration: #00b9ff underline;
 }
@@ -265,7 +264,7 @@ body {
 }
 
 .user > p {
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: bold;
   text-align: center;
 }
@@ -337,10 +336,10 @@ body {
   font-size: 5em;
 }
 
-#redirectFormEnterH1Main{
+#redirectFormEnterH1Main {
   transition: 0.3s;
 }
-#redirectFormEnterH1Main:hover{
+#redirectFormEnterH1Main:hover {
   transform: scale(1.05);
   text-decoration: #00b9ff underline;
 }
@@ -445,7 +444,7 @@ body {
 }
 
 @media (max-width: 900px) {
-  .header-drop-container-options{
+  .header-drop-container-options {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -461,7 +460,7 @@ body {
     width: 200px;
     /*margin-left: -15%;*/
   }
-  .header-drop-container-options2{
+  .header-drop-container-options2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -470,10 +469,10 @@ body {
     font-size: 1.25em;
     margin-left: -1%;
   }
-  .header-drop-container-options > h3 > img{
+  .header-drop-container-options > h3 > img {
     width: 10px;
   }
-  .header-drop-container-options2 > a > img{
+  .header-drop-container-options2 > a > img {
     width: 10px;
   }
 }
