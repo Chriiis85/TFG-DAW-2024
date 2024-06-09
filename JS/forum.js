@@ -427,7 +427,7 @@ function deleteBtn() {
 //FUNCION PARA ACUTALIZAR EL NUMERO DE TEMAS QUE SE MUESTRAN
 function actualizarPostP() {
   let totalPosts = document.querySelectorAll(".post-card-container");
-  countPost = "Showing: " + totalPosts.length + " Themes.";
+  countPost = "Showing: " + totalPosts.length + " Themes";
 
   let countPostP = document.getElementById("countPostP");
   countPostP.textContent = countPost;
@@ -456,7 +456,7 @@ filter.addEventListener("change", () => {
       tipo = "Default";
       break;
   }
-  orderP.textContent = "Order by: " + tipo + ".";
+  orderP.textContent = "Order by: " + tipo;
 
   //REALIZAR LA SOLICITUD AJAX PARA FILTRAR TEMAS
   var xhttp = new XMLHttpRequest();
@@ -745,11 +745,16 @@ redireccionPostsCards();
 //RECOGER EL BOTON
 document.getElementById("upBtn").classList.add("hidden");
 //CUANDO SE DETECTE SCROLL LLAMAR A LA FUNCION DE SCROLLEO
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () {
+  scrollFunction();
+};
 
 //DETECTAR CUANDO SE VA A MOSTRAR EL BOTON, CUANDO PASE DE LA PARTE PRINCIPAL DE LA PAGINA
 function scrollFunction() {
-  if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+  if (
+    document.body.scrollTop > window.innerHeight ||
+    document.documentElement.scrollTop > window.innerHeight
+  ) {
     document.getElementById("upBtn").classList.remove("hidden");
   } else {
     document.getElementById("upBtn").classList.add("hidden");
@@ -759,16 +764,15 @@ function scrollFunction() {
 //FUNCION PARA VOLVER ARRIBA DE LA PAGIINA
 function scrollToTop() {
   const scrollStep = -window.scrollY / (500 / 15);
-  const scrollInterval = setInterval(function(){
-    if ( window.scrollY != 0 ) {
-      window.scrollBy( 0, scrollStep );
-    }
-    else clearInterval(scrollInterval);
-  },15);
+  const scrollInterval = setInterval(function () {
+    if (window.scrollY != 0) {
+      window.scrollBy(0, scrollStep);
+    } else clearInterval(scrollInterval);
+  }, 15);
 }
 /*--------------------------------------------FUNCIONALIDAD DEL ELEMENTO DE BOTON VOLVER ATRÁS-------------------------------------------------*/
 //RECOGER EL BOTON
-document.getElementById("backBtn").addEventListener("click", ()=>{
+document.getElementById("backBtn").addEventListener("click", () => {
   //REDIRIGIR A LA PAGINA ANTERIOR
   window.location.href = "index.html";
 });

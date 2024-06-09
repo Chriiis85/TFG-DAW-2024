@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="posts-container-info">
-        <h1 id="orderP">Order by: Default.</h1>
+        <h1 id="orderP">Order by: Default</h1>
         <h1 id="countPostP"></h1>
       </div>
       <div id="posts-group" class="posts-group">

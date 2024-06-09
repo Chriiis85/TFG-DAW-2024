@@ -81,7 +81,7 @@
         </div>
       </div>
       <div class="posts-container-info">
-        <h1 id="orderP">Order by: Default.</h1>
+        <h1 id="orderP">Order by: Default</h1>
         <h1>Theme Name: <?php echo returnThemeName($id_theme) ?></h1>
         <h1 id="countPostP"></h1>
       </div>
