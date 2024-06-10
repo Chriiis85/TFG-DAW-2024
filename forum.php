@@ -89,7 +89,7 @@
 
         //SI NO HAY TEMAS QUE MOSTRAR INDICAR AL USUARIO
         if (sizeof($themes) == 0) {
-          echo '<img class="img-noresult" src="https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png" alt="No result Image" />';
+          echo '<img class="img-noresult" src="https://regionagropecuaria.com/assets/templates/basic/images/no-results.png" alt="No result Image" />';
         } else {
           //RECORRER EL ARRAY MOSTRANDO LOS TEMAS EN EL CONTENEDOR
           for ($i = 0; $i < sizeof($themes); $i++) {
