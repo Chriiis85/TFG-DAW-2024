@@ -488,7 +488,7 @@ filter.addEventListener("change", () => {
         let divimg = document.createElement("div");
         imagen.setAttribute(
           "src",
-          "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png"
+          "https://regionagropecuaria.com/assets/templates/basic/images/no-results.png"
         );
         imagen.classList.add("img-noresult");
         divimg.appendChild(imagen);
@@ -528,7 +528,7 @@ filter.addEventListener("change", () => {
                 postCardViews.appendChild(viewParagraph);
                 postContainer1.appendChild(postCardViews);*/
           let username = getCookie("username");
-
+          //SI EL USUARIO ES EL AUTOR DEL POST O EL ADMIN ENTRA SE CREAN LOS BOTONES DE EDITAR Y ELIMINAR
           if (postUserId == username || username == "admin") {
             const postCardEdit = document.createElement("div");
             postCardEdit.className = "post-card-6-edit";
@@ -612,7 +612,7 @@ function searchTheme(letra) {
         let divimg = document.createElement("div");
         imagen.setAttribute(
           "src",
-          "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png"
+          "https://regionagropecuaria.com/assets/templates/basic/images/no-results.png"
         );
         imagen.classList.add("img-noresult");
         divimg.appendChild(imagen);
@@ -641,7 +641,7 @@ function searchTheme(letra) {
           postContainer1.appendChild(postDateParagraph);
 
           let username = getCookie("username");
-
+          //SI EL USUARIO ES EL AUTOR DEL POST O EL ADMIN ENTRA SE CREAN LOS BOTONES DE EDITAR Y ELIMINAR
           if (postUserId == username || username == "admin") {
             const postCardEdit = document.createElement("div");
             postCardEdit.className = "post-card-6-edit";

@@ -478,7 +478,7 @@ filter.addEventListener("change", () => {
         let divimg = document.createElement("div");
         imagen.setAttribute(
           "src",
-          "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png"
+          "https://regionagropecuaria.com/assets/templates/basic/images/no-results.png"
         );
         imagen.classList.add("img-noresult");
         divimg.appendChild(imagen);
@@ -555,7 +555,8 @@ filter.addEventListener("change", () => {
         postCard6.appendChild(postCard6Info);
 
         let user = getCookie("username");
-        if (theme[3] == user) {
+        //SI EL USUARIO ES EL AUTOR DEL TEMA O EL ADMIN ENTRA SE CREAN LOS BOTONES DE EDITAR Y ELIMINAR
+        if (theme[3] == user || user == "admin") {
           postCard6Edit.appendChild(postCardEditBtn);
           postCard6Edit.appendChild(postCardDeleteBtn);
           postCard6.appendChild(postCard6Edit);
@@ -611,7 +612,7 @@ function searchTheme(letra) {
         let divimg = document.createElement("div");
         imagen.setAttribute(
           "src",
-          "https://cdn.dribbble.com/users/1883357/screenshots/6016190/search_no_result.png"
+          "https://regionagropecuaria.com/assets/templates/basic/images/no-results.png"
         );
         imagen.classList.add("img-noresult");
         divimg.appendChild(imagen);
@@ -688,7 +689,8 @@ function searchTheme(letra) {
         postCard6.appendChild(postCard6Info);
 
         let user = getCookie("username");
-        if (theme[3] == user) {
+        //SI EL USUARIO ES EL AUTOR DEL POST O EL ADMIN ENTRA SE CREAN LOS BOTONES DE EDITAR Y ELIMINAR
+        if (theme[3] == user || user == "admin") {
           postCard6Edit.appendChild(postCardEditBtn);
           postCard6Edit.appendChild(postCardDeleteBtn);
           postCard6.appendChild(postCard6Edit);
